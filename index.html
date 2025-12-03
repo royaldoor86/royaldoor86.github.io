@@ -1,383 +1,441 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Royal Door - رويال دور</title>
+  <title>Royal Door</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-        content="تطبيق رويال دور - غرف صوتية ملكية، دردشة، متجر هدايا، ألعاب والمزيد." />
+
+  <!-- خط جميل عربي -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --royal-purple: #4b008f;
+      --royal-pink: #ff4fd8;
+      --royal-dark: #140028;
+      --card-bg: rgba(12, 0, 32, 0.92);
+      --text-main: #ffffff;
+      --text-muted: #e2d4ff;
+      --accent: #ffd54f;
+      --shadow-card: 0 32px 80px rgba(0, 0, 0, 0.55);
+      --radius-xl: 32px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      background: radial-gradient(circle at top, #ff80ff 0, #3b0066 40%, #050012 100%);
-      color: #fff;
+      font-family: "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ff6ddd 0, #7b1fff 35%, #2d0055 100%);
+      color: var(--text-main);
       min-height: 100vh;
-      direction: rtl;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* الشريط العلوي */
-    header {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0 20px;
+      align-items: stretch;
+      justify-content: center;
+      padding: 24px;
     }
 
-    .logo {
+    .page-wrapper {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    /* الشريط الجانبي الأيسر (روابط صغيرة) */
+    .side-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-inline-start: 8px;
+    }
+
+    .side-logo {
+      font-weight: 900;
+      font-size: 26px;
+      letter-spacing: 0.08em;
+      color: #ffe082;
+      text-transform: uppercase;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .logo-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #ff66cc, #b400ff);
+    .side-logo span.crown {
+      font-size: 30px;
+      filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.6));
+    }
+
+    .side-menu {
+      margin-top: 20px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 22px;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    nav a:hover {
-      opacity: 1;
-      text-decoration: underline;
-    }
-
-    /* الهيرو */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 40px;
-      align-items: center;
-      padding: 30px 0 50px;
-    }
-
-    .hero-title-ar {
-      font-size: 32px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .hero-title-en {
-      font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 15px;
-    }
-
-    .hero-sub {
-      font-size: 14px;
-      line-height: 1.8;
-      opacity: 0.92;
-      margin-bottom: 25px;
-    }
-
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 25px;
-    }
-
-    .store-badge {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: rgba(5,0,20,0.4);
-      font-size: 13px;
-      display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
     }
 
-    .store-badge span.label {
-      font-size: 11px;
+    .side-menu a {
+      color: inherit;
+      text-decoration: none;
       opacity: 0.8;
+      transition: opacity 0.2s ease, transform 0.15s ease;
     }
 
-    .store-badge span.store {
-      font-weight: 600;
+    .side-menu a:hover {
+      opacity: 1;
+      transform: translateX(-3px);
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(5,0,20,0.6);
-      border: 1px solid rgba(255,255,255,0.16);
-      font-size: 11px;
-      margin-bottom: 10px;
-      opacity: 0.95;
+    .side-footer {
+      margin-top: auto;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
     }
 
-    .features-card {
-      background: rgba(7,0,25,0.85);
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.16);
-      padding: 18px 18px 16px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .features-card h3 {
-      font-size: 15px;
-      margin-bottom: 10px;
-    }
-
-    .features-list {
-      list-style: none;
-    }
-
-    .features-list li::before {
-      content: "•";
-      color: #ffb3ff;
-      margin-left: 6px;
-    }
-
-    /* كارت الموبايل */
-    .phone-card {
-      background: radial-gradient(circle at top, #ff8ae0, #5b00a8 55%, #120022 100%);
-      border-radius: 28px;
-      padding: 18px 16px;
-      border: 1px solid rgba(255,255,255,0.22);
-      box-shadow: 0 22px 50px rgba(0,0,0,0.6);
-      max-width: 290px;
-      margin-inline: auto;
+    /* الكارد الرئيسي */
+    .hero-card {
+      background: linear-gradient(135deg, rgba(12, 0, 32, 0.98), rgba(35, 0, 88, 0.96));
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-card);
+      padding: 32px 40px;
       position: relative;
       overflow: hidden;
     }
 
-    .phone-header {
-      display: flex;
-      justify-content: space-between;
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: -120px;
+      inset-block-start: -120px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(255, 111, 233, 0.35), transparent 70%);
+      opacity: 0.7;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset-inline-end: -80px;
+      inset-block-end: -80px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(120, 194, 255, 0.32), transparent 70%);
+      opacity: 0.7;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 32px;
       align-items: center;
-      font-size: 11px;
-      margin-bottom: 14px;
-      opacity: 0.9;
     }
 
-    .room-card {
-      background: rgba(6,0,25,0.7);
-      border-radius: 16px;
-      padding: 10px 10px 8px;
-      font-size: 11px;
-      margin-bottom: 10px;
-      border: 1px solid rgba(255,255,255,0.18);
+    .hero-main-title {
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 12px;
     }
 
-    .room-title {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 4px;
+    .hero-main-title span.en {
+      font-size: 36px;
+      display: block;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffeb3b;
     }
 
-    .avatars {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 6px;
+    .hero-subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 18px;
     }
 
-    .avatar {
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.8);
-      background: linear-gradient(135deg,#ffe6ff,#ff4bd1);
+    .hero-description {
+      font-size: 14px;
+      color: #f3e8ff;
+      line-height: 1.6;
+      margin-bottom: 26px;
+      max-width: 520px;
     }
 
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      opacity: 0.9;
-    }
-
-    .chip {
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.14);
-      font-size: 10px;
-    }
-
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding: 18px 0 8px;
-      margin-top: 20px;
-      font-size: 11px;
-      opacity: 0.85;
-    }
-
-    footer .footer-links {
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff4fd8, #ff9100);
+      color: #1b0030;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+      font-weight: 700;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-1px);
+    }
+
+    .badge-small {
+      font-size: 11px;
+      padding-inline: 10px;
+      padding-block: 5px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .badge-small span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #69f0ae;
+      box-shadow: 0 0 8px #69f0ae;
+    }
+
+    .hero-extra {
+      text-align: center;
+    }
+
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-muted);
+    }
+
+    .hero-extra-card {
+      border-radius: 24px;
+      padding: 18px 16px 16px;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 55%),
+                  linear-gradient(145deg, rgba(46, 9, 89, 0.95), rgba(15, 0, 37, 0.98));
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      position: relative;
+    }
+
+    .hero-extra-title {
+      font-size: 15px;
+      font-weight: 700;
       margin-bottom: 6px;
     }
 
-    footer a {
-      text-decoration: underline;
-      text-decoration-style: dotted;
-      text-underline-offset: 3px;
+    .hero-extra-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 10px;
     }
 
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
+    .hero-extra-pill {
+      font-size: 11px;
+      color: #d1c4ff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      display: inline-flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .hero-extra-pill span.dot-small {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ffab40;
+    }
+
+    .hero-extra-year {
+      position: absolute;
+      inset-inline-end: 14px;
+      inset-block-end: 10px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* استجابة للموبايل */
+    @media (max-width: 900px) {
+      body {
+        padding: 16px;
       }
-      header {
-        flex-direction: column;
-        gap: 12px;
+
+      .page-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
       }
-      nav {
-        justify-content: center;
+
+      .side-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .side-menu {
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: flex-end;
       }
-      .features-card {
-        text-align: right;
+
+      .hero-card {
+        padding: 22px 20px;
+      }
+
+      .hero-content {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-main-title {
+        font-size: 26px;
+      }
+
+      .hero-main-title span.en {
+        font-size: 30px;
       }
     }
   </style>
 </head>
-<body id="home">
-  <div class="container">
-    <header>
-      <div class="logo">
-        <div class="logo-mark">R</div>
-        <div>
-          <div style="font-weight:700;font-size:15px;">Royal Door</div>
-          <div style="font-size:11px;opacity:0.8;">العالم الملكي للغرف الصوتية</div>
-        </div>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- الشريط الجانبي -->
+    <aside class="side-bar">
+      <div class="side-logo">
+        <span class="crown">👑</span>
+        <span>Royal Door</span>
       </div>
 
-      <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="privacy.html">سياسة الخصوصية</a>
-        <a href="terms.html">الشروط والأحكام</a>
-        <a href="https://support.royaldoor.live" target="_blank">الدعم الفني</a>
+      <nav class="side-menu">
+        <a href="https://royaldoor.live">الرئيسية</a>
+        <a href="https://royaldoor.live/support">الدعم الفني</a>
+        <a href="https://royaldoor.live/privacy">سياسة الخصوصية</a>
+        <a href="https://royaldoor.live/terms">شروط الاستخدام</a>
       </nav>
-    </header>
 
-    <main class="hero">
-      <!-- النص -->
-      <section>
-        <div class="pill">
-          👑 تطبيق اجتماعي ملكي
-          <span style="opacity:0.7;">غرف صوتية – دردشة – متجر هدايا – ألعاب</span>
-        </div>
+      <div class="side-footer">
+        © جميع الحقوق محفوظة 2026 – Royal Door
+      </div>
+    </aside>
 
-        <h1 class="hero-title-ar">رويال دور… عالمك الصوتي الملكي</h1>
-        <h2 class="hero-title-en">Royal Door – Social Voice & Chat Experience</h2>
+    <!-- الكارد الرئيسي -->
+    <main class="hero-card">
+      <div class="hero-content">
 
-        <p class="hero-sub">
-          انضم إلى مجتمع رويال دور واستمتع بالغرف الصوتية، الدردشة الخاصة،
-          اليوميات، المتجر والهدايا، والعديد من المميزات الأخرى بطابع ملكي
-          وألوان بنفسجية فاخرة.
-        </p>
-
-        <div class="badges">
-          <div class="store-badge">
-            <span class="label">قريباً على</span>
-            <span class="store">Google Play</span>
-          </div>
-          <div class="store-badge">
-            <span class="label">قريباً على</span>
-            <span class="store">Apple App Store</span>
-          </div>
-        </div>
-
-        <div class="features-card">
-          <h3>مميزات تطبيق رويال دور:</h3>
-          <ul class="features-list">
-            <li>غرف صوتية عامة وخاصة مع تصميم ملكي.</li>
-            <li>متجر هدايا وجواهر وأنظمة ID مميزة.</li>
-            <li>دردشة خاصة بين الأصدقاء مع نظام أصدقاء كامل.</li>
-            <li>قسم يومياتي لمشاركة الصور واللحظات اليومية.</li>
-            <li>نظام حضور أونلاين، حظر، وإدارة متقدمة للمستخدمين والغرف.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- كارت الموبايل -->
-      <aside>
-        <div class="phone-card">
-          <div class="phone-header">
-            <span>غرفة رويال VIP 👑</span>
-            <span>متصلون الآن: 24</span>
+        <!-- النص الرئيسي -->
+        <section>
+          <div class="badge-small">
+            <span class="dot"></span>
+            إصدار تجريبي – سيتم إطلاق التطبيق قريباً
           </div>
 
-          <div class="room-card">
-            <div class="room-title">
-              <span>Royal Party Room 🎉</span>
-              <span>🎙 لايف الآن</span>
-            </div>
-            <div class="avatars">
-              <div class="avatar"></div>
-              <div class="avatar"></div>
-              <div class="avatar"></div>
-              <div class="avatar"></div>
-            </div>
-            <div class="chips">
-              <div class="chip">هدايا لحظية 💎</div>
-              <div class="chip">مستويات ملكية</div>
-              <div class="chip">دردشة صوتية</div>
-            </div>
+          <h1 class="hero-main-title">
+            مرحباً بك في
+            <span class="en">ROYAL DOOR</span>
+          </h1>
+
+          <h2 class="hero-subtitle">
+            تطبيق اجتماعي ملكي للغرف الصوتية والدردشة مع الأصدقاء.
+          </h2>
+
+          <p class="hero-description">
+            استمتع بغرف صوتية فاخرة، ألعاب مسلية، هدايا وجواهر، ونظام أصدقاء متكامل،
+            مع لوحة تحكم ملكية لإدارة كل شيء بسهولة. كن جزءاً من عالم Royal Door
+            حيث المتعة والخصوصية يجتمعان.
+          </p>
+
+          <div class="hero-buttons">
+            <!-- ضع هنا رابط تطبيقك في Google Play عندما يصبح جاهزاً -->
+            <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+              تنزيل من Google Play (قريباً)
+            </a>
+
+            <!-- ويمكنك تغيير الرابط لفتح أي صفحة/رابط دعم -->
+            <a class="btn btn-ghost" href="https://royaldoor.live/support" target="_blank" rel="noopener">
+              تواصل مع الدعم الملكي
+            </a>
           </div>
 
-          <div class="room-card">
-            <div class="room-title">
-              <span>غرفة الأصدقاء الخاصة 🤍</span>
-              <span>مقفلة 🔐</span>
+          <div style="font-size: 12px; color: var(--text-muted);">
+            * التطبيق حالياً في مرحلة التجربة الداخلية، وقد تختلف بعض المزايا في الإصدار النهائي.
+          </div>
+        </section>
+
+        <!-- صندوق جانبي صغير (معلومات إضافية) -->
+        <section class="hero-extra">
+          <div class="hero-chip">
+            🎧 غرف صوتية – 🎮 ألعاب – 🎁 هدايا
+          </div>
+
+          <div class="hero-extra-card">
+            <div class="hero-extra-title">
+              عالم ترفيهي متكامل في تطبيق واحد
             </div>
-            <div class="chips">
-              <div class="chip">رابط دعوة فقط</div>
-              <div class="chip">تشغيل موسيقى</div>
+            <div class="hero-extra-text">
+              أنشئ غرفتك الخاصة، اجمع الجواهر والهدايا، فعّل الثيمات الملكية،
+              وادعُ أصدقاءك لقضاء أجمل الأوقات داخل Royal Door.
+            </div>
+            <div class="hero-extra-pill">
+              <span class="dot-small"></span>
+              متوفر قريباً على متجر Google Play
+            </div>
+
+            <div class="hero-extra-year">
+              Royal Door • 2026
             </div>
           </div>
-        </div>
-      </aside>
+        </section>
+
+      </div>
     </main>
 
-    <footer>
-      <div class="footer-links">
-        <a href="privacy.html">سياسة الخصوصية</a>
-        <a href="terms.html">الشروط والأحكام</a>
-        <a href="https://support.royaldoor.live" target="_blank">مركز الدعم</a>
-        <a href="mailto:royaldoor86@gmail.com">التواصل: royaldoor86@gmail.com</a>
-      </div>
-      <div>© <span id="year"></span> Royal Door. جميع الحقوق محفوظة.</div>
-    </footer>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
