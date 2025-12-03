@@ -2,115 +2,382 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <title>الشروط والأحكام - رويال دور</title>
+  <title>Royal Door - رويال دور</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="تطبيق رويال دور - غرف صوتية ملكية، دردشة، متجر هدايا، ألعاب والمزيد." />
+
   <style>
-    body {
-      background: #050015;
-      color: #fff;
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      direction: rtl;
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
+
+    body {
+      background: radial-gradient(circle at top, #ff80ff 0, #3b0066 40%, #050012 100%);
+      color: #fff;
+      min-height: 100vh;
+      direction: rtl;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
     }
-    h1,h2 {
-      color: #ffb3ff;
+
+    /* الشريط العلوي */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0 20px;
     }
-    a { color: #ffb3ff; }
-    .card {
-      background: radial-gradient(circle at top, #4b007f, #050015);
-      border-radius: 20px;
-      padding: 20px;
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: 0 18px 35px rgba(0,0,0,0.5);
-      margin-top: 20px;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff66cc, #b400ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
       font-size: 14px;
-      line-height: 1.9;
+      opacity: 0.9;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* الهيرو */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+      padding: 30px 0 50px;
+    }
+
+    .hero-title-ar {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .hero-title-en {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 15px;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      line-height: 1.8;
+      opacity: 0.92;
+      margin-bottom: 25px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .store-badge {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(5,0,20,0.4);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .store-badge span.label {
+      font-size: 11px;
+      opacity: 0.8;
+    }
+
+    .store-badge span.store {
+      font-weight: 600;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(5,0,20,0.6);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-size: 11px;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    .features-card {
+      background: rgba(7,0,25,0.85);
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.16);
+      padding: 18px 18px 16px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .features-card h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .features-list {
+      list-style: none;
+    }
+
+    .features-list li::before {
+      content: "•";
+      color: #ffb3ff;
+      margin-left: 6px;
+    }
+
+    /* كارت الموبايل */
+    .phone-card {
+      background: radial-gradient(circle at top, #ff8ae0, #5b00a8 55%, #120022 100%);
+      border-radius: 28px;
+      padding: 18px 16px;
+      border: 1px solid rgba(255,255,255,0.22);
+      box-shadow: 0 22px 50px rgba(0,0,0,0.6);
+      max-width: 290px;
+      margin-inline: auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      margin-bottom: 14px;
+      opacity: 0.9;
+    }
+
+    .room-card {
+      background: rgba(6,0,25,0.7);
+      border-radius: 16px;
+      padding: 10px 10px 8px;
+      font-size: 11px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .room-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .avatars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.8);
+      background: linear-gradient(135deg,#ffe6ff,#ff4bd1);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      opacity: 0.9;
+    }
+
+    .chip {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      font-size: 10px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 18px 0 8px;
+      margin-top: 20px;
+      font-size: 11px;
+      opacity: 0.85;
+    }
+
+    footer .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .features-card {
+        text-align: right;
+      }
     }
   </style>
 </head>
-<body>
+<body id="home">
   <div class="container">
-    <h1>الشروط والأحكام لاستخدام تطبيق رويال دور</h1>
-    <p>آخر تحديث: <strong>ديسمبر 2025</strong></p>
+    <header>
+      <div class="logo">
+        <div class="logo-mark">R</div>
+        <div>
+          <div style="font-weight:700;font-size:15px;">Royal Door</div>
+          <div style="font-size:11px;opacity:0.8;">العالم الملكي للغرف الصوتية</div>
+        </div>
+      </div>
 
-    <div class="card">
-      <h2>1. قبول الشروط</h2>
-      <p>
-        باستخدامك لتطبيق <strong>Royal Door</strong> فإنك توافق على الالتزام
-        بهذه الشروط والأحكام، وسياسة الخصوصية المرتبطة به. إذا لم توافق على أي
-        جزء من هذه الشروط، يُرجى عدم استخدام التطبيق.
-      </p>
+      <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+        <a href="https://support.royaldoor.live" target="_blank">الدعم الفني</a>
+      </nav>
+    </header>
 
-      <h2>2. إنشاء الحساب</h2>
-      <ul>
-        <li>يجب أن تكون المعلومات التي تُدخلها صحيحة وغير مضللة.</li>
-        <li>أنت المسؤول عن الحفاظ على سرية بيانات الدخول إلى حسابك.</li>
-        <li>يحق لنا إيقاف أو حذف أي حساب يخالف القواعد أو يسيء استخدام التطبيق.</li>
-      </ul>
+    <main class="hero">
+      <!-- النص -->
+      <section>
+        <div class="pill">
+          👑 تطبيق اجتماعي ملكي
+          <span style="opacity:0.7;">غرف صوتية – دردشة – متجر هدايا – ألعاب</span>
+        </div>
 
-      <h2>3. استخدام مقبول</h2>
-      <p>يُحظر عليك داخل التطبيق:</p>
-      <ul>
-        <li>استخدام الألفاظ المسيئة أو المحتوى المخالف للأخلاق أو القوانين.</li>
-        <li>الإزعاج، التحرش، التهديد، أو انتحال شخصية الآخرين.</li>
-        <li>نشر محتوى عنيف، أو إباحي، أو مُحرّض على الكراهية أو العنصرية.</li>
-        <li>استخدام التطبيق لأغراض احتيالية أو تجارية غير مصرح بها.</li>
-      </ul>
+        <h1 class="hero-title-ar">رويال دور… عالمك الصوتي الملكي</h1>
+        <h2 class="hero-title-en">Royal Door – Social Voice & Chat Experience</h2>
 
-      <h2>4. المحتوى الذي ينشئه المستخدمون</h2>
-      <ul>
-        <li>أنت مسؤول بالكامل عن المحتوى الذي تنشره في الغرف أو الدردشة أو اليوميات.</li>
-        <li>يحق لإدارة التطبيق حذف أي محتوى مخالف أو إيقاف الحساب دون إشعار مسبق.</li>
-        <li>قد نستخدم بعض المحتوى العام (مثل أسماء الغرف أو الصور العامة) لأغراض عرض داخل التطبيق أو الترويج، مع احترام سياسة الخصوصية.</li>
-      </ul>
+        <p class="hero-sub">
+          انضم إلى مجتمع رويال دور واستمتع بالغرف الصوتية، الدردشة الخاصة،
+          اليوميات، المتجر والهدايا، والعديد من المميزات الأخرى بطابع ملكي
+          وألوان بنفسجية فاخرة.
+        </p>
 
-      <h2>5. المشتريات داخل التطبيق والجواهر والهدايا</h2>
-      <ul>
-        <li>الجواهر والهدايا هي عناصر افتراضية لا تمثل أموالاً حقيقية خارج التطبيق.</li>
-        <li>قد لا تكون المدفوعات قابلة للاسترجاع إلا وفق قوانين المتجر (Google Play / App Store).</li>
-        <li>يحق لنا تعديل أسعار الجواهر أو الهدايا أو العروض في أي وقت.</li>
-      </ul>
+        <div class="badges">
+          <div class="store-badge">
+            <span class="label">قريباً على</span>
+            <span class="store">Google Play</span>
+          </div>
+          <div class="store-badge">
+            <span class="label">قريباً على</span>
+            <span class="store">Apple App Store</span>
+          </div>
+        </div>
 
-      <h2>6. الإعلانات</h2>
-      <p>
-        قد يحتوي التطبيق على إعلانات مقدمة من أطراف ثالثة. لسنا مسؤولين عن
-        محتوى هذه الإعلانات أو المواقع الخارجية المرتبطة بها.
-      </p>
+        <div class="features-card">
+          <h3>مميزات تطبيق رويال دور:</h3>
+          <ul class="features-list">
+            <li>غرف صوتية عامة وخاصة مع تصميم ملكي.</li>
+            <li>متجر هدايا وجواهر وأنظمة ID مميزة.</li>
+            <li>دردشة خاصة بين الأصدقاء مع نظام أصدقاء كامل.</li>
+            <li>قسم يومياتي لمشاركة الصور واللحظات اليومية.</li>
+            <li>نظام حضور أونلاين، حظر، وإدارة متقدمة للمستخدمين والغرف.</li>
+          </ul>
+        </div>
+      </section>
 
-      <h2>7. إيقاف أو تعديل الخدمة</h2>
-      <p>
-        نحتفظ بالحق في تعديل أو إيقاف جزء من الخدمة أو كلّها مؤقتًا أو دائمًا،
-        مع أو بدون إشعار، ولن نكون مسؤولين تجاهك عن أي تغيّر أو إيقاف.
-      </p>
+      <!-- كارت الموبايل -->
+      <aside>
+        <div class="phone-card">
+          <div class="phone-header">
+            <span>غرفة رويال VIP 👑</span>
+            <span>متصلون الآن: 24</span>
+          </div>
 
-      <h2>8. إخلاء المسؤولية</h2>
-      <p>
-        يتم تقديم التطبيق "كما هو" بدون أي ضمانات صريحة أو ضمنية. استخدامك
-        للخدمة يكون على مسؤوليتك الخاصة.
-      </p>
+          <div class="room-card">
+            <div class="room-title">
+              <span>Royal Party Room 🎉</span>
+              <span>🎙 لايف الآن</span>
+            </div>
+            <div class="avatars">
+              <div class="avatar"></div>
+              <div class="avatar"></div>
+              <div class="avatar"></div>
+              <div class="avatar"></div>
+            </div>
+            <div class="chips">
+              <div class="chip">هدايا لحظية 💎</div>
+              <div class="chip">مستويات ملكية</div>
+              <div class="chip">دردشة صوتية</div>
+            </div>
+          </div>
 
-      <h2>9. التعديلات على الشروط</h2>
-      <p>
-        قد نقوم بتعديل هذه الشروط من وقت لآخر. سيتم نشر النسخة المحدثة في هذه
-        الصفحة مع تعديل تاريخ "آخر تحديث". استمرارك في استخدام التطبيق بعد
-        التعديل يعني موافقتك على الشروط الجديدة.
-      </p>
+          <div class="room-card">
+            <div class="room-title">
+              <span>غرفة الأصدقاء الخاصة 🤍</span>
+              <span>مقفلة 🔐</span>
+            </div>
+            <div class="chips">
+              <div class="chip">رابط دعوة فقط</div>
+              <div class="chip">تشغيل موسيقى</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
 
-      <h2>10. التواصل</h2>
-      <p>
-        لأي استفسار حول هذه الشروط يمكنك مراسلتنا على:
-        <a href="mailto:royaldoor86@gmail.com">royaldoor86@gmail.com</a>
-      </p>
-    </div>
-
-    <p style="margin-top:20px;">
-      <a href="index.html">العودة إلى الصفحة الرئيسية</a>
-    </p>
+    <footer>
+      <div class="footer-links">
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+        <a href="https://support.royaldoor.live" target="_blank">مركز الدعم</a>
+        <a href="mailto:royaldoor86@gmail.com">التواصل: royaldoor86@gmail.com</a>
+      </div>
+      <div>© <span id="year"></span> Royal Door. جميع الحقوق محفوظة.</div>
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
