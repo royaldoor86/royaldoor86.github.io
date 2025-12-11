@@ -1,496 +1,93 @@
-ا<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>الدعم الفني – تطبيق Royal Door</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الدعم الفني - Royal Door</title>
 
-  <!-- خط عربي جميل -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Tahoma", sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(135deg, #7b2cbf, #ff4d8d);
+            color: #fff;
+        }
 
-  <style>
-    :root {
-      --primary: #7b1fff;
-      --primary-dark: #1e0038;
-      --pink: #ff4fd8;
-      --accent: #ffb74d;
-      --bg-dark: #05000b;
-      --card-bg: rgba(255, 255, 255, 0.06);
-      --border: rgba(255, 255, 255, 0.14);
-      --text: #ffffff;
-      --text-muted: #d8c7ff;
-      --radius-lg: 26px;
-      --radius-md: 18px;
-    }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Tajawal", system-ui, -apple-system, sans-serif;
-    }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
 
-    body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top left, #ff80ff22, transparent 60%),
-                  radial-gradient(circle at bottom right, #40c4ff22, transparent 55%),
-                  linear-gradient(135deg, var(--primary-dark), var(--primary));
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
+        img.logo {
+            width: 65%;
+            max-width: 340px;
+            margin: 20px auto;
+            display: block;
+        }
 
-    .shell {
-      width: 100%;
-      max-width: 980px;
-      background: rgba(0, 0, 0, 0.42);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(12px);
-      padding: 26px 22px 22px;
-    }
+        .item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 12px;
+            font-size: 20px;
+            backdrop-filter: blur(6px);
+        }
 
-    /* شريط علوي */
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      gap: 10px;
-    }
+        a {
+            color: #ffe599;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: radial-gradient(circle at 30% 20%, #fff8, transparent 60%),
-                  linear-gradient(135deg, #ffb300, #ff4081);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
-    }
-
-    .brand-text-main {
-      font-weight: 900;
-      font-size: 20px;
-      letter-spacing: 0.03em;
-    }
-
-    .brand-text-sub {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      text-decoration: none;
-      color: var(--text-muted);
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      transition: 0.18s;
-    }
-
-    .nav-links a:hover {
-      border-color: rgba(255, 255, 255, 0.3);
-      color: #fff;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .nav-links a.active {
-      background: linear-gradient(135deg, var(--pink), var(--accent));
-      color: #1b0030;
-      font-weight: 700;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.7);
-    }
-
-    /* المحتوى الأساسي */
-    .content {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    @media (max-width: 820px) {
-      .shell {
-        padding: 20px 16px 18px;
-      }
-
-      .content {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    .hero {
-      background: linear-gradient(145deg, rgba(10, 0, 24, 0.96), rgba(30, 0, 72, 0.9));
-      border-radius: var(--radius-md);
-      padding: 24px 20px 20px;
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at top left, #ffeb3b11, transparent 50%),
-        radial-gradient(circle at bottom right, #00e5ff0f, transparent 55%);
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(123,31,255,0.25);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .hero-label span.icon {
-      font-size: 14px;
-    }
-
-    .hero-title {
-      font-size: 26px;
-      font-weight: 900;
-      margin-bottom: 6px;
-      letter-spacing: 0.03em;
-    }
-
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-      line-height: 1.7;
-    }
-
-    .hero-highlight {
-      color: #ffd54f;
-      font-weight: 700;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-
-    .badge {
-      font-size: 11px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .hero-footer-text {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .hero-footer-text span {
-      color: #80ffd5;
-      font-weight: 600;
-    }
-
-    /* كروت وسائل التواصل */
-    .panel {
-      background: linear-gradient(160deg, rgba(10, 0, 30, 0.96), rgba(29, 0, 68, 0.9));
-      border-radius: var(--radius-md);
-      padding: 18px 16px;
-      border: 1px solid var(--border);
-    }
-
-    .panel-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .panel-sub {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-
-    .support-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .support-item {
-      display: flex;
-      gap: 10px;
-      padding: 10px 10px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      align-items: center;
-      transition: 0.17s;
-    }
-
-    .support-item:hover {
-      background: rgba(255, 255, 255, 0.07);
-      transform: translateY(-1px);
-    }
-
-    .support-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      background: radial-gradient(circle at 30% 20%, #fff9, transparent 60%),
-                  linear-gradient(135deg, var(--pink), var(--accent));
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
-      flex-shrink: 0;
-      color: #1b0030;
-    }
-
-    .support-text-main {
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .support-text-sub {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .support-item .btn {
-      margin-right: auto;
-      font-size: 11px;
-      padding: 6px 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 8px 18px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      background: linear-gradient(135deg, var(--pink), var(--accent));
-      color: #1b0030;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.65);
-      transition: 0.18s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.75);
-    }
-
-    .btn span.icon {
-      font-size: 16px;
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--text-muted);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: none;
-    }
-
-    .btn-ghost:hover {
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    footer {
-      margin-top: 18px;
-      text-align: center;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="shell">
-  <!-- شريط علوي -->
-  <header class="nav">
-    <div class="brand">
-      <div class="brand-logo">👑</div>
-      <div>
-        <div class="brand-text-main">Royal Door</div>
-        <div class="brand-text-sub">تطبيق اجتماعي ملكي للدردشة الصوتية</div>
-      </div>
+    <div class="container">
+        <div class="title">الدعم الفني - Royal Door</div>
+
+        <!-- صورة 2026 الملكية -->
+        <img class="logo" src="YOUR_IMAGE_URL_HERE" alt="Royal Door 2026" />
+
+        <div class="item">
+            📞 واتساب:<br>
+            <a href="https://wa.me/9647770992966" target="_blank">07770992966</a>
+        </div>
+
+        <div class="item">
+            🔵 تليغرام:<br>
+            <a href="https://t.me/royaldoor_bot" target="_blank">@royaldoor_bot</a>
+        </div>
+
+        <div class="item">
+            ✉️ البريد الإلكتروني:<br>
+            <a href="mailto:royaldoor86@gmail.com">royaldoor86@gmail.com</a>
+        </div>
+
+        <div class="footer">
+            © جميع الحقوق محفوظة — Royal Door 2026
+        </div>
     </div>
-    <nav class="nav-links">
-      <a href="https://royaldoor.live/">الرئيسية</a>
-      <a href="https://royaldoor.live/terms">شروط الاستخدام</a>
-      <a href="https://royaldoor.live/privacy">سياسة الخصوصية</a>
-      <a href="https://royaldoor.live/support" class="active">الدعم الفني</a>
-    </nav>
-  </header>
-
-  <!-- المحتوى -->
-  <main class="content">
-    <!-- تعريف -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-label">
-          <span class="icon">💬</span>
-          مركز المساعدة الرسمي لتطبيق Royal Door
-        </div>
-
-        <h1 class="hero-title">الدعم الفني الملكي</h1>
-        <p class="hero-subtitle">
-          إذا واجهت أي مشكلة في
-          <span class="hero-highlight">الغرف الصوتية، الأصدقاء، المتجر أو الرصيد</span>
-          فريقنا متواجد لمساعدتك والرد عليك بأسرع وقت ممكن.
-        </p>
-
-        <div class="hero-badges">
-          <div class="badge">⏱ متوفر يومياً</div>
-          <div class="badge">⚡ رد أولي خلال 24 ساعة</div>
-          <div class="badge">🛡 حماية وبلاغات إساءة الاستخدام</div>
-        </div>
-
-        <a class="btn" href="mailto:support@royaldoor.live">
-          <span class="icon">📩</span>
-          فتح تذكرة عبر البريد
-        </a>
-        &nbsp;
-        <a class="btn btn-ghost" href="https://royaldoor.live" target="_blank">
-          <span class="icon">📱</span>
-          تحميل تطبيق Royal Door
-        </a>
-
-        <p class="hero-footer-text" style="margin-top:14px;">
-          ملاحظة: يمكنك أيضاً الإبلاغ مباشرة من داخل التطبيق عبر زر
-          <span>الإبلاغ عن مستخدم / غرفة</span>.
-        </p>
-      </div>
-    </section>
-
-    <!-- وسائل التواصل -->
-    <aside class="panel">
-      <div class="panel-title">طرق التواصل المتاحة</div>
-      <div class="panel-sub">اختر الطريقة الأنسب لك للتواصل مع فريق الدعم.</div>
-
-      <div class="support-list">
-
-        <!-- واتساب -->
-        <div class="support-item">
-          <div class="support-icon">📱</div>
-          <div>
-            <div class="support-text-main">دعم سريع عبر واتساب</div>
-            <div class="support-text-sub">
-              محادثة فورية مع أحد أعضاء الفريق (مشاكل الدخول، تفعيل الحساب، شراء الجواهر).
-            </div>
-          </div>
-          <a class="btn" href="https://wa.me/9647700000000" target="_blank">
-            فتح واتساب
-          </a>
-        </div>
-
-        <!-- تيليغرام -->
-        <div class="support-item">
-          <div class="support-icon">✈</div>
-          <div>
-            <div class="support-text-main">قناة / بوت تيليغرام</div>
-            <div class="support-text-sub">
-              متابعة آخر الأخبار والتعليمات، وفتح تذاكر فنية من داخل تيليغرام.
-            </div>
-          </div>
-          <a class="btn" href="https://t.me/royaldoor_support" target="_blank">
-            فتح تيليغرام
-          </a>
-        </div>
-
-        <!-- البريد الإلكتروني -->
-        <div class="support-item">
-          <div class="support-icon">📧</div>
-          <div>
-            <div class="support-text-main">البريد الإلكتروني الرسمي</div>
-            <div class="support-text-sub">
-              للمشاكل التقنية المفصّلة، أو لطلبات الحذف النهائي للبيانات والحساب.
-            </div>
-          </div>
-          <a class="btn" href="mailto:support@royaldoor.live">
-            إرسال بريد
-          </a>
-        </div>
-
-        <!-- نموذج بلاغ -->
-        <div class="support-item">
-          <div class="support-icon">⚠</div>
-          <div>
-            <div class="support-text-main">نموذج بلاغ إساءة استخدام</div>
-            <div class="support-text-sub">
-              في حال وجود إساءة، تحرش، أو نشاط مخالف لشروط الاستخدام داخل التطبيق.
-            </div>
-          </div>
-          <!-- ضع رابط Google Form الخاص بك هنا -->
-          <a class="btn" href="#" target="_blank">
-            فتح النموذج
-          </a>
-        </div>
-
-      </div>
-    </aside>
-  </main>
-
-  <footer>
-    © جميع الحقوق محفوظة لتطبيق Royal Door – 2026 ·
-    <a href="mailto:support@royaldoor.live">support@royaldoor.live</a>
-  </footer>
-</div>
 
 </body>
 </html>
