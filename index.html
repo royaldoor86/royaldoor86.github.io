@@ -2,139 +2,181 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Royal Door</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
     body {
+      margin: 0;
+      min-height: 100vh;
       font-family: "Tajawal", sans-serif;
       background: radial-gradient(circle at top left, #ff6ddd, #7b1fff 35%, #2d0055 100%);
-      color: #fff;
-      margin: 0;
-      padding: 24px;
-    }
-
-    .wrapper {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 30px;
-    }
-
-    aside {
       display: flex;
-      flex-direction: column;
-      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #fff;
     }
 
-    .logo {
-      font-size: 26px;
+    .card {
+      width: 100%;
+      max-width: 620px;
+      background: linear-gradient(160deg, rgba(18,0,40,.95), rgba(40,0,90,.95));
+      border-radius: 36px;
+      padding: 28px 22px 30px;
+      box-shadow: 0 35px 90px rgba(0,0,0,.65);
+      text-align: center;
+      position: relative;
+    }
+
+    /* العنوان العلوي */
+    .top-title {
+      font-size: 22px;
       font-weight: 900;
       color: #ffd54f;
+      margin-bottom: 12px;
     }
 
-    nav a {
-      display: block;
+    /* القائمة داخل الإطار */
+    .menu {
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 15px;
+      opacity: .9;
+    }
+
+    .menu a {
       color: #e2d4ff;
       text-decoration: none;
-      margin: 8px 0;
-      font-size: 14px;
     }
 
-    nav a:hover {
+    .menu a:hover {
       color: #fff;
     }
 
-    main {
-      background: rgba(12, 0, 32, 0.92);
-      border-radius: 32px;
-      padding: 32px;
-      box-shadow: 0 32px 80px rgba(0,0,0,.6);
+    /* الوسم التجريبي */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      background: rgba(255,255,255,.08);
+      padding: 6px 14px;
+      border-radius: 999px;
+      color: #ffeb3b;
+      margin-bottom: 18px;
+    }
+
+    .badge span {
+      width: 8px;
+      height: 8px;
+      background: #69f0ae;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #69f0ae;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 900;
     }
 
     h1 span {
       display: block;
-      font-size: 36px;
+      font-size: 34px;
+      letter-spacing: 4px;
       color: #ffeb3b;
-      font-weight: 900;
-      letter-spacing: 3px;
+      margin-top: 6px;
     }
 
     .subtitle {
+      margin: 14px 0 18px;
       color: #e2d4ff;
-      margin: 12px 0;
-      font-size: 18px;
+      font-size: 16px;
     }
 
-    .desc {
-      font-size: 15px;
-      line-height: 1.7;
+    .description {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #f3e8ff;
       margin-bottom: 22px;
     }
 
     .features {
       background: rgba(255,255,255,.08);
-      padding: 12px;
+      padding: 10px 14px;
       border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 22px;
       display: inline-block;
-      margin-bottom: 24px;
-      font-size: 14px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      margin-inline-end: 10px;
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .btn-main {
       background: linear-gradient(135deg, #ff4fd8, #ff9100);
       color: #1b0030;
+      font-weight: 900;
+      padding: 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 15px;
     }
 
-    .btn-sec {
-      border: 1px solid #fff;
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,.4);
       color: #fff;
+      padding: 11px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
     }
 
-    footer {
-      margin-top: 30px;
+    .note {
       font-size: 12px;
-      opacity: .7;
+      color: #d1c4ff;
+      opacity: .85;
+      margin-top: 10px;
     }
 
-    @media (max-width: 800px) {
-      .wrapper {
-        grid-template-columns: 1fr;
-      }
+    .footer {
+      margin-top: 22px;
+      font-size: 12px;
+      opacity: .6;
     }
   </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+  <div class="card">
 
-  <aside>
-    <div class="logo">👑 Royal Door</div>
-    <nav>
-      <a href="https://royaldoor.live">الرئيسية</a>
+    <div class="top-title">Royal Door 👑</div>
+
+    <!-- القائمة داخل الإطار -->
+    <div class="menu">
+      <a href="#">الرئيسية</a>
       <a href="support.html">الدعم الفني</a>
-      <a href="#">سياسة الخصوصية</a>
-      <a href="#">شروط الاستخدام</a>
-    </nav>
-    <footer>© Royal Door 2026</footer>
-  </aside>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="terms.html">شروط الاستخدام</a>
+    </div>
 
-  <main>
+    <div class="badge">
+      <span></span>
+      إصدار تجريبي – سيتم إطلاق التطبيق قريبًا
+    </div>
+
     <h1>
-      مرحباً بك في
+      مرحبًا بك في
       <span>ROYAL DOOR</span>
     </h1>
 
@@ -142,26 +184,33 @@
       منصة اجتماعية ملكية متكاملة
     </div>
 
-    <p class="desc">
+    <div class="description">
       Royal Door منصة ترفيهية تجمع بين الغرف الصوتية المباشرة،
       الألعاب التفاعلية، الهدايا والجواهر، نشر اليوميات،
       ونظام استثمار رقمي يمنح وقتك قيمة حقيقية.
       <br><br>
       أنشئ غرفتك، تواصل بالصوت، شارك يومياتك،
       واستمتع بتجربة ملكية آمنة وخاصة.
-    </p>
+    </div>
 
     <div class="features">
       🎙️ غرف صوتية – 🎮 ألعاب – 🎁 هدايا – 📝 يوميات – 💎 استثمار
     </div>
 
-    <div>
-      <a class="btn btn-main" href="#">تنزيل التطبيق (قريباً)</a>
-      <a class="btn btn-sec" href="support.html">تواصل مع الدعم</a>
+    <div class="buttons">
+      <a href="#" class="btn-main">تنزيل التطبيق (قريبًا)</a>
+      <a href="support.html" class="btn-ghost">تواصل مع الدعم الملكي</a>
     </div>
-  </main>
 
-</div>
+    <div class="note">
+      * التطبيق حاليًا في مرحلة التجربة الداخلية وقد تختلف بعض الميزات لاحقًا
+    </div>
+
+    <div class="footer">
+      © Royal Door 2026 — Designed by Amjad Hadi Al-Baydhani
+    </div>
+
+  </div>
 
 </body>
 </html>
