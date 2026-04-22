@@ -2,46 +2,76 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>مركز الشحن الملكي | Royal Door</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>مركز الشحن | Royal Door</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background: #0a0118; color: white; text-align: center; padding: 40px 10px; }
-        .card { max-width: 900px; margin: auto; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px; border: 1px solid #f3cf7a; }
-        .input-group { background: rgba(243,207,122,0.1); padding: 20px; border-radius: 20px; margin-bottom: 30px; border: 1px dashed #f3cf7a; }
-        input { width: 90%; padding: 15px; margin: 10px 0; border-radius: 12px; border: 1px solid #f3cf7a; background: #000; color: #fff; font-size: 1.1rem; text-align: center; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th { background: #f3cf7a; color: #000; padding: 15px; }
-        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1.1rem; }
-        .btn-order { background: #25d366; color: white; padding: 8px 20px; border-radius: 10px; text-decoration: none; font-weight: bold; }
-        .badge { background: #f3cf7a; color: #000; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; }
+        body { font-family: 'Cairo', sans-serif; background: #0a0118; color: white; text-align: center; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px; border: 1px solid #f3cf7a; }
+        .input-section { background: rgba(243,207,122,0.1); padding: 20px; border-radius: 20px; margin-bottom: 25px; }
+        input { width: 80%; padding: 15px; border-radius: 15px; border: 2px solid #f3cf7a; background: #000; color: white; text-align: center; font-size: 1.2rem; }
+        .tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+        .tab { padding: 10px 30px; border: 1px solid #f3cf7a; border-radius: 50px; cursor: pointer; font-weight: bold; }
+        .tab.active { background: #f3cf7a; color: black; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { background: #f3cf7a; color: black; padding: 12px; }
+        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .btn-buy { background: #25d366; color: white; padding: 8px 20px; border-radius: 10px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1 style="color:#f3cf7a">💎 مركز الشحن والتفعيل</h1>
-        <div class="input-group">
-            <p>يرجى إدخال البيانات المطلوبة لضمان سرعة التفعيل</p>
-            <input type="text" id="uid" placeholder="أدخل الآيدي (ID) الخاص بالحساب">
-            <input type="text" id="ucode" placeholder="أدخل كود البطاقة (إن وجد)">
+    <div class="container">
+        <h1 style="color:#f3cf7a">💎 متجر العملات الملكي</h1>
+        
+        <div class="input-section">
+            <label>يجب إدخال الآيدي الصحيح للتفعيل:</label><br><br>
+            <input type="number" id="userId" placeholder="أدخل الآيدي (ID) هنا">
         </div>
 
-        <h2 id="title">باقات الجواهر الملكية</h2>
+        <div class="tabs">
+            <div id="tabG" class="tab active" onclick="switchTab('gems')">الجواهر 💎</div>
+            <div id="tabC" class="tab" onclick="switchTab('coins')">الكوينز 💰</div>
+        </div>
+
         <div style="overflow-x:auto">
-            <table id="rechargeTable"></table>
+            <table id="storeTable"></table>
         </div>
         <br>
-        <button onclick="window.location.href='index.html'" style="color:gray; background:none; border:none; cursor:pointer;">← العودة للرئيسية</button>
+        <a href="index.html" style="color:#f3cf7a; font-weight:bold; text-decoration:none; font-size:1.2rem;">← العودة للقائمة الرئيسية</a>
     </div>
 
     <script>
-        const data = [
-            [1000,"2,600","2$"],[5000,"13,000","10$"],[10000,"26,000","20$"],[20000,"52,000","40$"],[30000,"78,000","60$"],[50000,"130,000","100$"],[100000,"260,000","200$"],[150000,"390,000","300$"],[200000,"520,000","400$"],[500000,"1,300,000","1000$"],[1000000,"2,600,000","2000$"]
-        ];
-        let html = `<tr><th>الكمية</th><th>دينار</th><th>دولار</th><th>تفعيل مباشر</th></tr>`;
-        data.forEach(r => {
-            html += `<tr><td>💎 ${r[0].toLocaleString()}</td><td>${r[1]}</td><td>${r[2]}</td><td><a href="https://wa.me/9647770992966" class="btn-order">اطلب الآن</a></td></tr>`;
-        });
-        document.getElementById('rechargeTable').innerHTML = html;
+        const gems = [[1000,"2,600","2$"],[5000,"13,000","10$"],[10000,"26,000","20$"],[50000,"130,000","100$"],[1000000,"2,600,000","2000$"]];
+        const coins = [[2000,"1,500","1$"],[10000,"7,500","5$"],[100000,"75,000","50$"],[1000000,"750,000","500$"]];
+
+        function switchTab(type) {
+            document.getElementById('tabG').className = type === 'gems' ? 'tab active' : 'tab';
+            document.getElementById('tabC').className = type === 'coins' ? 'tab active' : 'tab';
+            render(type);
+        }
+
+        function render(type) {
+            const data = type === 'gems' ? gems : coins;
+            let html = `<tr><th>الكمية</th><th>السعر</th><th>تفعيل</th></tr>`;
+            data.forEach(r => {
+                html += `<tr>
+                    <td>${type==='gems'?'💎':'💰'} ${r[0].toLocaleString()}</td>
+                    <td>${r[1]} IQD / ${r[2]}</td>
+                    <td><button class="btn-buy" onclick="sendOrder('${type}', '${r[0]}', '${r[1]}')">اطلب الآن</button></td>
+                </tr>`;
+            });
+            document.getElementById('storeTable').innerHTML = html;
+        }
+
+        function sendOrder(type, amount, price) {
+            const id = document.getElementById('userId').value;
+            if(!id || id.length < 4) {
+                alert("❌ خطأ: يرجى كتابة الآيدي (ID) الصحيح قبل الطلب!");
+                return;
+            }
+            const msg = `مرحباً Royal Door، أرغب بشحن باقة:\n- النوع: ${type}\n- الكمية: ${amount}\n- السعر: ${price}\n- الآيدي الخاص بي: ${id}\nيرجى التفعيل.`;
+            window.open(`https://wa.me/9647770992966?text=${encodeURIComponent(msg)}`);
+        }
+        render('gems');
     </script>
 </body>
 </html>
