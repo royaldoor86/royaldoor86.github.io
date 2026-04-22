@@ -4,5 +4,15 @@
 
 @keyframes glow {
   from { text-shadow: 0 0 10px #ffd700; }
-  to { text-shadow: 0 0 20px #fff; }
+  to { text-shadow: 0 0 25px #fff; }
+}
+
+.gold-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #ffd700; }
+  50% { box-shadow: 0 0 25px #ffcc00; }
+  100% { box-shadow: 0 0 10px #ffd700; }
 }
