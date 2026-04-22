@@ -4,257 +4,250 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Door | المنصة الملكية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #f3cf7a;
-            --dark-purple: #0a0118;
+            --dark-bg: #0a0118;
             --gradient: linear-gradient(135deg, #f3cf7a 0%, #b08d32 100%);
             --glass: rgba(255, 255, 255, 0.05);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: all 0.3s ease; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--dark-bg); color: white; text-align: center; overflow-x: hidden; }
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--dark-purple);
-            color: white;
-            text-align: center;
-            overflow-x: hidden;
-            direction: rtl;
-        }
-
-        #particles-js {
-            position: fixed;
-            width: 100%; height: 100%;
-            z-index: 1; top: 0; left: 0;
-            background: radial-gradient(circle at center, #1a0b2e 0%, #0a0118 100%);
-        }
-
-        .container { position: relative; z-index: 10; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        /* Particles Background */
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; background: radial-gradient(circle at center, #1a0b2e 0%, #0a0118 100%); }
+        .main-content { position: relative; z-index: 10; max-width: 1000px; margin: 0 auto; padding: 20px; }
 
         /* Navigation */
-        nav {
-            background: rgba(0,0,0,0.8);
-            padding: 15px;
-            border-radius: 50px;
-            margin-top: 10px;
-            border: 1px solid rgba(243, 207, 122, 0.2);
-            position: sticky; top: 10px; z-index: 100;
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
-        }
+        nav { background: rgba(0,0,0,0.85); padding: 15px; border-radius: 50px; margin-top: 10px; border: 1px solid rgba(243, 207, 122, 0.2); position: sticky; top: 10px; z-index: 100; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+        nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; padding: 6px 12px; cursor: pointer; border-radius: 20px; }
+        nav a:hover, nav a.active { color: var(--gold); background: rgba(243, 207, 122, 0.1); }
 
-        nav a {
-            color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600;
-            padding: 5px 10px; transition: 0.3s; cursor: pointer;
-        }
+        /* Sections Control */
+        .section { display: none; padding: 30px 0; animation: fadeIn 0.6s ease; }
+        .section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-        nav a:hover, nav a.active { color: var(--gold); background: rgba(243, 207, 122, 0.1); border-radius: 20px; }
+        /* Cards & Tables */
+        .card { background: var(--glass); border: 1px solid rgba(243, 207, 122, 0.2); border-radius: 20px; padding: 20px; margin-bottom: 20px; backdrop-filter: blur(10px); }
+        .table-wrapper { overflow-x: auto; border-radius: 15px; background: rgba(0,0,0,0.3); border: 1px solid rgba(243, 207, 122, 0.1); }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; font-size: 0.85rem; }
+        th { background: rgba(243, 207, 122, 0.15); color: var(--gold); padding: 12px; border-bottom: 2px solid var(--gold); }
+        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        tr:hover { background: rgba(243, 207, 122, 0.05); }
 
-        /* Sections */
-        .page-section { display: none; padding: 30px 0; animation: fadeIn 0.5s ease; }
-        .page-section.active { display: block; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Tables */
-        .table-container { overflow-x: auto; margin-top: 20px; border-radius: 15px; background: var(--glass); border: 1px solid rgba(243, 207, 122, 0.2); }
-        table { width: 100%; border-collapse: collapse; min-width: 500px; }
-        th { background: rgba(243, 207, 122, 0.1); color: var(--gold); padding: 15px; font-size: 0.9rem; }
-        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; }
-
-        /* Inputs & Buttons */
-        input {
-            width: 80%; max-width: 400px; padding: 12px; margin: 10px 0;
-            border-radius: 10px; border: 1px solid var(--gold);
-            background: rgba(0,0,0,0.5); color: white; text-align: center; font-family: 'Cairo';
-        }
-
-        .btn {
-            display: inline-block; padding: 12px 25px; border-radius: 30px;
-            text-decoration: none; font-weight: bold; cursor: pointer; transition: 0.3s;
-            border: none; margin: 5px; font-family: 'Cairo';
-        }
-        .btn-gold { background: var(--gradient); color: black; }
+        /* Buttons & Inputs */
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; cursor: pointer; border: none; margin: 10px 5px; font-family: 'Cairo'; font-size: 0.9rem; }
+        .btn-gold { background: var(--gradient); color: black; box-shadow: 0 4px 15px rgba(176, 141, 50, 0.3); }
         .btn-outline { border: 1px solid var(--gold); color: var(--gold); background: transparent; }
+        input { width: 80%; max-width: 400px; padding: 12px; margin: 10px 0; border-radius: 12px; border: 1px solid var(--gold); background: rgba(0,0,0,0.6); color: white; text-align: center; }
 
-        /* Timer */
-        .timer { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
-        .timer-unit { background: var(--glass); padding: 10px; border-radius: 10px; min-width: 60px; border: 1px solid var(--gold); }
-        .timer-unit span { display: block; font-size: 1.2rem; font-weight: 900; color: var(--gold); }
+        /* Tab Switcher */
+        .tab-btn { padding: 8px 20px; cursor: pointer; border: 1px solid var(--gold); background: transparent; color: white; border-radius: 20px; margin: 5px; font-family: 'Cairo'; }
+        .tab-btn.active { background: var(--gold); color: black; }
 
-        .video-box {
-            width: 100%; max-width: 600px; aspect-ratio: 16/9;
-            background: #000; border: 2px solid var(--gold); margin: 20px auto;
-            border-radius: 20px; overflow: hidden;
-        }
+        /* Language Switcher */
+        .lang-switch { margin-top: 15px; display: flex; justify-content: center; gap: 15px; }
+        .lang-link { color: var(--gold); cursor: pointer; font-size: 0.9rem; border-bottom: 1px solid transparent; }
+        .lang-link:hover { border-bottom: 1px solid var(--gold); }
 
-        .card { background: var(--glass); padding: 20px; border-radius: 20px; border: 1px solid var(--gold); margin: 20px 0; }
+        .video-container { width: 100%; max-width: 650px; aspect-ratio: 16/9; background: #000; border: 2px solid var(--gold); margin: 20px auto; border-radius: 25px; overflow: hidden; position: relative; box-shadow: 0 0 30px rgba(243, 207, 122, 0.2); }
     </style>
 </head>
 <body>
 
     <div id="particles-js"></div>
 
-    <div class="container">
-        <nav id="mainNav">
-            <a onclick="showSection('home')" class="active">الرئيسية</a>
-            <a onclick="showSection('shipping')">مركز الشحن الملكي</a>
-            <a onclick="showSection('investment')">الاستثمار</a>
-            <a onclick="showSection('support')">الدعم الفني</a>
-            <a onclick="showSection('privacy')">الخصوصية</a>
-            <a onclick="showSection('about')">نبذة عني</a>
+    <div class="main-content">
+        <nav id="navbar">
+            <a onclick="navigate('home')" class="active" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+            <a onclick="navigate('recharge')" data-ar="مركز الشحن" data-en="Recharge">مركز الشحن</a>
+            <a onclick="navigate('invest')" data-ar="الاستثمار" data-en="Investment">الاستثمار</a>
+            <a onclick="navigate('support')" data-ar="الدعم الفني" data-en="Support">الدعم الفني</a>
+            <a onclick="navigate('privacy')" data-ar="الخصوصية" data-en="Privacy">الخصوصية</a>
+            <a onclick="navigate('about')" data-ar="نبذة عني" data-en="About">نبذة عني</a>
         </nav>
 
-        <section id="home" class="page-section active">
-            <h1 style="font-size: 2.5rem; color: var(--gold); font-weight: 900; margin-top: 20px;">Royal Door</h1>
-            <p>منصة اجتماعية ملكية متكاملة</p>
-            <div class="video-box">
-                <iframe width="100%" height="100%" src="https://youtube.com/shorts/kHAiaOt9MdY?si=Ay1ws6aRqdkPm3SZ" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p style="font-size: 0.9rem; padding: 0 10px;">انشأ غرفتك - تواصل بالصوت - شارك يومياتك - استثمر واستمتع بتجربة ملكية آمنة وخاصة</p>
+        <section id="home" class="section active">
+            <img src="https://img.icons8.com/fluency/96/000000/crown.png" style="width: 90px; filter: drop-shadow(0 0 10px var(--gold));">
+            <h1 style="font-size: 3.2rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;">Royal Door</h1>
+            <h3 data-ar="مرحباً بك في عالم لا يشبه غيره" data-en="Welcome to a world like no other">مرحباً بك في عالم لا يشبه غيره</h3>
             
-            <p style="margin-top:20px; color: var(--gold);">إطلاق التطبيق بعد:</p>
-            <div class="timer" id="countdown">
-                <div class="timer-unit"><span id="days">00</span>يوم</div>
-                <div class="timer-unit"><span id="hours">00</span>ساعة</div>
-                <div class="timer-unit"><span id="minutes">00</span>دقيقة</div>
-                <div class="timer-unit"><span id="seconds">00</span>ثانية</div>
-            </div>
-            <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn btn-gold">تحميل التطبيق الآن</a>
-        </section>
-
-        <section id="shipping" class="page-section">
-            <h2 style="color: var(--gold);">💎 مركز الشحن الملكي</h2>
-            <div class="card">
-                <p>أدخل المعرف الخاص بك (ID) لشحن باقة الجواهر</p>
-                <input type="text" id="ship-id" placeholder="أدخل ID الخاص بك هنا">
+            <div class="video-container">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </div>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>💎 الجواهر</th>
-                            <th>💰 السعر (دينار)</th>
-                            <th>💵 السعر (دولار)</th>
-                            <th>إجراء</th>
-                        </tr>
-                    </thead>
-                    <tbody id="shippingTable">
-                        </tbody>
-                </table>
+            <p data-ar="منصة اجتماعية ملكية متكاملة تمنح وقتك قيمة حقيقية" data-en="A complete royal social platform that gives your time real value">منصة اجتماعية ملكية متكاملة تمنح وقتك قيمة حقيقية</p>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn btn-gold" data-ar="تحميل التطبيق الآن" data-en="Download App Now">تحميل التطبيق الآن</a>
+            
+            <div class="lang-switch">
+                <span class="lang-link" onclick="setLang('ar')">العربية (AR)</span>
+                <span class="lang-link" onclick="setLang('en')">English (EN)</span>
             </div>
         </section>
 
-        <section id="investment" class="page-section">
-            <h2 style="color: var(--gold);">📈 الاستثمار الرقمي</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>الباقة</th>
-                            <th>💰 السعر</th>
-                            <th>💎 الجواهر</th>
-                            <th>📈 الربح</th>
-                            <th>المجموع الكلي</th>
-                        </tr>
-                    </thead>
-                    <tbody id="invTable">
-                        </tbody>
-                </table>
-            </div>
+        <section id="recharge" class="section">
+            <h2 style="color: var(--gold);" data-ar="💎 مركز الشحن الملكي" data-en="💎 Royal Recharge Center">💎 مركز الشحن الملكي</h2>
             <div class="card">
-                <h3>طلب تفعيل الباقة</h3>
-                <input type="text" id="inv-id" placeholder="أدخل ID الخاص بك">
+                <div style="margin-bottom: 20px;">
+                    <button class="tab-btn active" id="btn-gems" onclick="switchRecharge('gems')" data-ar="الجواهر" data-en="Gems">الجواهر</button>
+                    <button class="tab-btn" id="btn-coins" onclick="switchRecharge('coins')" data-ar="الكوينز" data-en="Coins">الكوينز</button>
+                </div>
+                <input type="text" id="ship-id" placeholder="أدخل ID الخاص بك / Enter your ID">
+                
+                <div class="table-wrapper">
+                    <table id="recharge-table">
+                        <thead id="recharge-head"></thead>
+                        <tbody id="recharge-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="invest" class="section">
+            <h2 style="color: var(--gold);" data-ar="📈 نظام الاستثمار الملكي" data-en="📈 Royal Investment System">📈 نظام الاستثمار الملكي</h2>
+            <div class="card">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr data-ar="<th>الباقة</th><th>دينار</th><th>دولار</th><th>💎 جواهر</th><th>🎁 ربح</th><th>المجموع</th>" 
+                                data-en="<th>Package</th><th>IQD</th><th>USD</th><th>💎 Gems</th><th>🎁 Profit</th><th>Total</th>">
+                                <th>الباقة</th><th>دينار</th><th>دولار</th><th>💎 جواهر</th><th>🎁 ربح</th><th>المجموع</th>
+                            </tr>
+                        </thead>
+                        <tbody id="invest-body"></tbody>
+                    </table>
+                </div>
+                <div style="margin-top: 20px;">
+                    <input type="text" id="inv-id" placeholder="أدخل ID الخاص بك / Enter your ID">
+                    <br>
+                    <button onclick="sendWA('استثمار')" class="btn btn-gold" data-ar="تفعيل الباقة عبر واتساب" data-en="Activate Package via WhatsApp">تفعيل الباقة عبر واتساب</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="section">
+            <h2 style="color: var(--gold);" data-ar="الدعم الفني" data-en="Technical Support">الدعم الفني</h2>
+            <div class="card">
+                <p data-ar="نحن هنا لمساعدتك 24/7" data-en="We are here to help you 24/7">نحن هنا لمساعدتك 24/7</p>
+                <button onclick="sendWA('دعم')" class="btn btn-gold" style="width: 80%;">WhatsApp Support</button>
                 <br>
-                <button onclick="contactWhatsApp('استثمار')" class="btn btn-gold">تفعيل عبر واتساب</button>
+                <a href="mailto:support@royaldoor.live" class="btn btn-outline" style="width: 80%;">Email Support</a>
             </div>
         </section>
 
-        <section id="support" class="page-section">
-            <h2 style="color: var(--gold);">📞 الدعم الفني</h2>
-            <div class="card">
-                <p>نحن هنا لمساعدتك، اختر وسيلة التواصل المفضلة:</p>
-                <button onclick="contactWhatsApp('دعم')" class="btn btn-gold" style="width: 200px;">واتساب الدعم</button>
-                <br>
-                <a href="mailto:support@royaldoor.live" class="btn btn-outline" style="width: 200px;">دعم عبر البريد</a>
-            </div>
-        </section>
+        <section id="privacy" class="section"><div class="card"><h2 data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</h2><p data-ar="بياناتك محمية بالكامل." data-en="Your data is fully protected.">بياناتك محمية بالكامل.</p></div></section>
+        <section id="about" class="section"><div class="card"><h2 data-ar="نبذة عني" data-en="About Me">نبذة عني</h2><p data-ar="Royal Door هي المنصة الرائدة في الشرق الأوسط." data-en="Royal Door is the leading platform in the Middle East.">Royal Door هي المنصة الرائدة في الشرق الأوسط.</p></div></section>
 
-        <section id="privacy" class="page-section"><h2>سياسة الخصوصية</h2><p>نلتزم بحماية خصوصية بياناتك وتوفير بيئة آمنة.</p></section>
-        <section id="about" class="page-section"><h2>نبذة عني</h2><p>Royal Door هي منصة ترفيهية متكاملة تجمع بين الغرف الصوتية والخدمات الرقمية.</p></section>
-
-        <footer style="margin-top: 40px; opacity: 0.5; font-size: 0.8rem; padding-bottom: 20px;">
-            © 2026 Royal Door - Designed by Amjad Hadi
+        <footer style="padding: 20px; opacity: 0.5; font-size: 0.8rem;">
+            © 2026 Royal Door - Designed by Amjad Hadi Al-Baydhani
         </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // 1. Particles
-        particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#f3cf7a" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#f3cf7a", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
+        // 1. Particles Setup
+        particlesJS("particles-js", { "particles": { "number": { "value": 90 }, "color": { "value": "#f3cf7a" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#f3cf7a", "opacity": 0.2 }, "move": { "enable": true, "speed": 1.5 } } });
 
-        // 2. Navigation
-        function showSection(id) {
-            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+        // 2. Navigation Logic
+        function navigate(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
             document.getElementById(id).classList.add('active');
-            event.currentTarget.classList.add('active');
+            event.target.classList.add('active');
         }
 
-        // 3. Shipping Data (As Requested)
-        const gems = [
+        // 3. Language Logic
+        let currentLang = 'ar';
+        function setLang(lang) {
+            currentLang = lang;
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                el.innerHTML = el.getAttribute(`data-${lang}`);
+            });
+            renderTables();
+        }
+
+        // 4. Tables Data & Rendering
+        const rechargeGems = [
             [1000, "2,600", "2$"], [5000, "13,000", "10$"], [10000, "26,000", "20$"], 
             [20000, "52,000", "40$"], [30000, "78,000", "60$"], [50000, "130,000", "100$"],
-            [70000, "182,000", "140$"], [100000, "260,000", "200$"], [150000, "390,000", "300$"],
-            [200000, "520,000", "400$"], [300000, "780,000", "600$"], [400000, "1,040,000", "800$"],
-            [500000, "1,300,000", "1000$"], [600000, "1,560,000", "1200$"], [700000, "1,820,000", "1400$"],
-            [800000, "2,080,000", "1600$"], [900000, "2,340,000", "1800$"], [1000000, "2,600,000", "2000$"]
+            [100000, "260,000", "200$"], [500000, "1,300,000", "1000$"], [1000000, "2,600,000", "2000$"]
         ];
-        const sTable = document.getElementById('shippingTable');
-        gems.forEach(g => {
-            sTable.innerHTML += `<tr><td>💎 ${g[0].toLocaleString()}</td><td>${g[1]}</td><td>${g[2]}</td><td><button onclick="contactWhatsApp('شحن جواهر ${g[0]}')" class="btn btn-gold" style="padding:5px 12px; font-size:0.7rem;">شحن</button></td></tr>`;
-        });
-
-        // 4. Investment Data
-        const invs = [
-            ["🌟 الدر", "100,000", "38,500", "5,000", "40,400"],
-            ["🔴 المرجان", "200,000", "77,000", "10,000", "80,800"],
-            ["🟤 العقيق", "300,000", "115,000", "15,000", "121,000"],
-            ["💠 الكريستال", "500,000", "192,000", "25,000", "201,600"],
-            ["🟢 الزبرجد", "750,000", "288,000", "37,500", "302,400"],
-            ["🤍 اللؤلؤ", "1,000,000", "385,000", "50,000", "404,200"],
-            ["🔶 الياقوت", "1,500,000", "577,000", "75,000", "606,000"]
+        
+        const rechargeCoins = [
+            [2000, "1,500", "1$"], [4000, "3,000", "2$"], [10000, "7,500", "5$"],
+            [20000, "15,000", "10$"], [40000, "30,000", "20$"], [100000, "75,000", "50$"],
+            [500000, "375,000", "250$"], [1000000, "750,000", "500$"], [2000000, "1,500,000", "1000$"]
         ];
-        const iTable = document.getElementById('invTable');
-        invs.forEach(i => {
-            iTable.innerHTML += `<tr><td>${i[0]}</td><td>${i[1]}</td><td>${i[2]}</td><td>+ ${i[3]}</td><td style="color:var(--gold); font-weight:bold;">${i[4]}</td></tr>`;
-        });
 
-        // 5. WhatsApp Integration
-        function contactWhatsApp(type) {
-            let id = "";
-            if(type === 'استثمار') id = document.getElementById('inv-id').value;
-            else id = document.getElementById('ship-id').value;
-            
-            if(!id && type !== 'دعم') { alert("يرجى إدخال الآيدي (ID) للمتابعة"); return; }
-            
-            const phone = "+9647770992966";
-            const text = encodeURIComponent(`مرحباً وكيل Royal Door، أرغب في (${type}) للآيدي: ${id}`);
-            window.open(`https://wa.me/${phone}?text=${text}`);
+        const investData = [
+            ["🌟 الدر", "100,000", "66.7$", "38,500", "1,900", "40,400"],
+            ["🔴 المرجان", "200,000", "133.3$", "77,000", "3,800", "80,800"],
+            ["🟤 العقيق", "300,000", "200.0$", "115,000", "5,700", "120,700"],
+            ["💠 الكريستال", "500,000", "333.3$", "192,000", "9,600", "201,600"],
+            ["🟢 الزبرجد", "750,000", "500.0$", "288,000", "14,400", "302,400"],
+            ["🤍 اللؤلؤ", "1,000,000", "666.7$", "385,000", "19,200", "404,200"],
+            ["🔷 الفيروز", "1,200,000", "800.0$", "462,000", "23,000", "485,000"],
+            ["💎 الماس", "1,300,000", "866.7$", "500,000", "25,000", "525,000"],
+            ["🟩 الزمرد", "1,400,000", "933.3$", "538,000", "27,000", "565,000"],
+            ["🔶 الياقوت", "1,500,000", "1000.0$", "577,000", "29,000", "606,000"]
+        ];
+
+        let activeRecharge = 'gems';
+        function switchRecharge(type) {
+            activeRecharge = type;
+            document.getElementById('btn-gems').classList.toggle('active', type === 'gems');
+            document.getElementById('btn-coins').classList.toggle('active', type === 'coins');
+            renderTables();
         }
 
-        // 6. Timer (40 Days)
-        const target = new Date().getTime() + (40 * 24 * 60 * 60 * 1000);
-        setInterval(() => {
-            const now = new Date().getTime();
-            const d = target - now;
-            document.getElementById('days').innerText = Math.floor(d / 86400000);
-            document.getElementById('hours').innerText = Math.floor((d % 86400000) / 3600000);
-            document.getElementById('minutes').innerText = Math.floor((d % 3600000) / 60000);
-            document.getElementById('seconds').innerText = Math.floor((d % 60000) / 1000);
-        }, 1000);
+        function renderTables() {
+            // Recharge Table
+            const head = document.getElementById('recharge-head');
+            const body = document.getElementById('recharge-body');
+            const data = activeRecharge === 'gems' ? rechargeGems : rechargeCoins;
+            const icon = activeRecharge === 'gems' ? '💎' : '💰';
+            
+            head.innerHTML = `<tr><th>${icon} ${currentLang === 'ar' ? 'الكمية' : 'Amount'}</th><th>${currentLang === 'ar' ? 'دينار' : 'IQD'}</th><th>${currentLang === 'ar' ? 'دولار' : 'USD'}</th><th>${currentLang === 'ar' ? 'إجراء' : 'Action'}</th></tr>`;
+            
+            body.innerHTML = data.map(row => `
+                <tr>
+                    <td>${icon} ${row[0].toLocaleString()}</td>
+                    <td>${row[1]}</td>
+                    <td>${row[2]}</td>
+                    <td><button onclick="sendWA('شحن ${activeRecharge} ${row[0]}')" class="btn btn-gold" style="padding:4px 10px; font-size:0.7rem;">${currentLang === 'ar' ? 'شحن' : 'Recharge'}</button></td>
+                </tr>
+            `).join('');
+
+            // Investment Table
+            const invBody = document.getElementById('invest-body');
+            invBody.innerHTML = investData.map(row => `
+                <tr>
+                    <td style="color:var(--gold); font-weight:bold;">${row[0]}</td>
+                    <td>${row[1]}</td>
+                    <td>${row[2]}</td>
+                    <td>${row[3].toLocaleString()}</td>
+                    <td style="color:#00ff88;">+ ${row[4].toLocaleString()}</td>
+                    <td style="background:rgba(243,207,122,0.1); font-weight:900;">${row[5].toLocaleString()}</td>
+                </tr>
+            `).join('');
+        }
+
+        // 5. WhatsApp Integration
+        function sendWA(type) {
+            const id = type === 'استثمار' ? document.getElementById('inv-id').value : document.getElementById('ship-id').value;
+            if(!id && type !== 'دعم') { alert(currentLang === 'ar' ? 'يرجى إدخال ID الخاص بك' : 'Please enter your ID'); return; }
+            
+            const msg = encodeURIComponent(`مرحباً وكيل Royal Door، أرغب في (${type}) للآيدي: ${id}`);
+            window.open(`https://wa.me/9647770992966?text=${msg}`);
+        }
+
+        // Initialize
+        renderTables();
     </script>
 </body>
 </html>
