@@ -6,50 +6,250 @@
   <title>مركز الشحن الملكي - Royal Door</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; min-height: 100vh; font-family: "Tajawal", sans-serif; background: radial-gradient(circle at top left, #ff6ddd, #7b1fff 35%, #2d0055 100%); display: flex; align-items: center; justify-content: center; padding: 20px; color: #fff; }
-    .card { width: 100%; max-width: 620px; background: linear-gradient(160deg, rgba(18,0,40,.95), rgba(40,0,90,.95)); border-radius: 36px; padding: 30px; text-align: center; box-shadow: 0 35px 90px rgba(0,0,0,.65); }
-    h2 { color: #ffd54f; margin-bottom: 20px; }
-    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px; }
-    th { color: #ffd54f; padding: 12px; border-bottom: 2px solid #5d00a0; }
-    td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,.1); }
-    .btn-buy { background: linear-gradient(135deg, #ff4fd8, #ff9100); color: #1b0030; padding: 12px 30px; border-radius: 999px; text-decoration: none; font-weight: 900; display: inline-block; margin-top: 20px; }
-    .back { color: #e2d4ff; text-decoration: none; display: block; margin-top: 20px; opacity: 0.8; }
+    :root {
+      --bg-dark: #121921;
+      --card-bg: #1c2631;
+      --accent-yellow: #f8cc3d;
+      --accent-gray: #778593;
+      --highlight: rgba(255,255,255,0.05);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Tajawal", sans-serif;
+      background-color: var(--bg-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .app-screen {
+      width: 100%;
+      max-width: 420px;
+      height: 100vh;
+      background: var(--bg-dark);
+      border-radius: 36px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    }
+
+    /* القائمة العلوية */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      background-color: rgba(255,255,255,0.02);
+    }
+
+    .top-bar-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent-gray);
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 15px 0;
+      color: var(--accent-gray);
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      color: var(--accent-yellow);
+      border-bottom: 3px solid var(--accent-yellow);
+    }
+
+    /* لوحة الأرصدة (محاكاة) */
+    .balances-wrapper {
+      display: flex;
+      padding: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .balance-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .balance-count {
+      font-size: 18px;
+      font-weight: 900;
+      margin-top: 5px;
+    }
+
+    /* الحاوية السفلية للدفع */
+    .payment-container {
+      flex: 1;
+      background-color: var(--card-bg);
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .payment-title {
+      color: var(--accent-yellow);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .purchase-details {
+      color: var(--accent-gray);
+      font-size: 14px;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* خيارات الدفع (السوق) */
+    .payment-options {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .payment-option {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .payment-option:hover {
+      background: var(--highlight);
+    }
+
+    .option-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      color: #fff;
+    }
+
+    .option-name {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .option-number {
+      font-size: 13px;
+      color: var(--accent-gray);
+    }
+
+    .back-home {
+      display: block;
+      margin-top: auto;
+      text-align: center;
+      color: var(--accent-gray);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 15px;
+    }
+
   </style>
 </head>
 <body>
-  <div class="card">
-    <h2>💎 مركز الشحن الملكي</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>الجواهر</th>
-          <th>السعر (د.ع)</th>
-          <th>السعر ($)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1,000</td><td>2,600</td><td>2$</td></tr>
-        <tr><td>5,000</td><td>13,000</td><td>10$</td></tr>
-        <tr><td>10,000</td><td>26,000</td><td>20$</td></tr>
-        <tr><td>20,000</td><td>52,000</td><td>40$</td></tr>
-        <tr><td>30,000</td><td>78,000</td><td>60$</td></tr>
-        <tr><td>50,000</td><td>130,000</td><td>100$</td></tr>
-        <tr><td>70,000</td><td>182,000</td><td>140$</td></tr>
-        <tr><td>100,000</td><td>260,000</td><td>200$</td></tr>
-        <tr><td>150,000</td><td>390,000</td><td>300$</td></tr>
-        <tr><td>200,000</td><td>520,000</td><td>400$</td></tr>
-        <tr><td>300,000</td><td>780,000</td><td>600$</td></tr>
-        <tr><td>400,000</td><td>1,040,000</td><td>800$</td></tr>
-        <tr><td>500,000</td><td>1,300,000</td><td>1,000$</td></tr>
-        <tr><td>600,000</td><td>1,560,000</td><td>1,200$</td></tr>
-        <tr><td>700,000</td><td>1,820,000</td><td>1,400$</td></tr>
-        <tr><td>800,000</td><td>2,080,000</td><td>1,600$</td></tr>
-        <tr><td>900,000</td><td>2,340,000</td><td>1,800$</td></tr>
-        <tr><td>1,000,000</td><td>2,600,000</td><td>2,000$</td></tr>
-      </tbody>
-    </table>
-    <a href="support.html" class="btn-buy">طلب الشحن عبر الدعم الفني</a>
-    <a href="index.html" class="back">← العودة للرئيسية</a>
+  <div class="app-screen">
+    <div class="top-bar">
+      <span>→</span>
+      <span class="top-bar-title">مركز الشحن الملكي</span>
+      <span>...</span>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">شحن كوينز</div>
+      <div class="tab active">شحن جواهر</div>
+    </div>
+
+    <div class="balances-wrapper">
+      <div class="balance-box">
+        <span style="font-size: 24px;">⭐</span>
+        <span class="balance-count">790</span>
+      </div>
+      <div style="width: 1px; background-color:rgba(255,255,255,0.05);"></div>
+      <div class="balance-box">
+        <span style="font-size: 24px;">💎</span>
+        <span class="balance-count">14281</span>
+      </div>
+    </div>
+
+    <div class="payment-container">
+      <div class="payment-title">اختر وسيلة الدفع الملكية</div>
+      
+      <div class="purchase-details">
+        <span>⭐</span>
+        لشراء 2000 كوينز بمبلغ 1.0 نجمة
+      </div>
+
+      <div class="payment-options">
+        
+        <a href="support.html" class="payment-option">
+          <span>‹</span>
+          <div class="option-info">
+            <span class="option-name">زين كاش (Zain Cash)</span>
+            <span class="option-number">07855900447</span>
+          </div>
+          <span style="font-size: 24px;">💳</span>
+        </a>
+
+        <a href="support.html" class="payment-option">
+          <span>‹</span>
+          <div class="option-info">
+            <span class="option-name">آسيا باي (AsiaPay)</span>
+            <span class="option-number">07770992966</span>
+          </div>
+          <span style="font-size: 24px;">👛</span>
+        </a>
+
+        <a href="support.html" class="payment-option">
+          <span>‹</span>
+          <div class="option-info">
+            <span class="option-name">رصيد آسيا سيل / زين</span>
+            <span class="option-number">تحويل رصيد</span>
+          </div>
+          <span style="font-size: 24px;">📱</span>
+        </a>
+
+        <a href="support.html" class="payment-option">
+          <span>‹</span>
+          <div class="option-info">
+            <span class="option-name">ماستر كارد / فيزا / كي كارد</span>
+            <span class="option-number">910113911184</span>
+          </div>
+          <span style="font-size: 24px;">🌐</span>
+        </a>
+
+      </div>
+
+      <a href="index.html" class="back-home">العروض الحالية (السوق)</a>
+    </div>
   </div>
 </body>
 </html>
