@@ -7,10 +7,38 @@ body {
   padding: 0;
 }
 
+header {
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+}
+
+.logo {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+nav a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .hero h1 {
-  font-size: 36px;
+  font-size: 40px;
   color: #ffd700;
   text-shadow: 0 0 15px #ffd700, 0 0 30px #fff;
+}
+
+.hero p {
+  font-size: 20px;
+  margin: 10px 0;
 }
 
 .gold-btn {
@@ -25,4 +53,10 @@ body {
 
 .gold-btn:hover {
   transform: scale(1.1);
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #aaa;
 }
