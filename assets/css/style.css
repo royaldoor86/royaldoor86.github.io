@@ -5,9 +5,7 @@ body {
   text-align: center;
 }
 
-.gold {
-  color: #ffd700;
-}
+.gold { color: #ffd700; }
 
 .gold-btn {
   background-color: #ffd700;
@@ -36,10 +34,4 @@ nav a {
   color: #ffd700;
   text-decoration: none;
   font-weight: bold;
-}
-
-footer {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #aaa;
 }
