@@ -3,52 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Door - المنصة الملكية</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>Royal Door | المنصة الملكية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-    <div class="background-overlay"></div>
+    <div id="particles-js"></div>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#">مركز شحني</a></li>
-                <li><a href="#">مركز الشحن الملكي</a></li>
-                <li><a href="#">سياسة الخصوصية</a></li>
-                <li><a href="#">الدعم الفني</a></li>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="search-icon">🔍</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="recharge.html">مركز شحني</a></li>
+                <li><a href="update-center.html">مركز الشحن الملكي</a></li>
+                <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                <li><a href="support.html">الدعم الفني</a></li>
             </ul>
+            <div class="lang-switch">🌐 English</div>
         </nav>
     </header>
 
-    <main class="container">
-        <div class="logo-section">
-            <img src="crown-icon.png" alt="Crown" class="crown">
-            <h1>Royal Door</h1>
-            <h2>مرحباً بك في <span>ROYAL DOOR</span></h2>
-            <p>منصة اجتماعية ملكية متكاملة</p>
-        </div>
+    <main class="hero-section">
+        <div class="content-wrapper">
+            <img src="https://img.icons8.com/fluency/96/000000/crown.png" alt="Royal Crown" class="main-crown">
+            <h1 class="brand-name">Royal Door</h1>
+            <h2 class="welcome-text">مرحباً بك في <br><span>ROYAL DOOR</span></h2>
+            <p class="sub-title">منصة اجتماعية ملكية متكاملة</p>
 
-        <div class="features-badge">
-            <span>غرف صوتية • ألعاب • هدايا يومية • شحن ملكي</span>
-        </div>
+            <div class="features-pill">
+                <span>غرف صوتية 🎙️</span>
+                <span>ألعاب 🎮</span>
+                <span>هدايا يومية 🎁</span>
+                <span>شحن ملكي 💎</span>
+            </div>
 
-        <div class="video-placeholder">
-            <button class="play-button">▶</button>
-        </div>
+            <div class="video-container">
+                <div class="play-trigger">
+                    <div class="play-icon">▶</div>
+                </div>
+                <p>إعلان ROYAL DOOR الرسمي</p>
+            </div>
 
-        <div class="action-buttons">
-            <a href="#" class="btn-primary">تحميل التطبيق الآن</a>
-            <a href="#" class="btn-secondary">تواصل مع الدعم الملكي</a>
-            <a href="#" class="btn-outline">زيارة متجر الشحن</a>
+            <div class="action-area">
+                <a href="#" class="btn btn-gold">تحميل التطبيق الآن</a>
+                <a href="support.html" class="btn btn-trans">تواصل مع الدعم الملكي</a>
+                <a href="recharge.html" class="btn btn-outline">زيارة متجر الشحن</a>
+            </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Royal Door - Designed by Amjad Hadi</p>
+    <footer class="royal-footer">
+        <p>© Royal Door 2026 - Designed by Amjad Hadi Al-Baydhani</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        /* إعدادات النجوم المتحركة مباشرة */
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#f3cf7a" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#f3cf7a", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+            },
+            "interactivity": {
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+            }
+        });
+    </script>
 </body>
 </html>
