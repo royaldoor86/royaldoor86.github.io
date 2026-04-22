@@ -1,1 +1,45 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  background: radial-gradient(circle at center, #1a0033, #000);
+  color: #fff;
+  text-align: center;
+}
 
+.gold {
+  color: #ffd700;
+}
+
+.gold-btn {
+  background-color: #ffd700;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.gold-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #aaa;
+}
