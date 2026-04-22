@@ -14,7 +14,7 @@ header {
 }
 
 .logo {
-  height: 60px;
+  height: 70px;
 }
 
 nav ul {
@@ -32,7 +32,7 @@ nav a {
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 42px;
   color: #ffd700;
   text-shadow: 0 0 15px #ffd700, 0 0 30px #fff;
 }
