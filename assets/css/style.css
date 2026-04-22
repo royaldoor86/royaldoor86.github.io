@@ -1,143 +1,57 @@
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0a0a0f;
-  color: white;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    background: #0a0118; /* لون غامق كخلفية */
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-.background {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top, #1a1a40, #0a0a0f);
-  z-index: -1;
+/* خلفية متدرجة مع صورة النجوم */
+.background-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(63,31,105,1) 0%, rgba(10,1,24,1) 100%);
+    z-index: -1;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 60px;
-  align-items: center;
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
 }
 
-.logo {
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #00e0ff;
+header nav ul li a {
+    color: #e2c275; /* اللون الذهبي */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
 }
 
-.btn {
-  padding: 10px 20px;
-  background: #00e0ff;
-  color: black;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
+.logo-section h1 {
+    font-size: 3rem;
+    color: #f3cf7a;
+    text-shadow: 0px 0px 20px rgba(243, 207, 122, 0.5);
 }
 
-.hero {
-  text-align: center;
-  padding: 80px 20px;
+.btn-primary {
+    display: block;
+    width: 280px;
+    margin: 10px auto;
+    padding: 15px;
+    background: linear-gradient(90deg, #f3cf7a, #b08d32);
+    color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.hero h1 {
-  font-size: 42px;
-}
-
-.hero p {
-  color: #aaa;
-  margin-top: 10px;
-}
-
-.actions {
-  margin-top: 20px;
-}
-
-.primary, .secondary {
-  padding: 12px 18px;
-  margin: 5px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.primary {
-  background: #00e0ff;
-  color: black;
-}
-
-.secondary {
-  border: 1px solid #00e0ff;
-  color: #00e0ff;
-}
-
-.card-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 16px;
-  width: 280px;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  border-color: #00e0ff;
-}
-
-.stats span {
-  display: block;
-  margin-top: 5px;
-  color: #aaa;
-}
-
-button {
-  margin-top: 15px;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  background: #00e0ff;
-  color: black;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.progress {
-  width: 100%;
-  height: 8px;
-  background: #222;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-.bar {
-  width: 90%;
-  height: 8px;
-  background: #00e0ff;
-  border-radius: 10px;
-}
-
-.visit {
-  display: block;
-  margin-top: 10px;
-  text-align: center;
-  color: #00e0ff;
-  text-decoration: none;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #555;
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px #f3cf7a;
 }
