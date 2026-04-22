@@ -2,28 +2,83 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>طلب حذف الحساب | Royal Door</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب حذف الحساب والبيانات | Royale Dur</title>
     <style>
-        body { font-family: 'Cairo', sans-serif; background: #050010; color: white; text-align: center; margin: 0; }
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
-        .content { position: relative; z-index: 10; max-width: 600px; margin: 100px auto; padding: 30px; background: rgba(255,0,0,0.05); border: 1px solid #ff4d4d; border-radius: 20px; backdrop-filter: blur(10px); }
-        .btn-del { background: #ff4d4d; color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 20px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; }
+        .container { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { color: #d4af37; text-align: center; margin-bottom: 20px; }
+        .info-box { background: #fff8e1; border-right: 5px solid #ffc107; padding: 15px; margin-bottom: 25px; border-radius: 4px; }
+        .step { margin-bottom: 20px; padding: 15px; border: 1px solid #eee; border-radius: 8px; }
+        .step h3 { margin-top: 0; color: #0a1f1c; }
+        .deletion-form { background: #fdfdfd; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="email"], input[type="text"], textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .btn-submit { background: #dc3545; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px; font-weight: bold; }
+        .btn-submit:hover { background: #c82333; }
+        .data-list { font-size: 14px; color: #666; }
+        .footer { text-align: center; margin-top: 30px; font-size: 12px; color: #999; }
     </style>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div class="content">
-        <h2 style="color:#ff4d4d">⚠️ حذف الحساب والبيانات الشخصية</h2>
-        <p>عند تأكيد الطلب، سيتم حذف كافة بياناتك (الاسم، الآيدي، الرصيد، والملف الشخصي) نهائياً من سيرفراتنا ولا يمكن استعادتها.</p>
-        <p>تستغرق عملية المعالجة اليدوية من 24 إلى 48 ساعة.</p>
-        <a href="mailto:royaldoor86@gmail.com?subject=طلب حذف حساب" class="btn-del">تأكيد طلب الحذف عبر البريد</a>
-        <br><br>
-        <a href="index.html" style="color:gray; text-decoration:none;">إلغاء والعودة</a>
+
+<div class="container">
+    <h1>حذف الحساب والبيانات المرتبطة</h1>
+    
+    <div class="info-box">
+        <strong>تنبيه هامة:</strong> عند حذف حسابك، سيتم إزالة كافة بياناتك الشخصية، العملات الافتراضية، الجواهر، وقائمة الأصدقاء نهائياً. لا يمكن التراجع عن هذا الإجراء بمجرد اكتماله.
     </div>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS("particles-js", {"particles":{"number":{"value":50},"color":{"value":"#ff4d4d"},"shape":{"type":"circle"},"opacity":{"value":0.3},"size":{"value":2},"line_linked":{"enable":true,"distance":150,"color":"#ff4d4d","opacity":0.2},"move":{"enable":true,"speed":1}}});
-    </script>
+
+    <div class="step">
+        <h3>1. الحذف من داخل التطبيق (موصى به)</h3>
+        <p>للحصول على معالجة فورية، نوصي بالحذف من داخل التطبيق:</p>
+        <ul>
+            <li>افتح تطبيق <strong>Royale Dur</strong>.</li>
+            <li>اذهب إلى <strong>الملف الشخصي</strong>.</li>
+            <li>اضغط على أيقونة <strong>الإعدادات</strong> (الترس).</li>
+            <li>اختر <strong>حذف الحساب</strong> ثم أكد العملية.</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>2. تقديم طلب حذف عبر الويب</h3>
+        <p>إذا لم يعد التطبيق مثبتاً لديك، يرجى ملء النموذج أدناه. سيقوم فريق الدعم بمعالجة طلبك خلال 7 أيام عمل.</p>
+        
+        <form class="deletion-form" action="mailto:support@royaldoor.live" method="post" enctype="text-plain">
+            <div class="form-group">
+                <label>البريد الإلكتروني المرتبط بالحساب:</label>
+                <input type="email" name="email" required placeholder="example@mail.com">
+            </div>
+            <div class="form-group">
+                <label>اسم المستخدم (أو الـ ID إن وجد):</label>
+                <input type="text" name="username" required placeholder="اسمك داخل التطبيق">
+            </div>
+            <div class="form-group">
+                <label>سبب الحذف (اختياري):</label>
+                <textarea name="reason" rows="3" placeholder="لماذا تود مغادرتنا؟"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">إرسال طلب الحذف النهائي</button>
+        </form>
+    </div>
+
+    <div class="step">
+        <h3>ما هي البيانات التي سيتم حذفها؟</h3>
+        <ul class="data-list">
+            <li>معلومات الملف الشخصي (الاسم، الصورة، السيرة الذاتية).</li>
+            <li>سجل الرسائل والمحادثات الخاصة.</li>
+            <li>الرصيد الافتراضي (العملات والجواهر).</li>
+            <li>الصور والمنشورات في قسم "اليوميات".</li>
+            <li>قائمة الأصدقاء والمتابعين.</li>
+        </ul>
+        <p><small>* ملاحظة: قد نحتفظ ببعض سجلات العمليات المالية لمدة زمنية محددة وفقاً لما يقتضيه القانون أو لأغراض منع الاحتيال، قبل أن يتم حذفها تلقائياً.</small></p>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Royale Dur Support Team <br>
+        سياسة معالجة البيانات متوافقة مع معايير Google Play Data Safety
+    </div>
+</div>
+
 </body>
 </html>
