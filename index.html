@@ -4,117 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Door | المنصة الملكية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #f3cf7a;
+            --gold-dark: #b08d32;
             --dark: #0a0118;
-            --glass: rgba(255, 255, 255, 0.05);
+            --glass: rgba(255, 255, 255, 0.07);
             --gradient: linear-gradient(135deg, #f3cf7a 0%, #b08d32 100%);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; transition: all 0.3s ease; }
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: 0.3s ease; }
         body { font-family: 'Cairo', sans-serif; background-color: var(--dark); color: white; overflow-x: hidden; text-align: center; }
 
-        /* Background Particles */
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; background: radial-gradient(circle, #1a0b2e 0%, #0a0118 100%); }
+        /* Background Effects */
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; background: radial-gradient(circle at center, #1a0b2e 0%, #0a0118 100%); }
+        .main-wrapper { position: relative; z-index: 10; max-width: 1000px; margin: 0 auto; padding: 10px; }
 
-        /* Navigation Menu - الترتيب المطلوب */
+        /* Navigation - الترتيب المطلوب */
         nav {
-            background: rgba(0,0,0,0.9);
-            padding: 15px;
+            background: rgba(0,0,0,0.85);
+            padding: 12px;
             position: sticky;
-            top: 0;
+            top: 10px;
             z-index: 1000;
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 5px;
             flex-wrap: wrap;
-            border-bottom: 1px solid var(--gold);
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(243, 207, 122, 0.3);
+            border-radius: 50px;
+            backdrop-filter: blur(15px);
+            margin-bottom: 20px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            padding: 8px 15px;
+            padding: 8px 12px;
             cursor: pointer;
-            border-radius: 20px;
+            border-radius: 25px;
         }
 
-        nav a:hover, nav a.active { color: var(--gold); background: rgba(243, 207, 122, 0.1); }
+        nav a:hover, nav a.active { color: var(--gold); background: rgba(243, 207, 122, 0.15); }
 
-        .container { position: relative; z-index: 10; max-width: 900px; margin: 20px auto; padding: 20px; }
-        
-        .section { display: none; animation: fadeIn 0.6s ease; }
+        /* Sections Control */
+        .section { display: none; animation: slideUp 0.6s ease forwards; padding-bottom: 50px; }
         .section.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Cards & Content */
-        .card { background: var(--glass); border: 1px solid rgba(243, 207, 122, 0.2); border-radius: 20px; padding: 25px; margin-bottom: 25px; backdrop-filter: blur(15px); }
-        h1, h2 { color: var(--gold); margin-bottom: 20px; font-weight: 900; }
-        
-        /* Tables */
-        .table-container { overflow-x: auto; border-radius: 15px; margin-top: 20px; border: 1px solid rgba(243, 207, 122, 0.2); }
-        table { width: 100%; border-collapse: collapse; min-width: 600px; background: rgba(0,0,0,0.4); }
-        th { background: rgba(243, 207, 122, 0.2); color: var(--gold); padding: 15px; font-size: 0.9rem; }
-        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        /* Cards & Styling */
+        .card { background: var(--glass); border: 1px solid rgba(243, 207, 122, 0.2); border-radius: 25px; padding: 25px; margin-top: 20px; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { font-size: 3.5rem; font-weight: 900; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px rgba(243,207,122,0.3)); }
+        h2 { color: var(--gold); margin-bottom: 20px; font-weight: 800; }
+
+        /* Tables - تصميم ملكي عريض */
+        .table-container { overflow-x: auto; border-radius: 15px; border: 1px solid rgba(243, 207, 122, 0.2); background: rgba(0,0,0,0.4); }
+        table { width: 100%; border-collapse: collapse; min-width: 700px; }
+        th { background: rgba(243, 207, 122, 0.2); color: var(--gold); padding: 15px; font-size: 0.85rem; border-bottom: 2px solid var(--gold); }
+        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
         tr:hover { background: rgba(243, 207, 122, 0.05); }
 
-        /* Buttons */
-        .btn { display: inline-block; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; font-family: 'Cairo'; margin: 10px; }
+        /* Buttons & Tabs */
+        .btn { display: inline-block; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 800; cursor: pointer; border: none; font-family: 'Cairo'; margin: 10px; }
         .btn-gold { background: var(--gradient); color: black; box-shadow: 0 4px 15px rgba(176, 141, 50, 0.4); }
         .btn-outline { border: 1px solid var(--gold); color: var(--gold); background: transparent; }
         
-        .tab-btn { padding: 8px 25px; border: 1px solid var(--gold); background: transparent; color: white; cursor: pointer; border-radius: 20px; margin: 5px; }
-        .tab-btn.active { background: var(--gold); color: black; font-weight: 900; }
+        .tab-btn { padding: 10px 30px; border: 1px solid var(--gold); background: transparent; color: white; cursor: pointer; border-radius: 50px; margin: 5px; font-weight: bold; }
+        .tab-btn.active { background: var(--gold); color: black; }
 
-        input { width: 90%; max-width: 400px; padding: 15px; margin: 15px 0; border-radius: 15px; border: 1px solid var(--gold); background: rgba(0,0,0,0.5); color: white; text-align: center; font-size: 1rem; }
+        input { width: 90%; max-width: 450px; padding: 15px; margin: 15px 0; border-radius: 15px; border: 1px solid var(--gold); background: rgba(0,0,0,0.6); color: white; text-align: center; font-size: 1.1rem; }
 
-        .video-box { width: 100%; aspect-ratio: 16/9; background: #000; border: 2px solid var(--gold); border-radius: 20px; margin: 20px 0; overflow: hidden; }
-        
-        .lang-switch { margin-top: 10px; display: flex; justify-content: center; gap: 20px; font-weight: bold; }
-        .lang-link { color: var(--gold); cursor: pointer; border-bottom: 1px dashed var(--gold); }
+        .video-box { width: 100%; max-width: 700px; aspect-ratio: 16/9; background: #000; border: 2px solid var(--gold); border-radius: 25px; margin: 25px auto; overflow: hidden; box-shadow: 0 0 20px var(--gold-dark); }
     </style>
 </head>
 <body>
 
 <div id="particles-js"></div>
 
-<nav>
-    <a onclick="showSec('home')" class="active" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-    <a onclick="showSec('recharge')" data-ar="مركز الشحن" data-en="Recharge Center">مركز الشحن</a>
-    <a onclick="showSec('invest')" data-ar="الأستثمار" data-en="Investment">الأستثمار</a>
-    <a onclick="showSec('support')" data-ar="الدعم الفني" data-en="Technical Support">الدعم الفني</a>
-    <a onclick="showSec('privacy')" data-ar="الخصوصيه" data-en="Privacy">الخصوصيه</a>
-    <a onclick="showSec('about')" data-ar="نبذه عني" data-en="About Me">نبذه عني</a>
-    <a onclick="showSec('terms')" data-ar="الشروط" data-en="Terms">الشروط</a>
-</nav>
+<div class="main-wrapper">
+    <nav>
+        <a onclick="navTo('home')" class="active" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+        <a onclick="navTo('recharge')" data-ar="مركز الشحن" data-en="Recharge">مركز الشحن</a>
+        <a onclick="navTo('invest')" data-ar="الأستثمار" data-en="Invest">الأستثمار</a>
+        <a onclick="navTo('support')" data-ar="الدعم الفني" data-en="Support">الدعم الفني</a>
+        <a onclick="navTo('privacy')" data-ar="الخصوصيه" data-en="Privacy">الخصوصيه</a>
+        <a onclick="navTo('about')" data-ar="نبذه عني" data-en="About Me">نبذه عني</a>
+        <a onclick="navTo('terms')" data-ar="الشروط" data-en="Terms">الشروط</a>
+    </nav>
 
-<div class="container">
-    
     <section id="home" class="section active">
-        <h1 style="font-size: 3rem;">Royal Door</h1>
-        <p data-ar="مرحباً بك في عالم لا يشبه غيره" data-en="Welcome to a world like no other">مرحباً بك في عالم لا يشبه غيره</p>
+        <h1>Royal Door</h1>
+        <p data-ar="أهلاً بك في المنصة الاجتماعية الملكية" data-en="Welcome to Royal Door Platform">أهلاً بك في المنصة الاجتماعية الملكية</p>
         <div class="video-box">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
         </div>
-        <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn btn-gold" data-ar="تحميل التطبيق الآن" data-en="Download App Now">تحميل التطبيق الآن</a>
-        <div class="lang-switch">
-            <span class="lang-link" onclick="changeLang('ar')">العربية</span>
-            <span class="lang-link" onclick="changeLang('en')">English</span>
+        <a href="#" class="btn btn-gold" style="width: 250px;">Google Play Download</a>
+        <div style="margin-top: 10px;">
+            <span style="cursor:pointer; color:var(--gold);" onclick="setLang('ar')">العربية</span> | 
+            <span style="cursor:pointer; color:var(--gold);" onclick="setLang('en')">English</span>
         </div>
     </section>
 
     <section id="recharge" class="section">
-        <h2 data-ar="💎 مركز الشحن الملكي" data-en="💎 Royal Recharge">💎 مركز الشحن الملكي</h2>
+        <h2 data-ar="💎 مركز الشحن الملكي" data-en="💎 Royal Recharge Center">💎 مركز الشحن الملكي</h2>
         <div class="card">
-            <button class="tab-btn active" id="tabG" onclick="setShop('gems')" data-ar="الجواهر" data-en="Gems">الجواهر</button>
-            <button class="tab-btn" id="tabC" onclick="setShop('coins')" data-ar="الكوينز" data-en="Coins">الكوينز</button>
+            <button class="tab-btn active" id="t-gems" onclick="setShop('gems')" data-ar="الجواهر" data-en="Gems">الجواهر</button>
+            <button class="tab-btn" id="t-coins" onclick="setShop('coins')" data-ar="الكوينز" data-en="Coins">الكوينز</button>
             <br><br>
-            <input type="text" id="sh-id" placeholder="أدخل الآيدي الخاص بك (ID)">
+            <input type="text" id="sh-id" placeholder="أدخل الآيدي الخاص بك (ID) هنا">
             <div class="table-container">
                 <table id="shop-table"></table>
             </div>
@@ -125,134 +125,128 @@
         <h2 data-ar="📈 نظام الأستثمار" data-en="📈 Investment System">📈 نظام الأستثمار</h2>
         <div class="card">
             <div class="table-container">
-                <table>
-                    <thead>
-                        <tr data-ar="<th>الباقة</th><th>دينار</th><th>دولار</th><th>جواهر</th><th>ربح</th><th>المجموع</th>"
-                            data-en="<th>Package</th><th>IQD</th><th>USD</th><th>Gems</th><th>Profit</th><th>Total</th>">
-                            <th>الباقة</th><th>دينار</th><th>دولار</th><th>جواهر</th><th>ربح</th><th>المجموع</th>
-                        </tr>
-                    </thead>
-                    <tbody id="invest-table"></tbody>
-                </table>
+                <table id="invest-table"></table>
             </div>
             <br>
-            <input type="text" id="inv-id" placeholder="أدخل الآيدي للتفعيل (ID)">
-            <button onclick="sendWA('استثمار')" class="btn btn-gold" data-ar="تفعيل عبر واتساب" data-en="Activate via WhatsApp">تفعيل عبر واتساب</button>
+            <input type="text" id="inv-id" placeholder="أدخل الآيدي (ID) لتفعيل الباقة">
+            <button onclick="goWA('استثمار')" class="btn btn-gold">تفعيل الباقة عبر واتساب</button>
         </div>
     </section>
 
     <section id="support" class="section">
         <h2 data-ar="📞 الدعم الفني" data-en="📞 Technical Support">📞 الدعم الفني</h2>
         <div class="card">
-            <p data-ar="فريق الدعم متاح 24 ساعة لخدمتكم" data-en="Support team is available 24/7">فريق الدعم متاح 24 ساعة لخدمتكم</p>
-            <a onclick="sendWA('دعم')" class="btn btn-gold">WhatsApp Official Support</a>
-            <p style="margin-top: 15px; opacity: 0.7;">support@royaldoor.live</p>
+            <div style="font-size: 1.2rem; margin-bottom: 20px;">📞 واتساب: <a href="https://wa.me/9647770992966" style="color:var(--gold);">07770992966</a></div>
+            <div style="font-size: 1.2rem; margin-bottom: 20px;">✉️ بريد: <a href="mailto:royaldoor86@gmail.com" style="color:var(--gold);">royaldoor86@gmail.com</a></div>
+            <a onclick="goWA('دعم')" class="btn btn-gold" style="width: 80%;">مراسلة الدعم الفني الآن</a>
         </div>
     </section>
 
     <section id="privacy" class="section">
         <h2 data-ar="🛡️ سياسة الخصوصيه" data-en="🛡️ Privacy Policy">🛡️ سياسة الخصوصيه</h2>
-        <div class="card" style="text-align: right; line-height: 1.8;">
-            <p data-ar="نحن في Royal Door نولي أهمية قصوى لخصوصيتك. بياناتك مشفرة ولا يتم مشاركتها مع أي طرف ثالث." 
-               data-en="At Royal Door, we prioritize your privacy. Your data is encrypted and not shared.">
-               نحن في Royal Door نولي أهمية قصوى لخصوصيتك. بياناتك مشفرة ولا يتم مشاركتها مع أي طرف ثالث.
-            </p>
+        <div class="card" style="text-align: right; line-height: 2;">
+            <h3>1. جمع البيانات:</h3>
+            <p>نجمع البيانات الأساسية مثل الاسم والآيدي لضمان عمل التطبيق وتقديم الخدمات المالية.</p>
+            <h3>2. الأمان:</h3>
+            <p>نستخدم تقنيات تشفير متطورة لحماية تعاملاتك المالية داخل Royal Door.</p>
+            <a href="delete.html" style="color:var(--gold);">طلب حذف الحساب والبيانات</a>
         </div>
     </section>
 
     <section id="about" class="section">
         <h2 data-ar="👤 نبذه عني" data-en="👤 About Me">👤 نبذه عني</h2>
         <div class="card">
-            <p data-ar="Royal Door هي منصة اجتماعية ترفيهية تهدف لدمج التواصل بالألعاب والاستثمار الرقمي." 
-               data-en="Royal Door is a social platform aiming to merge communication with gaming and investment.">
-               Royal Door هي منصة اجتماعية ترفيهية تهدف لدمج التواصل بالألعاب والاستثمار الرقمي.
-            </p>
+            <p>Royal Door هي منصة ملكية عراقية عالمية، تهدف إلى توفير بيئة اجتماعية راقية تجمع بين الترفيه والاستثمار.</p>
+            <p>المطور: Amjad Hadi Al-Baydhani</p>
         </div>
     </section>
 
     <section id="terms" class="section">
-        <h2 data-ar="📜 الشروط والأحكام" data-en="📜 Terms & Conditions">📜 الشروط والأحكام</h2>
+        <h2 data-ar="📜 شروط الاستخدام" data-en="📜 Terms of Use">📜 شروط الاستخدام</h2>
         <div class="card" style="text-align: right;">
-            <ul style="list-style: none;">
-                <li data-ar="• يجب احترام خصوصية الآخرين في الغرف الصوتية." data-en="• Respect others' privacy in voice rooms."> • يجب احترام خصوصية الآخرين في الغرف الصوتية.</li>
-                <li data-ar="• يمنع استخدام التطبيق لأغراض غير قانونية." data-en="• Illegal use is strictly prohibited."> • يمنع استخدام التطبيق لأغراض غير قانونية.</li>
-            </ul>
+            <p>• الالتزام بالاحترام المتبادل في الغرف الصوتية.</p>
+            <p>• يمنع التلاعب بالعملات الرقمية (جواهر/كوينز) خارج الأطر الرسمية.</p>
+            <p>• الإدارة لها الحق في حظر أي حساب يخالف القوانين.</p>
         </div>
     </section>
-
 </div>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    // 1. Particles
-    particlesJS("particles-js", {"particles":{"number":{"value":80},"color":{"value":"#f3cf7a"},"shape":{"type":"circle"},"opacity":{"value":0.5},"size":{"value":3},"line_linked":{"enable":true,"distance":150,"color":"#f3cf7a","opacity":0.3},"move":{"enable":true,"speed":2}}});
+    particlesJS("particles-js", {"particles":{"number":{"value":90},"color":{"value":"#f3cf7a"},"shape":{"type":"circle"},"opacity":{"value":0.5},"size":{"value":2},"line_linked":{"enable":true,"distance":150,"color":"#f3cf7a","opacity":0.3},"move":{"enable":true,"speed":1.5}}});
 
-    // 2. Navigation
-    function showSec(id) {
+    function navTo(id) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
         document.getElementById(id).classList.add('active');
         event.target.classList.add('active');
+        window.scrollTo(0,0);
     }
 
-    // 3. Language
-    let curLang = 'ar';
-    function changeLang(l) {
-        curLang = l;
+    let lang = 'ar';
+    function setLang(l) {
+        lang = l;
         document.dir = l === 'ar' ? 'rtl' : 'ltr';
-        document.querySelectorAll('[data-ar]').forEach(el => {
-            el.innerHTML = el.getAttribute('data-' + l);
-        });
-        renderAll();
+        document.querySelectorAll('[data-ar]').forEach(el => el.innerHTML = el.getAttribute('data-' + l));
+        renderTables();
     }
 
-    // 4. Data
-    const gems = [ [1000, "2,600", "2$"], [5000, "13,000", "10$"], [10000, "26,000", "20$"], [50000, "130,000", "100$"], [1000000, "2,600,000", "2000$"] ];
-    const coins = [ [2000, "1,500", "1$"], [4000, "3,000", "2$"], [10000, "7,500", "5$"], [100000, "75,000", "50$"], [1000000, "750,000", "500$"] ];
-    const invests = [
+    // البيانات الكاملة (جواهر)
+    const gData = [
+        [1000, "2,600", "2$"], [5000, "13,000", "10$"], [10000, "26,000", "20$"], [20000, "52,000", "40$"],
+        [30000, "78,000", "60$"], [50000, "130,000", "100$"], [100000, "260,000", "200$"], [150000, "390,000", "300$"],
+        [200000, "520,000", "400$"], [500000, "1,300,000", "1000$"], [1000000, "2,600,000", "2000$"]
+    ];
+    // البيانات الكاملة (كوينز)
+    const cData = [
+        [2000, "1,500", "1$"], [4000, "3,000", "2$"], [10000, "7,500", "5$"], [20000, "15,000", "10$"],
+        [40000, "30,000", "20$"], [100000, "75,000", "50$"], [200000, "150,000", "100$"], [1000000, "750,000", "500$"]
+    ];
+    // الاستثمار الكامل
+    const iData = [
         ["🌟 الدر", "100,000", "66.7$", "38,500", "1,900", "40,400"],
         ["🔴 المرجان", "200,000", "133.3$", "77,000", "3,800", "80,800"],
+        ["🟤 العقيق", "300,000", "200.0$", "115,000", "5,700", "120,700"],
+        ["💠 الكريستال", "500,000", "333.3$", "192,000", "9,600", "201,600"],
+        ["🟢 الزبرجد", "750,000", "500.0$", "288,000", "14,400", "302,400"],
+        ["🤍 اللؤلؤ", "1,000,000", "666.7$", "385,000", "19,200", "404,200"],
+        ["🔷 الفيروز", "1,200,000", "800.0$", "462,000", "23,000", "485,000"],
         ["💎 الماس", "1,300,000", "866.7$", "500,000", "25,000", "525,000"],
+        ["🟩 الزمرد", "1,400,000", "933.3$", "538,000", "27,000", "565,000"],
         ["🔶 الياقوت", "1,500,000", "1000.0$", "577,000", "29,000", "606,000"]
     ];
 
-    let shopType = 'gems';
-    function setShop(t) {
-        shopType = t;
-        document.getElementById('tabG').classList.toggle('active', t === 'gems');
-        document.getElementById('tabC').classList.toggle('active', t === 'coins');
-        renderAll();
+    let shop = 'gems';
+    function setShop(s) {
+        shop = s;
+        document.getElementById('t-gems').classList.toggle('active', s === 'gems');
+        document.getElementById('t-coins').classList.toggle('active', s === 'coins');
+        renderTables();
     }
 
-    function renderAll() {
-        const isAr = curLang === 'ar';
-        // Shop
-        const sTable = document.getElementById('shop-table');
-        let sHtml = `<tr><th>${isAr?'الكمية':'Amount'}</th><th>${isAr?'دينار':'IQD'}</th><th>${isAr?'دولار':'USD'}</th><th>${isAr?'شحن':'Buy'}</th></tr>`;
-        const data = shopType === 'gems' ? gems : coins;
-        data.forEach(r => {
-            sHtml += `<tr><td>${shopType==='gems'?'💎':'💰'} ${r[0].toLocaleString()}</td><td>${r[1]}</td><td>${r[2]}</td><td><button onclick="sendWA('شحن ${shopType}')" class="btn btn-gold" style="padding:5px 10px; font-size:0.7rem;">OK</button></td></tr>`;
-        });
-        sTable.innerHTML = sHtml;
+    function renderTables() {
+        const isAr = lang === 'ar';
+        const sTab = document.getElementById('shop-table');
+        const iTab = document.getElementById('invest-table');
+        
+        // Shop Table Render
+        let sHead = `<tr><th>${isAr?'الكمية':'Amount'}</th><th>${isAr?'دينار':'IQD'}</th><th>${isAr?'دولار':'USD'}</th><th>${isAr?'إجراء':'Action'}</th></tr>`;
+        let sRows = (shop === 'gems' ? gData : cData).map(r => `<tr><td>${shop==='gems'?'💎':'💰'} ${r[0].toLocaleString()}</td><td>${r[1]}</td><td>${r[2]}</td><td><button onclick="goWA('شحن ${shop}')" class="btn btn-gold" style="padding:5px 12px; font-size:0.7rem;">OK</button></td></tr>`).join('');
+        sTab.innerHTML = sHead + sRows;
 
-        // Invest
-        const iTable = document.getElementById('invest-table');
-        let iHtml = '';
-        invests.forEach(r => {
-            iHtml += `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td style="color:#00ff88;">+ ${r[4]}</td><td style="color:var(--gold); font-weight:bold;">${r[5]}</td></tr>`;
-        });
-        iTable.innerHTML = iHtml;
+        // Invest Table Render
+        let iHead = `<tr><th>${isAr?'الباقة':'Package'}</th><th>IQD</th><th>USD</th><th>Gems</th><th>${isAr?'ربح':'Profit'}</th><th>${isAr?'المجموع':'Total'}</th></tr>`;
+        let iRows = iData.map(r => `<tr><td style="color:var(--gold); font-weight:bold;">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td style="color:#00ff88;">+${r[4]}</td><td style="background:rgba(243,207,122,0.1); font-weight:bold;">${r[5]}</td></tr>`).join('');
+        iTab.innerHTML = iHead + iRows;
     }
 
-    function sendWA(type) {
-        const id = document.querySelector('.active input') ? document.querySelector('.active input').value : "غير محدد";
-        const phone = "+9647770992966";
-        const text = encodeURIComponent(`مرحباً وكيل Royal Door، أرغب في (${type}) للآيدي: ${id}`);
-        window.open(`https://wa.me/${phone}?text=${text}`);
+    function goWA(type) {
+        const id = document.querySelector('.active input') ? document.querySelector('.active input').value : "Support";
+        const msg = encodeURIComponent(`مرحباً وكيل Royal Door، أرغب في (${type}) للآيدي: ${id}`);
+        window.open(`https://wa.me/9647770992966?text=${msg}`);
     }
 
-    renderAll();
+    renderTables();
 </script>
-
 </body>
 </html>
