@@ -1,62 +1,47 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>مركز الشحن الملكي</title>
-  <style>
-    body { background: #121921; color: #fff; font-family: sans-serif; padding: 20px; }
-    .card { max-width: 500px; margin: auto; background: #1c2631; padding: 20px; border-radius: 20px; }
-    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-    th, td { padding: 10px; border-bottom: 1px solid #333; text-align: center; }
-    .btn-buy { background: #f8cc3d; color: #000; padding: 5px 15px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; }
-    /* نافذة الدفع المخفية */
-    #paymentModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; }
-    .modal-content { background: #1c2631; padding: 20px; border-radius: 20px; width: 90%; max-width: 400px; }
-    input, select { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; }
-  </style>
+    <meta charset="UTF-8">
+    <title>مركز الشحن الملكي | Royal Door</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; background: #0a0118; color: white; text-align: center; padding: 40px 10px; }
+        .card { max-width: 900px; margin: auto; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px; border: 1px solid #f3cf7a; }
+        .input-group { background: rgba(243,207,122,0.1); padding: 20px; border-radius: 20px; margin-bottom: 30px; border: 1px dashed #f3cf7a; }
+        input { width: 90%; padding: 15px; margin: 10px 0; border-radius: 12px; border: 1px solid #f3cf7a; background: #000; color: #fff; font-size: 1.1rem; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { background: #f3cf7a; color: #000; padding: 15px; }
+        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1.1rem; }
+        .btn-order { background: #25d366; color: white; padding: 8px 20px; border-radius: 10px; text-decoration: none; font-weight: bold; }
+        .badge { background: #f3cf7a; color: #000; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; }
+    </style>
 </head>
 <body>
+    <div class="card">
+        <h1 style="color:#f3cf7a">💎 مركز الشحن والتفعيل</h1>
+        <div class="input-group">
+            <p>يرجى إدخال البيانات المطلوبة لضمان سرعة التفعيل</p>
+            <input type="text" id="uid" placeholder="أدخل الآيدي (ID) الخاص بالحساب">
+            <input type="text" id="ucode" placeholder="أدخل كود البطاقة (إن وجد)">
+        </div>
 
-<div class="card">
-  <h2>💎 اختر باقتك</h2>
-  <table>
-    <tr><th>الجواهر</th><th>السعر</th><th>شراء</th></tr>
-    <tr><td>1,000</td><td>2$</td><td><button class="btn-buy" onclick="openModal('1000 جواهر - 2$')">شراء</button></td></tr>
-    <tr><td>500,000</td><td>1000$</td><td><button class="btn-buy" onclick="openModal('500,000 جواهر - 1000$')">شراء</button></td></tr>
-    </table>
-</div>
+        <h2 id="title">باقات الجواهر الملكية</h2>
+        <div style="overflow-x:auto">
+            <table id="rechargeTable"></table>
+        </div>
+        <br>
+        <button onclick="window.location.href='index.html'" style="color:gray; background:none; border:none; cursor:pointer;">← العودة للرئيسية</button>
+    </div>
 
-<div id="paymentModal">
-  <div class="modal-content">
-    <h3>اختر وسيلة الدفع</h3>
-    <select id="method" onchange="updateDetails()">
-      <option value="زين كاش - 07855900447">زين كاش</option>
-      <option value="آسيا باي - 07770992966">آسيا باي</option>
-      <option value="رصيد (آسيا/زين)">رصيد (آسيا/زين)</option>
-      <option value="ماستر/فيزا - 910113911184">بطاقة مصرفية</option>
-    </select>
-    <p id="accountDetails">رقم الحساب: 07855900447</p>
-    <input type="text" id="senderName" placeholder="اسمك داخل اللعبة">
-    <input type="text" id="transactionId" placeholder="رقم عملية التحويل أو تفاصيل البطاقة">
-    <button class="btn-buy" onclick="sendToWhatsApp()">إرسال الطلب عبر واتساب</button>
-    <button onclick="document.getElementById('paymentModal').style.display='none'">إغلاق</button>
-  </div>
-</div>
-
-<script>
-  let selectedPackage = "";
-  function openModal(pkg) { selectedPackage = pkg; document.getElementById('paymentModal').style.display = 'flex'; }
-  function updateDetails() { document.getElementById('accountDetails').innerText = "رقم الحساب: " + document.getElementById('method').value; }
-  
-  function sendToWhatsApp() {
-    let method = document.getElementById('method').value;
-    let name = document.getElementById('senderName').value;
-    let trans = document.getElementById('transactionId').value;
-    let msg = `طلب شحن جديد:%0Aالباقة: ${selectedPackage}%0Aالوسيلة: ${method}%0Aاسم اللاعب: ${name}%0Aرقم العملية/تفاصيل البطاقة: ${trans}`;
-    window.open(`https://wa.me/9647855900447?text=${msg}`, '_blank');
-  }
-</script>
-
+    <script>
+        const data = [
+            [1000,"2,600","2$"],[5000,"13,000","10$"],[10000,"26,000","20$"],[20000,"52,000","40$"],[30000,"78,000","60$"],[50000,"130,000","100$"],[100000,"260,000","200$"],[150000,"390,000","300$"],[200000,"520,000","400$"],[500000,"1,300,000","1000$"],[1000000,"2,600,000","2000$"]
+        ];
+        let html = `<tr><th>الكمية</th><th>دينار</th><th>دولار</th><th>تفعيل مباشر</th></tr>`;
+        data.forEach(r => {
+            html += `<tr><td>💎 ${r[0].toLocaleString()}</td><td>${r[1]}</td><td>${r[2]}</td><td><a href="https://wa.me/9647770992966" class="btn-order">اطلب الآن</a></td></tr>`;
+        });
+        document.getElementById('rechargeTable').innerHTML = html;
+    </script>
 </body>
 </html>
