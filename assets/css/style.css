@@ -1,37 +1,28 @@
 body {
   font-family: 'Cairo', sans-serif;
-  background: radial-gradient(circle at center, #1a0033, #000);
+  background: linear-gradient(135deg, #1a0033, #000033);
   color: #fff;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.gold { color: #ffd700; }
+.hero h1 {
+  font-size: 36px;
+  color: #ffd700;
+  text-shadow: 0 0 15px #ffd700, 0 0 30px #fff;
+}
 
 .gold-btn {
-  background-color: #ffd700;
+  background: linear-gradient(90deg, #ffd700, #ffcc00);
   color: #000;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  padding: 14px 28px;
+  border-radius: 10px;
   font-weight: bold;
-  transition: 0.3s;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .gold-btn:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-nav a {
-  color: #ffd700;
-  text-decoration: none;
-  font-weight: bold;
+  transform: scale(1.1);
 }
