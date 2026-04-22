@@ -1,6 +1,7 @@
 body {
   font-family: 'Cairo', sans-serif;
-  background: linear-gradient(135deg, #1a0033, #000033);
+  background: url('assets/images/world-map-glow.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
   text-align: center;
   margin: 0;
