@@ -11,15 +11,16 @@
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; }
         .main-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; padding-top: 80px; }
         nav { background: rgba(0,0,0,0.85); padding: 15px; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; gap: 10px; border-bottom: 1px solid var(--gold); backdrop-filter: blur(10px); }
-        nav a { color: white; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; }
+        nav a { color: white; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { background: var(--gold); color: black; }
-        h1 { font-size: 4rem; font-weight: 900; background: linear-gradient(to bottom, #f3cf7a, #b08d32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
-        .video-box { width: 90%; max-width: 750px; aspect-ratio: 16/9; border: 3px solid var(--gold); border-radius: 25px; overflow: hidden; box-shadow: 0 0 30px rgba(243,207,122,0.3); margin: 25px 0; }
+        h1 { font-size: 3.5rem; font-weight: 900; background: linear-gradient(to bottom, #f3cf7a, #b08d32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 10px 0; }
+        .video-box { width: 90%; max-width: 750px; aspect-ratio: 16/9; border: 3px solid var(--gold); border-radius: 25px; overflow: hidden; box-shadow: 0 0 30px rgba(243,207,122,0.3); margin: 20px 0; }
         .policy-bar { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 15px 0; }
         .policy-bar a { color: #ccc; text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(243,207,122,0.3); }
-        .btn-dl { background: linear-gradient(135deg, #f3cf7a, #b08d32); color: black; padding: 15px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; font-size: 1.2rem; }
+        .btn-dl { background: linear-gradient(135deg, #f3cf7a, #b08d32); color: black; padding: 15px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(243,207,122,0.3); }
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 15px; width: 90%; max-width: 800px; margin: 40px 0; }
-        .social-card { background: var(--glass); border: 1px solid rgba(243,207,122,0.2); padding: 15px; border-radius: 20px; text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 8px; backdrop-filter: blur(5px); }
+        .social-card { background: var(--glass); border: 1px solid rgba(243,207,122,0.2); padding: 15px; border-radius: 20px; text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 8px; backdrop-filter: blur(5px); transition: 0.3s; }
+        .social-card:hover { transform: translateY(-5px); border-color: var(--gold); }
         .social-card img { width: 35px; }
     </style>
 </head>
@@ -29,7 +30,7 @@
         <a href="index.html">الرئيسية</a>
         <a href="recharge.html">مركز الشحن</a>
         <a href="invest.html">الأستثمار</a>
-        <a href="privacy.html">الخصوصية</a>
+        <a href="agents.html">قائمة الوكلاء</a>
     </nav>
     <div class="main-content">
         <h1>Royal Door</h1>
@@ -39,14 +40,14 @@
         <div class="policy-bar">
             <a href="privacy.html">سياسة الخصوصية</a>
             <a href="terms.html">شروط الاستخدام</a>
-            <a href="delete.html">حذف الحساب</a>
+            <a href="delete.html">طلب حذف الحساب</a>
         </div>
-        <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn-dl">Download App</a>
+        <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn-dl">Download Application</a>
         <div class="social-grid">
             <a href="https://wa.me/9647770992966" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"><span>واتساب</span></a>
             <a href="https://t.me/royaldoor_bot" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"><span>تيليجرام</span></a>
-            <a href="https://facebook.com" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"><span>فيسبوك</span></a>
             <a href="https://instagram.com" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"><span>انستقرام</span></a>
+            <a href="https://tiktok.com" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"><span>تيك توك</span></a>
             <a href="mailto:royaldoor86@gmail.com" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png"><span>البريد</span></a>
         </div>
     </div>
