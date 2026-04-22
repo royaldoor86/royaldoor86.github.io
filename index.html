@@ -3,67 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Door | الرئيسية</title>
+    <title>Royal Door | الواجهة الملكية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #f3cf7a; --dark: #0a0118; --glass: rgba(255, 255, 255, 0.08); }
-        body { font-family: 'Cairo', sans-serif; background: var(--dark); color: white; margin: 0; text-align: center; }
-        nav { background: rgba(0,0,0,0.9); padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; border-bottom: 1px solid var(--gold); }
-        nav a { color: white; text-decoration: none; font-size: 0.85rem; padding: 8px 15px; border-radius: 20px; font-weight: bold; }
-        nav a:hover, nav a.active { color: var(--gold); background: rgba(243, 207, 122, 0.1); }
-        .container { max-width: 900px; margin: 20px auto; padding: 20px; position: relative; z-index: 10; }
-        .video-box { width: 100%; aspect-ratio: 16/9; background: #000; border: 2px solid var(--gold); border-radius: 20px; margin: 20px 0; overflow: hidden; box-shadow: 0 0 20px rgba(243,207,122,0.3); }
-        .card { background: var(--glass); border: 1px solid rgba(243, 207, 122, 0.2); border-radius: 20px; padding: 25px; margin-bottom: 25px; backdrop-filter: blur(10px); }
-        .btn-gold { background: linear-gradient(135deg, #f3cf7a, #b08d32); color: black; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin: 10px; border: none; cursor: pointer; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; min-width: 600px; }
-        th { background: rgba(243, 207, 122, 0.2); color: var(--gold); padding: 15px; border: 1px solid rgba(243, 207, 122, 0.3); }
-        td { padding: 12px; border: 1px solid rgba(255,255,255,0.1); }
-        .tab-btn { padding: 10px 25px; border: 1px solid var(--gold); background: transparent; color: white; cursor: pointer; border-radius: 20px; margin: 5px; }
-        .tab-btn.active { background: var(--gold); color: black; }
+        body { font-family: 'Cairo', sans-serif; background: #050010; color: white; margin: 0; overflow-x: hidden; }
+        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at center, #1a0b2e 0%, #050010 100%); }
+        nav { background: rgba(0,0,0,0.8); padding: 20px; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; border-bottom: 1px solid #f3cf7a; backdrop-filter: blur(10px); }
+        nav a { color: white; text-decoration: none; font-weight: 700; padding: 10px 20px; border-radius: 30px; border: 1px solid transparent; }
+        nav a:hover { border-color: #f3cf7a; color: #f3cf7a; }
+        .video-box { width: 90%; max-width: 800px; aspect-ratio: 16/9; border: 4px solid #f3cf7a; border-radius: 30px; overflow: hidden; box-shadow: 0 0 50px rgba(243,207,122,0.2); margin: 20px 0; }
+        h1 { font-size: 4rem; font-weight: 900; background: linear-gradient(to bottom, #f3cf7a, #b08d32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 80px; }
+        .btn-gold { background: linear-gradient(135deg, #f3cf7a, #b08d32); color: black; padding: 18px 50px; border-radius: 50px; text-decoration: none; font-weight: 900; font-size: 1.3rem; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .btn-gold:hover { transform: scale(1.05); box-shadow: 0 0 30px #f3cf7a; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="active">الرئيسية</a>
-        <a href="#recharge">مركز الشحن</a>
+        <a href="index.html">الرئيسية</a>
+        <a href="recharge.html">مركز الشحن</a>
         <a href="invest.html">الأستثمار</a>
         <a href="support.html">الدعم الفني</a>
         <a href="privacy.html">الخصوصيه</a>
         <a href="about.html">نبذه عني</a>
         <a href="terms.html">الشروط</a>
     </nav>
-
-    <div class="container">
-        <h1 style="font-size: 3rem; color: var(--gold);">Royal Door</h1>
-        
+    <div class="hero">
+        <h1>Royal Door</h1>
         <div class="video-box">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/F_V8AzHz0mE" frameborder="0" allowfullscreen></iframe>
         </div>
-
-        <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn-gold">Download on Google Play</a>
-
-        <div id="recharge" class="card">
-            <h2 style="color:var(--gold)">💎 مركز الشحن الملكي</h2>
-            <button class="tab-btn active" id="btnG" onclick="toggleShop('gems')">الجواهر</button>
-            <button class="tab-btn" id="btnC" onclick="toggleShop('coins')">الكوينز</button>
-            <div style="overflow-x:auto">
-                <table id="shop-table"></table>
-            </div>
-        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn-gold">Download Application</a>
     </div>
-
-    <script>
-        const gems = [[1000, "2,600", "2$"], [5000, "13,000", "10$"], [10000, "26,000", "20$"], [50000, "130,000", "100$"], [1000000, "2,600,000", "2000$"]];
-        const coins = [[2000, "1,500", "1$"], [4000, "3,000", "2$"], [10000, "7,500", "5$"], [100000, "75,000", "50$"], [1000000, "750,000", "500$"]];
-        function toggleShop(type) {
-            const data = type === 'gems' ? gems : coins;
-            document.getElementById('btnG').className = type === 'gems' ? 'tab-btn active' : 'tab-btn';
-            document.getElementById('btnC').className = type === 'coins' ? 'tab-btn active' : 'tab-btn';
-            let html = `<tr><th>الكمية</th><th>دينار</th><th>دولار</th></tr>`;
-            data.forEach(r => html += `<tr><td>${type==='gems'?'💎':'💰'} ${r[0].toLocaleString()}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`);
-            document.getElementById('shop-table').innerHTML = html;
-        }
-        toggleShop('gems');
-    </script>
 </body>
 </html>
