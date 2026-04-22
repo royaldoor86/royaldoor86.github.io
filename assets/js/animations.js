@@ -4,7 +4,7 @@
 
 @keyframes glow {
   from { text-shadow: 0 0 10px #ffd700; }
-  to { text-shadow: 0 0 25px #fff; }
+  to { text-shadow: 0 0 35px #fff; }
 }
 
 .gold-btn {
