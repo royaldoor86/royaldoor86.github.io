@@ -4,218 +4,280 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Door | المنصة الملكية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
     <style>
-        /* كود التنسيق مدمج لضمان العمل 100% */
         :root {
             --gold: #f3cf7a;
-            --dark-bg: #0a0118;
+            --dark-purple: #0a0118;
             --gradient: linear-gradient(135deg, #f3cf7a 0%, #b08d32 100%);
+            --glass: rgba(255, 255, 255, 0.05);
         }
 
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            margin: 0;
-            padding: 0;
             font-family: 'Cairo', sans-serif;
-            background-color: var(--dark-bg);
+            background-color: var(--dark-purple);
             color: white;
             text-align: center;
-            direction: rtl;
             overflow-x: hidden;
         }
 
-        /* خلفية النجوم */
         #particles-js {
             position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            top: 0;
-            left: 0;
+            width: 100%; height: 100%;
+            z-index: 1; top: 0; left: 0;
             background: radial-gradient(circle at center, #1a0b2e 0%, #0a0118 100%);
         }
 
-        .main-container {
-            position: relative;
-            z-index: 10;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .container { position: relative; z-index: 10; max-width: 1000px; margin: 0 auto; padding: 20px; }
 
-        header nav {
-            background: rgba(0, 0, 0, 0.7);
+        /* Navigation */
+        nav {
+            background: rgba(0,0,0,0.8);
             padding: 15px;
-            border-radius: 0 0 20px 20px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(243, 207, 122, 0.3);
-        }
-
-        header nav a {
-            color: var(--gold);
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.85rem;
-        }
-
-        .crown-img {
-            width: 100px;
-            margin-top: 20px;
-            filter: drop-shadow(0 0 10px var(--gold));
-        }
-
-        h1.logo-text {
-            font-size: 3rem;
-            font-weight: 900;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 10px 0;
-        }
-
-        .welcome-msg {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        .welcome-msg span {
-            color: var(--gold);
-            display: block;
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-        }
-
-        .description {
-            opacity: 0.8;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .features-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(243, 207, 122, 0.2);
-            padding: 12px;
             border-radius: 50px;
-            font-size: 0.8rem;
-            margin-bottom: 30px;
+            margin-top: 10px;
+            border: 1px solid rgba(243, 207, 122, 0.2);
+            position: sticky; top: 10px; z-index: 100;
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
         }
 
-        .video-box {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: rgba(0,0,0,0.5);
-            border: 2px solid var(--gold);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-            box-shadow: 0 0 20px rgba(243, 207, 122, 0.1);
+        nav a {
+            color: white; text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            padding: 5px 12px; transition: 0.3s; cursor: pointer;
         }
 
-        .play-btn {
-            font-size: 3rem;
-            color: var(--gold);
-            cursor: pointer;
-        }
+        nav a:hover, nav a.active { color: var(--gold); }
 
-        .buttons-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
+        /* Sections Visibility */
+        .page-section { display: none; padding: 40px 0; animation: fadeIn 0.5s ease; }
+        .page-section.active { display: block; }
 
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Tables & Cards */
+        .table-container { overflow-x: auto; margin-top: 20px; border-radius: 15px; background: var(--glass); border: 1px solid rgba(243, 207, 122, 0.2); }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th { background: rgba(243, 207, 122, 0.1); color: var(--gold); padding: 15px; }
+        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
+        tr:hover { background: rgba(255,255,255,0.03); }
+
+        /* Buttons */
         .btn {
-            width: 85%;
-            padding: 14px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+            display: inline-block; padding: 12px 25px; border-radius: 30px;
+            text-decoration: none; font-weight: bold; cursor: pointer; transition: 0.3s;
+            border: none; margin: 5px; font-family: 'Cairo';
+        }
+        .btn-gold { background: var(--gradient); color: black; }
+        .btn-outline { border: 1px solid var(--gold); color: var(--gold); background: transparent; }
+
+        /* Video */
+        .video-box {
+            width: 100%; max-width: 600px; aspect-ratio: 16/9;
+            background: #000; border: 2px solid var(--gold); margin: 20px auto;
+            border-radius: 20px; overflow: hidden; position: relative;
         }
 
-        .btn-main {
-            background: var(--gradient);
-            color: black;
-        }
+        /* Countdown */
+        .timer { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
+        .timer-unit { background: var(--glass); padding: 10px; border-radius: 10px; min-width: 70px; border: 1px solid var(--gold); }
+        .timer-unit span { display: block; font-size: 1.5rem; font-weight: 900; color: var(--gold); }
 
-        .btn-sub {
-            border: 1px solid var(--gold);
-            color: white;
-            background: rgba(243, 207, 122, 0.05);
-        }
+        /* Subscription styles */
+        .sub-card { background: var(--glass); padding: 20px; border-radius: 20px; border: 1px solid var(--gold); margin-top: 20px; }
 
-        .btn-link {
-            color: var(--gold);
-            border-bottom: 1px solid var(--gold);
-            border-radius: 0;
-            width: auto;
-            padding: 5px;
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 0.75rem;
-            opacity: 0.6;
-            padding-bottom: 30px;
-        }
+        .payment-methods img { width: 40px; margin: 0 10px; vertical-align: middle; }
     </style>
 </head>
 <body>
 
     <div id="particles-js"></div>
 
-    <div class="main-container">
-        <header>
-            <nav>
-                <a href="index.html">الرئيسية</a>
-                <a href="recharge.html">مركز شحني</a>
-                <a href="update-center.html">مركز الشحن الملكي</a>
-                <a href="support.html">الدعم</a>
-            </nav>
-        </header>
+    <div class="container">
+        <nav id="mainNav">
+            <a onclick="showSection('home')" class="active">الرئيسية</a>
+            <a onclick="showSection('shipping')">مركز الشحن الملكي</a>
+            <a onclick="showSection('investment')">الاستثمار</a>
+            <a onclick="showSection('support')">الدعم الفني</a>
+            <a onclick="showSection('privacy')">سياسة الخصوصية</a>
+            <a onclick="showSection('terms')">شروط الاستخدام</a>
+            <a onclick="showSection('about')">نبذة عني</a>
+        </nav>
 
-        <img src="https://img.icons8.com/fluency/96/000000/crown.png" class="crown-img">
-        
-        <h1 class="logo-text">Royal Door</h1>
-        
-        <h2 class="welcome-msg">مرحباً بك في <span>ROYAL DOOR</span></h2>
-        <p class="description">منصة اجتماعية ملكية متكاملة</p>
+        <section id="home" class="page-section active">
+            <img src="https://img.icons8.com/fluency/96/000000/crown.png" style="width: 80px; margin-top: 20px;">
+            <h1 style="font-size: 3rem; color: var(--gold); font-weight: 900;">Royal Door</h1>
+            <h3>مرحباً بك في عالم لا يشبه غيره</h3>
+            <p style="margin: 15px 0;">منصة اجتماعية ملكية متكاملة</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">انشأ غرفتك - تواصل بالصوت - شارك يومياتك - استثمر واستمتع بتجربة ملكية آمنة وخاصة</p>
+            
+            <div class="video-box">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
 
-        <div class="features-box">
-            🎙️ غرف صوتية • 🎮 ألعاب • 🎁 هدايا • 💎 شحن ملكي
-        </div>
+            <p style="color: var(--gold); font-weight: bold;">تنزيل التطبيق متاح خلال:</p>
+            <div class="timer" id="countdown">
+                <div class="timer-unit"><span id="days">00</span>أيام</div>
+                <div class="timer-unit"><span id="hours">00</span>ساعة</div>
+                <div class="timer-unit"><span id="minutes">00</span>دقيقة</div>
+                <div class="timer-unit"><span id="seconds">00</span>ثانية</div>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn btn-gold">متجر Google Play</a>
+        </section>
 
-        <div class="video-box">
-            <div class="play-btn">▶</div>
-        </div>
+        <section id="shipping" class="page-section">
+            <h2 style="color: var(--gold);">💎 مركز الشحن الملكي</h2>
+            <div style="margin: 20px 0;">
+                <button class="btn btn-gold" onclick="toggleShipping('gems')">شحن الجواهر</button>
+                <button class="btn btn-outline" onclick="toggleShipping('coins')">شحن الكوينز</button>
+            </div>
+            
+            <div id="gemsTable" class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>💎 الجواهر</th>
+                            <th>💰 دينار</th>
+                            <th>💵 دولار</th>
+                            <th>إجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody id="shippingBody">
+                        </tbody>
+                </table>
+            </div>
+            <div style="margin-top: 20px; background: rgba(243, 207, 122, 0.1); padding: 15px; border-radius: 10px; font-size: 0.8rem;">
+                <p>⚠️ ملاحظة: الشحن يتم عبر المعرف (ID) الخاص بك. تأكد من كتابة الرقم بدقة.</p>
+            </div>
+        </section>
 
-        <div class="buttons-group">
-            <a href="#" class="btn btn-main">تحميل التطبيق الآن</a>
-            <a href="support.html" class="btn btn-sub">تواصل مع الدعم الملكي</a>
-            <a href="recharge.html" class="btn btn-link">زيارة متجر الشحن</a>
-        </div>
+        <section id="investment" class="page-section">
+            <h2 style="color: var(--gold);">📈 نظام الاستثمار الملكي</h2>
+            <p>حوّل وقتك إلى قيمة حقيقية مع باقاتنا المتنوعة</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الباقة</th>
+                            <th>السعر (دينار)</th>
+                            <th>💎 جواهر</th>
+                            <th>📈 الربح (شهر)</th>
+                            <th>المجموع الكلي</th>
+                        </tr>
+                    </thead>
+                    <tbody id="investmentBody">
+                        </tbody>
+                </table>
+            </div>
 
-        <footer>
-            © Royal Door 2026 - Designed by Amjad Hadi
+            <div class="sub-card">
+                <h3>تفعيل الباقة الاستثمارية</h3>
+                <p>أدخل الـ ID الخاص بك واختر الباقة للتواصل مع الوكيل المعتمد</p>
+                <input type="text" id="user-id" placeholder="أدخل ID الخاص بك هنا" style="width: 80%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none;">
+                <br>
+                <button onclick="sendToWhatsApp()" class="btn btn-gold">تفعيل عبر WhatsApp</button>
+            </div>
+        </section>
+
+        <section id="support" class="page-section"><h2>الدعم الفني</h2><p>نحن هنا لخدمتك 24/7 عبر الواتساب الرسمي.</p></section>
+        <section id="privacy" class="page-section"><h2>سياسة الخصوصية</h2><p>بياناتك في Royal Door محمية بأحدث أنظمة التشفير العالمية.</p></section>
+        <section id="terms" class="page-section"><h2>شروط الاستخدام</h2><p>استخدامك للمنصة يعني موافقتك على القوانين الملكية للمجتمع.</p></section>
+        <section id="about" class="page-section"><h2>نبذة عني</h2><p>Royal Door: رؤية جديدة للتواصل الاجتماعي والاستثمار الرقمي المصمم للمجتمع العربي.</p></section>
+
+        <footer style="margin-top: 50px; padding: 20px; opacity: 0.5; font-size: 0.8rem;">
+            © 2026 Royal Door - All Rights Reserved
         </footer>
+    </div>
+
+    <div id="paymentModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#1a0b2e; padding:30px; border:2px solid var(--gold); border-radius:20px; z-index:200;">
+        <h3>اختر طريقة الدفع</h3>
+        <div class="payment-methods" style="margin:20px 0;">
+            <p>زين كاش - آسيا باي - ماستركارد</p>
+        </div>
+        <button onclick="closeModal()" class="btn btn-outline">إغلاق</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // 1. Particles Background
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 80 },
+                "number": { "value": 100 },
                 "color": { "value": "#f3cf7a" },
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.5 },
                 "size": { "value": 3 },
                 "line_linked": { "enable": true, "distance": 150, "color": "#f3cf7a", "opacity": 0.2, "width": 1 },
-                "move": { "enable": true, "speed": 2 }
+                "move": { "enable": true, "speed": 1.5 }
             }
         });
+
+        // 2. Navigation Logic
+        function showSection(sectionId) {
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // 3. Shipping Data
+        const shippingData = [
+            [1000, "2,600", "2$"], [5000, "13,000", "10$"], [10000, "26,000", "20$"], 
+            [20000, "52,000", "40$"], [50000, "130,000", "100$"], [100000, "260,000", "200$"]
+        ];
+        const shippingBody = document.getElementById('shippingBody');
+        shippingData.forEach(row => {
+            shippingBody.innerHTML += `<tr>
+                <td>💎 ${row[0].toLocaleString()}</td>
+                <td>${row[1]} د.ع</td>
+                <td>${row[2]}</td>
+                <td><button onclick="openModal()" class="btn btn-gold" style="padding:5px 10px; font-size:0.7rem;">شحن</button></td>
+            </tr>`;
+        });
+
+        // 4. Investment Data
+        const invData = [
+            ["🌟 الدر", "100,000", "38,500", "5,000", "40,400"],
+            ["🔴 المرجان", "200,000", "77,000", "10,000", "80,800"],
+            ["🟤 العقيق", "300,000", "115,000", "15,000", "121,000"],
+            ["💠 الكريستال", "500,000", "192,000", "25,000", "201,600"],
+            ["🟢 الزبرجد", "750,000", "288,000", "37,500", "302,400"],
+            ["🤍 اللؤلؤ", "1,000,000", "385,000", "50,000", "404,200"]
+        ];
+        const invBody = document.getElementById('investmentBody');
+        invData.forEach(row => {
+            invBody.innerHTML += `<tr>
+                <td>${row[0]}</td>
+                <td>${row[1]}</td>
+                <td>${row[2]}</td>
+                <td>+ ${row[3]}</td>
+                <td style="color:var(--gold); font-weight:bold;">${row[4]}</td>
+            </tr>`;
+        });
+
+        // 5. Countdown Timer (40 Days)
+        const targetDate = new Date().getTime() + (40 * 24 * 60 * 60 * 1000);
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('minutes').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('seconds').innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        }, 1000);
+
+        // 6. WhatsApp Action
+        function sendToWhatsApp() {
+            const id = document.getElementById('user-id').value;
+            if(!id) return alert("يرجى إدخال الآيدي أولاً");
+            const msg = encodeURIComponent(`مرحباً وكيل Royal Door، أرغب في تفعيل باقة استثمارية للآيدي: ${id}`);
+            window.open(`https://wa.me/9647770992966?text=${msg}`);
+        }
+
+        function openModal() { document.getElementById('paymentModal').style.display = 'block'; }
+        function closeModal() { document.getElementById('paymentModal').style.display = 'none'; }
     </script>
 </body>
 </html>
