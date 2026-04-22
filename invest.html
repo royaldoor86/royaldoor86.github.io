@@ -2,63 +2,59 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الأستثمار | Royal Door</title>
+    <title>نظام الأستثمار الملكي | Royal Door</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #0a0118; color: white; margin: 0; text-align: center; }
-        nav { background: rgba(0,0,0,0.9); padding: 15px; border-bottom: 2px solid #f3cf7a; display: flex; justify-content: center; gap: 15px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; }
-        .container { max-width: 1100px; margin: 30px auto; padding: 20px; }
-        .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(243,207,122,0.3); border-radius: 25px; padding: 25px; overflow-x: auto; }
+        body { font-family: 'Cairo', sans-serif; background: #050010; color: white; padding: 40px 10px; }
+        .container { max-width: 1100px; margin: auto; }
+        .alert-box { background: rgba(255, 0, 0, 0.1); border: 2px solid #ff4d4d; padding: 25px; border-radius: 20px; margin-bottom: 30px; text-align: right; }
+        .table-card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 30px; border: 1px solid #f3cf7a; overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; min-width: 900px; }
-        th { background: rgba(243,207,122,0.2); color: #f3cf7a; padding: 15px; border: 1px solid rgba(243,207,122,0.3); }
-        td { padding: 15px; border: 1px solid rgba(255,255,255,0.05); font-size: 1rem; }
-        tr:nth-child(even) { background: rgba(255,255,255,0.02); }
-        .btn-activate { background: linear-gradient(135deg, #f3cf7a, #b08d32); color: black; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; }
+        th { background: #f3cf7a; color: #000; padding: 15px; }
+        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .profit { color: #00ff88; font-weight: bold; }
     </style>
 </head>
 <body>
-<nav><a href="index.html">الرئيسية</a> <a href="invest.html" style="color:#f3cf7a">الأستثمار</a> <a href="support.html">الدعم</a></nav>
+    <div class="container">
+        <h1>📈 مركز الأستثمار والأرباح</h1>
+        
+        <div class="alert-box">
+            <h3 style="color:#ff4d4d">⚠️ ملاحظة قانونية هامة (تنبيه المخاطر):</h3>
+            <p>التزاماً بسياسات متجر Google Play الصارمة تجاه "غسيل الأموال" و "الاستثمار المباشر"، نود إحاطتكم علماً بما يلي:</p>
+            <ul>
+                <li>تم إلغاء التعامل بالعملات النقدية المباشرة داخل التطبيق وتحويلها إلى نظام <b>(النجوم الملكية)</b>.</li>
+                <li>يتم استبدال النجوم داخل المتجر للحفاظ على أمان حساباتكم وتجنب الحظر القانوني للمنصة.</li>
+                <li>الأستثمار الموضح في الجدول أدناه يتم عبر شراء باقات الخدمة وتفعيل ميزة الأرباح داخل حسابك الشخصي.</li>
+            </ul>
+        </div>
 
-<div class="container">
-    <h1 style="color:#f3cf7a; font-size: 2.5rem;">📈 نظام الأستثمار الملكي</h1>
-    <p>استثمر جواهرك واحصل على أرباح شهرية مضمونة</p>
-    <div class="card">
-        <table>
-            <thead>
-                <tr>
-                    <th>الباقة</th><th>سعر (دينار)</th><th>سعر (دولار)</th><th>الجواهر</th><th>ربح شهري</th><th>المجموع</th><th>تفعيل</th>
-                </tr>
-            </thead>
-            <tbody id="invest-body"></tbody>
-        </table>
+        <div class="table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>الباقة</th><th>السعر (دينار)</th><th>السعر (دولار)</th><th>قيمة الجواهر</th><th>الربح الشهري</th><th>الإجمالي</th>
+                    </tr>
+                </thead>
+                <tbody id="iBody"></tbody>
+            </table>
+        </div>
     </div>
-</div>
 
-<script>
-    const investData = [
-        ["🌟 الدر","100,000","66.7$","38,500","1,900","40,400"],
-        ["🔴 المرجان","200,000","133.3$","77,000","3,800","80,800"],
-        ["🟤 العقيق","300,000","200.0$","115,000","5,700","120,700"],
-        ["💠 الكريستال","500,000","333.3$","192,000","9,600","201,600"],
-        ["🟢 الزبرجد","750,000","500.0$","288,000","14,400","302,400"],
-        ["🤍 اللؤلؤ","1,000,000","666.7$","385,000","19,200","404,200"],
-        ["🔷 الفيروز","1,200,000","800.0$","462,000","23,000","485,000"],
-        ["💎 الماس","1,300,000","866.7$","500,000","25,000","525,000"],
-        ["🟩 الزمرد","1,400,000","933.3$","538,000","27,000","565,000"],
-        ["🔶 الياقوت","1,500,000","1000.0$","577,000","29,000","606,000"]
-    ];
-
-    document.getElementById('invest-body').innerHTML = investData.map(r => `
-        <tr>
-            <td style="font-weight:bold; color:#f3cf7a;">${r[0]}</td>
-            <td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td>
-            <td style="color:#00ff88">+${r[4]}</td>
-            <td style="background:rgba(243,207,122,0.1); font-weight:900;">${r[5]}</td>
-            <td><a href="https://wa.me/9647770992966" class="btn-activate">تفعيل</a></td>
-        </tr>
-    `).join('');
-</script>
+    <script>
+        const iData = [
+            ["🌟 الدر","100,000","66.7$","38,500","1,900","40,400"],
+            ["🔴 المرجان","200,000","133.3$","77,000","3,800","80,800"],
+            ["🟤 العقيق","300,000","200.0$","115,000","5,700","120,700"],
+            ["💠 الكريستال","500,000","333.3$","192,000","9,600","201,600"],
+            ["🟢 الزبرجد","750,000","500.0$","288,000","14,400","302,400"],
+            ["🤍 اللؤلؤ","1,000,000","666.7$","385,000","19,200","404,200"],
+            ["🔷 الفيروز","1,200,000","800.0$","462,000","23,000","485,000"],
+            ["💎 الماس","1,300,000","866.7$","500,000","25,000","525,000"],
+            ["🟩 الزمرد","1,400,000","933.3$","538,000","27,000","565,000"],
+            ["🔶 الياقوت","1,500,000","1000.0$","577,000","29,000","606,000"]
+        ];
+        document.getElementById('iBody').innerHTML = iData.map(r => `<tr><td style="font-weight:bold; color:#f3cf7a">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td class="profit">+${r[4]}</td><td style="font-weight:900">${r[5]}</td></tr>`).join('');
+    </script>
 </body>
 </html>
