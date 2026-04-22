@@ -21,6 +21,7 @@
             color: white;
             text-align: center;
             overflow-x: hidden;
+            direction: rtl;
         }
 
         #particles-js {
@@ -44,26 +45,31 @@
         }
 
         nav a {
-            color: white; text-decoration: none; font-size: 0.85rem; font-weight: 600;
-            padding: 5px 12px; transition: 0.3s; cursor: pointer;
+            color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600;
+            padding: 5px 10px; transition: 0.3s; cursor: pointer;
         }
 
-        nav a:hover, nav a.active { color: var(--gold); }
+        nav a:hover, nav a.active { color: var(--gold); background: rgba(243, 207, 122, 0.1); border-radius: 20px; }
 
-        /* Sections Visibility */
-        .page-section { display: none; padding: 40px 0; animation: fadeIn 0.5s ease; }
+        /* Sections */
+        .page-section { display: none; padding: 30px 0; animation: fadeIn 0.5s ease; }
         .page-section.active { display: block; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Tables & Cards */
+        /* Tables */
         .table-container { overflow-x: auto; margin-top: 20px; border-radius: 15px; background: var(--glass); border: 1px solid rgba(243, 207, 122, 0.2); }
-        table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        th { background: rgba(243, 207, 122, 0.1); color: var(--gold); padding: 15px; }
-        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
-        tr:hover { background: rgba(255,255,255,0.03); }
+        table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        th { background: rgba(243, 207, 122, 0.1); color: var(--gold); padding: 15px; font-size: 0.9rem; }
+        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; }
 
-        /* Buttons */
+        /* Inputs & Buttons */
+        input {
+            width: 80%; max-width: 400px; padding: 12px; margin: 10px 0;
+            border-radius: 10px; border: 1px solid var(--gold);
+            background: rgba(0,0,0,0.5); color: white; text-align: center; font-family: 'Cairo';
+        }
+
         .btn {
             display: inline-block; padding: 12px 25px; border-radius: 30px;
             text-decoration: none; font-weight: bold; cursor: pointer; transition: 0.3s;
@@ -72,22 +78,18 @@
         .btn-gold { background: var(--gradient); color: black; }
         .btn-outline { border: 1px solid var(--gold); color: var(--gold); background: transparent; }
 
-        /* Video */
+        /* Timer */
+        .timer { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
+        .timer-unit { background: var(--glass); padding: 10px; border-radius: 10px; min-width: 60px; border: 1px solid var(--gold); }
+        .timer-unit span { display: block; font-size: 1.2rem; font-weight: 900; color: var(--gold); }
+
         .video-box {
             width: 100%; max-width: 600px; aspect-ratio: 16/9;
             background: #000; border: 2px solid var(--gold); margin: 20px auto;
-            border-radius: 20px; overflow: hidden; position: relative;
+            border-radius: 20px; overflow: hidden;
         }
 
-        /* Countdown */
-        .timer { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
-        .timer-unit { background: var(--glass); padding: 10px; border-radius: 10px; min-width: 70px; border: 1px solid var(--gold); }
-        .timer-unit span { display: block; font-size: 1.5rem; font-weight: 900; color: var(--gold); }
-
-        /* Subscription styles */
-        .sub-card { background: var(--glass); padding: 20px; border-radius: 20px; border: 1px solid var(--gold); margin-top: 20px; }
-
-        .payment-methods img { width: 40px; margin: 0 10px; vertical-align: middle; }
+        .card { background: var(--glass); padding: 20px; border-radius: 20px; border: 1px solid var(--gold); margin: 20px 0; }
     </style>
 </head>
 <body>
@@ -100,184 +102,159 @@
             <a onclick="showSection('shipping')">مركز الشحن الملكي</a>
             <a onclick="showSection('investment')">الاستثمار</a>
             <a onclick="showSection('support')">الدعم الفني</a>
-            <a onclick="showSection('privacy')">سياسة الخصوصية</a>
-            <a onclick="showSection('terms')">شروط الاستخدام</a>
+            <a onclick="showSection('privacy')">الخصوصية</a>
             <a onclick="showSection('about')">نبذة عني</a>
         </nav>
 
         <section id="home" class="page-section active">
-            <img src="https://img.icons8.com/fluency/96/000000/crown.png" style="width: 80px; margin-top: 20px;">
-            <h1 style="font-size: 3rem; color: var(--gold); font-weight: 900;">Royal Door</h1>
-            <h3>مرحباً بك في عالم لا يشبه غيره</h3>
-            <p style="margin: 15px 0;">منصة اجتماعية ملكية متكاملة</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">انشأ غرفتك - تواصل بالصوت - شارك يومياتك - استثمر واستمتع بتجربة ملكية آمنة وخاصة</p>
-            
+            <h1 style="font-size: 2.5rem; color: var(--gold); font-weight: 900; margin-top: 20px;">Royal Door</h1>
+            <p>منصة اجتماعية ملكية متكاملة</p>
             <div class="video-box">
                 <iframe width="100%" height="100%" src="https://youtube.com/shorts/kHAiaOt9MdY?si=Ay1ws6aRqdkPm3SZ" frameborder="0" allowfullscreen></iframe>
             </div>
-
-            <p style="color: var(--gold); font-weight: bold;">تنزيل التطبيق متاح خلال:</p>
+            <p style="font-size: 0.9rem; padding: 0 10px;">انشأ غرفتك - تواصل بالصوت - شارك يومياتك - استثمر واستمتع بتجربة ملكية آمنة وخاصة</p>
+            
+            <p style="margin-top:20px; color: var(--gold);">إطلاق التطبيق بعد:</p>
             <div class="timer" id="countdown">
-                <div class="timer-unit"><span id="days">00</span>أيام</div>
+                <div class="timer-unit"><span id="days">00</span>يوم</div>
                 <div class="timer-unit"><span id="hours">00</span>ساعة</div>
                 <div class="timer-unit"><span id="minutes">00</span>دقيقة</div>
                 <div class="timer-unit"><span id="seconds">00</span>ثانية</div>
             </div>
-            <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn btn-gold">متجر Google Play</a>
+            <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn btn-gold">تحميل التطبيق الآن</a>
         </section>
 
         <section id="shipping" class="page-section">
             <h2 style="color: var(--gold);">💎 مركز الشحن الملكي</h2>
-            <div style="margin: 20px 0;">
-                <button class="btn btn-gold" onclick="toggleShipping('gems')">شحن الجواهر</button>
-                <button class="btn btn-outline" onclick="toggleShipping('coins')">شحن الكوينز</button>
+            <div class="card">
+                <p>أدخل المعرف الخاص بك (ID) لشحن باقة الجواهر</p>
+                <input type="text" id="ship-id" placeholder="أدخل ID الخاص بك هنا">
             </div>
-            
-            <div id="gemsTable" class="table-container">
+
+            <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th>💎 الجواهر</th>
-                            <th>💰 دينار</th>
-                            <th>💵 دولار</th>
+                            <th>💰 السعر (دينار)</th>
+                            <th>💵 السعر (دولار)</th>
                             <th>إجراء</th>
                         </tr>
                     </thead>
-                    <tbody id="shippingBody">
+                    <tbody id="shippingTable">
                         </tbody>
                 </table>
-            </div>
-            <div style="margin-top: 20px; background: rgba(243, 207, 122, 0.1); padding: 15px; border-radius: 10px; font-size: 0.8rem;">
-                <p>⚠️ ملاحظة: الشحن يتم عبر المعرف (ID) الخاص بك. تأكد من كتابة الرقم بدقة.</p>
             </div>
         </section>
 
         <section id="investment" class="page-section">
-            <h2 style="color: var(--gold);">📈 نظام الاستثمار الملكي</h2>
-            <p>حوّل وقتك إلى قيمة حقيقية مع باقاتنا المتنوعة</p>
-            
+            <h2 style="color: var(--gold);">📈 الاستثمار الرقمي</h2>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th>الباقة</th>
-                            <th>السعر (دينار)</th>
-                            <th>💎 جواهر</th>
-                            <th>📈 الربح (شهر)</th>
+                            <th>💰 السعر</th>
+                            <th>💎 الجواهر</th>
+                            <th>📈 الربح</th>
                             <th>المجموع الكلي</th>
                         </tr>
                     </thead>
-                    <tbody id="investmentBody">
+                    <tbody id="invTable">
                         </tbody>
                 </table>
             </div>
-
-            <div class="sub-card">
-                <h3>تفعيل الباقة الاستثمارية</h3>
-                <p>أدخل الـ ID الخاص بك واختر الباقة للتواصل مع الوكيل المعتمد</p>
-                <input type="text" id="user-id" placeholder="أدخل ID الخاص بك هنا" style="width: 80%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none;">
+            <div class="card">
+                <h3>طلب تفعيل الباقة</h3>
+                <input type="text" id="inv-id" placeholder="أدخل ID الخاص بك">
                 <br>
-                <button onclick="sendToWhatsApp()" class="btn btn-gold">تفعيل عبر WhatsApp</button>
+                <button onclick="contactWhatsApp('استثمار')" class="btn btn-gold">تفعيل عبر واتساب</button>
             </div>
         </section>
 
-        <section id="support" class="page-section"><h2>الدعم الفني</h2><p>نحن هنا لخدمتك 24/7 عبر الواتساب الرسمي.</p></section>
-        <section id="privacy" class="page-section"><h2>سياسة الخصوصية</h2><p>بياناتك في Royal Door محمية بأحدث أنظمة التشفير العالمية.</p></section>
-        <section id="terms" class="page-section"><h2>شروط الاستخدام</h2><p>استخدامك للمنصة يعني موافقتك على القوانين الملكية للمجتمع.</p></section>
-        <section id="about" class="page-section"><h2>نبذة عني</h2><p>Royal Door: رؤية جديدة للتواصل الاجتماعي والاستثمار الرقمي المصمم للمجتمع العربي.</p></section>
+        <section id="support" class="page-section">
+            <h2 style="color: var(--gold);">📞 الدعم الفني</h2>
+            <div class="card">
+                <p>نحن هنا لمساعدتك، اختر وسيلة التواصل المفضلة:</p>
+                <button onclick="contactWhatsApp('دعم')" class="btn btn-gold" style="width: 200px;">واتساب الدعم</button>
+                <br>
+                <a href="mailto:support@royaldoor.live" class="btn btn-outline" style="width: 200px;">دعم عبر البريد</a>
+            </div>
+        </section>
 
-        <footer style="margin-top: 50px; padding: 20px; opacity: 0.5; font-size: 0.8rem;">
-            © 2026 Royal Door - All Rights Reserved
+        <section id="privacy" class="page-section"><h2>سياسة الخصوصية</h2><p>نلتزم بحماية خصوصية بياناتك وتوفير بيئة آمنة.</p></section>
+        <section id="about" class="page-section"><h2>نبذة عني</h2><p>Royal Door هي منصة ترفيهية متكاملة تجمع بين الغرف الصوتية والخدمات الرقمية.</p></section>
+
+        <footer style="margin-top: 40px; opacity: 0.5; font-size: 0.8rem; padding-bottom: 20px;">
+            © 2026 Royal Door - Designed by Amjad Hadi
         </footer>
-    </div>
-
-    <div id="paymentModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#1a0b2e; padding:30px; border:2px solid var(--gold); border-radius:20px; z-index:200;">
-        <h3>اختر طريقة الدفع</h3>
-        <div class="payment-methods" style="margin:20px 0;">
-            <p>زين كاش - آسيا باي - ماستركارد</p>
-        </div>
-        <button onclick="closeModal()" class="btn btn-outline">إغلاق</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // 1. Particles Background
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 100 },
-                "color": { "value": "#f3cf7a" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5 },
-                "size": { "value": 3 },
-                "line_linked": { "enable": true, "distance": 150, "color": "#f3cf7a", "opacity": 0.2, "width": 1 },
-                "move": { "enable": true, "speed": 1.5 }
-            }
-        });
+        // 1. Particles
+        particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#f3cf7a" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#f3cf7a", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
 
-        // 2. Navigation Logic
-        function showSection(sectionId) {
+        // 2. Navigation
+        function showSection(id) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
-            event.target.classList.add('active');
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active');
         }
 
-        // 3. Shipping Data
-        const shippingData = [
+        // 3. Shipping Data (As Requested)
+        const gems = [
             [1000, "2,600", "2$"], [5000, "13,000", "10$"], [10000, "26,000", "20$"], 
-            [20000, "52,000", "40$"], [50000, "130,000", "100$"], [100000, "260,000", "200$"]
+            [20000, "52,000", "40$"], [30000, "78,000", "60$"], [50000, "130,000", "100$"],
+            [70000, "182,000", "140$"], [100000, "260,000", "200$"], [150000, "390,000", "300$"],
+            [200000, "520,000", "400$"], [300000, "780,000", "600$"], [400000, "1,040,000", "800$"],
+            [500000, "1,300,000", "1000$"], [600000, "1,560,000", "1200$"], [700000, "1,820,000", "1400$"],
+            [800000, "2,080,000", "1600$"], [900000, "2,340,000", "1800$"], [1000000, "2,600,000", "2000$"]
         ];
-        const shippingBody = document.getElementById('shippingBody');
-        shippingData.forEach(row => {
-            shippingBody.innerHTML += `<tr>
-                <td>💎 ${row[0].toLocaleString()}</td>
-                <td>${row[1]} د.ع</td>
-                <td>${row[2]}</td>
-                <td><button onclick="openModal()" class="btn btn-gold" style="padding:5px 10px; font-size:0.7rem;">شحن</button></td>
-            </tr>`;
+        const sTable = document.getElementById('shippingTable');
+        gems.forEach(g => {
+            sTable.innerHTML += `<tr><td>💎 ${g[0].toLocaleString()}</td><td>${g[1]}</td><td>${g[2]}</td><td><button onclick="contactWhatsApp('شحن جواهر ${g[0]}')" class="btn btn-gold" style="padding:5px 12px; font-size:0.7rem;">شحن</button></td></tr>`;
         });
 
         // 4. Investment Data
-        const invData = [
+        const invs = [
             ["🌟 الدر", "100,000", "38,500", "5,000", "40,400"],
             ["🔴 المرجان", "200,000", "77,000", "10,000", "80,800"],
             ["🟤 العقيق", "300,000", "115,000", "15,000", "121,000"],
             ["💠 الكريستال", "500,000", "192,000", "25,000", "201,600"],
             ["🟢 الزبرجد", "750,000", "288,000", "37,500", "302,400"],
-            ["🤍 اللؤلؤ", "1,000,000", "385,000", "50,000", "404,200"]
+            ["🤍 اللؤلؤ", "1,000,000", "385,000", "50,000", "404,200"],
+            ["🔶 الياقوت", "1,500,000", "577,000", "75,000", "606,000"]
         ];
-        const invBody = document.getElementById('investmentBody');
-        invData.forEach(row => {
-            invBody.innerHTML += `<tr>
-                <td>${row[0]}</td>
-                <td>${row[1]}</td>
-                <td>${row[2]}</td>
-                <td>+ ${row[3]}</td>
-                <td style="color:var(--gold); font-weight:bold;">${row[4]}</td>
-            </tr>`;
+        const iTable = document.getElementById('invTable');
+        invs.forEach(i => {
+            iTable.innerHTML += `<tr><td>${i[0]}</td><td>${i[1]}</td><td>${i[2]}</td><td>+ ${i[3]}</td><td style="color:var(--gold); font-weight:bold;">${i[4]}</td></tr>`;
         });
 
-        // 5. Countdown Timer (40 Days)
-        const targetDate = new Date().getTime() + (40 * 24 * 60 * 60 * 1000);
-        setInterval(() => {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-            document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-            document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('minutes').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById('seconds').innerText = Math.floor((diff % (1000 * 60)) / 1000);
-        }, 1000);
-
-        // 6. WhatsApp Action
-        function sendToWhatsApp() {
-            const id = document.getElementById('user-id').value;
-            if(!id) return alert("يرجى إدخال الآيدي أولاً");
-            const msg = encodeURIComponent(`مرحباً وكيل Royal Door، أرغب في تفعيل باقة استثمارية للآيدي: ${id}`);
-            window.open(`https://wa.me/9647770992966?text=${msg}`);
+        // 5. WhatsApp Integration
+        function contactWhatsApp(type) {
+            let id = "";
+            if(type === 'استثمار') id = document.getElementById('inv-id').value;
+            else id = document.getElementById('ship-id').value;
+            
+            if(!id && type !== 'دعم') { alert("يرجى إدخال الآيدي (ID) للمتابعة"); return; }
+            
+            const phone = "+9647770992966";
+            const text = encodeURIComponent(`مرحباً وكيل Royal Door، أرغب في (${type}) للآيدي: ${id}`);
+            window.open(`https://wa.me/${phone}?text=${text}`);
         }
 
-        function openModal() { document.getElementById('paymentModal').style.display = 'block'; }
-        function closeModal() { document.getElementById('paymentModal').style.display = 'none'; }
+        // 6. Timer (40 Days)
+        const target = new Date().getTime() + (40 * 24 * 60 * 60 * 1000);
+        setInterval(() => {
+            const now = new Date().getTime();
+            const d = target - now;
+            document.getElementById('days').innerText = Math.floor(d / 86400000);
+            document.getElementById('hours').innerText = Math.floor((d % 86400000) / 3600000);
+            document.getElementById('minutes').innerText = Math.floor((d % 3600000) / 60000);
+            document.getElementById('seconds').innerText = Math.floor((d % 60000) / 1000);
+        }, 1000);
     </script>
 </body>
 </html>
