@@ -4,75 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Door | المنصة الملكية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* كود التنسيق مدمج لضمان العمل 100% */
+        :root {
+            --gold: #f3cf7a;
+            --dark-bg: #0a0118;
+            --gradient: linear-gradient(135deg, #f3cf7a 0%, #b08d32 100%);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            text-align: center;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+
+        /* خلفية النجوم */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at center, #1a0b2e 0%, #0a0118 100%);
+        }
+
+        .main-container {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(243, 207, 122, 0.3);
+        }
+
+        header nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.85rem;
+        }
+
+        .crown-img {
+            width: 100px;
+            margin-top: 20px;
+            filter: drop-shadow(0 0 10px var(--gold));
+        }
+
+        h1.logo-text {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+        }
+
+        .welcome-msg {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .welcome-msg span {
+            color: var(--gold);
+            display: block;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+
+        .description {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .features-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(243, 207, 122, 0.2);
+            padding: 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 30px;
+        }
+
+        .video-box {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: rgba(0,0,0,0.5);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(243, 207, 122, 0.1);
+        }
+
+        .play-btn {
+            font-size: 3rem;
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+        .buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn {
+            width: 85%;
+            padding: 14px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-main {
+            background: var(--gradient);
+            color: black;
+        }
+
+        .btn-sub {
+            border: 1px solid var(--gold);
+            color: white;
+            background: rgba(243, 207, 122, 0.05);
+        }
+
+        .btn-link {
+            color: var(--gold);
+            border-bottom: 1px solid var(--gold);
+            border-radius: 0;
+            width: auto;
+            padding: 5px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.75rem;
+            opacity: 0.6;
+            padding-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
 
     <div id="particles-js"></div>
 
-    <header class="main-header">
-        <nav class="nav-container">
-            <div class="search-icon">🔍</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">الرئيسية</a></li>
-                <li><a href="recharge.html">مركز شحني</a></li>
-                <li><a href="update-center.html">مركز الشحن الملكي</a></li>
-                <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                <li><a href="support.html">الدعم الفني</a></li>
-            </ul>
-            <div class="lang-switch">🌐 English</div>
-        </nav>
-    </header>
+    <div class="main-container">
+        <header>
+            <nav>
+                <a href="index.html">الرئيسية</a>
+                <a href="recharge.html">مركز شحني</a>
+                <a href="update-center.html">مركز الشحن الملكي</a>
+                <a href="support.html">الدعم</a>
+            </nav>
+        </header>
 
-    <main class="hero-section">
-        <div class="content-wrapper">
-            <img src="https://img.icons8.com/fluency/96/000000/crown.png" alt="Royal Crown" class="main-crown">
-            <h1 class="brand-name">Royal Door</h1>
-            <h2 class="welcome-text">مرحباً بك في <br><span>ROYAL DOOR</span></h2>
-            <p class="sub-title">منصة اجتماعية ملكية متكاملة</p>
+        <img src="https://img.icons8.com/fluency/96/000000/crown.png" class="crown-img">
+        
+        <h1 class="logo-text">Royal Door</h1>
+        
+        <h2 class="welcome-msg">مرحباً بك في <span>ROYAL DOOR</span></h2>
+        <p class="description">منصة اجتماعية ملكية متكاملة</p>
 
-            <div class="features-pill">
-                <span>غرف صوتية 🎙️</span>
-                <span>ألعاب 🎮</span>
-                <span>هدايا يومية 🎁</span>
-                <span>شحن ملكي 💎</span>
-            </div>
-
-            <div class="video-container">
-                <div class="play-trigger">
-                    <div class="play-icon">▶</div>
-                </div>
-                <p>إعلان ROYAL DOOR الرسمي</p>
-            </div>
-
-            <div class="action-area">
-                <a href="#" class="btn btn-gold">تحميل التطبيق الآن</a>
-                <a href="support.html" class="btn btn-trans">تواصل مع الدعم الملكي</a>
-                <a href="recharge.html" class="btn btn-outline">زيارة متجر الشحن</a>
-            </div>
+        <div class="features-box">
+            🎙️ غرف صوتية • 🎮 ألعاب • 🎁 هدايا • 💎 شحن ملكي
         </div>
-    </main>
 
-    <footer class="royal-footer">
-        <p>© Royal Door 2026 - Designed by Amjad Hadi Al-Baydhani</p>
-    </footer>
+        <div class="video-box">
+            <div class="play-btn">▶</div>
+        </div>
+
+        <div class="buttons-group">
+            <a href="#" class="btn btn-main">تحميل التطبيق الآن</a>
+            <a href="support.html" class="btn btn-sub">تواصل مع الدعم الملكي</a>
+            <a href="recharge.html" class="btn btn-link">زيارة متجر الشحن</a>
+        </div>
+
+        <footer>
+            © Royal Door 2026 - Designed by Amjad Hadi
+        </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        /* إعدادات النجوم المتحركة مباشرة */
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "number": { "value": 80 },
                 "color": { "value": "#f3cf7a" },
                 "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": true },
-                "size": { "value": 3, "random": true },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3 },
                 "line_linked": { "enable": true, "distance": 150, "color": "#f3cf7a", "opacity": 0.2, "width": 1 },
-                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
-            },
-            "interactivity": {
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+                "move": { "enable": true, "speed": 2 }
             }
         });
     </script>
