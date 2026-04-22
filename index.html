@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Royal Door - الصفحة الرئيسية</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Door - المنصة الملكية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <img src="assets/images/logo.png" alt="Royal Door Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="about.html">عن المنصة</a></li>
-        <li><a href="update-center.html">مركز التحديث الملكي</a></li>
-        <li><a href="support.html">الدعم الفني</a></li>
-        <li><a href="privacy.html">سياسة الخصوصية</a></li>
-        <li><a href="terms.html">شروط الاستخدام</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>مرحباً بك في <span class="gold">ROYAL DOOR</span></h1>
-    <p>منصة اجتماعية ملكية عالمية تجمع بين الغرف الصوتية، الألعاب، والهدايا الرقمية.</p>
-    <div id="countdown"></div>
-    <button class="gold-btn">تحميل التطبيق الآن!</button>
-    <br><br>
-    <button onclick="switchLanguage('en')" class="gold-btn">English</button>
-    <button onclick="switchLanguage('ar')" class="gold-btn">العربية</button>
-    <br><br>
-    <video controls poster="assets/images/world-map-glow.jpg">
-      <source src="assets/video/promo.mp4" type="video/mp4">
-      متصفحك لا يدعم تشغيل الفيديو.
-    </video>
-  </section>
+    <div class="background-overlay"></div>
 
-  <footer>
-    <p>© Royal Door 2026 – Designed by Amjad Hadi Al-Baydhani</p>
-  </footer>
-  <script src="assets/js/main.js"></script>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">مركز شحني</a></li>
+                <li><a href="#">مركز الشحن الملكي</a></li>
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">الدعم الفني</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="logo-section">
+            <img src="crown-icon.png" alt="Crown" class="crown">
+            <h1>Royal Door</h1>
+            <h2>مرحباً بك في <span>ROYAL DOOR</span></h2>
+            <p>منصة اجتماعية ملكية متكاملة</p>
+        </div>
+
+        <div class="features-badge">
+            <span>غرف صوتية • ألعاب • هدايا يومية • شحن ملكي</span>
+        </div>
+
+        <div class="video-placeholder">
+            <button class="play-button">▶</button>
+        </div>
+
+        <div class="action-buttons">
+            <a href="#" class="btn-primary">تحميل التطبيق الآن</a>
+            <a href="#" class="btn-secondary">تواصل مع الدعم الملكي</a>
+            <a href="#" class="btn-outline">زيارة متجر الشحن</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Royal Door - Designed by Amjad Hadi</p>
+    </footer>
+
 </body>
 </html>
