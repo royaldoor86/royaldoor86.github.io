@@ -8,49 +8,94 @@
     <style>
         :root { --gold: #f3cf7a; --glass: rgba(255, 255, 255, 0.05); }
         body, html { margin: 0; padding: 0; font-family: 'Cairo', sans-serif; background: #050010; color: white; overflow-x: hidden; }
+        
+        /* الخلفية الكونية */
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; }
-        .main-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; padding-top: 80px; }
+        
+        .main-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; padding-top: 100px; padding-bottom: 50px; text-align: center; }
+        
+        /* الشريط العلوي */
         nav { background: rgba(0,0,0,0.85); padding: 15px; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; gap: 10px; border-bottom: 1px solid var(--gold); backdrop-filter: blur(10px); }
         nav a { color: white; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { background: var(--gold); color: black; }
-        h1 { font-size: 3.5rem; font-weight: 900; background: linear-gradient(to bottom, #f3cf7a, #b08d32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 10px 0; }
-        .video-box { width: 90%; max-width: 750px; aspect-ratio: 16/9; border: 3px solid var(--gold); border-radius: 25px; overflow: hidden; box-shadow: 0 0 30px rgba(243,207,122,0.3); margin: 20px 0; }
+
+        /* اللوجو والتاج */
+        .royal-logo { width: 120px; margin-bottom: 10px; filter: drop-shadow(0 0 10px var(--gold)); }
+        
+        h1 { font-size: 3.5rem; font-weight: 900; background: linear-gradient(to bottom, #f3cf7a, #b08d32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 5px 0; }
+
+        /* النصوص الترغيبية */
+        .intro-text { max-width: 800px; padding: 20px; }
+        .intro-text h2 { color: var(--gold); font-size: 1.5rem; margin-bottom: 10px; }
+        .intro-text p { font-size: 1.1rem; color: #e0e0e0; line-height: 1.6; margin: 5px 0; }
+        .features-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
+        .chip { background: var(--glass); border: 1px solid var(--gold); padding: 5px 15px; border-radius: 50px; font-size: 0.9rem; }
+
+        .video-box { width: 90%; max-width: 750px; aspect-ratio: 16/9; border: 3px solid var(--gold); border-radius: 25px; overflow: hidden; box-shadow: 0 0 30px rgba(243,207,122,0.3); margin: 25px 0; }
+
+        /* روابط السياسات واللغة */
         .policy-bar { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 15px 0; }
         .policy-bar a { color: #ccc; text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(243,207,122,0.3); }
-        .btn-dl { background: linear-gradient(135deg, #f3cf7a, #b08d32); color: black; padding: 15px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(243,207,122,0.3); }
+        .lang-switch { margin-top: 10px; font-size: 0.9rem; color: var(--gold); cursor: pointer; }
+
+        .btn-dl { background: linear-gradient(135deg, #f3cf7a, #b08d32); color: black; padding: 15px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(243,207,122,0.3); margin: 20px 0; }
+
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 15px; width: 90%; max-width: 800px; margin: 40px 0; }
-        .social-card { background: var(--glass); border: 1px solid rgba(243,207,122,0.2); padding: 15px; border-radius: 20px; text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 8px; backdrop-filter: blur(5px); transition: 0.3s; }
-        .social-card:hover { transform: translateY(-5px); border-color: var(--gold); }
-        .social-card img { width: 35px; }
+        .social-card { background: var(--glass); border: 1px solid rgba(243,207,122,0.2); padding: 15px; border-radius: 20px; text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 8px; backdrop-filter: blur(5px); }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
+    
     <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="recharge.html">مركز الشحن</a>
-        <a href="invest.html">الأستثمار</a>
-        <a href="agents.html">قائمة الوكلاء</a>
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="recharge.html">💎 الشحن</a>
+        <a href="invest.html">📈 الأستثمار</a>
+        <a href="agents.html">🤝 الوكلاء</a>
+        <a href="about.html">✨ نبذة عني</a>
     </nav>
+
     <div class="main-content">
+        <img src="https://cdn-icons-png.flaticon.com/512/1152/1152912.png" class="royal-logo" alt="Logo">
+        
         <h1>Royal Door</h1>
+
+        <div class="intro-text">
+            <h2>مرحباً بك في عالم لايشبه غيره 👑</h2>
+            <p>منصة ترفيهية اجتماعيه تجمع بين الدردشه الصوتيه والالعاب التفاعليه البروفايل والهدايا والموضوعات</p>
+            <p>الاستثمار والباقات والجواهر 💎 نشر اليوميات والاستوريات 📸</p>
+            <div class="features-chips">
+                <span class="chip">🎙️ انشأ غرفتك</span>
+                <span class="chip">🔊 تواصل بالصوت</span>
+                <span class="chip">📱 شارك يومياتك</span>
+                <span class="chip">🛡️ استثمر بتجربه ملكية امنه وخاصه</span>
+            </div>
+        </div>
+
         <div class="video-box">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/F_V8AzHz0mE" frameborder="0" allowfullscreen></iframe>
         </div>
+
         <div class="policy-bar">
             <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="user-agreement.html">اتفاقية المستخدم</a>
             <a href="terms.html">شروط الاستخدام</a>
-            <a href="delete.html">طلب حذف الحساب</a>
         </div>
+
+        <div class="lang-switch">
+            🌐 <span onclick="alert('اللغة الحالية: العربية')">العربية</span> | <span onclick="alert('English version coming soon')">English</span>
+        </div>
+
         <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn-dl">Download Application</a>
+
         <div class="social-grid">
-            <a href="https://wa.me/9647770992966" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"><span>واتساب</span></a>
-            <a href="https://t.me/royaldoor_bot" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"><span>تيليجرام</span></a>
-            <a href="https://instagram.com" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"><span>انستقرام</span></a>
-            <a href="https://tiktok.com" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"><span>تيك توك</span></a>
-            <a href="mailto:royaldoor86@gmail.com" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png"><span>البريد</span></a>
+            <a href="https://wa.me/9647770992966" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30"><span>واتساب</span></a>
+            <a href="https://t.me/royaldoor_bot" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="30"><span>تيليجرام</span></a>
+            <a href="https://instagram.com" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="30"><span>انستقرام</span></a>
+            <a href="https://tiktok.com" class="social-card"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" width="30"><span>تيك توك</span></a>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {"particles":{"number":{"value":80},"color":{"value":"#f3cf7a"},"shape":{"type":"circle"},"opacity":{"value":0.5},"size":{"value":3},"line_linked":{"enable":true,"distance":150,"color":"#f3cf7a","opacity":0.2},"move":{"enable":true,"speed":2}}});
