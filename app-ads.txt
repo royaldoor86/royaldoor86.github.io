@@ -1,3 +1,4 @@
+google.com, pub-3609643361862120, DIRECT, f08c47fec0942fa0
 undefined/app-ads.txt
 
 
