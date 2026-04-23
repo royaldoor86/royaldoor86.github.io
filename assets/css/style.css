@@ -21,7 +21,7 @@ header {
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* يسمح بتوزيع العناصر */
   justify-content: center;
   gap: 15px;
   padding: 0;
@@ -72,7 +72,7 @@ footer {
   color: #aaa;
 }
 
-/* للشاشات الصغيرة */
+/* للشاشات الصغيرة (هواتف) */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
