@@ -2,43 +2,65 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>قائمة الوكلاء | Royal Door</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وكلاء Royal Door المعتمدون | شبكة الوكلاء</title>
+    <link rel="canonical" href="https://royaldoor.live/agents.html" />
+    <meta name="description" content="قائمة وكلاء Royal Door المعتمدين في كافة المحافظات العراقية لشحن الجواهر والكوينز بضمانة وأمان.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Cairo', sans-serif; background: #050010; color: white; text-align: center; margin: 0; }
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
-        .container { position: relative; z-index: 10; max-width: 900px; margin: auto; padding: 40px 10px; }
-        .agent-card { background: rgba(243, 207, 122, 0.05); border: 1px solid #f3cf7a; border-radius: 25px; padding: 25px; backdrop-filter: blur(10px); }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th { background: #f3cf7a; color: black; padding: 15px; border-radius: 10px 10px 0 0; }
-        td { padding: 15px; border-bottom: 1px solid rgba(243, 207, 122, 0.2); }
-        .btn-chat { background: #25d366; color: white; padding: 5px 15px; border-radius: 10px; text-decoration: none; font-size: 0.9rem; }
-        .back-home { display: inline-block; margin-top: 30px; color: #f3cf7a; text-decoration: none; border: 1px solid #f3cf7a; padding: 10px 30px; border-radius: 50px; }
+        .container { position: relative; z-index: 10; max-width: 900px; margin: auto; padding: 40px 15px; }
+        .agent-card { background: rgba(243, 207, 122, 0.05); border: 2px solid #f3cf7a; border-radius: 30px; padding: 30px; backdrop-filter: blur(15px); }
+        h1 { color: #f3cf7a; margin-bottom: 30px; font-size: 2rem; }
+        table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+        th { color: #f3cf7a; padding: 15px; font-size: 1.2rem; }
+        td { padding: 15px; background: rgba(255,255,255,0.03); }
+        tr td:first-child { border-radius: 10px 0 0 10px; color: #f3cf7a; font-weight: bold; }
+        tr td:last-child { border-radius: 0 10px 10px 0; }
+        .btn-chat { background: #25d366; color: white; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: inline-block; }
+        .btn-chat:hover { transform: scale(1.1); box-shadow: 0 0 15px #25d366; }
+        .back-home { display: inline-block; margin-top: 30px; color: #f3cf7a; text-decoration: none; border: 2px solid #f3cf7a; padding: 12px 40px; border-radius: 50px; font-weight: bold; }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
     <div class="container">
-        <h1 style="color:#f3cf7a">🤝 وكلاء شحن Royal Door المعتمدين</h1>
+        <h1>🤝 وكلاء Royal Door المعتمدون</h1>
         <div class="agent-card">
             <table>
                 <thead>
-                    <tr><th>اسم الوكيل</th><th>الاختصاص</th><th>تواصل</th></tr>
+                    <tr><th>اسم الوكيل</th><th>المحافظة</th><th>تواصل</th></tr>
                 </thead>
                 <tbody id="agent-list">
-                    <tr><td>الوكيل الماستر</td><td>وكيل عام</td><td><a href="https://wa.me/9647770992966" class="btn-chat">واتساب</a></td></tr>
-                    <tr><td>الوكيل الملكي</td><td>شحن باقات</td><td><a href="#" class="btn-chat">واتساب</a></td></tr>
-                    <tr><td>الوكيل القيصر</td><td>نقاط ونجوم</td><td><a href="#" class="btn-chat">واتساب</a></td></tr>
-                    <tr><td>الوكيل المهيب</td><td>دعم فني</td><td><a href="#" class="btn-chat">واتساب</a></td></tr>
-                    <tr><td>الوكيل الفخامة</td><td>شحن كوينز</td><td><a href="#" class="btn-chat">واتساب</a></td></tr>
-                </tbody>
+                    </tbody>
             </table>
         </div>
-        <a href="index.html" class="back-home">العودة للرئيسية</a>
+        <a href="index.html" class="back-home">🏠 العودة للرئيسية</a>
     </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {"particles":{"number":{"value":80},"color":{"value":"#f3cf7a"},"shape":{"type":"circle"},"opacity":{"value":0.5},"size":{"value":3},"line_linked":{"enable":true,"distance":150,"color":"#f3cf7a","opacity":0.2},"move":{"enable":true,"speed":2}}});
+
+        const agents = [
+            ["الوكيل العام", "Royal Door", "07770992966"],
+            ["در محمد", "بغداد", "07855900447"],
+            ["الباشق", "النجف وكربلاء", "07862414050"],
+            ["شهم المحمداوي", "الديوانية والسماوة", "07813431076"],
+            ["التميمية", "البصرة والعمارة", "07717901796"],
+            ["لارا علي", "الأقليم", "07736436338"],
+            ["شهد هادي", "ديالى والرمادي", "غير متوفر حالياً"]
+        ];
+
+        const list = document.getElementById('agent-list');
+        agents.forEach(a => {
+            const chatLink = a[2] !== "غير متوفر حالياً" 
+                ? `<a href="https://wa.me/${a[2]}" class="btn-chat" target="_blank">واتساب</a>` 
+                : `<span style="color:#666">خارج الخدمة</span>`;
+            
+            list.innerHTML += `<tr><td>${a[0]}</td><td>${a[1]}</td><td>${chatLink}</td></tr>`;
+        });
     </script>
 </body>
 </html>
