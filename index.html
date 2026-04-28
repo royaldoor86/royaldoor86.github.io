@@ -25,7 +25,6 @@
         .intro-text { max-width: 800px; padding: 20px; }
         .intro-text h2 { color: var(--gold); font-size: 1.5rem; margin-bottom: 10px; }
         
-        /* صندوق الإرشادات الجديد */
         .notice-box { background: rgba(243, 207, 122, 0.1); border: 1px solid var(--gold); padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 700px; text-align: justify; font-size: 0.95rem; color: #f3cf7a; }
         
         .features-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
@@ -33,15 +32,16 @@
 
         .video-box { width: 90%; max-width: 750px; aspect-ratio: 16/9; border: 3px solid var(--gold); border-radius: 25px; overflow: hidden; box-shadow: 0 0 30px rgba(243,207,122,0.3); margin: 25px 0; }
 
-        /* زر المساعدة العائم */
         .help-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: var(--gold); color: #050010; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4); z-index: 1000; transition: 0.3s; }
         .help-btn:hover { transform: scale(1.1) rotate(20deg); }
 
         .policy-bar { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 15px 0; }
         .policy-bar a { color: #ccc; text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(243,207,122,0.3); }
         .btn-dl { background: linear-gradient(135deg, #f3cf7a, #b08d32); color: black; padding: 15px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(243,207,122,0.3); margin: 20px 0; }
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 15px; width: 90%; max-width: 800px; margin: 40px 0; }
-        .social-card { background: var(--glass); border: 1px solid rgba(243,207,122,0.2); padding: 15px; border-radius: 20px; text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; width: 90%; max-width: 800px; margin: 40px 0; }
+        .social-card { background: var(--glass); border: 1px solid rgba(243,207,122,0.2); padding: 12px; border-radius: 15px; text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 0.85rem; transition: 0.3s; }
+        .social-card:hover { border-color: var(--gold); background: rgba(243,207,122,0.1); }
     </style>
 </head>
 <body>
@@ -77,7 +77,7 @@
         </div>
 
         <div class="video-box">
-            <iframe width="100%" height="100%" src="https://youtube.com/shorts/kHAiaOt9MdY?si=bmhUrEu3PymjOTYT" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="https://youtube.com/shorts/kHAiaOt9MdY?si=GTvsGfrao6IceVLN" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <a href="guide.html" class="help-btn" title="دليل الإرشادات">؟</a>
@@ -91,8 +91,12 @@
         <a href="https://play.google.com/store/apps/details?id=com.royaldoor.live" class="btn-dl">Download Application</a>
 
         <div class="social-grid">
-            <a href="https://wa.me/9647770992966" class="social-card"><span>واتساب</span></a>
-            <a href="https://t.me/royaldoor_bot" class="social-card"><span>تيليجرام</span></a>
+            <a href="https://wa.me/9647770992966" class="social-card">واتساب</a>
+            <a href="https://t.me/royaldur" class="social-card">تيليجرام</a>
+            <a href="https://youtube.com/@royaldoor?si=qMtOZhBNioimsUQd" class="social-card">انستغرام</a>
+            <a href="https://www.facebook.com/share/1CoYUY6yWX/" class="social-card">فيسبوك</a>
+            <a href="https://youtube.com/@royaldoor?si=qMtOZhBNioimsUQd" class="social-card">يوتيوب</a>
+            <a href="https://www.tiktok.com/@royaldoor86?_r=1&_t=ZS-95vX5Jo09Yd" class="social-card">تيكتوك</a>
         </div>
     </div>
 
