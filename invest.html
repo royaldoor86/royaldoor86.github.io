@@ -2,18 +2,23 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الأستثمار الملكي | Royal Door</title>
+    <link rel="canonical" href="https://royaldoor.live/invest.html" />
+    <meta name="description" content="نظام الاستثمار الملكي في منصة Royal Door. استثمر نجومك واحصل على أرباح حقيقية بضمانات موثوقة.">
+    
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Cairo', sans-serif; background: #050010; color: white; text-align: center; margin: 0; }
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; }
         .container { position: relative; z-index: 10; max-width: 1000px; margin: auto; padding: 40px 10px; }
         .invest-box { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 30px; border: 1px solid #f3cf7a; backdrop-filter: blur(10px); }
-        input { width: 80%; padding: 15px; border-radius: 15px; border: 2px solid #f3cf7a; background: #000; color: white; text-align: center; margin-bottom: 20px; font-size: 1.2rem; }
+        input { width: 80%; max-width: 300px; padding: 15px; border-radius: 15px; border: 2px solid #f3cf7a; background: #000; color: white; text-align: center; margin-bottom: 20px; font-size: 1.2rem; outline: none; transition: 0.3s; }
         table { width: 100%; border-collapse: collapse; min-width: 800px; }
         th { background: #f3cf7a; color: black; padding: 15px; }
         td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .btn-go { background: #f3cf7a; color: black; border: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer; }
+        .btn-go { background: #f3cf7a; color: black; border: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-go:hover { transform: scale(1.05); background: #fff; }
         .back-link { display: inline-block; margin-top: 30px; color: #f3cf7a; text-decoration: none; font-weight: bold; font-size: 1.2rem; border: 1px solid #f3cf7a; padding: 10px 30px; border-radius: 50px; }
     </style>
 </head>
@@ -30,6 +35,7 @@
         </div>
         <a href="index.html" class="back-link">← العودة للرئيسية</a>
     </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {"particles":{"number":{"value":80},"color":{"value":"#f3cf7a"},"shape":{"type":"circle"},"opacity":{"value":0.5},"size":{"value":3},"line_linked":{"enable":true,"distance":150,"color":"#f3cf7a","opacity":0.2},"move":{"enable":true,"speed":2}}});
@@ -51,9 +57,14 @@
             data.map(r => `<tr><td style="color:#f3cf7a">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td style="color:#00ff88">+${r[3]}</td><td>${r[4]}</td><td><button class="btn-go" onclick="sendInv('${r[0]}','${r[1]}')">تفعيل</button></td></tr>`).join('');
 
         function sendInv(pkg, price) {
-            const id = document.getElementById('invId').value;
-            if(!id) { alert("❌ اكتب الآيدي أولاً!"); return; }
-            const msg = `طلب استثمار:\nباقة: ${pkg}\nالسعر: ${price}\nالآيدي: ${id}`;
+            const idInput = document.getElementById('invId');
+            if(!idInput.value) { 
+                idInput.style.borderColor = "red";
+                alert("❌ يرجى كتابة الآيدي الخاص بك أولاً!"); 
+                return; 
+            }
+            idInput.style.borderColor = "#f3cf7a";
+            const msg = `طلب استثمار:\nباقة: ${pkg}\nالسعر: ${price}\nالآيدي: ${idInput.value}`;
             window.open(`https://wa.me/9647770992966?text=${encodeURIComponent(msg)}`);
         }
     </script>
