@@ -3,139 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>من نحن | Royal Door</title>
+    <title>نبذة عنا | Royal Door</title>
+    <link rel="canonical" href="https://royaldoor.live/about.html" />
+    <meta name="description" content="تعرف على Royal Door، المنصة الاجتماعية الأولى للدردشة الصوتية والترفيه بأسلوب ملكي فاخر.">
+    
     <style>
-        /* إعدادات الخطوط والألوان العامة */
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            background-color: #f4f4f4; 
-        }
-        
-        /* الحاوية الرئيسية */
-        .container { 
-            background: #ffffff; 
-            padding: 40px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-            text-align: center; 
-        }
-
-        /* تصميم الشعار الافتراضي */
-        .logo-box { 
-            width: 100px; 
-            height: 100px; 
-            background: linear-gradient(135deg, #0a1f1c 0%, #1a3a35 100%); 
-            color: #d4af37; 
-            border-radius: 25%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin: 0 auto 20px; 
-            font-size: 32px; 
-            font-weight: bold; 
-            border: 2px solid #d4af37;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
-        }
-
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; }
+        .container { background: #ffffff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
+        .logo-box { width: 100px; height: 100px; background: linear-gradient(135deg, #0a1f1c 0%, #1a3a35 100%); color: #d4af37; border-radius: 25%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px; font-weight: bold; border: 2px solid #d4af37; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); }
         h1 { color: #0a1f1c; margin-bottom: 5px; font-size: 2.5rem; }
         .tagline { color: #b8860b; font-size: 1.2rem; font-weight: 600; margin-bottom: 30px; }
-        
-        h2 { 
-            color: #d4af37; 
-            border-right: 5px solid #0a1f1c; 
-            padding-right: 15px; 
-            text-align: right; 
-            margin-top: 40px; 
-            font-size: 1.5rem;
-        }
-
+        h2 { color: #d4af37; border-right: 5px solid #0a1f1c; padding-right: 15px; text-align: right; margin-top: 40px; font-size: 1.5rem; }
         p { text-align: justify; color: #555; font-size: 1.05rem; margin-bottom: 20px; }
-
-        /* شبكة المميزات */
-        .features-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 20px; 
-            margin-top: 30px; 
-        }
-
-        .feature-item { 
-            background: #fffdf5; 
-            padding: 20px; 
-            border-radius: 15px; 
-            border: 1px solid #f4ece1; 
-            transition: all 0.3s ease; 
-        }
-
-        .feature-item:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-color: #d4af37;
-        }
-
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+        .feature-item { background: #fffdf5; padding: 20px; border-radius: 15px; border: 1px solid #f4ece1; transition: all 0.3s ease; }
+        .feature-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-color: #d4af37; }
         .feature-item h3 { color: #0a1f1c; margin-bottom: 10px; font-size: 1.1rem; }
         .feature-item p { text-align: center; font-size: 0.95rem; color: #777; margin: 0; }
-
-        /* قسم الرؤية */
-        .vision-box { 
-            background: #0a1f1c; 
-            color: #fff; 
-            padding: 35px; 
-            border-radius: 15px; 
-            margin-top: 40px; 
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .vision-box::after {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
-        }
-
+        .vision-box { background: #0a1f1c; color: #fff; padding: 35px; border-radius: 15px; margin-top: 40px; position: relative; overflow: hidden; }
         .vision-box h2 { color: #d4af37; border: none; text-align: center; margin-top: 0; }
         .vision-box p { color: #e0e0e0; text-align: center; margin: 0; }
-
-        /* التذييل */
-        .footer { 
-            margin-top: 50px; 
-            padding-top: 25px; 
-            border-top: 1px solid #eee; 
-            font-size: 0.9rem; 
-            color: #999; 
-        }
-
+        .footer { margin-top: 50px; padding-top: 25px; border-top: 1px solid #eee; font-size: 0.9rem; color: #999; }
         .footer a { color: #d4af37; text-decoration: none; margin: 0 10px; }
         .footer a:hover { text-decoration: underline; }
-
-        /* للهواتف */
-        @media (max-width: 600px) {
-            .container { padding: 25px 15px; }
-            h1 { font-size: 1.8rem; }
-        }
+        @media (max-width: 600px) { .container { padding: 25px 15px; } h1 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- الشعار -->
     <div class="logo-box">RD</div>
-    
     <h1>Royal Door</h1>
     <div class="tagline">الفخامة في التواصل والترفيه</div>
 
-    <p>
-        مرحباً بك في <strong>Royal Door</strong>، المنصة الاجتماعية الأكثر تميزاً في العالم العربي. لقد انطلقنا برؤية طموحة تهدف إلى إعادة تعريف مفهوم التواصل الصوتي المباشر، من خلال دمج الرقي التكنولوجي بالروح الاجتماعية العربية الأصيلة. نحن لسنا مجرد تطبيق للدردشة، بل نحن مجتمع متكامل يمنحك صوتاً، ومكانة، وتجربة ترفيهية لا تُنسى.
-    </p>
+    <p>مرحباً بك في <strong>Royal Door</strong>، المنصة الاجتماعية الأكثر تميزاً في العالم العربي. لقد انطلقنا برؤية طموحة تهدف إلى إعادة تعريف مفهوم التواصل الصوتي المباشر، من خلال دمج الرقي التكنولوجي بالروح الاجتماعية العربية الأصيلة. نحن لسنا مجرد تطبيق للدردشة، بل نحن مجتمع متكامل يمنحك صوتاً، ومكانة، وتجربة ترفيهية لا تُنسى.</p>
 
     <div class="vision-box">
         <h2>رؤيتنا</h2>
@@ -144,37 +45,19 @@
 
     <h2>لماذا تختار Royal Door؟</h2>
     <div class="features-grid">
-        <div class="feature-item">
-            <h3>صوت نقي وواضح</h3>
-            <p>تقنيات متطورة تضمن لك اتصالاً صوتياً بدون تقطيع وبأعلى جودة ممكنة.</p>
-        </div>
-        <div class="feature-item">
-            <h3>نظام رتب ملكي</h3>
-            <p>تميز عن الآخرين برتبك وهداياك الفريدة التي تعكس شخصيتك داخل المجتمع.</p>
-        </div>
-        <div class="feature-item">
-            <h3>أمان وخصوصية</h3>
-            <p>نطبق أعلى معايير الحماية لبياناتك مع فريق رقابة يضمن احترام الجميع.</p>
-        </div>
-        <div class="feature-item">
-            <h3>فعاليات وتحديات</h3>
-            <p>مسابقات وجوائز يومية تضفي طابع الحماس على وقتك داخل التطبيق.</p>
-        </div>
+        <div class="feature-item"><h3>صوت نقي وواضح</h3><p>تقنيات متطورة تضمن لك اتصالاً صوتياً بدون تقطيع وبأعلى جودة ممكنة.</p></div>
+        <div class="feature-item"><h3>نظام رتب ملكي</h3><p>تميز عن الآخرين برتبك وهداياك الفريدة التي تعكس شخصيتك داخل المجتمع.</p></div>
+        <div class="feature-item"><h3>أمان وخصوصية</h3><p>نطبق أعلى معايير الحماية لبياناتك مع فريق رقابة يضمن احترام الجميع.</p></div>
+        <div class="feature-item"><h3>فعاليات وتحديات</h3><p>مسابقات وجوائز يومية تضفي طابع الحماس على وقتك داخل التطبيق.</p></div>
     </div>
 
-    <h2>التزامنا</h2>
-    <p>
-        نحن في <strong>Royal Door</strong> نلتزم بالتطوير المستمر والاستماع لمقترحات مستخدمينا. هدفنا هو تقديم خدمة تتجاوز التوقعات، مع الحفاظ على قيمنا الأساسية في الشفافية، العدالة في توزيع المكافآت، وبناء مجتمع إيجابي يخلو من أي سلوك مسيء.
-    </p>
-
     <div class="footer">
-        <p>&copy; 2024 Royal Door. جميع الحقوق محفوظة.</p>
+        <p>&copy; 2026 Royal Door. جميع الحقوق محفوظة.</p>
         <div>
-            <a href="privacy-policy.html">سياسة الخصوصية</a> | 
-            <a href="terms-of-service.html">شروط الاستخدام</a> | 
+            <a href="privacy.html">سياسة الخصوصية</a> | 
+            <a href="terms.html">شروط الاستخدام</a> | 
             <a href="delete-account.html">حذف الحساب</a>
         </div>
-        <p style="margin-top: 15px; font-size: 0.8rem;">صُنع بفخر لخدمة المجتمع العربي</p>
     </div>
 </div>
 
