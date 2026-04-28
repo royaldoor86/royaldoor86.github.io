@@ -12,12 +12,21 @@
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
         .container { position: relative; z-index: 10; max-width: 900px; margin: auto; padding: 40px 15px; }
         .agent-card { background: rgba(243, 207, 122, 0.05); border: 2px solid #f3cf7a; border-radius: 30px; padding: 30px; backdrop-filter: blur(15px); }
+        
+        /* صندوق الإرشادات */
+        .notice-box { background: rgba(243, 207, 122, 0.1); border: 1px solid #f3cf7a; padding: 15px; border-radius: 15px; margin-bottom: 25px; font-size: 0.9rem; color: #f3cf7a; text-align: justify; }
+
         h1 { color: #f3cf7a; margin-bottom: 30px; font-size: 2rem; }
         table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
         th { color: #f3cf7a; padding: 15px; font-size: 1.2rem; }
         td { padding: 15px; background: rgba(255,255,255,0.03); }
         tr td:first-child { border-radius: 10px 0 0 10px; color: #f3cf7a; font-weight: bold; }
         tr td:last-child { border-radius: 0 10px 10px 0; }
+        
+        /* زر المساعدة العائم */
+        .help-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: #f3cf7a; color: #050010; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4); z-index: 1000; transition: 0.3s; }
+        .help-btn:hover { transform: scale(1.1) rotate(20deg); }
+
         .btn-chat { background: #25d366; color: white; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: inline-block; }
         .btn-chat:hover { transform: scale(1.1); box-shadow: 0 0 15px #25d366; }
         .back-home { display: inline-block; margin-top: 30px; color: #f3cf7a; text-decoration: none; border: 2px solid #f3cf7a; padding: 12px 40px; border-radius: 50px; font-weight: bold; }
@@ -27,6 +36,12 @@
     <div id="particles-js"></div>
     <div class="container">
         <h1>🤝 وكلاء Royal Door المعتمدون</h1>
+        
+        <div class="notice-box">
+            <strong>💡 ملاحظة هامة:</strong>
+            نتعامل مع وكلاء معتمدين فقط لضمان وصول خدمات الشحن إليك بأمان. هؤلاء الوكلاء هم المعتمدون رسمياً من إدارة Royal Door، ونخلي مسؤوليتنا عن أي تعامل يتم خارج نطاق هذه القائمة.
+        </div>
+
         <div class="agent-card">
             <table>
                 <thead>
@@ -36,6 +51,9 @@
                     </tbody>
             </table>
         </div>
+
+        <a href="guide.html" class="help-btn" title="دليل الإرشادات">؟</a>
+
         <a href="index.html" class="back-home">🏠 العودة للرئيسية</a>
     </div>
 
@@ -43,7 +61,6 @@
     <script>
         particlesJS("particles-js", {"particles":{"number":{"value":80},"color":{"value":"#f3cf7a"},"shape":{"type":"circle"},"opacity":{"value":0.5},"size":{"value":3},"line_linked":{"enable":true,"distance":150,"color":"#f3cf7a","opacity":0.2},"move":{"enable":true,"speed":2}}});
 
-        // تم إضافة الرقم 9647805772978 لشهد هادي
         const agents = [
             ["الوكيل العام", "Royal Door", "9647770992966"],
             ["در محمد", "بغداد", "9647855900447"],
