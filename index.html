@@ -11,87 +11,87 @@
         body, html { margin: 0; padding: 0; font-family: 'Cairo', sans-serif; background: #050010; color: white; overflow-x: hidden; }
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; pointer-events: none; }
         .main-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; padding-top: 100px; padding-bottom: 50px; text-align: center; }
-        
-        /* القائمة الأصلية */
         nav { background: rgba(0,0,0,0.85); padding: 15px; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; gap: 10px; border-bottom: 1px solid var(--gold); backdrop-filter: blur(10px); }
         nav a { color: white; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { background: var(--gold); color: black; }
-
-        /* التنسيقات الأصلية */
         .royal-logo { width: 120px; margin-bottom: 10px; filter: drop-shadow(0 0 10px var(--gold)); }
         h1 { font-size: 3.5rem; font-weight: 900; background: linear-gradient(to bottom, #f3cf7a, #b08d32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 5px 0; }
         .intro-text { max-width: 800px; padding: 20px; }
         .notice-box { background: rgba(243, 207, 122, 0.1); border: 1px solid var(--gold); padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 700px; text-align: justify; font-size: 0.95rem; color: #f3cf7a; }
         .features-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
         .chip { background: var(--glass); border: 1px solid var(--gold); padding: 5px 15px; border-radius: 50px; font-size: 0.9rem; }
-        
-        /* الإضافات الجديدة */
         .stats-box, .testimonials { background: var(--glass); border: 1px solid var(--gold); padding: 15px; border-radius: 15px; margin: 10px; }
         .video-box { width: 90%; max-width: 750px; aspect-ratio: 16/9; border: 3px solid var(--gold); border-radius: 25px; overflow: hidden; margin: 25px 0; }
-        
-        /* أيقونات التواصل الملونة */
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; width: 90%; max-width: 800px; margin: 40px 0; }
-        .social-card { background: var(--glass); border: 1px solid var(--gold); padding: 15px; border-radius: 15px; text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+        .social-card { background: var(--glass); border: 1px solid var(--gold); padding: 15px; border-radius: 15px; text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 5px; transition: 0.3s; }
+        .social-card:hover { transform: translateY(-5px); background: rgba(243, 207, 122, 0.1); }
         .fab { font-size: 24px; }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
-    
     <nav>
-        <a href="index.html">🏠 الرئيسية</a>
-        <a href="recharge.html">💎 الشحن</a>
-        <a href="invest.html">📈 الأستثمار</a>
-        <a href="agents.html">🤝 الوكلاء</a>
-        <a href="about.html">✨ نبذة عني</a>
-        <a href="comp.html">🏆 المسابقات الملكية</a>
-        <button onclick="toggleLang()" style="background:none; border:1px solid var(--gold); color:white; border-radius:20px; cursor:pointer;">EN/AR</button>
+        <a href="index.html" id="nav-home">🏠 الرئيسية</a>
+        <a href="recharge.html" id="nav-recharge">💎 الشحن</a>
+        <a href="invest.html" id="nav-invest">📈 الأستثمار</a>
+        <a href="agents.html" id="nav-agents">🤝 الوكلاء</a>
+        <a href="about.html" id="nav-about">✨ نبذة عني</a>
+        <a href="competitions.html" id="nav-comp">🏆 المسابقات الملكية</a>
+        <button onclick="toggleLang()" style="background:none; border:1px solid var(--gold); color:white; border-radius:20px; padding: 5px 15px; cursor:pointer; font-family:'Cairo';">EN/AR</button>
     </nav>
 
     <div class="main-content">
         <img src="https://cdn-icons-png.flaticon.com/512/1152/1152912.png" class="royal-logo" alt="Logo">
         <h1>Royal Door</h1>
-
-        <div class="stats-box">👥 المستخدمون حالياً: <span id="user-count">50,000</span></div>
-
+        <div class="stats-box"><span id="stats-text">👥 المستخدمون حالياً:</span> <span id="user-count">50,000</span></div>
         <div class="intro-text">
-            <h2>مرحباً بك في عالم لايشبه غيره 👑</h2>
-            <p>منصة ترفيهية اجتماعيه تجمع بين الدردشه الصوتيه والالعاب التفاعليه البروفايل والهدايا والموضوعات.</p>
-            <div class="notice-box">
+            <h2 id="welcome-title">مرحباً بك في عالم لايشبه غيره 👑</h2>
+            <p id="welcome-desc">منصة ترفيهية اجتماعيه تجمع بين الدردشه الصوتيه والالعاب التفاعليه البروفايل والهدايا والموضوعات.</p>
+            <div class="notice-box" id="notice-content">
                 <strong>تنويه: لماذا خدماتنا هنا؟</strong><br>
                 لقد خصصنا هذا الموقع الإلكتروني لإدارة عمليات الشحن والاستثمار بشكل مستقل عن التطبيق؛ وذلك للامتثال الصارم لسياسات Google Play المتعلقة بالمدفوعات.
             </div>
             <div class="features-chips">
-                <span class="chip">🎙️ انشأ غرفتك</span>
-                <span class="chip">🔊 تواصل بالصوت</span>
-                <span class="chip">🛡️ استثمر بتجربه ملكية</span>
+                <span class="chip" id="feat-1">🎙️ انشأ غرفتك</span>
+                <span class="chip" id="feat-2">🔊 تواصل بالصوت</span>
+                <span class="chip" id="feat-3">🛡️ استثمر بتجربه ملكية</span>
             </div>
         </div>
-
         <div class="video-box">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kHAiaOt9MdY" frameborder="0" allowfullscreen></iframe>
         </div>
-
         <div class="testimonials">
-            <h4>آراء الأعضاء</h4>
-            <p>"تجربة ملكية لا تضاهى!"</p>
+            <h4 id="testi-title">آراء الأعضاء</h4>
+            <p id="testi-desc">"تجربة ملكية لا تضاهى!"</p>
         </div>
-
         <div class="social-grid">
-            <a href="#" class="social-card"><i class="fab fa-whatsapp" style="color:#25D366;"></i> واتساب</a>
-            <a href="#" class="social-card"><i class="fab fa-telegram" style="color:#0088cc;"></i> تيليجرام</a>
-            <a href="#" class="social-card"><i class="fab fa-instagram" style="color:#E1306C;"></i> انستقرام</a>
-            <a href="#" class="social-card"><i class="fab fa-tiktok" style="color:#000;"></i> تيك توك</a>
+            <a href="https://wa.me/9647770992966" class="social-card"><i class="fab fa-whatsapp" style="color:#25D366;"></i> <span>واتساب</span></a>
+            <a href="https://t.me/royaldur" class="social-card"><i class="fab fa-telegram" style="color:#0088cc;"></i> <span>تيليجرام</span></a>
+            <a href="https://www.instagram.com/royaldoor86" class="social-card"><i class="fab fa-instagram" style="color:#E1306C;"></i> <span>انستغرام</span></a>
+            <a href="https://www.facebook.com/share/1CoYUY6yWX/" class="social-card"><i class="fab fa-facebook" style="color:#1877F2;"></i> <span>فيسبوك</span></a>
+            <a href="https://youtube.com/@royaldoor" class="social-card"><i class="fab fa-youtube" style="color:#FF0000;"></i> <span>يوتيوب</span></a>
+            <a href="https://www.tiktok.com/@royaldoor86" class="social-card"><i class="fab fa-tiktok" style="color:#fff;"></i> <span>تيك توك</span></a>
         </div>
     </div>
 
     <script>
         function toggleLang() {
             const el = document.getElementById('html-root');
-            el.dir = (el.dir === 'rtl') ? 'ltr' : 'rtl';
-            el.lang = (el.lang === 'ar') ? 'en' : 'ar';
+            const isAr = el.dir === 'rtl';
+            el.dir = isAr ? 'ltr' : 'rtl';
+            el.lang = isAr ? 'en' : 'ar';
+            
+            document.getElementById('nav-home').innerText = isAr ? '🏠 Home' : '🏠 الرئيسية';
+            document.getElementById('nav-recharge').innerText = isAr ? '💎 Recharge' : '💎 الشحن';
+            document.getElementById('nav-invest').innerText = isAr ? '📈 Investment' : '📈 الأستثمار';
+            document.getElementById('nav-agents').innerText = isAr ? '🤝 Agents' : '🤝 الوكلاء';
+            document.getElementById('nav-about').innerText = isAr ? '✨ About Me' : '✨ نبذة عني';
+            document.getElementById('nav-comp').innerText = isAr ? '🏆 Royal Competitions' : '🏆 المسابقات الملكية';
+            document.getElementById('welcome-title').innerText = isAr ? 'Welcome to a world like no other 👑' : 'مرحباً بك في عالم لايشبه غيره 👑';
+            document.getElementById('stats-text').innerText = isAr ? '👥 Users online:' : '👥 المستخدمون حالياً:';
+            document.getElementById('notice-content').innerHTML = isAr ? '<strong>Notice: Why our services are here?</strong><br>We dedicated this website to manage recharge and investment operations independently to comply with Google Play policies.' : '<strong>تنويه: لماذا خدماتنا هنا؟</strong><br>لقد خصصنا هذا الموقع الإلكتروني لإدارة عمليات الشحن والاستثمار بشكل مستقل عن التطبيق.';
         }
-        setInterval(() => { document.getElementById('user-count').innerText = Math.floor(Math.random()*1000 + 50000); }, 3000);
+        setInterval(() => { document.getElementById('user-count').innerText = Math.floor(Math.random()*1000 + 50000).toLocaleString(); }, 3000);
     </script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>particlesJS("particles-js", {"particles":{"number":{"value":80},"color":{"value":"#f3cf7a"},"size":{"value":2},"move":{"enable":true,"speed":1}}});</script>
