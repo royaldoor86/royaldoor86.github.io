@@ -18,10 +18,12 @@
         
         h1 { font-size: 2.5rem; background: linear-gradient(to bottom, #f3cf7a, #b08d32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 30px; }
 
-        .id-section { background: rgba(243, 207, 122, 0.1); padding: 25px; border-radius: 20px; margin-bottom: 30px; border: 1px dashed var(--gold); }
-        input { width: 90%; max-width: 400px; padding: 18px; border-radius: 15px; border: 2px solid var(--gold); background: #000; color: #fff; font-size: 1.3rem; text-align: center; font-weight: bold; outline: none; transition: 0.3s; }
-        input:focus { box-shadow: 0 0 15px var(--gold); }
+        /* صندوق الإرشادات */
+        .notice-box { background: rgba(243, 207, 122, 0.1); border: 1px solid var(--gold); padding: 15px; border-radius: 15px; margin-bottom: 25px; font-size: 0.9rem; color: #f3cf7a; text-align: justify; }
 
+        .id-section { background: rgba(243, 207, 122, 0.05); padding: 25px; border-radius: 20px; margin-bottom: 30px; border: 1px dashed var(--gold); }
+        input { width: 90%; max-width: 400px; padding: 18px; border-radius: 15px; border: 2px solid var(--gold); background: #000; color: #fff; font-size: 1.3rem; text-align: center; font-weight: bold; outline: none; transition: 0.3s; }
+        
         .tabs { display: flex; gap: 15px; justify-content: center; margin-bottom: 25px; }
         .tab-btn { padding: 12px 40px; border: 2px solid var(--gold); background: transparent; color: white; cursor: pointer; border-radius: 50px; font-weight: 900; font-size: 1.1rem; transition: 0.3s; }
         .tab-btn.active { background: var(--gold); color: black; }
@@ -30,10 +32,13 @@
         table { width: 100%; border-collapse: collapse; min-width: 650px; background: rgba(0,0,0,0.3); }
         th { background: var(--gold); color: black; padding: 18px; font-size: 1.1rem; }
         td { padding: 18px; border-bottom: 1px solid rgba(243, 207, 122, 0.1); font-size: 1.1rem; font-weight: bold; }
-        tr:hover { background: rgba(243, 207, 122, 0.05); }
-
+        
         .btn-whatsapp { background: #25d366; color: white; padding: 10px 25px; border-radius: 12px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
         .btn-whatsapp:hover { transform: scale(1.1); box-shadow: 0 0 20px #25d366; }
+
+        /* زر المساعدة العائم */
+        .help-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: var(--gold); color: #050010; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4); z-index: 1000; transition: 0.3s; }
+        .help-btn:hover { transform: scale(1.1) rotate(20deg); }
 
         .back-home { display: inline-block; margin-top: 35px; color: var(--gold); text-decoration: none; font-weight: 900; font-size: 1.2rem; border: 2px solid var(--gold); padding: 12px 40px; border-radius: 50px; }
     </style>
@@ -43,15 +48,25 @@
     <div class="container">
         <div class="main-card">
             <h1>💎 مركز الشحن الملكي</h1>
+            
+            <div class="notice-box">
+                <strong>💡 لماذا الشحن عبر الموقع؟</strong> 
+                نعتمد نظام الشحن المباشر عبر الموقع لضمان أمان حسابك وتجنب أي قيود تقنية قد تفرضها سياسات المتاجر على المدفوعات المباشرة. عملية الشحن تتم بضمانة الوكلاء المعتمدين وبسرعة فائقة.
+            </div>
+
             <div class="id-section">
                 <p style="margin-top:0; font-weight:bold; color:var(--gold);">خطوة هامة: أدخل الآيدي (ID) الخاص بك في التطبيق أولاً</p>
                 <input type="number" id="user-id" placeholder="ID الحساب">
             </div>
+            
             <div class="tabs">
                 <button id="tabG" class="tab-btn active" onclick="showTab('gems')">الجواهر 💎</button>
                 <button id="tabC" class="tab-btn" onclick="showTab('coins')">الكوينز 💰</button>
             </div>
             <div class="table-wrapper"><table id="recharge-table"></table></div>
+            
+            <a href="guide.html" class="help-btn" title="دليل الإرشادات">؟</a>
+            
             <a href="index.html" class="back-home">🏠 العودة للرئيسية</a>
         </div>
     </div>
@@ -77,7 +92,6 @@
         function sendOrder(type, amount, price) {
             const userId = document.getElementById('user-id');
             if(!userId.value) { userId.style.borderColor = "red"; alert("⚠️ يرجى كتابة الآيدي الخاص بك أولاً!"); return; }
-            userId.style.borderColor = "var(--gold)";
             window.open(`https://wa.me/9647770992966?text=${encodeURIComponent(`طلب شحن ${type} (${amount}) للسعر ${price} IQD، الآيدي: ${userId.value}`)}`, '_blank');
         }
         showTab('gems');
