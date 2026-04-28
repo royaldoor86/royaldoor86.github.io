@@ -13,12 +13,21 @@
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; }
         .container { position: relative; z-index: 10; max-width: 1000px; margin: auto; padding: 40px 10px; }
         .invest-box { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 30px; border: 1px solid #f3cf7a; backdrop-filter: blur(10px); }
+        
+        /* صندوق الإرشادات */
+        .notice-box { background: rgba(243, 207, 122, 0.1); border: 1px solid #f3cf7a; padding: 15px; border-radius: 15px; margin-bottom: 25px; font-size: 0.9rem; color: #f3cf7a; text-align: justify; }
+
         input { width: 80%; max-width: 300px; padding: 15px; border-radius: 15px; border: 2px solid #f3cf7a; background: #000; color: white; text-align: center; margin-bottom: 20px; font-size: 1.2rem; outline: none; transition: 0.3s; }
         table { width: 100%; border-collapse: collapse; min-width: 800px; }
         th { background: #f3cf7a; color: black; padding: 15px; }
         td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .btn-go { background: #f3cf7a; color: black; border: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .btn-go:hover { transform: scale(1.05); background: #fff; }
+        
+        /* زر المساعدة العائم */
+        .help-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: #f3cf7a; color: #050010; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4); z-index: 1000; transition: 0.3s; }
+        .help-btn:hover { transform: scale(1.1) rotate(20deg); }
+
         .back-link { display: inline-block; margin-top: 30px; color: #f3cf7a; text-decoration: none; font-weight: bold; font-size: 1.2rem; border: 1px solid #f3cf7a; padding: 10px 30px; border-radius: 50px; }
     </style>
 </head>
@@ -26,6 +35,12 @@
     <div id="particles-js"></div>
     <div class="container">
         <h1 style="color:#f3cf7a">📈 نظام الأستثمار الملكي (النجوم)</h1>
+        
+        <div class="notice-box">
+            <strong>💡 لماذا الاستثمار هنا؟</strong>
+            نظام الاستثمار عبر الموقع يوفر لك لوحة تحكم مستقلة وشفافة لمتابعة أرباحك، بعيداً عن تقلبات بيئة التطبيق الداخلية. نحن نضمن لك عملية استثمارية منظمة وآمنة تليق بتجربتك الملكية.
+        </div>
+
         <div class="invest-box">
             <p style="color:#00ff88">"حوّل نجومك إلى أرباح حقيقية بضمانة Royal Door"</p>
             <input type="number" id="invId" placeholder="أدخل الآيدي (ID) لتفعيل الباقة">
@@ -33,6 +48,9 @@
                 <table id="iTable"></table>
             </div>
         </div>
+        
+        <a href="guide.html" class="help-btn" title="دليل الإرشادات">؟</a>
+        
         <a href="index.html" class="back-link">← العودة للرئيسية</a>
     </div>
 
