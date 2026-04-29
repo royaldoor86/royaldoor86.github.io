@@ -2,27 +2,44 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الأسئلة الشائعة | Royal Door</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        :root { --gold: #f3cf7a; }
         body { background: #050010; color: white; font-family: 'Cairo', sans-serif; padding: 20px; text-align: center; }
-        .faq-box { max-width: 800px; margin: auto; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; border: 1px solid #f3cf7a; }
-        .q { color: #f3cf7a; font-weight: bold; margin-top: 20px; }
-        .a { margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .faq-container { max-width: 800px; margin: auto; padding: 20px; }
+        h1 { color: var(--gold); border-bottom: 2px solid var(--gold); display: inline-block; padding: 0 20px; }
+        .faq-item { background: rgba(243, 207, 122, 0.05); border: 1px solid var(--gold); padding: 20px; border-radius: 15px; margin-bottom: 20px; text-align: justify; }
+        .q { color: var(--gold); font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+        .a { line-height: 1.8; }
+        .back-btn { display: inline-block; margin-top: 20px; padding: 10px 30px; background: var(--gold); color: black; text-decoration: none; border-radius: 25px; font-weight: bold; }
     </style>
 </head>
 <body>
     <h1>الأسئلة الشائعة</h1>
-    <div class="faq-box">
-        <div class="q">س: كيف أشحن الجواهر؟</div>
-        <div class="a">ج: اختر الباقة من صفحة الشحن، أدخل الآيدي الخاص بك، واضغط على زر واتساب للتواصل مع الوكيل.</div>
-        
-        <div class="q">س: كم تستغرق عملية الاستثمار؟</div>
-        <div class="a">ج: يتم تفعيل الاستثمار فور تأكيد وصول النجوم وتواصلك مع الوكيل عبر واتساب.</div>
-        
-        <div class="q">س: هل الشحن آمن؟</div>
-        <div class="a">ج: نعم، الشحن يتم عبر وكلاء معتمدين يضمنون وصول العملات لحسابك مباشرة.</div>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="q">س: كيف أشحن الجواهر؟</div>
+            <div class="a">ج: اختر الباقة من صفحة الشحن، أدخل الآيدي (ID) الصحيح الخاص بك في التطبيق، واضغط على زر واتساب للتواصل مع الوكيل الخاص بمحافظتك أو من ينوب عنه.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">س: ماهو الاستثمار وكم يستغرق؟</div>
+            <div class="a">ج: هي عملية شراء جواهر واستثمارها في التطبيق لمدة ٣٠ يوم. بعد انتهاء المدة تحصل على عائد أو راتب حسب نوع الباقة. كل باقة لها ربحها اليومي والشهري، وتستطيع الاستمرار بعد شهر بتفعيل باقة أخرى أو سحب أرباحك كاملة. رويال دور منصة آمنة وموثقة قانونياً عبر قبول تطبيقنا في منصة جوجل، كما يمكنك شراء وتفعيل الباقات من خانة "المكافآت الملكية" أو بيع باقتك في سوق بيع الباقات إذا احتجت لأموالك.<br>
+            <strong>تنويه هام:</strong> قمنا بتصميم هذه العملية بهذا الأسلوب لتجنب خصم عمولات جوجل (التي تصل لثلث المبلغ)، لضمان وصول المبلغ كاملاً إليك؛ فإذا اشتريت 100 جوهرة، تحصل على 100 جوهرة بنفس السعر. سعر الدولار المعتمد هو 1300 دينار.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">س: هل توجد رسوم على التحويلات المالية؟</div>
+            <div class="a">ج: يمكنك تحويل أموالك من حساب لآخر ومن شخص لآخر داخل منصة "المكافآت الملكية" بعمولة 5% فقط كأجور تحويل.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">س: هل الشحن آمن؟</div>
+            <div class="a">ج: نعم، الشحن يتم عبر الوكلاء الرسميين المعتمدين في الموقع والتطبيق حصراً ويضمنون وصول الأموال إلى حسابك مباشرة. أي وكيل لم يُذكر في قائمة الوكلاء بالموقع الرسمي فهو ليس تابعاً للتطبيق.</div>
+        </div>
     </div>
-    <br>
-    <a href="index.html" style="color: #f3cf7a;">العودة للرئيسية</a>
+    <a href="index.html" class="back-btn">العودة للرئيسية</a>
 </body>
 </html>
