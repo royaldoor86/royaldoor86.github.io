@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" id="html-root">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Door | الواجهة الملكية</title>
@@ -35,6 +42,7 @@
         <a href="recharge.html" id="nav-recharge">💎 الشحن</a>
         <a href="invest.html" id="nav-invest">📈 الأستثمار</a>
         <a href="agents.html" id="nav-agents">🤝 الوكلاء</a>
+        <a href="faq.html" id="nav-faq">❓ الأسئلة</a>
         <a href="about.html" id="nav-about">✨ نبذة عني</a>
         <a href="competitions.html" id="nav-comp">🏆 المسابقات الملكية</a>
         <button onclick="toggleLang()" style="background:none; border:1px solid var(--gold); color:white; border-radius:20px; padding: 5px 15px; cursor:pointer; font-family:'Cairo';">EN/AR</button>
@@ -85,6 +93,7 @@
             document.getElementById('nav-recharge').innerText = isAr ? '💎 Recharge' : '💎 الشحن';
             document.getElementById('nav-invest').innerText = isAr ? '📈 Investment' : '📈 الأستثمار';
             document.getElementById('nav-agents').innerText = isAr ? '🤝 Agents' : '🤝 الوكلاء';
+            document.getElementById('nav-faq').innerText = isAr ? '❓ FAQ' : '❓ الأسئلة';
             document.getElementById('nav-about').innerText = isAr ? '✨ About Me' : '✨ نبذة عني';
             document.getElementById('nav-comp').innerText = isAr ? '🏆 Royal Competitions' : '🏆 المسابقات الملكية';
             document.getElementById('welcome-title').innerText = isAr ? 'Welcome to a world like no other 👑' : 'مرحباً بك في عالم لايشبه غيره 👑';
