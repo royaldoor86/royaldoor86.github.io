@@ -104,6 +104,8 @@
         <div class="social-grid">
             <a href="https://wa.me/9647770992966" class="social-card"><i class="fab fa-whatsapp" style="color:#25D366;"></i> <span>واتساب</span></a>
             <a href="https://t.me/royaldur" class="social-card"><i class="fab fa-telegram" style="color:#0088cc;"></i> <span>تيليجرام</span></a>
+            <!-- زر بوت التلغرام المضاف حديثاً -->
+            <a href="https://t.me/royaldoor_bot" target="_blank" class="social-card"><i class="fab fa-telegram-plane" style="color:#0088cc;"></i> <span id="telegram-bot-text">بوت التلغرام</span></a>
             <a href="https://www.instagram.com/royaldoor86" class="social-card"><i class="fab fa-instagram" style="color:#E1306C;"></i> <span>انستغرام</span></a>
             <a href="https://www.facebook.com/share/1CoYUY6yWX/" class="social-card"><i class="fab fa-facebook" style="color:#1877F2;"></i> <span>فيسبوك</span></a>
             <a href="https://youtube.com/@royaldoor" class="social-card"><i class="fab fa-youtube" style="color:#FF0000;"></i> <span>يوتيوب</span></a>
@@ -128,6 +130,7 @@
             document.getElementById('welcome-title').innerText = isAr ? 'Welcome to a world like no other 👑' : 'مرحباً بك في عالم لايشبه غيره 👑';
             document.getElementById('stats-text').innerText = isAr ? '👥 Users online:' : '👥 المستخدمون حالياً:';
             document.getElementById('webapp-btn-text').innerText = isAr ? '🌐 Open Web App' : '🌐 فتح تطبيق الويب';
+            document.getElementById('telegram-bot-text').innerText = isAr ? 'Telegram Bot' : 'بوت التلغرام';
             document.getElementById('notice-content').innerHTML = isAr ? '<strong>Notice: Why our services are here?</strong><br>We dedicated this website to manage recharge and investment operations independently to comply with Google Play policies.' : '<strong>تنويه: لماذا خدماتنا هنا؟</strong><br>لقد خصصنا هذا الموقع الإلكتروني لإدارة عمليات الشحن والاستثمار بشكل مستقل عن التطبيق.';
         }
         setInterval(() => { document.getElementById('user-count').innerText = Math.floor(Math.random()*1000 + 50000).toLocaleString(); }, 3000);
