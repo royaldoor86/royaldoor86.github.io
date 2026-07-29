@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" id="html-root">
 <head>
-<head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPJJR3W8WT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -30,6 +29,28 @@
         .features-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
         .chip { background: var(--glass); border: 1px solid var(--gold); padding: 5px 15px; border-radius: 50px; font-size: 0.9rem; }
         .stats-box, .testimonials { background: var(--glass); border: 1px solid var(--gold); padding: 15px; border-radius: 15px; margin: 10px; }
+        
+        /* تنسيق زر تطبيق الويب الملكي */
+        .royal-webapp-btn {
+            background: linear-gradient(135deg, #f3cf7a, #b08d32);
+            color: #050010;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 900;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0 5px 0;
+            box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4);
+            transition: all 0.3s ease;
+            border: 1px solid #fff;
+        }
+        .royal-webapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243, 207, 122, 0.7);
+            background: linear-gradient(135deg, #ffffff, #f3cf7a);
+        }
+
         .video-box { width: 90%; max-width: 750px; aspect-ratio: 16/9; border: 3px solid var(--gold); border-radius: 25px; overflow: hidden; margin: 25px 0; }
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; width: 90%; max-width: 800px; margin: 40px 0; }
         .social-card { background: var(--glass); border: 1px solid var(--gold); padding: 15px; border-radius: 15px; text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 5px; transition: 0.3s; }
@@ -53,7 +74,13 @@
     <div class="main-content">
         <img src="https://royaldoor86.github.io/assets/images/logo.png" class="royal-logo" alt="Logo">
         <h1>Royal Door</h1>
+        
+        <!-- صندوق المستخدمين وتحته زر تطبيق الويب المضاف -->
         <div class="stats-box"><span id="stats-text">👥 المستخدمون حالياً:</span> <span id="user-count">50,000</span></div>
+        <div>
+            <a href="https://royaldoor86-e6489.web.app" target="_blank" class="royal-webapp-btn" id="webapp-btn-text">🌐 فتح تطبيق الويب</a>
+        </div>
+
         <div class="intro-text">
             <h2 id="welcome-title">مرحباً بك في عالم لايشبه غيره 👑</h2>
             <p id="welcome-desc">منصة ترفيهية اجتماعيه تجمع بين الدردشه الصوتيه والالعاب التفاعليه البروفايل والهدايا والموضوعات.</p>
@@ -100,6 +127,7 @@
             document.getElementById('nav-comp').innerText = isAr ? '🏆 Royal Competitions' : '🏆 المسابقات الملكية';
             document.getElementById('welcome-title').innerText = isAr ? 'Welcome to a world like no other 👑' : 'مرحباً بك في عالم لايشبه غيره 👑';
             document.getElementById('stats-text').innerText = isAr ? '👥 Users online:' : '👥 المستخدمون حالياً:';
+            document.getElementById('webapp-btn-text').innerText = isAr ? '🌐 Open Web App' : '🌐 فتح تطبيق الويب';
             document.getElementById('notice-content').innerHTML = isAr ? '<strong>Notice: Why our services are here?</strong><br>We dedicated this website to manage recharge and investment operations independently to comply with Google Play policies.' : '<strong>تنويه: لماذا خدماتنا هنا؟</strong><br>لقد خصصنا هذا الموقع الإلكتروني لإدارة عمليات الشحن والاستثمار بشكل مستقل عن التطبيق.';
         }
         setInterval(() => { document.getElementById('user-count').innerText = Math.floor(Math.random()*1000 + 50000).toLocaleString(); }, 3000);
