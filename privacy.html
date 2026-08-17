@@ -1,75 +1,349 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية | Royal Door</title>
-    <link rel="canonical" href="https://royaldoor.live/privacy.html" />
-    <meta name="description" content="سياسة الخصوصية الخاصة بتطبيق Royal Door. نتعرف على كيفية جمع وحماية بياناتك وفقاً لمعايير Google Play.">
-    
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
-        .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
-        h2 { color: #0a1f1c; margin-top: 30px; border-right: 4px solid #d4af37; padding-right: 15px; }
-        p, li { font-size: 16px; color: #555; }
-        .highlight { background: #fff3cd; padding: 10px; border-radius: 5px; border-right: 5px solid #ffc107; margin: 20px 0; }
-        .footer { margin-top: 50px; text-align: center; font-size: 14px; color: #888; border-top: 1px solid #eee; padding-top: 20px; }
-        .btn-delete { display: inline-block; background: #dc3545; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
-        @media (max-width: 600px) { .container { padding: 20px; } }
-    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>سياسة الخصوصية | Royal Door</title>
+
+<meta name="description"
+content="سياسة الخصوصية لتطبيق Royal Door والبيانات التي يتم جمعها واستخدامها وحمايتها.">
+
+<link rel="canonical"
+href="https://royaldoor.live/privacy.html">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root {
+    --gold:#f3cf7a;
+    --gold-dark:#b08d32;
+    --bg:#050010;
+    --card:rgba(255,255,255,0.05);
+}
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    margin:0;
+    padding:20px;
+    background:var(--bg);
+    color:#eee;
+    font-family:'Cairo',sans-serif;
+    line-height:2;
+}
+
+.container {
+    max-width:950px;
+    margin:auto;
+    background:var(--card);
+    border:1px solid var(--gold);
+    border-radius:25px;
+    padding:35px;
+    backdrop-filter:blur(12px);
+}
+
+.logo {
+    display:block;
+    width:90px;
+    margin:0 auto 10px;
+    filter:drop-shadow(0 0 12px var(--gold));
+}
+
+h1 {
+    text-align:center;
+    color:var(--gold);
+    font-weight:900;
+}
+
+h2 {
+    color:var(--gold);
+    border-right:4px solid var(--gold);
+    padding-right:12px;
+    margin-top:35px;
+}
+
+p, li {
+    color:#ddd;
+}
+
+.box {
+    background:rgba(243,207,122,0.08);
+    border:1px solid var(--gold);
+    border-radius:15px;
+    padding:18px;
+    margin:20px 0;
+}
+
+a {
+    color:var(--gold);
+}
+
+.back {
+    display:block;
+    width:max-content;
+    margin:35px auto 0;
+    border:1px solid var(--gold);
+    border-radius:30px;
+    padding:8px 25px;
+    text-decoration:none;
+}
+
+.footer {
+    text-align:center;
+    color:#888;
+    border-top:1px solid rgba(243,207,122,.2);
+    margin-top:40px;
+    padding-top:20px;
+    font-size:.85rem;
+}
+
+</style>
+
 </head>
+
 <body>
 
 <div class="container">
-    <h1>سياسة الخصوصية لتطبيق Royal Door</h1>
-    <p>تاريخ آخر تحديث: 28 أبريل 2026</p>
 
-    <p>نحن في <strong>Royal Door</strong> نلتزم بحماية خصوصيتك. توضح هذه السياسة كيفية جمع بياناتك واستخدامها وحمايتها، وهي مصممة لتلبية متطلبات متجر Google Play وقوانين حماية البيانات الدولية.</p>
+<img
+src="https://royaldoor86.github.io/assets/images/logo.png"
+class="logo"
+alt="Royal Door">
 
-    <div class="highlight">
-        <strong>ملاحظة هامة:</strong> باستخدامك للتطبيق، فإنك توافق على جمع واستخدام المعلومات وفقاً لهذه السياسة.
-    </div>
+<h1>سياسة الخصوصية</h1>
 
-    <h2>1. المعلومات التي نجمعها</h2>
-    <ul>
-        <li><strong>بيانات الحساب:</strong> الاسم، البريد الإلكتروني، رقم الهاتف، وصورة الملف الشخصي.</li>
-        <li><strong>المحتوى المنشأ:</strong> الرسائل داخل الغرف، الصور المرفوعة في اليوميات، والمقاطع الصوتية.</li>
-        <li><strong>بيانات الجهاز:</strong> نوع الجهاز، إصدار نظام التشغيل، ومعرف الإعلان (Advertising ID).</li>
-        <li><strong>بيانات الموقع:</strong> الموقع التقريبي (عبر الـ IP) لتحسين الخدمة واقتراح الغرف المناسبة.</li>
-    </ul>
+<p style="text-align:center">
+آخر تحديث: 17 أغسطس 2026
+</p>
 
-    <h2>2. كيف نستخدم بياناتك</h2>
-    <ul>
-        <li>توفير الميزات الأساسية (الغرف الصوتية، المكالمات، الدردشة).</li>
-        <li>إدارة نظام المكافآت وحماية المعاملات المالية.</li>
-        <li>تحسين أداء التطبيق وحل المشكلات التقنية عبر Firebase.</li>
-        <li>تقديم إعلانات ملائمة عبر AdMob.</li>
-    </ul>
 
-    <h2>3. الأذونات الحساسة</h2>
-    <p>يطلب التطبيق الوصول إلى: <strong>الميكروفون</strong> (للدردشة الصوتية)، <strong>الكاميرا</strong> (لليوميات)، <strong>التخزين</strong> (لرفع الصور)، و<strong>الإشعارات</strong> (للتنبيهات).</p>
+<div class="box">
 
-    <h2>4. مشاركة البيانات مع أطراف ثالثة</h2>
-    <p>نحن لا نبيع بياناتك. نشاركها فقط مع خدمات ضرورية (Firebase للمصادقة والتحليل، AdMob للإعلانات، وخدمات الدفع الآمنة).</p>
+<strong>مرحبًا بك في Royal Door 👑</strong>
 
-    <h2>5. أمان وحماية البيانات</h2>
-    <p>نستخدم تقنيات التشفير (SSL/TLS) لحماية البيانات أثناء النقل، ويتم تخزين البيانات في خوادم سحابية محمية.</p>
+<br>
 
-    <h2>6. حذف البيانات والحساب</h2>
-    <p>يحق لك حذف حسابك وبياناتك في أي وقت. يمكنك طلب الحذف عبر الإعدادات داخل التطبيق، أو عبر الرابط التالي:</p>
-    <a href="https://royaldoor.live/delete-account.html" class="btn-delete">طلب حذف الحساب والبيانات</a>
+نحترم خصوصيتك ونوضح في هذه السياسة نوع البيانات
+التي قد يتم جمعها، وكيف يتم استخدامها وحمايتها،
+وكيف يمكنك طلب حذف حسابك وبياناتك.
 
-    <h2>7. خصوصية الأطفال</h2>
-    <p>التطبيق غير مخصص للأطفال دون سن 13 عاماً، ولا نجمع بياناتهم عمداً.</p>
+</div>
 
-    <h2>8. اتصل بنا</h2>
-    <p>لأي استفسار، تواصل معنا عبر: <a href="mailto:support@royaldoor.live">support@royaldoor.live</a></p>
 
-    <div class="footer">
-        &copy; 2026 Royal Door. جميع الحقوق محفوظة.<br>
-        تم الامتثال لسياسات Google Play Developer Distribution Agreement.
-    </div>
+<h2>1. معلومات الحساب</h2>
+
+<p>
+قد نجمع المعلومات التي تقدمها عند إنشاء أو استخدام
+حساب Royal Door، مثل:
+</p>
+
+<ul>
+
+<li>اسم المستخدم أو الاسم المعروض.</li>
+
+<li>معرف الحساب داخل التطبيق (Royal ID).</li>
+
+<li>البريد الإلكتروني عند استخدامه للمصادقة أو الدعم.</li>
+
+<li>رقم الهاتف إذا تم استخدامه في تسجيل الدخول أو الحساب.</li>
+
+<li>صورة الملف الشخصي والمعلومات التي يختار المستخدم إضافتها.</li>
+
+</ul>
+
+
+<h2>2. المحتوى الذي ينشئه المستخدم</h2>
+
+<p>
+قد يتعامل التطبيق مع المحتوى الذي ينشئه المستخدم،
+مثل الصور والمنشورات والرسائل والمحتوى الصوتي،
+وذلك لتوفير الميزات التي يطلبها المستخدم.
+</p>
+
+
+<h2>3. البيانات التقنية</h2>
+
+<p>
+قد يتم جمع معلومات تقنية ضرورية لتشغيل التطبيق
+وتحسين الأداء، مثل نوع الجهاز وإصدار نظام التشغيل
+ومعلومات الأعطال والتشخيص.
+</p>
+
+
+<h2>4. خدمات الطرف الثالث</h2>
+
+<p>
+قد يستخدم Royal Door خدمات تقنية من أطراف ثالثة
+لتوفير وظائف التطبيق، ومنها خدمات Google Firebase
+وخدمات الإعلانات التابعة لـ Google عند تفعيلها.
+</p>
+
+<p>
+تستخدم هذه الخدمات البيانات وفقًا لوظائفها وسياساتها
+الخاصة. كما قد يتم استخدام خدمة الاتصالات الصوتية
+المستخدمة في التطبيق لتوفير الغرف والاتصالات الصوتية.
+</p>
+
+
+<h2>5. الإعلانات</h2>
+
+<p>
+إذا تم تفعيل الإعلانات داخل التطبيق، فقد تستخدم خدمات
+الإعلانات مثل Google AdMob معلومات تقنية وبيانات
+إعلانية وفق إعدادات المستخدم ومتطلبات Google.
+</p>
+
+
+<h2>6. الميكروفون والكاميرا</h2>
+
+<p>
+قد يطلب التطبيق إذن الميكروفون عند استخدام الميزات
+الصوتية، وقد يطلب إذن الكاميرا عند استخدام الميزات
+التي تتطلب التصوير أو رفع الصور.
+</p>
+
+<p>
+لا يتم استخدام هذه الأذونات إلا عندما تكون هناك
+ميزة تحتاج إليها.
+</p>
+
+
+<h2>7. الموقع</h2>
+
+<p>
+لا نطلب موقع الجهاز الدقيق إلا إذا كانت هناك ميزة
+تحتاج إليه وكان المستخدم قد منح الإذن المطلوب.
+إذا لم تكن ميزة الموقع مستخدمة في إصدار التطبيق،
+فلا يتم طلب إذن الموقع.
+</p>
+
+
+<h2>8. الجواهر والرصيد الافتراضي</h2>
+
+<p>
+الجواهر والعملات الافتراضية داخل Royal Door هي عناصر
+رقمية للاستخدام داخل المنصة وفق القواعد والميزات
+المتاحة داخل التطبيق.
+</p>
+
+<p>
+لا تمثل هذه العناصر أموالًا نقدية بحد ذاتها ولا ينبغي
+اعتبارها حسابًا مصرفيًا أو استثمارًا ماليًا.
+</p>
+
+
+<h2>9. استخدام البيانات</h2>
+
+<ul>
+
+<li>تشغيل ميزات التطبيق.</li>
+
+<li>إدارة الحسابات والمستخدمين.</li>
+
+<li>توفير الغرف الصوتية والدردشة.</li>
+
+<li>توفير الألعاب والميزات الاجتماعية.</li>
+
+<li>حماية الحسابات ومنع إساءة الاستخدام والاحتيال.</li>
+
+<li>تحسين أداء التطبيق ومعالجة الأعطال.</li>
+
+<li>عرض الإعلانات عند تفعيلها.</li>
+
+<li>تقديم الدعم للمستخدمين.</li>
+
+</ul>
+
+
+<h2>10. حماية البيانات</h2>
+
+<p>
+نتخذ إجراءات تقنية وتنظيمية مناسبة لحماية البيانات
+من الوصول غير المصرح به أو التغيير أو الفقدان.
+يتم نقل البيانات عبر قنوات آمنة عندما تكون الخدمة
+والبنية التقنية تدعم ذلك.
+</p>
+
+
+<h2>11. الاحتفاظ بالبيانات</h2>
+
+<p>
+نحتفظ بالبيانات طالما كان ذلك ضروريًا لتوفير الخدمة
+أو تشغيل الحساب أو تحقيق أغراض أمنية ومشروعة.
+عند طلب حذف الحساب، يتم حذف البيانات المرتبطة به
+وفق إجراءات الحذف لدينا، باستثناء البيانات التي قد
+يُسمح أو يُطلب الاحتفاظ بها لأسباب قانونية أو أمنية.
+</p>
+
+
+<h2>12. حذف الحساب والبيانات</h2>
+
+<p>
+يمكنك طلب حذف حساب Royal Door والبيانات المرتبطة به
+من داخل التطبيق أو من خلال صفحة حذف الحساب الخارجية:
+</p>
+
+<a href="delete-account.html">
+طلب حذف الحساب والبيانات
+</a>
+
+
+<h2>13. خصوصية الأطفال</h2>
+
+<p>
+Royal Door غير موجه للأطفال الذين تقل أعمارهم عن
+السن المسموح به وفق القوانين المعمول بها في المكان
+الذي يستخدم فيه التطبيق. لا نهدف إلى جمع بيانات
+الأطفال بشكل متعمد.
+</p>
+
+
+<h2>14. التغييرات على سياسة الخصوصية</h2>
+
+<p>
+قد نقوم بتحديث هذه السياسة عند إضافة ميزات جديدة
+أو إجراء تغييرات على طريقة معالجة البيانات.
+سيتم نشر النسخة المحدثة على هذه الصفحة مع تحديث
+تاريخ آخر تعديل.
+</p>
+
+
+<h2>15. التواصل معنا</h2>
+
+<p>
+للاستفسارات المتعلقة بالخصوصية أو البيانات:
+</p>
+
+<p>
+📧
+<a href="mailto:support@royaldoor.live">
+support@royaldoor.live
+</a>
+</p>
+
+
+<div class="footer">
+
+© 2026 Royal Door
+
+<br>
+
+جميع الحقوق محفوظة.
+
+</div>
+
+
+<a href="index.html" class="back">
+🏠 العودة إلى الرئيسية
+</a>
+
 </div>
 
 </body>
