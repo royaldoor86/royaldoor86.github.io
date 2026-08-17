@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPJJR3W8WT"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RPJJR3W8WT');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RPJJR3W8WT');
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>المكافآت الملكية | Royal Door</title>
 
-    <link rel="canonical" href="https://royaldoor.live/invest.html" />
+    <link rel="canonical" href="https://royaldoor.live/royal_rewards.html">
 
-    <meta name="description"
-          content="نظام المكافآت الملكية في منصة Royal Door. باقات ومزايا رقمية ومكافآت جواهر داخل التطبيق.">
+    <meta
+        name="description"
+        content="المكافآت الملكية من Royal Door - باقات رقمية ومزايا ومكافآت داخل المنصة."
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
+
         body {
             font-family: 'Cairo', sans-serif;
             background: #050010;
@@ -38,6 +45,7 @@
             z-index: 1;
             top: 0;
             left: 0;
+            pointer-events: none;
         }
 
         .container {
@@ -48,7 +56,7 @@
             padding: 40px 10px;
         }
 
-        .invest-box {
+        .rewards-box {
             background: rgba(255,255,255,0.05);
             padding: 25px;
             border-radius: 30px;
@@ -57,14 +65,21 @@
         }
 
         .notice-box {
-            background: rgba(243, 207, 122, 0.1);
+            background: rgba(243,207,122,0.1);
             border: 1px solid #f3cf7a;
-            padding: 15px;
+            padding: 18px;
             border-radius: 15px;
             margin-bottom: 25px;
             font-size: 0.9rem;
             color: #f3cf7a;
             text-align: justify;
+            line-height: 1.9;
+        }
+
+        .title-sub {
+            color: #00eaff;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
         }
 
         input {
@@ -82,21 +97,52 @@
             transition: 0.3s;
         }
 
+        input:focus {
+            box-shadow: 0 0 15px rgba(243,207,122,0.4);
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 15px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 800px;
+            min-width: 850px;
         }
 
         th {
             background: #f3cf7a;
             color: black;
             padding: 15px;
+            font-size: 0.95rem;
         }
 
         td {
             padding: 15px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+        }
+
+        .package-name {
+            color: #f3cf7a;
+            font-weight: 900;
+        }
+
+        .reward {
+            color: #00ff88;
+            font-weight: 900;
+        }
+
+        .benefit {
+            color: #00eaff;
+            font-weight: bold;
+        }
+
+        .price {
+            color: white;
+            font-weight: bold;
         }
 
         .btn-go {
@@ -130,7 +176,7 @@
             font-size: 30px;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4);
+            box-shadow: 0 4px 15px rgba(243,207,122,0.4);
             z-index: 1000;
             transition: 0.3s;
         }
@@ -150,7 +196,46 @@
             padding: 10px 30px;
             border-radius: 50px;
         }
+
+        .info-box {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 15px;
+            background: rgba(0,234,255,0.05);
+            border: 1px solid rgba(0,234,255,0.3);
+            color: #ddd;
+            line-height: 1.8;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 25px 8px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .rewards-box {
+                padding: 15px;
+            }
+
+            .notice-box {
+                font-size: 0.82rem;
+            }
+
+            th,
+            td {
+                padding: 12px 8px;
+                font-size: 0.82rem;
+            }
+
+        }
+
     </style>
+
 </head>
 
 <body>
@@ -159,47 +244,74 @@
 
 <div class="container">
 
-    <h1 style="color:#f3cf7a">
-        👑 نظام المكافآت الملكية
+    <h1 style="color:#f3cf7a;">
+        👑 المكافآت الملكية
     </h1>
 
     <div class="notice-box">
 
-        <strong>💎 المكافآت الملكية</strong>
+        <strong>💎 نظام المكافآت الملكية</strong>
 
         <br><br>
 
-        اختر الباقة الملكية المناسبة واستمتع بالمزايا والمكافآت
-        الرقمية داخل Royal Door خلال مدة الباقة.
+        اختر الباقة الرقمية المناسبة واستمتع بالمزايا والمكافآت
+        المتاحة داخل Royal Door.
 
         <br><br>
 
-        جميع المكافآت والجواهر المذكورة في هذا النظام هي مكافآت
-        رقمية داخل المنصة وتخضع لشروط وأحكام Royal Door.
+        تشمل الباقات مزايا رقمية ومكافآت جواهر للاستخدام داخل
+        المنصة وفق شروط وأحكام Royal Door.
 
         <br><br>
 
         <strong>
-            ⚠️ هذا النظام لا يمثل استثمارًا أو فائدة أو عائدًا ماليًا،
-            والجواهر الرقمية مخصصة للاستخدام وفق وظائف Royal Door.
+            ⚠️ جميع الجواهر والمكافآت في هذا النظام رقمية ومخصصة
+            للاستخدام داخل Royal Door، ولا تمثل استثمارًا أو فائدة
+            أو عائدًا ماليًا.
         </strong>
 
     </div>
 
-    <div class="invest-box">
+    <div class="rewards-box">
 
-        <p style="color:#00ff88">
-            👑 "فعّل باقتك الملكية واستمتع بمكافآتك داخل Royal Door"
+        <p class="title-sub">
+            ✨ اختر باقتك الملكية واستمتع بمزاياها الرقمية
         </p>
 
         <input
             type="number"
-            id="invId"
-            placeholder="أدخل الآيدي (ID) لتفعيل الباقة"
+            id="userId"
+            placeholder="أدخل الآيدي (ID)"
+            inputmode="numeric"
         >
 
-        <div style="overflow-x:auto">
-            <table id="iTable"></table>
+        <div class="table-wrapper">
+
+            <table id="rewardsTable">
+
+                <tr>
+                    <th>الباقة</th>
+                    <th>السعر</th>
+                    <th>المدة</th>
+                    <th>مكافأة الجواهر</th>
+                    <th>مزايا الباقة</th>
+                    <th>اختيار</th>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="info-box">
+
+            💡 الجواهر الرقمية والمزايا المذكورة هنا مخصصة
+            للاستخدام داخل خدمات Royal Door.
+
+            <br>
+
+            لا تمثل هذه الباقات ودائع أو استثمارات أو أوراقًا مالية،
+            ولا تمنح حقًا في الحصول على مبالغ نقدية.
+
         </div>
 
     </div>
@@ -207,313 +319,316 @@
     <a
         href="guide.html"
         class="help-btn"
-        title="دليل الإرشادات">
+        title="دليل المكافآت"
+    >
         ؟
     </a>
 
     <a
         href="index.html"
-        class="back-link">
+        class="back-link"
+    >
         ← العودة للرئيسية
     </a>
 
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 <script>
 
 particlesJS("particles-js", {
+
     "particles": {
+
         "number": {
             "value": 80
         },
+
         "color": {
             "value": "#f3cf7a"
         },
+
         "shape": {
             "type": "circle"
         },
+
         "opacity": {
             "value": 0.5
         },
+
         "size": {
             "value": 3
         },
+
         "line_linked": {
             "enable": true,
             "distance": 150,
             "color": "#f3cf7a",
             "opacity": 0.2
         },
+
         "move": {
             "enable": true,
             "speed": 2
         }
+
     }
+
 });
 
 
 /*
-====================================================
-نظام المكافآت الملكية - Royal Door
-====================================================
+========================================================
+Royal Door
+نظام المكافآت الملكية
+========================================================
 
-سعر الجواهر:
-500 جوهرة = 1,500 دينار
+سعر الجواهر المرجعي:
+
+500 جوهرة = 1,500 د.ع
 
 أي:
-1 جوهرة = 3 دنانير
 
-الأسعار أدناه مضبوطة على مضاعفات 500 جوهرة
-حتى تكون القيمة بالدينار متوافقة مع سعر الجواهر.
-====================================================
+1 جوهرة = 3 د.ع
+
+ملاحظة:
+السعر هنا هو سعر الباقة الرقمية.
+المكافأة المذكورة هي مكافأة رقمية داخل المنصة.
+
+========================================================
 */
 
 
-const data = [
+const rewardPackages = [
 
     {
         name: "🌟 الدر",
-        gems: 33500,
-        priceIQD: 100500,
+        price: 100000,
         duration: "30 يوم",
-        reward: 2700,
-        daily: 90
+        reward: 2500,
+        benefits: "مزايا أساسية + مكافأة جواهر"
     },
 
     {
         name: "🔴 المرجان",
-        gems: 67000,
-        priceIQD: 201000,
+        price: 200000,
         duration: "30 يوم",
-        reward: 5700,
-        daily: 190
+        reward: 5500,
+        benefits: "مزايا متقدمة + مكافأة جواهر"
     },
 
     {
         name: "🟤 العقيق",
-        gems: 100000,
-        priceIQD: 300000,
+        price: 300000,
         duration: "30 يوم",
         reward: 9000,
-        daily: 300
+        benefits: "مزايا مميزة + مكافأة جواهر"
     },
 
     {
         name: "💠 الكريستال",
-        gems: 166500,
-        priceIQD: 499500,
+        price: 500000,
         duration: "30 يوم",
-        reward: 15800,
-        daily: 527
+        reward: 16000,
+        benefits: "مزايا كريستالية + مكافأة جواهر"
     },
 
     {
         name: "🟢 الزبرجد",
-        gems: 250000,
-        priceIQD: 750000,
+        price: 750000,
         duration: "30 يوم",
         reward: 25000,
-        daily: 833
+        benefits: "مزايا متقدمة + مكافأة جواهر"
     },
 
     {
         name: "🤍 اللؤلؤ",
-        gems: 333500,
-        priceIQD: 1000500,
+        price: 1000000,
         duration: "30 يوم",
         reward: 35000,
-        daily: 1167
+        benefits: "مزايا لؤلؤية + مكافأة جواهر"
     },
 
     {
         name: "🔷 الفيروز",
-        gems: 400000,
-        priceIQD: 1200000,
+        price: 1200000,
         duration: "30 يوم",
-        reward: 44000,
-        daily: 1467
+        reward: 45000,
+        benefits: "مزايا VIP + مكافأة جواهر"
     },
 
     {
         name: "💎 الماس",
-        gems: 433500,
-        priceIQD: 1300500,
+        price: 1300000,
         duration: "30 يوم",
-        reward: 49800,
-        daily: 1660
+        reward: 50000,
+        benefits: "مزايا ألماسية + مكافأة جواهر"
     },
 
     {
         name: "🟩 الزمرد",
-        gems: 466500,
-        priceIQD: 1399500,
+        price: 1400000,
         duration: "30 يوم",
-        reward: 56000,
-        daily: 1867
+        reward: 55000,
+        benefits: "مزايا زمردية + مكافأة جواهر"
     },
 
     {
         name: "🔶 الياقوت",
-        gems: 500000,
-        priceIQD: 1500000,
+        price: 1500000,
         duration: "30 يوم",
-        reward: 62500,
-        daily: 2083
-    },
-
-    {
-        name: "👑 الملكي",
-        gems: 666500,
-        priceIQD: 1999500,
-        duration: "45 يوم",
-        reward: 86700,
-        daily: 1927
-    },
-
-    {
-        name: "👑 الإمبراطوري",
-        gems: 1000000,
-        priceIQD: 3000000,
-        duration: "60 يوم",
-        reward: 140000,
-        daily: 2333
-    },
-
-    {
-        name: "👑💎 التاج الملكي",
-        gems: 1666500,
-        priceIQD: 4999500,
-        duration: "90 يوم",
-        reward: 250000,
-        daily: 2778
+        reward: 60000,
+        benefits: "مزايا ملكية + مكافأة جواهر"
     }
 
 ];
 
 
-document.getElementById('iTable').innerHTML = `
+/*
+========================================================
+إنشاء الجدول
+========================================================
+*/
+
+const table = document.getElementById("rewardsTable");
+
+table.innerHTML = `
 
 <tr>
 
     <th>الباقة</th>
 
-    <th>السعر 💎</th>
-
-    <th>ما يعادله د.ع</th>
+    <th>السعر</th>
 
     <th>المدة</th>
 
-    <th>المكافأة 💎</th>
+    <th>مكافأة الجواهر</th>
 
-    <th>يوميًا 💎</th>
+    <th>مزايا الباقة</th>
 
-    <th>تفعيل</th>
-
-</tr>
-
-` +
-
-data.map(item => `
-
-<tr>
-
-    <td style="color:#f3cf7a">
-        ${item.name}
-    </td>
-
-    <td>
-        ${item.gems.toLocaleString()} 💎
-    </td>
-
-    <td>
-        ${item.priceIQD.toLocaleString()} د.ع
-    </td>
-
-    <td>
-        ${item.duration}
-    </td>
-
-    <td style="color:#00ff88">
-        +${item.reward.toLocaleString()} 💎
-    </td>
-
-    <td style="color:#00eaff">
-        ${item.daily.toLocaleString()} 💎
-    </td>
-
-    <td>
-
-        <button
-            class="btn-go"
-            onclick="sendReward(
-                '${item.name}',
-                '${item.gems}',
-                '${item.priceIQD}',
-                '${item.duration}',
-                '${item.reward}'
-            )">
-
-            تفعيل
-
-        </button>
-
-    </td>
+    <th>اختيار</th>
 
 </tr>
 
-`).join('');
+`;
 
 
-function sendReward(
-    pkg,
-    gems,
-    priceIQD,
+rewardPackages.forEach((item) => {
+
+    table.innerHTML += `
+
+    <tr>
+
+        <td class="package-name">
+            ${item.name}
+        </td>
+
+        <td class="price">
+            ${item.price.toLocaleString()} د.ع
+        </td>
+
+        <td>
+            ${item.duration}
+        </td>
+
+        <td class="reward">
+            +${item.reward.toLocaleString()} 💎
+        </td>
+
+        <td class="benefit">
+            ${item.benefits}
+        </td>
+
+        <td>
+
+            <button
+                class="btn-go"
+                onclick="requestPackage(
+                    '${item.name}',
+                    ${item.price},
+                    '${item.duration}',
+                    ${item.reward}
+                )"
+            >
+                اختيار
+            </button>
+
+        </td>
+
+    </tr>
+
+    `;
+
+});
+
+
+/*
+========================================================
+طلب الباقة عبر واتساب
+========================================================
+*/
+
+function requestPackage(
+    packageName,
+    price,
     duration,
     reward
 ) {
 
-    const idInput =
-        document.getElementById('invId');
+    const userId =
+        document.getElementById("userId");
 
 
-    if (!idInput.value) {
+    if (!userId.value) {
 
-        idInput.style.borderColor = "red";
+        userId.style.borderColor = "red";
 
         alert(
-            "❌ يرجى كتابة الآيدي الخاص بك أولاً!"
+            "❌ يرجى إدخال الآيدي الخاص بك أولاً."
         );
 
+        userId.focus();
+
         return;
+
     }
 
 
-    idInput.style.borderColor = "#f3cf7a";
+    userId.style.borderColor = "#f3cf7a";
 
 
-    const msg =
+    const message =
 
-`طلب تفعيل باقة المكافآت الملكية:
+`طلب باقة المكافآت الملكية
 
-الباقة: ${pkg}
+الباقة: ${packageName}
 
-قيمة الباقة: ${Number(gems).toLocaleString()} جوهرة
+السعر: ${Number(price).toLocaleString()} د.ع
 
-القيمة بالدينار: ${Number(priceIQD).toLocaleString()} د.ع
+المدة: ${duration}
 
-مدة المزايا: ${duration}
+مكافأة الجواهر: +${Number(reward).toLocaleString()} 💎
 
-مكافأة الجواهر: ${Number(reward).toLocaleString()} جوهرة
+آيدي الحساب: ${userId.value}
 
-الآيدي: ${idInput.value}
+أرغب بالاستفسار عن تفعيل الباقة الرقمية.
 
-نظام المكافآت الملكية هو نظام مكافآت رقمية داخل Royal Door.`;
+ملاحظة:
+الباقة رقمية ومخصصة لمزايا ومكافآت داخل Royal Door.`;
+
+
+    const whatsappUrl =
+
+        "https://wa.me/9647770992966?text=" +
+
+        encodeURIComponent(message);
 
 
     window.open(
-        `https://wa.me/9647770992966?text=${encodeURIComponent(msg)}`
+        whatsappUrl,
+        "_blank"
     );
 
 }
