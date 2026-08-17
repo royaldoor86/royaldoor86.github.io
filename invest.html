@@ -16,9 +16,11 @@
 
     <link rel="canonical" href="https://royaldoor.live/invest.html" />
 
-    <meta name="description" content="نظام المكافآت الملكية في منصة Royal Door. باقات ومزايا رقمية ومكافآت جواهر داخل التطبيق.">
+    <meta name="description"
+          content="نظام المكافآت الملكية في منصة Royal Door. باقات ومزايا رقمية ومكافآت جواهر داخل التطبيق.">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap"
+          rel="stylesheet">
 
     <style>
         body {
@@ -54,7 +56,6 @@
             backdrop-filter: blur(10px);
         }
 
-        /* صندوق الإرشادات */
         .notice-box {
             background: rgba(243, 207, 122, 0.1);
             border: 1px solid #f3cf7a;
@@ -114,7 +115,6 @@
             background: #fff;
         }
 
-        /* زر المساعدة العائم */
         .help-btn {
             position: fixed;
             bottom: 30px;
@@ -155,348 +155,370 @@
 
 <body>
 
-    <div id="particles-js"></div>
+<div id="particles-js"></div>
 
-    <div class="container">
+<div class="container">
 
-        <h1 style="color:#f3cf7a">
-            👑 نظام المكافآت الملكية
-        </h1>
+    <h1 style="color:#f3cf7a">
+        👑 نظام المكافآت الملكية
+    </h1>
 
-        <div class="notice-box">
+    <div class="notice-box">
 
-            <strong>💎 كيف تعمل المكافآت الملكية؟</strong>
+        <strong>💎 المكافآت الملكية</strong>
 
-            <br><br>
+        <br><br>
 
-            اختر الباقة الملكية المناسبة لك واستمتع بمزايا ومكافآت رقمية
-            داخل Royal Door خلال مدة الباقة.
+        اختر الباقة الملكية المناسبة واستمتع بالمزايا والمكافآت
+        الرقمية داخل Royal Door خلال مدة الباقة.
 
-            <br><br>
+        <br><br>
 
-            يتم احتساب المكافآت وفق تفاصيل كل باقة، وتظهر الجواهر
-            كمكافآت رقمية داخل التطبيق.
+        جميع المكافآت والجواهر المذكورة في هذا النظام هي مكافآت
+        رقمية داخل المنصة وتخضع لشروط وأحكام Royal Door.
 
-            <br><br>
+        <br><br>
 
-            <strong>
-                ⚠️ المكافآت والجواهر الرقمية مخصصة للاستخدام داخل Royal Door
-                ولا تمثل استثمارًا أو فائدة أو عائدًا ماليًا مضمونًا،
-                ولا تعد أموالًا نقدية.
-            </strong>
-
-        </div>
-
-        <div class="invest-box">
-
-            <p style="color:#00ff88">
-                👑 "استمتع بمزاياك الملكية واجمع مكافآتك داخل Royal Door"
-            </p>
-
-            <input
-                type="number"
-                id="invId"
-                placeholder="أدخل الآيدي (ID) لتفعيل الباقة"
-            >
-
-            <div style="overflow-x:auto">
-
-                <table id="iTable"></table>
-
-            </div>
-
-        </div>
-
-        <a
-            href="guide.html"
-            class="help-btn"
-            title="دليل الإرشادات"
-        >
-            ؟
-        </a>
-
-        <a
-            href="index.html"
-            class="back-link"
-        >
-            ← العودة للرئيسية
-        </a>
+        <strong>
+            ⚠️ هذا النظام لا يمثل استثمارًا أو فائدة أو عائدًا ماليًا،
+            والجواهر الرقمية مخصصة للاستخدام وفق وظائف Royal Door.
+        </strong>
 
     </div>
 
+    <div class="invest-box">
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <p style="color:#00ff88">
+            👑 "فعّل باقتك الملكية واستمتع بمكافآتك داخل Royal Door"
+        </p>
 
-    <script>
+        <input
+            type="number"
+            id="invId"
+            placeholder="أدخل الآيدي (ID) لتفعيل الباقة"
+        >
 
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80
-                },
-                "color": {
-                    "value": "#f3cf7a"
-                },
-                "shape": {
-                    "type": "circle"
-                },
-                "opacity": {
-                    "value": 0.5
-                },
-                "size": {
-                    "value": 3
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#f3cf7a",
-                    "opacity": 0.2
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2
-                }
-            }
-        });
+        <div style="overflow-x:auto">
+            <table id="iTable"></table>
+        </div>
 
+    </div>
 
-        /*
-         * نظام المكافآت الملكية
-         *
-         * لا يوجد:
-         * - ربح مالي
-         * - دولار
-         * - فائدة
-         * - عائد استثماري
-         *
-         * توجد:
-         * - باقة رقمية
-         * - مدة مزايا
-         * - نقاط ملكية
-         * - مكافآت جواهر داخل التطبيق
-         */
+    <a
+        href="guide.html"
+        class="help-btn"
+        title="دليل الإرشادات">
+        ؟
+    </a>
 
+    <a
+        href="index.html"
+        class="back-link">
+        ← العودة للرئيسية
+    </a>
 
-        const data = [
+</div>
 
-            [
-                "🌟 الدر",
-                "100,000",
-                "30 يوم",
-                "40,400",
-                "150,000"
-            ],
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-            [
-                "🔴 المرجان",
-                "200,000",
-                "30 يوم",
-                "80,800",
-                "300,000"
-            ],
+<script>
 
-            [
-                "🟤 العقيق",
-                "300,000",
-                "30 يوم",
-                "120,700",
-                "500,000"
-            ],
-
-            [
-                "💠 الكريستال",
-                "500,000",
-                "30 يوم",
-                "201,600",
-                "750,000"
-            ],
-
-            [
-                "🟢 الزبرجد",
-                "750,000",
-                "30 يوم",
-                "302,400",
-                "1,000,000"
-            ],
-
-            [
-                "🤍 اللؤلؤ",
-                "1,000,000",
-                "30 يوم",
-                "404,200",
-                "1,500,000"
-            ],
-
-            [
-                "🔷 الفيروز",
-                "1,200,000",
-                "30 يوم",
-                "485,000",
-                "2,000,000"
-            ],
-
-            [
-                "💎 الماس",
-                "1,300,000",
-                "30 يوم",
-                "525,000",
-                "2,500,000"
-            ],
-
-            [
-                "🟩 الزمرد",
-                "1,400,000",
-                "30 يوم",
-                "565,000",
-                "3,000,000"
-            ],
-
-            [
-                "🔶 الياقوت",
-                "1,500,000",
-                "30 يوم",
-                "606,000",
-                "3,500,000"
-            ],
-
-            [
-                "👑 الملكي",
-                "2,000,000",
-                "45 يوم",
-                "800,000",
-                "4,000,000"
-            ],
-
-            [
-                "👑👑 الإمبراطوري",
-                "3,000,000",
-                "60 يوم",
-                "1,200,000",
-                "4,500,000"
-            ],
-
-            [
-                "👑💎 التاج الملكي",
-                "5,000,000",
-                "90 يوم",
-                "2,000,000",
-                "5,000,000"
-            ]
-
-        ];
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 80
+        },
+        "color": {
+            "value": "#f3cf7a"
+        },
+        "shape": {
+            "type": "circle"
+        },
+        "opacity": {
+            "value": 0.5
+        },
+        "size": {
+            "value": 3
+        },
+        "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#f3cf7a",
+            "opacity": 0.2
+        },
+        "move": {
+            "enable": true,
+            "speed": 2
+        }
+    }
+});
 
 
-        document.getElementById('iTable').innerHTML =
+/*
+====================================================
+نظام المكافآت الملكية - Royal Door
+====================================================
 
-            `
-            <tr>
+سعر الجواهر:
+500 جوهرة = 1,500 دينار
 
-                <th>الباقة</th>
+أي:
+1 جوهرة = 3 دنانير
 
-                <th>السعر</th>
-
-                <th>مدة المزايا</th>
-
-                <th>مكافآت الجواهر</th>
-
-                <th>نقاط الملكية</th>
-
-                <th>تفعيل</th>
-
-            </tr>
-            `
-
-            +
-
-            data.map(r =>
-
-                `
-                <tr>
-
-                    <td style="color:#f3cf7a">
-                        ${r[0]}
-                    </td>
-
-                    <td>
-                        ${r[1]} 💎
-                    </td>
-
-                    <td>
-                        ${r[2]}
-                    </td>
-
-                    <td style="color:#00ff88">
-                        +${r[3]} 💎
-                    </td>
-
-                    <td style="color:#f3cf7a">
-                        ${r[4]} ⭐
-                    </td>
-
-                    <td>
-
-                        <button
-                            class="btn-go"
-                            onclick="sendInv('${r[0]}','${r[1]}','${r[2]}','${r[3]}')"
-                        >
-                            تفعيل
-                        </button>
-
-                    </td>
-
-                </tr>
-                `
-
-            ).join('');
+الأسعار أدناه مضبوطة على مضاعفات 500 جوهرة
+حتى تكون القيمة بالدينار متوافقة مع سعر الجواهر.
+====================================================
+*/
 
 
-        function sendInv(pkg, price, duration, rewards) {
+const data = [
 
-            const idInput =
-                document.getElementById('invId');
+    {
+        name: "🌟 الدر",
+        gems: 33500,
+        priceIQD: 100500,
+        duration: "30 يوم",
+        reward: 2700,
+        daily: 90
+    },
+
+    {
+        name: "🔴 المرجان",
+        gems: 67000,
+        priceIQD: 201000,
+        duration: "30 يوم",
+        reward: 5700,
+        daily: 190
+    },
+
+    {
+        name: "🟤 العقيق",
+        gems: 100000,
+        priceIQD: 300000,
+        duration: "30 يوم",
+        reward: 9000,
+        daily: 300
+    },
+
+    {
+        name: "💠 الكريستال",
+        gems: 166500,
+        priceIQD: 499500,
+        duration: "30 يوم",
+        reward: 15800,
+        daily: 527
+    },
+
+    {
+        name: "🟢 الزبرجد",
+        gems: 250000,
+        priceIQD: 750000,
+        duration: "30 يوم",
+        reward: 25000,
+        daily: 833
+    },
+
+    {
+        name: "🤍 اللؤلؤ",
+        gems: 333500,
+        priceIQD: 1000500,
+        duration: "30 يوم",
+        reward: 35000,
+        daily: 1167
+    },
+
+    {
+        name: "🔷 الفيروز",
+        gems: 400000,
+        priceIQD: 1200000,
+        duration: "30 يوم",
+        reward: 44000,
+        daily: 1467
+    },
+
+    {
+        name: "💎 الماس",
+        gems: 433500,
+        priceIQD: 1300500,
+        duration: "30 يوم",
+        reward: 49800,
+        daily: 1660
+    },
+
+    {
+        name: "🟩 الزمرد",
+        gems: 466500,
+        priceIQD: 1399500,
+        duration: "30 يوم",
+        reward: 56000,
+        daily: 1867
+    },
+
+    {
+        name: "🔶 الياقوت",
+        gems: 500000,
+        priceIQD: 1500000,
+        duration: "30 يوم",
+        reward: 62500,
+        daily: 2083
+    },
+
+    {
+        name: "👑 الملكي",
+        gems: 666500,
+        priceIQD: 1999500,
+        duration: "45 يوم",
+        reward: 86700,
+        daily: 1927
+    },
+
+    {
+        name: "👑 الإمبراطوري",
+        gems: 1000000,
+        priceIQD: 3000000,
+        duration: "60 يوم",
+        reward: 140000,
+        daily: 2333
+    },
+
+    {
+        name: "👑💎 التاج الملكي",
+        gems: 1666500,
+        priceIQD: 4999500,
+        duration: "90 يوم",
+        reward: 250000,
+        daily: 2778
+    }
+
+];
 
 
-            if (!idInput.value) {
+document.getElementById('iTable').innerHTML = `
 
-                idInput.style.borderColor = "red";
+<tr>
 
-                alert(
-                    "❌ يرجى كتابة الآيدي الخاص بك أولاً!"
-                );
+    <th>الباقة</th>
 
-                return;
-            }
+    <th>السعر 💎</th>
+
+    <th>ما يعادله د.ع</th>
+
+    <th>المدة</th>
+
+    <th>المكافأة 💎</th>
+
+    <th>يوميًا 💎</th>
+
+    <th>تفعيل</th>
+
+</tr>
+
+` +
+
+data.map(item => `
+
+<tr>
+
+    <td style="color:#f3cf7a">
+        ${item.name}
+    </td>
+
+    <td>
+        ${item.gems.toLocaleString()} 💎
+    </td>
+
+    <td>
+        ${item.priceIQD.toLocaleString()} د.ع
+    </td>
+
+    <td>
+        ${item.duration}
+    </td>
+
+    <td style="color:#00ff88">
+        +${item.reward.toLocaleString()} 💎
+    </td>
+
+    <td style="color:#00eaff">
+        ${item.daily.toLocaleString()} 💎
+    </td>
+
+    <td>
+
+        <button
+            class="btn-go"
+            onclick="sendReward(
+                '${item.name}',
+                '${item.gems}',
+                '${item.priceIQD}',
+                '${item.duration}',
+                '${item.reward}'
+            )">
+
+            تفعيل
+
+        </button>
+
+    </td>
+
+</tr>
+
+`).join('');
 
 
-            idInput.style.borderColor = "#f3cf7a";
+function sendReward(
+    pkg,
+    gems,
+    priceIQD,
+    duration,
+    reward
+) {
+
+    const idInput =
+        document.getElementById('invId');
 
 
-            const msg =
+    if (!idInput.value) {
 
-                `طلب تفعيل باقة مكافآت ملكية:
+        idInput.style.borderColor = "red";
+
+        alert(
+            "❌ يرجى كتابة الآيدي الخاص بك أولاً!"
+        );
+
+        return;
+    }
+
+
+    idInput.style.borderColor = "#f3cf7a";
+
+
+    const msg =
+
+`طلب تفعيل باقة المكافآت الملكية:
 
 الباقة: ${pkg}
 
-السعر: ${price} جوهرة
+قيمة الباقة: ${Number(gems).toLocaleString()} جوهرة
+
+القيمة بالدينار: ${Number(priceIQD).toLocaleString()} د.ع
 
 مدة المزايا: ${duration}
 
-مكافآت الجواهر: ${rewards} جوهرة
+مكافأة الجواهر: ${Number(reward).toLocaleString()} جوهرة
 
 الآيدي: ${idInput.value}
 
-أوافق على أن المكافآت رقمية داخل Royal Door وليست استثمارًا أو عائدًا ماليًا.`;
+نظام المكافآت الملكية هو نظام مكافآت رقمية داخل Royal Door.`;
 
 
-            window.open(
+    window.open(
+        `https://wa.me/9647770992966?text=${encodeURIComponent(msg)}`
+    );
 
-                `https://wa.me/9647770992966?text=${encodeURIComponent(msg)}`
+}
 
-            );
-
-        }
-
-    </script>
+</script>
 
 </body>
 </html>
