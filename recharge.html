@@ -1,108 +1,940 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPJJR3W8WT"></script>
+
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RPJJR3W8WT');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-RPJJR3W8WT');
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>مركز الشحن الملكي | Royal Door</title>
-    <link rel="canonical" href="https://royaldoor.live/recharge.html" />
-    <meta name="description" content="اشحن جواهر وكوينز Royal Door الملكية بأفضل الأسعار. آمن، سريع، ومباشر عبر واتساب.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="canonical"
+          href="https://royaldoor.live/recharge.html">
+
+    <meta name="description"
+          content="مركز الشحن الملكي في Royal Door. اشحن الجواهر والكوينز لحسابك بسهولة وسرعة عبر الوكلاء المعتمدين.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"
+          rel="stylesheet">
+
+
     <style>
-        :root { --gold: #f3cf7a; --glass: rgba(255, 255, 255, 0.05); }
-        body, html { margin: 0; padding: 0; font-family: 'Cairo', sans-serif; background: #050010; color: white; overflow-x: hidden; }
-        
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; }
-        .container { position: relative; z-index: 10; max-width: 950px; margin: auto; padding: 40px 15px; }
-        .main-card { background: var(--glass); border: 2px solid var(--gold); border-radius: 35px; padding: 30px; backdrop-filter: blur(15px); box-shadow: 0 0 40px rgba(243, 207, 122, 0.1); }
-        
-        h1 { font-size: 2.5rem; background: linear-gradient(to bottom, #f3cf7a, #b08d32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 30px; }
+
+        :root {
+            --gold: #f3cf7a;
+            --gold-dark: #b08d32;
+            --glass: rgba(255, 255, 255, 0.05);
+            --background: #050010;
+        }
+
+
+        body,
+        html {
+
+            margin: 0;
+            padding: 0;
+
+            font-family: 'Cairo', sans-serif;
+
+            background: var(--background);
+
+            color: white;
+
+            overflow-x: hidden;
+        }
+
+
+        #particles-js {
+
+            position: fixed;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: 1;
+
+            top: 0;
+            left: 0;
+
+            pointer-events: none;
+        }
+
+
+        .container {
+
+            position: relative;
+
+            z-index: 10;
+
+            max-width: 950px;
+
+            margin: auto;
+
+            padding: 40px 15px;
+        }
+
+
+        .main-card {
+
+            background: var(--glass);
+
+            border: 2px solid var(--gold);
+
+            border-radius: 35px;
+
+            padding: 30px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 0 40px rgba(243, 207, 122, 0.1);
+        }
+
+
+        h1 {
+
+            font-size: 2.5rem;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #f3cf7a,
+                    #b08d32
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            margin-bottom: 30px;
+        }
+
 
         /* صندوق الإرشادات */
-        .notice-box { background: rgba(243, 207, 122, 0.1); border: 1px solid var(--gold); padding: 15px; border-radius: 15px; margin-bottom: 25px; font-size: 0.9rem; color: #f3cf7a; text-align: justify; }
 
-        .id-section { background: rgba(243, 207, 122, 0.05); padding: 25px; border-radius: 20px; margin-bottom: 30px; border: 1px dashed var(--gold); }
-        input { width: 90%; max-width: 400px; padding: 18px; border-radius: 15px; border: 2px solid var(--gold); background: #000; color: #fff; font-size: 1.3rem; text-align: center; font-weight: bold; outline: none; transition: 0.3s; }
-        
-        .tabs { display: flex; gap: 15px; justify-content: center; margin-bottom: 25px; }
-        .tab-btn { padding: 12px 40px; border: 2px solid var(--gold); background: transparent; color: white; cursor: pointer; border-radius: 50px; font-weight: 900; font-size: 1.1rem; transition: 0.3s; }
-        .tab-btn.active { background: var(--gold); color: black; }
+        .notice-box {
 
-        .table-wrapper { overflow-x: auto; border-radius: 20px; }
-        table { width: 100%; border-collapse: collapse; min-width: 650px; background: rgba(0,0,0,0.3); }
-        th { background: var(--gold); color: black; padding: 18px; font-size: 1.1rem; }
-        td { padding: 18px; border-bottom: 1px solid rgba(243, 207, 122, 0.1); font-size: 1.1rem; font-weight: bold; }
-        
-        .btn-whatsapp { background: #25d366; color: white; padding: 10px 25px; border-radius: 12px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
-        .btn-whatsapp:hover { transform: scale(1.1); box-shadow: 0 0 20px #25d366; }
+            background:
+                rgba(243, 207, 122, 0.1);
 
-        /* زر المساعدة العائم */
-        .help-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: var(--gold); color: #050010; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4); z-index: 1000; transition: 0.3s; }
-        .help-btn:hover { transform: scale(1.1) rotate(20deg); }
+            border:
+                1px solid var(--gold);
 
-        .back-home { display: inline-block; margin-top: 35px; color: var(--gold); text-decoration: none; font-weight: 900; font-size: 1.2rem; border: 2px solid var(--gold); padding: 12px 40px; border-radius: 50px; }
+            padding: 15px;
+
+            border-radius: 15px;
+
+            margin-bottom: 25px;
+
+            font-size: 0.9rem;
+
+            color: var(--gold);
+
+            text-align: justify;
+
+            line-height: 1.8;
+        }
+
+
+        /* قسم الآيدي */
+
+        .id-section {
+
+            background:
+                rgba(243, 207, 122, 0.05);
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            margin-bottom: 30px;
+
+            border:
+                1px dashed var(--gold);
+        }
+
+
+        input {
+
+            width: 90%;
+
+            max-width: 400px;
+
+            padding: 18px;
+
+            border-radius: 15px;
+
+            border:
+                2px solid var(--gold);
+
+            background: #000;
+
+            color: #fff;
+
+            font-size: 1.3rem;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            outline: none;
+
+            transition: 0.3s;
+
+            box-sizing: border-box;
+        }
+
+
+        input:focus {
+
+            box-shadow:
+                0 0 15px rgba(243,207,122,0.35);
+        }
+
+
+        /* الأزرار */
+
+        .tabs {
+
+            display: flex;
+
+            gap: 15px;
+
+            justify-content: center;
+
+            margin-bottom: 25px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .tab-btn {
+
+            padding: 12px 40px;
+
+            border:
+                2px solid var(--gold);
+
+            background: transparent;
+
+            color: white;
+
+            cursor: pointer;
+
+            border-radius: 50px;
+
+            font-weight: 900;
+
+            font-size: 1.1rem;
+
+            transition: 0.3s;
+        }
+
+
+        .tab-btn.active {
+
+            background: var(--gold);
+
+            color: black;
+        }
+
+
+        .tab-btn:hover {
+
+            transform: translateY(-2px);
+        }
+
+
+        /* الجدول */
+
+        .table-wrapper {
+
+            overflow-x: auto;
+
+            border-radius: 20px;
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 600px;
+
+            background:
+                rgba(0,0,0,0.3);
+        }
+
+
+        th {
+
+            background: var(--gold);
+
+            color: black;
+
+            padding: 18px;
+
+            font-size: 1.1rem;
+        }
+
+
+        td {
+
+            padding: 18px;
+
+            border-bottom:
+                1px solid rgba(243,207,122,0.1);
+
+            font-size: 1.1rem;
+
+            font-weight: bold;
+        }
+
+
+        .amount {
+
+            color: var(--gold);
+
+            font-weight: 900;
+        }
+
+
+        .price {
+
+            color: white;
+
+            font-weight: 900;
+        }
+
+
+        /* زر واتساب */
+
+        .btn-whatsapp {
+
+            background: #25d366;
+
+            color: white;
+
+            padding: 10px 25px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .btn-whatsapp:hover {
+
+            transform: scale(1.1);
+
+            box-shadow:
+                0 0 20px #25d366;
+        }
+
+
+        /* زر المساعدة */
+
+        .help-btn {
+
+            position: fixed;
+
+            bottom: 30px;
+
+            left: 30px;
+
+            width: 60px;
+
+            height: 60px;
+
+            background: var(--gold);
+
+            color: #050010;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 4px 15px rgba(243,207,122,0.4);
+
+            z-index: 1000;
+
+            transition: 0.3s;
+        }
+
+
+        .help-btn:hover {
+
+            transform:
+                scale(1.1) rotate(20deg);
+        }
+
+
+        /* العودة */
+
+        .back-home {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            color: var(--gold);
+
+            text-decoration: none;
+
+            font-weight: 900;
+
+            font-size: 1.2rem;
+
+            border:
+                2px solid var(--gold);
+
+            padding: 12px 40px;
+
+            border-radius: 50px;
+
+            transition: 0.3s;
+        }
+
+
+        .back-home:hover {
+
+            background: var(--gold);
+
+            color: #050010;
+        }
+
+
+        /* ملاحظة السعر */
+
+        .price-note {
+
+            margin-top: 15px;
+
+            color: #ddd;
+
+            font-size: 0.9rem;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 20px 10px;
+            }
+
+            .main-card {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tab-btn {
+                width: 90%;
+                padding: 10px 20px;
+            }
+
+            td,
+            th {
+                padding: 13px 10px;
+                font-size: 0.95rem;
+            }
+
+            .btn-whatsapp {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+
+        }
+
     </style>
+
 </head>
+
+
 <body>
-    <div id="particles-js"></div>
-    <div class="container">
-        <div class="main-card">
-            <h1>💎 مركز الشحن الملكي</h1>
-            
-            <div class="notice-box">
-                <strong>💡 لماذا الشحن عبر الموقع؟</strong> 
-                نعتمد نظام الشحن المباشر عبر الموقع لضمان أمان حسابك وتجنب أي قيود تقنية قد تفرضها سياسات المتاجر على المدفوعات المباشرة. عملية الشحن تتم بضمانة الوكلاء المعتمدين وبسرعة فائقة.
+
+
+<div id="particles-js"></div>
+
+
+<div class="container">
+
+
+    <div class="main-card">
+
+
+        <h1>
+            💎 مركز الشحن الملكي
+        </h1>
+
+
+        <div class="notice-box">
+
+            <strong>
+                💡 شحن الجواهر بسهولة
+            </strong>
+
+            <br>
+
+            اختر الكمية المناسبة لك،
+            ثم أدخل الآيدي الخاص بحسابك
+            واضغط على زر الشحن للتواصل
+            مع فريق الشحن المعتمد.
+
+            <br><br>
+
+            يتم تنفيذ الشحن على الحساب
+            بعد التأكد من بيانات الطلب.
+
+        </div>
+
+
+        <div class="id-section">
+
+            <p style="
+                margin-top:0;
+                font-weight:bold;
+                color:var(--gold);
+            ">
+
+                👑 أدخل الآيدي (ID) الخاص بك في التطبيق
+
+            </p>
+
+
+            <input
+                type="number"
+                id="user-id"
+                placeholder="ID الحساب"
+                inputmode="numeric"
+            >
+
+
+            <div class="price-note">
+
+                💎 السعر المعتمد:
+                <strong style="color:var(--gold);">
+                    500 جوهرة = 1,500 د.ع
+                </strong>
+
             </div>
 
-            <div class="id-section">
-                <p style="margin-top:0; font-weight:bold; color:var(--gold);">خطوة هامة: أدخل الآيدي (ID) الخاص بك في التطبيق أولاً</p>
-                <input type="number" id="user-id" placeholder="ID الحساب">
-            </div>
-            
-            <div class="tabs">
-                <button id="tabG" class="tab-btn active" onclick="showTab('gems')">الجواهر 💎</button>
-                <button id="tabC" class="tab-btn" onclick="showTab('coins')">الكوينز 💰</button>
-            </div>
-            <div class="table-wrapper"><table id="recharge-table"></table></div>
-            
-            <a href="guide.html" class="help-btn" title="دليل الإرشادات">؟</a>
-            
-            <a href="index.html" class="back-home">🏠 العودة للرئيسية</a>
         </div>
+
+
+        <div class="tabs">
+
+            <button
+                id="tabG"
+                class="tab-btn active"
+                onclick="showTab('gems')"
+            >
+                الجواهر 💎
+            </button>
+
+
+            <button
+                id="tabC"
+                class="tab-btn"
+                onclick="showTab('coins')"
+            >
+                الكوينز 💰
+            </button>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table id="recharge-table"></table>
+
+        </div>
+
+
+        <a
+            href="guide.html"
+            class="help-btn"
+            title="دليل الإرشادات"
+        >
+            ؟
+        </a>
+
+
+        <a
+            href="index.html"
+            class="back-home"
+        >
+            🏠 العودة للرئيسية
+        </a>
+
+
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS("particles-js", {"particles":{"number":{"value":80},"color":{"value":"#f3cf7a"},"shape":{"type":"circle"},"opacity":{"value":0.5},"size":{"value":3},"line_linked":{"enable":true,"distance":150,"color":"#f3cf7a","opacity":0.2},"move":{"enable":true,"speed":2}}});
-        
-        const gems = [[1000, "2,600", "2$"],[5000, "13,000", "10$"],[10000, "26,000", "20$"],[20000, "52,000", "40$"],[30000, "78,000", "60$"],[50000, "130,000", "100$"],[100000, "260,000", "200$"],[150000, "390,000", "300$"],[200000, "520,000", "400$"],[500000, "1,300,000", "1000$"],[1000000, "2,600,000", "2000$"]];
-        const coins = [[2000, "1,500", "1$"],[4000, "3,000", "2$"],[10000, "7,500", "5$"],[20000, "15,000", "10$"],[40000, "30,000", "20$"],[100000, "75,000", "50$"],[200000, "150,000", "100$"],[1000000, "750,000", "500$"]];
+</div>
 
-        function showTab(type) {
-            const data = (type === 'gems') ? gems : coins;
-            const icon = (type === 'gems') ? '💎' : '💰';
-            const label = (type === 'gems') ? 'جواهر' : 'كوينز';
-            document.getElementById('tabG').className = (type === 'gems') ? 'tab-btn active' : 'tab-btn';
-            document.getElementById('tabC').className = (type === 'coins') ? 'tab-btn active' : 'tab-btn';
-            let html = `<tr><th>الكمية</th><th>بالدينار</th><th>بالدولار</th><th>طلب شحن</th></tr>`;
-            data.forEach(row => { html += `<tr><td style="color:var(--gold)">${icon} ${row[0].toLocaleString()}</td><td>${row[1]} IQD</td><td>${row[2]}</td><td><button class="btn-whatsapp" onclick="sendOrder('${label}', '${row[0]}', '${row[1]}')">شحن الآن</button></td></tr>`; });
-            document.getElementById('recharge-table').innerHTML = html;
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
+<script>
+
+
+/*
+==================================================
+أسعار الجواهر
+==================================================
+
+السعر الأساسي:
+
+500 جوهرة = 1,500 دينار
+
+أي:
+
+1 جوهرة = 3 دنانير
+
+==================================================
+*/
+
+
+const gems = [
+
+    [500,      "1,500"],
+
+    [1000,     "3,000"],
+
+    [5000,     "15,000"],
+
+    [10000,    "30,000"],
+
+    [20000,    "60,000"],
+
+    [30000,    "90,000"],
+
+    [50000,    "150,000"],
+
+    [100000,   "300,000"],
+
+    [150000,   "450,000"],
+
+    [200000,   "600,000"],
+
+    [500000,   "1,500,000"],
+
+    [1000000,  "3,000,000"]
+
+];
+
+
+/*
+==================================================
+أسعار الكوينز
+==================================================
+
+هذه القيم أبقيتها كما كانت في الكود السابق.
+
+إذا كان للكوينز سعر جديد،
+أرسل لي السعر وسأعيد حساب الجدول بالكامل.
+==================================================
+*/
+
+
+const coins = [
+
+    [2000,    "1,500"],
+
+    [4000,    "3,000"],
+
+    [10000,   "7,500"],
+
+    [20000,   "15,000"],
+
+    [40000,   "30,000"],
+
+    [100000,  "75,000"],
+
+    [200000,  "150,000"],
+
+    [1000000, "750,000"]
+
+];
+
+
+
+function showTab(type) {
+
+
+    const data =
+        type === 'gems'
+        ? gems
+        : coins;
+
+
+    const icon =
+        type === 'gems'
+        ? '💎'
+        : '💰';
+
+
+    const label =
+        type === 'gems'
+        ? 'جواهر'
+        : 'كوينز';
+
+
+    document.getElementById('tabG').className =
+        type === 'gems'
+        ? 'tab-btn active'
+        : 'tab-btn';
+
+
+    document.getElementById('tabC').className =
+        type === 'coins'
+        ? 'tab-btn active'
+        : 'tab-btn';
+
+
+    let html = `
+
+        <tr>
+
+            <th>
+                الكمية
+            </th>
+
+            <th>
+                السعر
+            </th>
+
+            <th>
+                طلب الشحن
+            </th>
+
+        </tr>
+
+    `;
+
+
+    data.forEach(row => {
+
+        html += `
+
+            <tr>
+
+                <td class="amount">
+
+                    ${icon}
+                    ${Number(row[0]).toLocaleString('en-US')}
+
+                </td>
+
+
+                <td class="price">
+
+                    ${row[1]} د.ع
+
+                </td>
+
+
+                <td>
+
+                    <button
+                        class="btn-whatsapp"
+                        onclick="
+                            sendOrder(
+                                '${label}',
+                                '${row[0]}',
+                                '${row[1]}'
+                            )
+                        "
+                    >
+
+                        شحن الآن
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        'recharge-table'
+    ).innerHTML = html;
+
+}
+
+
+
+function sendOrder(
+    type,
+    amount,
+    price
+) {
+
+
+    const userId =
+        document.getElementById('user-id');
+
+
+    if (!userId.value) {
+
+        userId.style.borderColor = "red";
+
+
+        alert(
+            "⚠️ يرجى كتابة الآيدي الخاص بك أولاً!"
+        );
+
+
+        userId.focus();
+
+        return;
+    }
+
+
+    userId.style.borderColor =
+        "var(--gold)";
+
+
+    const message =
+
+        `طلب شحن من Royal Door\n\n` +
+
+        `النوع: ${type}\n` +
+
+        `الكمية: ${Number(amount).toLocaleString('en-US')}\n` +
+
+        `السعر: ${price} د.ع\n` +
+
+        `الآيدي: ${userId.value}`;
+
+
+    const whatsappUrl =
+
+        `https://wa.me/9647770992966?text=` +
+
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappUrl,
+        '_blank'
+    );
+
+}
+
+
+/*
+عرض الجواهر عند فتح الصفحة
+*/
+
+showTab('gems');
+
+
+
+/*
+خلفية الجسيمات
+*/
+
+particlesJS(
+
+    "particles-js",
+
+    {
+
+        "particles": {
+
+            "number": {
+                "value": 80
+            },
+
+            "color": {
+                "value": "#f3cf7a"
+            },
+
+            "shape": {
+                "type": "circle"
+            },
+
+            "opacity": {
+                "value": 0.5
+            },
+
+            "size": {
+                "value": 3
+            },
+
+            "line_linked": {
+
+                "enable": true,
+
+                "distance": 150,
+
+                "color": "#f3cf7a",
+
+                "opacity": 0.2
+
+            },
+
+            "move": {
+
+                "enable": true,
+
+                "speed": 2
+
+            }
+
         }
 
-        function sendOrder(type, amount, price) {
-            const userId = document.getElementById('user-id');
-            if(!userId.value) { userId.style.borderColor = "red"; alert("⚠️ يرجى كتابة الآيدي الخاص بك أولاً!"); return; }
-            window.open(`https://wa.me/9647770992966?text=${encodeURIComponent(`طلب شحن ${type} (${amount}) للسعر ${price} IQD، الآيدي: ${userId.value}`)}`, '_blank');
-        }
-        showTab('gems');
-    </script>
+    }
+
+);
+
+</script>
+
+
 </body>
+
 </html>
