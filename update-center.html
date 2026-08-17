@@ -1,16 +1,776 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="html-root">
+
 <head>
-  <meta charset="UTF-8">
-  <title>مركز التحديث الملكي</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>مركز التحديث الملكي | Royal Door</title>
+
+    <meta name="description"
+          content="مركز التحديث الملكي في Royal Door لمتابعة آخر تحديثات التطبيق والإصدارات والتحسينات والميزات الجديدة.">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <link rel="canonical"
+          href="https://royaldoor.live/updates.html">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        :root {
+            --gold: #f3cf7a;
+            --gold-dark: #b08d32;
+            --bg: #050010;
+            --glass: rgba(255,255,255,0.05);
+            --border: rgba(243,207,122,0.55);
+            --text: #f4f4f4;
+            --muted: #aaa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+
+        body {
+
+            font-family: 'Cairo', sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(243,207,122,0.10),
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at bottom,
+                    rgba(100,40,160,0.10),
+                    transparent 45%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            text-align: center;
+
+            padding: 30px 15px 60px;
+
+            overflow-x: hidden;
+        }
+
+        .container {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            margin: auto;
+
+            position: relative;
+
+            z-index: 5;
+        }
+
+        .logo {
+
+            width: 95px;
+            height: 95px;
+
+            object-fit: contain;
+
+            margin-bottom: 10px;
+
+            filter:
+                drop-shadow(
+                    0 0 18px
+                    rgba(243,207,122,0.45)
+                );
+        }
+
+        h1 {
+
+            margin: 5px 0;
+
+            color: var(--gold);
+
+            font-size: 2.4rem;
+
+            font-weight: 900;
+
+            text-shadow:
+                0 0 20px
+                rgba(243,207,122,0.20);
+        }
+
+        .subtitle {
+
+            color: var(--muted);
+
+            font-size: 1rem;
+
+            margin-bottom: 30px;
+        }
+
+        .main-card {
+
+            background: var(--glass);
+
+            border: 1px solid var(--border);
+
+            border-radius: 25px;
+
+            padding: 30px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 15px 50px
+                rgba(0,0,0,0.35);
+        }
+
+        .status-box {
+
+            background:
+                rgba(243,207,122,0.07);
+
+            border:
+                1px solid
+                rgba(243,207,122,0.45);
+
+            border-radius: 18px;
+
+            padding: 20px;
+
+            margin-bottom: 25px;
+
+            line-height: 1.9;
+        }
+
+        .status-title {
+
+            color: var(--gold);
+
+            font-size: 1.25rem;
+
+            font-weight: 900;
+
+            margin-bottom: 5px;
+        }
+
+        .countdown {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+            margin: 25px auto;
+
+            max-width: 650px;
+        }
+
+        .time-box {
+
+            background:
+                rgba(0,0,0,0.35);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 18px;
+
+            padding: 18px 10px;
+        }
+
+        .time-number {
+
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 2rem;
+
+            font-weight: 900;
+        }
+
+        .time-label {
+
+            color: #bbb;
+
+            font-size: 0.85rem;
+        }
+
+        .update-box {
+
+            text-align: right;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            border-radius: 18px;
+
+            padding: 20px;
+
+            margin-top: 25px;
+
+            line-height: 1.9;
+        }
+
+        .update-box h2 {
+
+            color: var(--gold);
+
+            margin-top: 0;
+
+            font-size: 1.25rem;
+        }
+
+        .update-list {
+
+            padding-right: 20px;
+
+            margin-bottom: 0;
+        }
+
+        .update-list li {
+
+            margin-bottom: 8px;
+
+            color: #ddd;
+        }
+
+        .important {
+
+            margin-top: 25px;
+
+            padding: 18px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(243,207,122,0.07);
+
+            border:
+                1px solid
+                var(--gold);
+
+            color: #eee;
+
+            line-height: 1.9;
+
+            text-align: right;
+
+            font-size: 0.92rem;
+        }
+
+        .important strong {
+
+            color: var(--gold);
+        }
+
+        .buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 900;
+
+            transition: 0.3s;
+
+        }
+
+        .btn-home {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold),
+                    var(--gold-dark)
+                );
+
+            color: #050010;
+        }
+
+        .btn-secondary {
+
+            color: var(--gold);
+
+            border:
+                1px solid
+                var(--gold);
+
+            background: transparent;
+        }
+
+        .btn:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 8px 25px
+                rgba(243,207,122,0.20);
+        }
+
+        .footer {
+
+            margin-top: 40px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color: #777;
+
+            font-size: 0.82rem;
+
+            line-height: 1.8;
+        }
+
+        .footer a {
+
+            color: var(--gold);
+
+            text-decoration: none;
+
+            margin: 0 5px;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding:
+                    20px 10px 45px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .main-card {
+                padding: 20px 15px;
+            }
+
+            .countdown {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .time-number {
+                font-size: 1.7rem;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-  <header><h1>مركز التحديث الملكي</h1></header>
-  <section>
-    <h2>إطلاق النظام خلال:</h2>
-    <div id="countdown"></div>
-  </section>
-  <script src="assets/js/main.js"></script>
+
+<div class="container">
+
+    <img
+        src="https://royaldoor86.github.io/assets/images/logo.png"
+        class="logo"
+        alt="شعار Royal Door">
+
+    <h1>
+        👑 مركز التحديث الملكي
+    </h1>
+
+    <div class="subtitle">
+        تابع هنا آخر تحديثات وتطويرات منصة Royal Door
+    </div>
+
+
+    <div class="main-card">
+
+        <div class="status-box">
+
+            <div class="status-title">
+                🚀 التحديث القادم
+            </div>
+
+            <div>
+                نعمل باستمرار على تطوير Royal Door
+                وإضافة تحسينات وميزات جديدة
+                لتحسين تجربة المستخدم.
+            </div>
+
+        </div>
+
+
+        <!--
+        =====================================================
+        مؤقت التحديث
+        =====================================================
+
+        غيّر التاريخ التالي عند تحديد موعد التحديث.
+
+        الصيغة:
+        YYYY-MM-DDTHH:MM:SS
+
+        مثال:
+        2026-09-01T20:00:00
+
+        =====================================================
+        -->
+
+        <div class="countdown">
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="days">
+                    00
+                </span>
+
+                <span class="time-label">
+                    يوم
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="hours">
+                    00
+                </span>
+
+                <span class="time-label">
+                    ساعة
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="minutes">
+                    00
+                </span>
+
+                <span class="time-label">
+                    دقيقة
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="seconds">
+                    00
+                </span>
+
+                <span class="time-label">
+                    ثانية
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="status-box"
+            id="countdown-status">
+
+            ⏳ التحديث قيد التحضير...
+
+        </div>
+
+
+        <div class="update-box">
+
+            <h2>
+                ✨ ماذا نعمل على تطويره؟
+            </h2>
+
+            <ul class="update-list">
+
+                <li>
+                    تحسين أداء التطبيق وسرعة الاستجابة.
+                </li>
+
+                <li>
+                    تطوير تجربة المستخدم والواجهات.
+                </li>
+
+                <li>
+                    تحسين الألعاب والميزات الترفيهية.
+                </li>
+
+                <li>
+                    تطوير الغرف الصوتية والتفاعل الاجتماعي.
+                </li>
+
+                <li>
+                    تحسين أنظمة الهدايا والمزايا الرقمية.
+                </li>
+
+                <li>
+                    إضافة ميزات جديدة تدريجيًا وفق خطة التطوير.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="important">
+
+            <strong>
+                ⚠️ ملاحظة مهمة
+            </strong>
+
+            <br>
+
+            مواعيد التحديثات والميزات المذكورة في هذه الصفحة
+            قد تتغير حسب مراحل التطوير والاختبارات التقنية.
+
+            <br>
+
+            ظهور عداد أو موعد على هذه الصفحة لا يُعد وعدًا
+            بإطلاق ميزة معينة في وقت محدد، ما لم يتم الإعلان
+            عنها رسميًا من Royal Door.
+
+            <br>
+
+            جميع الميزات والخدمات تخضع للتوفر الفعلي
+            داخل التطبيق وللشروط والسياسات المعمول بها.
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a
+                href="index.html"
+                class="btn btn-home">
+                🏠 الرئيسية
+            </a>
+
+            <a
+                href="faq.html"
+                class="btn btn-secondary">
+                ❓ الأسئلة الشائعة
+            </a>
+
+            <a
+                href="user-agreement.html"
+                class="btn btn-secondary">
+                📜 اتفاقية المستخدم
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        © 2026 Royal Door — جميع الحقوق محفوظة
+
+        <br>
+
+        <a href="privacy.html">
+            سياسة الخصوصية
+        </a>
+
+        |
+
+        <a href="user-agreement.html">
+            اتفاقية المستخدم
+        </a>
+
+        |
+
+        <a href="delete-account.html">
+            حذف الحساب
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /*
+    =====================================================
+    إعداد موعد التحديث
+    =====================================================
+
+    غيّر التاريخ فقط عند تحديد الموعد.
+
+    ملاحظة:
+    الوقت هنا حسب التوقيت المحلي لجهاز المستخدم.
+
+    =====================================================
+    */
+
+    const UPDATE_DATE =
+        new Date("2026-09-01T20:00:00");
+
+
+    const daysElement =
+        document.getElementById("days");
+
+    const hoursElement =
+        document.getElementById("hours");
+
+    const minutesElement =
+        document.getElementById("minutes");
+
+    const secondsElement =
+        document.getElementById("seconds");
+
+    const statusElement =
+        document.getElementById("countdown-status");
+
+
+    function formatNumber(number) {
+
+        return String(number).padStart(2, "0");
+
+    }
+
+
+    function updateCountdown() {
+
+        const now =
+            new Date().getTime();
+
+        const target =
+            UPDATE_DATE.getTime();
+
+        const difference =
+            target - now;
+
+
+        if (difference <= 0) {
+
+            daysElement.textContent = "00";
+            hoursElement.textContent = "00";
+            minutesElement.textContent = "00";
+            secondsElement.textContent = "00";
+
+            statusElement.textContent =
+                "👑 وصل موعد التحديث أو انتهى الموعد المحدد. تابع التطبيق لمعرفة حالة الإطلاق.";
+
+            return;
+
+        }
+
+
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (difference %
+                (1000 * 60)) /
+                1000
+            );
+
+
+        daysElement.textContent =
+            formatNumber(days);
+
+        hoursElement.textContent =
+            formatNumber(hours);
+
+        minutesElement.textContent =
+            formatNumber(minutes);
+
+        secondsElement.textContent =
+            formatNumber(seconds);
+
+    }
+
+
+    updateCountdown();
+
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+</script>
+
 </body>
 </html>
