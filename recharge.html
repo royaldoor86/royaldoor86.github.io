@@ -1,375 +1,1033 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPJJR3W8WT"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
         gtag('config', 'G-RPJJR3W8WT');
     </script>
 
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>مركز الشحن الملكي | Royal Door</title>
 
-    <link rel="canonical" href="https://royaldoor.live/recharge.html">
+
+    <link rel="canonical"
+          href="https://royaldoor.live/recharge.html">
+
 
     <meta name="description"
-          content="مركز الشحن الملكي في Royal Door. اشحن الجواهر والكوينز بسهولة وسرعة.">
+          content="مركز الشحن الملكي في Royal Door لشحن الجواهر والكوينز الرقمية داخل المنصة.">
+
+
+    <meta name="robots"
+          content="index, follow">
+
 
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"
           rel="stylesheet">
 
+
     <style>
+
         :root {
+
             --gold: #f3cf7a;
             --gold-dark: #b08d32;
-            --glass: rgba(255, 255, 255, 0.05);
-            --green: #25d366;
-            --bg: #050010;
+
+            --glass:
+                rgba(255,255,255,0.05);
+
+            --green:
+                #25d366;
+
+            --red:
+                #ff4d4d;
+
+            --blue:
+                #00c8ff;
+
+            --bg:
+                #050010;
+
         }
+
 
         * {
             box-sizing: border-box;
         }
 
-        body,
-        html {
+
+        html,
+        body {
+
             margin: 0;
             padding: 0;
-            font-family: 'Cairo', sans-serif;
-            background: var(--bg);
-            color: white;
-            overflow-x: hidden;
+
+            font-family:
+                'Cairo',
+                sans-serif;
+
+            background:
+                var(--bg);
+
+            color:
+                white;
+
+            overflow-x:
+                hidden;
+
         }
+
+
+        body {
+
+            min-height:
+                100vh;
+
+        }
+
 
         #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            pointer-events: none;
+
+            position:
+                fixed;
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            z-index:
+                1;
+
+            top:
+                0;
+
+            left:
+                0;
+
+            pointer-events:
+                none;
+
         }
+
 
         .container {
-            position: relative;
-            z-index: 10;
-            max-width: 950px;
-            margin: auto;
-            padding: 40px 15px;
+
+            position:
+                relative;
+
+            z-index:
+                10;
+
+            max-width:
+                1000px;
+
+            margin:
+                auto;
+
+            padding:
+                30px 15px 60px;
+
         }
+
 
         .main-card {
-            background: var(--glass);
-            border: 2px solid var(--gold);
-            border-radius: 35px;
-            padding: 30px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 0 40px rgba(243, 207, 122, 0.1);
+
+            background:
+                var(--glass);
+
+            border:
+                2px solid var(--gold);
+
+            border-radius:
+                35px;
+
+            padding:
+                30px;
+
+            backdrop-filter:
+                blur(15px);
+
+            box-shadow:
+                0 0 40px
+                rgba(243,207,122,0.10);
+
         }
+
+
+        .brand {
+
+            color:
+                var(--gold);
+
+            font-size:
+                1rem;
+
+            font-weight:
+                900;
+
+            margin-bottom:
+                5px;
+
+        }
+
 
         h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(
-                to bottom,
-                #f3cf7a,
-                #b08d32
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 30px;
+
+            font-size:
+                2.5rem;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #f3cf7a,
+                    #b08d32
+                );
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+
+            margin:
+                5px 0 30px;
+
         }
+
 
         .notice-box {
-            background: rgba(243, 207, 122, 0.1);
-            border: 1px solid var(--gold);
-            padding: 15px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
-            color: var(--gold);
-            text-align: justify;
-            line-height: 1.8;
+
+            background:
+                rgba(243,207,122,0.08);
+
+            border:
+                1px solid var(--gold);
+
+            padding:
+                18px;
+
+            border-radius:
+                18px;
+
+            margin-bottom:
+                25px;
+
+            font-size:
+                0.95rem;
+
+            color:
+                #f8dfa0;
+
+            text-align:
+                right;
+
+            line-height:
+                1.9;
+
         }
+
+
+        .notice-box strong {
+
+            color:
+                var(--gold);
+
+        }
+
 
         .id-section {
-            background: rgba(243, 207, 122, 0.05);
-            padding: 25px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            border: 1px dashed var(--gold);
+
+            background:
+                rgba(243,207,122,0.04);
+
+            padding:
+                25px;
+
+            border-radius:
+                20px;
+
+            margin-bottom:
+                30px;
+
+            border:
+                1px dashed var(--gold);
+
         }
+
 
         .id-section p {
-            margin-top: 0;
-            font-weight: bold;
-            color: var(--gold);
+
+            margin-top:
+                0;
+
+            font-weight:
+                bold;
+
+            color:
+                var(--gold);
+
         }
+
 
         input {
-            width: 90%;
-            max-width: 400px;
-            padding: 18px;
-            border-radius: 15px;
-            border: 2px solid var(--gold);
-            background: #000;
-            color: #fff;
-            font-size: 1.3rem;
-            text-align: center;
-            font-weight: bold;
-            outline: none;
-            transition: 0.3s;
+
+            width:
+                90%;
+
+            max-width:
+                400px;
+
+            padding:
+                18px;
+
+            border-radius:
+                15px;
+
+            border:
+                2px solid var(--gold);
+
+            background:
+                #000;
+
+            color:
+                #fff;
+
+            font-size:
+                1.3rem;
+
+            text-align:
+                center;
+
+            font-weight:
+                bold;
+
+            outline:
+                none;
+
+            transition:
+                0.3s;
+
         }
+
 
         input:focus {
-            box-shadow: 0 0 15px rgba(243, 207, 122, 0.35);
+
+            box-shadow:
+                0 0 15px
+                rgba(243,207,122,0.35);
+
         }
+
 
         input::placeholder {
-            color: rgba(255,255,255,0.5);
+
+            color:
+                rgba(255,255,255,0.5);
+
         }
+
 
         .tabs {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
+
+            display:
+                flex;
+
+            gap:
+                15px;
+
+            justify-content:
+                center;
+
+            margin-bottom:
+                20px;
+
+            flex-wrap:
+                wrap;
+
         }
+
 
         .tab-btn {
-            padding: 12px 40px;
-            border: 2px solid var(--gold);
-            background: transparent;
-            color: white;
-            cursor: pointer;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 1.1rem;
-            transition: 0.3s;
-            font-family: 'Cairo', sans-serif;
+
+            padding:
+                12px 40px;
+
+            border:
+                2px solid var(--gold);
+
+            background:
+                transparent;
+
+            color:
+                white;
+
+            cursor:
+                pointer;
+
+            border-radius:
+                50px;
+
+            font-weight:
+                900;
+
+            font-size:
+                1.1rem;
+
+            transition:
+                0.3s;
+
+            font-family:
+                'Cairo',
+                sans-serif;
+
         }
+
 
         .tab-btn:hover {
-            transform: translateY(-2px);
+
+            transform:
+                translateY(-2px);
+
         }
+
 
         .tab-btn.active {
-            background: var(--gold);
-            color: black;
+
+            background:
+                var(--gold);
+
+            color:
+                #000;
+
         }
 
-        .table-wrapper {
-            overflow-x: auto;
-            border-radius: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 650px;
-            background: rgba(0,0,0,0.3);
-        }
-
-        th {
-            background: var(--gold);
-            color: black;
-            padding: 18px;
-            font-size: 1.1rem;
-        }
-
-        td {
-            padding: 18px;
-            border-bottom: 1px solid rgba(243, 207, 122, 0.1);
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .amount {
-            color: var(--gold);
-        }
-
-        .price-iqd {
-            color: white;
-        }
-
-        .price-usd {
-            color: rgba(255,255,255,0.65);
-            font-size: 0.95rem;
-        }
-
-        .btn-whatsapp {
-            background: var(--green);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        .btn-whatsapp:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
-        }
 
         .price-info {
-            margin: 20px auto 25px;
-            padding: 12px 20px;
-            border: 1px solid rgba(243,207,122,0.5);
-            background: rgba(243,207,122,0.06);
-            border-radius: 15px;
-            color: var(--gold);
-            max-width: 650px;
-            font-weight: bold;
+
+            margin:
+                20px auto 25px;
+
+            padding:
+                15px 20px;
+
+            border:
+                1px solid
+                rgba(243,207,122,0.5);
+
+            background:
+                rgba(243,207,122,0.06);
+
+            border-radius:
+                15px;
+
+            color:
+                var(--gold);
+
+            max-width:
+                650px;
+
+            font-weight:
+                bold;
+
         }
+
+
+        .table-wrapper {
+
+            overflow-x:
+                auto;
+
+            border-radius:
+                20px;
+
+        }
+
+
+        table {
+
+            width:
+                100%;
+
+            border-collapse:
+                collapse;
+
+            min-width:
+                650px;
+
+            background:
+                rgba(0,0,0,0.30);
+
+        }
+
+
+        th {
+
+            background:
+                var(--gold);
+
+            color:
+                black;
+
+            padding:
+                18px;
+
+            font-size:
+                1.05rem;
+
+        }
+
+
+        td {
+
+            padding:
+                18px;
+
+            border-bottom:
+                1px solid
+                rgba(243,207,122,0.10);
+
+            font-size:
+                1rem;
+
+            font-weight:
+                bold;
+
+        }
+
+
+        .amount {
+
+            color:
+                var(--gold);
+
+        }
+
+
+        .price-iqd {
+
+            color:
+                white;
+
+        }
+
+
+        .unit-note {
+
+            display:
+                block;
+
+            color:
+                rgba(255,255,255,0.55);
+
+            font-size:
+                0.78rem;
+
+            margin-top:
+                3px;
+
+        }
+
+
+        .btn-whatsapp {
+
+            background:
+                var(--green);
+
+            color:
+                white;
+
+            padding:
+                10px 22px;
+
+            border-radius:
+                12px;
+
+            text-decoration:
+                none;
+
+            font-weight:
+                bold;
+
+            border:
+                none;
+
+            cursor:
+                pointer;
+
+            transition:
+                0.3s;
+
+            font-family:
+                'Cairo',
+                sans-serif;
+
+        }
+
+
+        .btn-whatsapp:hover {
+
+            transform:
+                scale(1.06);
+
+            box-shadow:
+                0 0 20px
+                rgba(37,211,102,0.5);
+
+        }
+
+
+        .terms-box {
+
+            margin-top:
+                30px;
+
+            padding:
+                20px;
+
+            border-radius:
+                18px;
+
+            background:
+                rgba(255,255,255,0.03);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            text-align:
+                right;
+
+            line-height:
+                1.9;
+
+            font-size:
+                0.88rem;
+
+            color:
+                rgba(255,255,255,0.75);
+
+        }
+
+
+        .terms-box h3 {
+
+            color:
+                var(--gold);
+
+            margin-top:
+                0;
+
+        }
+
+
+        .terms-box ul {
+
+            padding-right:
+                20px;
+
+            margin-bottom:
+                0;
+
+        }
+
+
+        .terms-box li {
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .important {
+
+            color:
+                #ffd98a;
+
+            font-weight:
+                bold;
+
+        }
+
 
         .help-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 60px;
-            height: 60px;
-            background: var(--gold);
-            color: var(--bg);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4);
-            z-index: 1000;
-            transition: 0.3s;
+
+            position:
+                fixed;
+
+            bottom:
+                30px;
+
+            left:
+                30px;
+
+            width:
+                60px;
+
+            height:
+                60px;
+
+            background:
+                var(--gold);
+
+            color:
+                var(--bg);
+
+            border-radius:
+                50%;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            font-size:
+                30px;
+
+            font-weight:
+                bold;
+
+            text-decoration:
+                none;
+
+            box-shadow:
+                0 4px 15px
+                rgba(243,207,122,0.4);
+
+            z-index:
+                1000;
+
+            transition:
+                0.3s;
+
         }
+
 
         .help-btn:hover {
-            transform: scale(1.1) rotate(20deg);
+
+            transform:
+                scale(1.1)
+                rotate(20deg);
+
         }
+
 
         .back-home {
-            display: inline-block;
-            margin-top: 35px;
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 1.2rem;
-            border: 2px solid var(--gold);
-            padding: 12px 40px;
-            border-radius: 50px;
-            transition: 0.3s;
+
+            display:
+                inline-block;
+
+            margin-top:
+                35px;
+
+            color:
+                var(--gold);
+
+            text-decoration:
+                none;
+
+            font-weight:
+                900;
+
+            font-size:
+                1.2rem;
+
+            border:
+                2px solid
+                var(--gold);
+
+            padding:
+                12px 40px;
+
+            border-radius:
+                50px;
+
+            transition:
+                0.3s;
+
         }
+
 
         .back-home:hover {
-            background: var(--gold);
-            color: black;
+
+            background:
+                var(--gold);
+
+            color:
+                black;
+
         }
 
-        @media (max-width: 600px) {
+
+        @media (max-width:600px) {
 
             .container {
-                padding: 20px 10px;
+
+                padding:
+                    20px 10px 50px;
+
             }
+
 
             .main-card {
-                padding: 20px 12px;
-                border-radius: 25px;
+
+                padding:
+                    20px 12px;
+
+                border-radius:
+                    25px;
+
             }
+
 
             h1 {
-                font-size: 2rem;
+
+                font-size:
+                    2rem;
+
             }
 
+
             .tab-btn {
-                padding: 10px 25px;
-                font-size: 1rem;
+
+                padding:
+                    10px 25px;
+
+                font-size:
+                    1rem;
+
             }
+
 
             td,
             th {
-                padding: 14px 10px;
-                font-size: 0.95rem;
+
+                padding:
+                    14px 10px;
+
+                font-size:
+                    0.9rem;
+
             }
 
+
             .help-btn {
-                width: 50px;
-                height: 50px;
-                left: 20px;
-                bottom: 20px;
+
+                width:
+                    50px;
+
+                height:
+                    50px;
+
+                left:
+                    20px;
+
+                bottom:
+                    20px;
+
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
 <div id="particles-js"></div>
+
 
 <div class="container">
 
+
     <div class="main-card">
 
-        <h1>💎 مركز الشحن الملكي</h1>
+
+        <div class="brand">
+            👑 ROYAL DOOR
+        </div>
+
+
+        <h1>
+            💎 مركز الشحن الملكي
+        </h1>
+
 
         <div class="notice-box">
-            <strong>💡 الشحن الملكي</strong><br>
-            اختر نوع الرصيد الذي ترغب بشحنه، ثم اختر الكمية المناسبة.
-            بعد ذلك أدخل الآيدي الخاص بحسابك لإرسال طلب الشحن.
-            تأكد من صحة الآيدي قبل إرسال الطلب.
+
+            <strong>
+                💡 الشحن داخل Royal Door
+            </strong>
+
+            <br>
+
+            اختر نوع الرصيد الذي تريد إضافته إلى حسابك،
+            ثم اختر الكمية المناسبة وأدخل رقم الـ ID الصحيح
+            الخاص بحسابك.
+
+            <br><br>
+
+            <strong>
+                أسعار الشحن المعتمدة:
+            </strong>
+
+            <br>
+
+            💎 500 جوهرة = 1,500 د.ع
+
+            <br>
+
+            💰 1,000 كوينز = 1,500 د.ع
+
         </div>
+
 
         <div class="id-section">
 
             <p>
-                خطوة هامة: أدخل الآيدي (ID) الخاص بك في التطبيق أولاً
+                🔐 أدخل الآيدي (ID) الخاص بحسابك
             </p>
 
+            <div style="color:rgba(255,255,255,0.65);font-size:0.85rem;margin-bottom:15px;">
+                تأكد من رقم الـ ID قبل إرسال طلب الشحن.
+            </div>
+
+
             <input
-                type="number"
+                type="text"
                 id="user-id"
-                placeholder="ID الحساب"
+                placeholder="أدخل ID الحساب"
                 inputmode="numeric"
+                autocomplete="off"
+                maxlength="20"
             >
 
         </div>
+
 
         <div class="tabs">
 
             <button
                 id="tabG"
                 class="tab-btn active"
+                type="button"
                 onclick="showTab('gems')"
             >
-                الجواهر 💎
+                💎 الجواهر
             </button>
+
 
             <button
                 id="tabC"
                 class="tab-btn"
+                type="button"
                 onclick="showTab('coins')"
             >
-                الكوينز 💰
+                💰 الكوينز
             </button>
 
         </div>
 
-        <div class="price-info" id="price-info">
-            💎 كل 500 جوهرة = 1,500 دينار
+
+        <div
+            class="price-info"
+            id="price-info"
+        >
         </div>
+
 
         <div class="table-wrapper">
 
             <table id="recharge-table"></table>
 
         </div>
+
+
+        <div class="terms-box">
+
+            <h3>
+                📜 شروط الشحن
+            </h3>
+
+            <ul>
+
+                <li>
+                    الشحن مخصص لإضافة أرصدة رقمية
+                    داخل منصة Royal Door.
+                </li>
+
+                <li>
+                    يجب إدخال رقم الـ ID الصحيح
+                    قبل إرسال الطلب.
+                </li>
+
+                <li>
+                    المستخدم مسؤول عن التأكد من صحة
+                    الـ ID قبل تنفيذ عملية الشحن.
+                </li>
+
+                <li>
+                    بعد إرسال الطلب عبر واتساب،
+                    يتم التواصل مع جهة الشحن المعتمدة
+                    لإتمام العملية وفق الإجراءات المتاحة.
+                </li>
+
+                <li>
+                    الجواهر والكوينز أرصدة رقمية
+                    مخصصة للاستخدام داخل المنصة
+                    وفق الوظائف المتاحة.
+                </li>
+
+                <li>
+                    لا تُعد الجواهر أو الكوينز نقودًا
+                    أو عملة قانونية بحد ذاتها.
+                </li>
+
+                <li>
+                    لا يعني شراء الجواهر أو الكوينز
+                    وجود عائد مالي أو ربح أو فائدة.
+                </li>
+
+                <li>
+                    الأسعار المعروضة في هذه الصفحة
+                    هي أسعار الشحن الحالية وقد يتم تحديثها
+                    من إدارة Royal Door.
+                </li>
+
+                <li class="important">
+                    لا ترسل أي مبلغ إلى شخص يدّعي أنه
+                    وكيل Royal Door ما لم يكن معتمدًا
+                    من خلال القنوات الرسمية.
+                </li>
+
+            </ul>
+
+        </div>
+
 
         <a
             href="guide.html"
@@ -379,12 +1037,14 @@
             ؟
         </a>
 
+
         <a
             href="index.html"
             class="back-home"
         >
             🏠 العودة للرئيسية
         </a>
+
 
     </div>
 
@@ -393,50 +1053,92 @@
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
+
 <script>
 
-    /*
-    =====================================================
-    إعدادات الأسعار
-    =====================================================
 
-    الجواهر:
-    500 جوهرة = 1,500 دينار
+/*
+========================================================
+ROYAL DOOR — إعدادات مركز الشحن
+========================================================
 
-    الكوينز:
-    1,000 كوينز = 1,500 دينار
+يمكن تغيير الأسعار مستقبلاً من هذا القسم فقط.
 
-    إذا أردت تغيير الأسعار مستقبلاً،
-    غيّر هذه القيم فقط.
-    =====================================================
-    */
+الجواهر:
+500 = 1,500 د.ع
 
-    const PRICING = {
+الكوينز:
+1,000 = 1,500 د.ع
+
+========================================================
+*/
+
+
+const CONFIG = {
+
+    brandName:
+        "Royal Door",
+
+    whatsappNumber:
+        "9647770992966",
+
+    pricing: {
 
         gems: {
-            baseAmount: 500,
-            basePrice: 1500,
-            symbol: "💎",
-            name: "جوهرة"
+
+            baseAmount:
+                500,
+
+            basePriceIQD:
+                1500,
+
+            symbol:
+                "💎",
+
+            name:
+                "جوهرة",
+
+            namePlural:
+                "جواهر"
+
         },
 
+
         coins: {
-            baseAmount: 1000,
-            basePrice: 1500,
-            symbol: "💰",
-            name: "كوينز"
+
+            baseAmount:
+                1000,
+
+            basePriceIQD:
+                1500,
+
+            symbol:
+                "💰",
+
+            name:
+                "كوينز",
+
+            namePlural:
+                "كوينز"
+
         }
 
-    };
+    }
+
+};
 
 
-    /*
-    =====================================================
-    الكميات التي تظهر للمستخدم
-    =====================================================
-    */
+/*
+========================================================
+الكميات المعروضة
+========================================================
+*/
 
-    const GEM_AMOUNTS = [
+
+const AMOUNTS = {
+
+    gems: [
+
         500,
         1000,
         2500,
@@ -450,10 +1152,12 @@
         200000,
         500000,
         1000000
-    ];
+
+    ],
 
 
-    const COIN_AMOUNTS = [
+    coins: [
+
         1000,
         2000,
         5000,
@@ -465,302 +1169,477 @@
         200000,
         500000,
         1000000
-    ];
+
+    ]
+
+};
 
 
-    /*
-    =====================================================
-    حساب السعر تلقائياً
-    =====================================================
-    */
+/*
+========================================================
+حساب السعر
+========================================================
+*/
 
-    function calculatePrice(type, amount) {
 
-        const pricing = PRICING[type];
+function calculatePrice(type, amount) {
 
-        return (amount / pricing.baseAmount) * pricing.basePrice;
+    const pricing =
+        CONFIG.pricing[type];
+
+
+    return (
+        amount /
+        pricing.baseAmount
+    ) *
+    pricing.basePriceIQD;
+
+}
+
+
+/*
+========================================================
+تنسيق الأرقام
+========================================================
+*/
+
+
+function formatNumber(number) {
+
+    return Number(number)
+        .toLocaleString('en-US');
+
+}
+
+
+/*
+========================================================
+تنسيق الدينار
+========================================================
+*/
+
+
+function formatIQD(number) {
+
+    return (
+        formatNumber(number) +
+        " د.ع"
+    );
+
+}
+
+
+/*
+========================================================
+التحقق من ID
+========================================================
+*/
+
+
+function validateUserId(value) {
+
+    const clean =
+        String(value)
+        .trim();
+
+
+    if (!clean) {
+
+        return false;
 
     }
 
 
-    /*
-    =====================================================
-    تنسيق الأرقام
-    =====================================================
-    */
+    if (!/^[0-9]+$/.test(clean)) {
 
-    function formatNumber(number) {
-
-        return Number(number).toLocaleString('en-US');
+        return false;
 
     }
 
 
-    /*
-    =====================================================
-    حساب الدولار للعرض فقط
-    =====================================================
+    if (
+        clean.length < 3 ||
+        clean.length > 20
+    ) {
 
-    السعر المعروض بالدولار:
-    1 دولار = 1,500 دينار
-
-    إذا أردت تغيير سعر الدولار مستقبلاً
-    غيّر هذا المتغير.
-    =====================================================
-    */
-
-    const USD_RATE = 1500;
-
-
-    function calculateUSD(price) {
-
-        return price / USD_RATE;
+        return false;
 
     }
 
 
+    return true;
+
+}
+
+
+/*
+========================================================
+عرض الجدول
+========================================================
+*/
+
+
+function showTab(type) {
+
+
+    const pricing =
+        CONFIG.pricing[type];
+
+
+    const amounts =
+        AMOUNTS[type];
+
+
+    const tabG =
+        document.getElementById('tabG');
+
+
+    const tabC =
+        document.getElementById('tabC');
+
+
+    tabG.className =
+        type === 'gems'
+            ? 'tab-btn active'
+            : 'tab-btn';
+
+
+    tabC.className =
+        type === 'coins'
+            ? 'tab-btn active'
+            : 'tab-btn';
+
+
     /*
-    =====================================================
-    عرض الجدول
-    =====================================================
+    تحديث معلومات السعر
     */
 
-    function showTab(type) {
 
-        const pricing = PRICING[type];
+    document.getElementById(
+        'price-info'
+    ).innerHTML =
 
-        const data =
-            type === 'gems'
-                ? GEM_AMOUNTS
-                : COIN_AMOUNTS;
-
-        const icon = pricing.symbol;
-
-        const label = type === 'gems'
-            ? 'جواهر'
-            : 'كوينز';
+        `${pricing.symbol}
+        كل ${formatNumber(pricing.baseAmount)}
+        ${pricing.namePlural}
+        = ${formatIQD(pricing.basePriceIQD)}`;
 
 
-        /*
-        تغيير شكل الأزرار
-        */
-
-        document.getElementById('tabG').className =
-            type === 'gems'
-                ? 'tab-btn active'
-                : 'tab-btn';
-
-        document.getElementById('tabC').className =
-            type === 'coins'
-                ? 'tab-btn active'
-                : 'tab-btn';
+    /*
+    إنشاء الجدول
+    */
 
 
-        /*
-        تغيير ملاحظة السعر
-        */
+    let html = `
 
-        if (type === 'gems') {
+        <tr>
 
-            document.getElementById('price-info').innerHTML =
-                '💎 كل 500 جوهرة = 1,500 دينار';
+            <th>
+                الكمية
+            </th>
 
-        } else {
+            <th>
+                السعر
+            </th>
 
-            document.getElementById('price-info').innerHTML =
-                '💰 كل 1,000 كوينز = 1,500 دينار';
+            <th>
+                طلب الشحن
+            </th>
 
-        }
+        </tr>
+
+    `;
 
 
-        /*
-        إنشاء الجدول
-        */
+    amounts.forEach(function(amount) {
 
-        let html = `
+
+        const price =
+            calculatePrice(
+                type,
+                amount
+            );
+
+
+        html += `
 
             <tr>
 
-                <th>الكمية</th>
+                <td class="amount">
 
-                <th>بالدينار</th>
+                    ${pricing.symbol}
 
-                <th>بالدولار</th>
+                    ${formatNumber(amount)}
 
-                <th>طلب شحن</th>
+                    <span class="unit-note">
+                        ${pricing.namePlural}
+                    </span>
+
+                </td>
+
+
+                <td class="price-iqd">
+
+                    ${formatIQD(price)}
+
+                </td>
+
+
+                <td>
+
+                    <button
+
+                        class="btn-whatsapp"
+
+                        type="button"
+
+                        onclick="sendOrder(
+                            '${type}',
+                            ${amount},
+                            ${price}
+                        )"
+
+                    >
+
+                        شحن الآن
+
+                    </button>
+
+                </td>
 
             </tr>
 
         `;
 
-
-        data.forEach(function(amount) {
-
-            const price =
-                calculatePrice(type, amount);
-
-            const usd =
-                calculateUSD(price);
+    });
 
 
-            html += `
+    document.getElementById(
+        'recharge-table'
+    ).innerHTML = html;
 
-                <tr>
-
-                    <td class="amount">
-                        ${icon}
-                        ${formatNumber(amount)}
-                    </td>
-
-                    <td class="price-iqd">
-                        ${formatNumber(price)} IQD
-                    </td>
-
-                    <td class="price-usd">
-                        $${usd.toFixed(2)}
-                    </td>
-
-                    <td>
-
-                        <button
-                            class="btn-whatsapp"
-                            onclick="sendOrder(
-                                '${label}',
-                                '${amount}',
-                                '${price}'
-                            )"
-                        >
-                            شحن الآن
-                        </button>
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        });
+}
 
 
+/*
+========================================================
+إرسال طلب الشحن
+========================================================
+*/
+
+
+function sendOrder(
+    type,
+    amount,
+    price
+) {
+
+
+    const input =
         document.getElementById(
-            'recharge-table'
-        ).innerHTML = html;
-
-    }
-
-
-    /*
-    =====================================================
-    إرسال طلب الشحن إلى واتساب
-    =====================================================
-    */
-
-    function sendOrder(type, amount, price) {
-
-        const userId =
-            document.getElementById('user-id');
-
-
-        if (!userId.value) {
-
-            userId.style.borderColor = "red";
-
-            alert(
-                "⚠️ يرجى كتابة الآيدي الخاص بك أولاً!"
-            );
-
-            userId.focus();
-
-            return;
-
-        }
-
-
-        userId.style.borderColor =
-            "var(--gold)";
-
-
-        const message =
-
-            `طلب شحن Royal Door\n\n` +
-
-            `النوع: ${type}\n` +
-
-            `الكمية: ${formatNumber(amount)}\n` +
-
-            `السعر: ${formatNumber(price)} دينار\n` +
-
-            `الآيدي: ${userId.value}`;
-
-
-        window.open(
-
-            `https://wa.me/9647770992966?text=${encodeURIComponent(message)}`,
-
-            '_blank'
-
+            'user-id'
         );
 
+
+    const userId =
+        input.value.trim();
+
+
+    /*
+    التحقق من ID
+    */
+
+
+    if (!validateUserId(userId)) {
+
+
+        input.style.borderColor =
+            "var(--red)";
+
+
+        alert(
+            "⚠️ يرجى إدخال ID صحيح لحسابك."
+        );
+
+
+        input.focus();
+
+
+        return;
+
     }
 
 
+    input.style.borderColor =
+        "var(--gold)";
+
+
+    const pricing =
+        CONFIG.pricing[type];
+
+
     /*
-    =====================================================
-    تشغيل الصفحة على الجواهر عند فتحها
-    =====================================================
+    رسالة الطلب
     */
 
-    showTab('gems');
+
+    const message =
+
+`طلب شحن Royal Door
+
+النوع: ${pricing.namePlural}
+
+الكمية: ${formatNumber(amount)}
+
+السعر: ${formatIQD(price)}
+
+ID الحساب: ${userId}
+
+أؤكد أنني تحققت من رقم ID قبل إرسال الطلب.`;
 
 
-    /*
-    =====================================================
-    خلفية الجزيئات
-    =====================================================
-    */
+    const whatsappURL =
 
-    particlesJS(
-        "particles-js",
-        {
-            "particles": {
+        `https://wa.me/` +
+        `${CONFIG.whatsappNumber}` +
+        `?text=` +
+        encodeURIComponent(message);
 
-                "number": {
-                    "value": 80
-                },
 
-                "color": {
-                    "value": "#f3cf7a"
-                },
+    window.open(
+        whatsappURL,
+        '_blank',
+        'noopener,noreferrer'
+    );
 
-                "shape": {
-                    "type": "circle"
-                },
+}
 
-                "opacity": {
-                    "value": 0.5
-                },
 
-                "size": {
-                    "value": 3
-                },
+/*
+========================================================
+منع إدخال أحرف في ID
+========================================================
+*/
 
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#f3cf7a",
-                    "opacity": 0.2
-                },
 
-                "move": {
-                    "enable": true,
-                    "speed": 2
-                }
+document
+    .getElementById('user-id')
+    .addEventListener(
+        'input',
+        function() {
 
-            }
+            this.value =
+                this.value.replace(
+                    /[^0-9]/g,
+                    ''
+                );
+
         }
     );
 
+
+/*
+========================================================
+التشغيل الافتراضي
+========================================================
+*/
+
+
+showTab('gems');
+
+
+/*
+========================================================
+خلفية الجزيئات
+========================================================
+*/
+
+
+particlesJS(
+
+    "particles-js",
+
+    {
+
+        "particles": {
+
+            "number": {
+
+                "value":
+                    70
+
+            },
+
+
+            "color": {
+
+                "value":
+                    "#f3cf7a"
+
+            },
+
+
+            "shape": {
+
+                "type":
+                    "circle"
+
+            },
+
+
+            "opacity": {
+
+                "value":
+                    0.45
+
+            },
+
+
+            "size": {
+
+                "value":
+                    3
+
+            },
+
+
+            "line_linked": {
+
+                "enable":
+                    true,
+
+                "distance":
+                    150,
+
+                "color":
+                    "#f3cf7a",
+
+                "opacity":
+                    0.15
+
+            },
+
+
+            "move": {
+
+                "enable":
+                    true,
+
+                "speed":
+                    1.5
+
+            }
+
+        }
+
+    }
+
+);
+
+
 </script>
 
+
 </body>
+
 </html>
