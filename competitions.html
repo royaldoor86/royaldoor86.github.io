@@ -1,40 +1,1928 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="html-root">
+
 <head>
+
+    <!-- =====================================================
+         Google Analytics
+    ====================================================== -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPJJR3W8WT"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-RPJJR3W8WT');
+    </script>
+
+
+    <!-- =====================================================
+         Basic SEO
+    ====================================================== -->
+
     <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>المسابقات الملكية | Royal Door</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta
+        name="description"
+        content="المسابقات الملكية في Royal Door. مسابقات ترفيهية رقمية وجوائز داخل المنصة وفق شروط المشاركة المعلنة."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <link
+        rel="canonical"
+        href="https://royaldoor.live/competitions.html"
+    >
+
+
+    <!-- =====================================================
+         Fonts
+    ====================================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap"
+        rel="stylesheet"
+    >
+
+
     <style>
-        body { font-family: 'Cairo', sans-serif; background: #050010; color: white; text-align: center; padding-top: 50px; }
-        .comp-container { width: 90%; max-width: 800px; margin: auto; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; border: 1px solid #f3cf7a; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 15px; border-bottom: 1px solid rgba(243,207,122,0.2); }
-        th { color: #f3cf7a; }
-        .btn-join { background: #f3cf7a; color: black; padding: 5px 15px; border-radius: 20px; text-decoration: none; font-weight: bold; }
+
+        :root {
+
+            --gold: #f3cf7a;
+            --gold-dark: #b08d32;
+
+            --green: #25d366;
+            --green-dark: #128c4a;
+
+            --red: #ff5252;
+            --blue: #00cfff;
+
+            --bg: #050010;
+
+            --glass: rgba(255,255,255,0.05);
+
+            --border:
+                rgba(243,207,122,0.55);
+
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            font-family:
+                'Cairo',
+                sans-serif;
+
+            background:
+                var(--bg);
+
+            color: white;
+
+            overflow-x: hidden;
+
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            text-align: center;
+
+        }
+
+
+        /* =====================================================
+           Particles
+        ====================================================== */
+
+        #particles-js {
+
+            position: fixed;
+
+            width: 100%;
+            height: 100%;
+
+            top: 0;
+            left: 0;
+
+            z-index: 1;
+
+            pointer-events: none;
+
+        }
+
+
+        /* =====================================================
+           Navigation
+        ====================================================== */
+
+        .top-nav {
+
+            position: relative;
+
+            z-index: 100;
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            padding: 15px;
+
+            background:
+                rgba(0,0,0,0.85);
+
+            border-bottom:
+                1px solid var(--gold);
+
+            backdrop-filter:
+                blur(15px);
+
+        }
+
+
+        .top-nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            padding:
+                8px 14px;
+
+            border:
+                1px solid
+                rgba(243,207,122,0.4);
+
+            border-radius: 30px;
+
+            font-size:
+                0.85rem;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .top-nav a:hover {
+
+            background:
+                var(--gold);
+
+            color: black;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================================
+           Main
+        ====================================================== */
+
+        .container {
+
+            position: relative;
+
+            z-index: 10;
+
+            width: 94%;
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding:
+                35px 0 60px;
+
+        }
+
+
+        .page-card {
+
+            background:
+                var(--glass);
+
+            border:
+                2px solid
+                var(--gold);
+
+            border-radius:
+                35px;
+
+            padding:
+                30px;
+
+            backdrop-filter:
+                blur(15px);
+
+            box-shadow:
+                0 0 45px
+                rgba(243,207,122,0.08);
+
+        }
+
+
+        /* =====================================================
+           Header
+        ====================================================== */
+
+        .crown {
+
+            font-size:
+                3.5rem;
+
+            filter:
+                drop-shadow(
+                    0 0 15px
+                    rgba(243,207,122,0.6)
+                );
+
+        }
+
+
+        h1 {
+
+            margin:
+                5px 0 10px;
+
+            font-size:
+                2.6rem;
+
+            font-weight:
+                900;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #fff3c4,
+                    var(--gold),
+                    var(--gold-dark)
+                );
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+
+        }
+
+
+        .subtitle {
+
+            color:
+                rgba(255,255,255,0.75);
+
+            margin-bottom:
+                30px;
+
+        }
+
+
+        /* =====================================================
+           Important notice
+        ====================================================== */
+
+        .notice {
+
+            text-align:
+                right;
+
+            background:
+                rgba(243,207,122,0.08);
+
+            border:
+                1px solid
+                var(--gold);
+
+            border-radius:
+                20px;
+
+            padding:
+                20px;
+
+            margin-bottom:
+                30px;
+
+            line-height:
+                1.9;
+
+            color:
+                #f3cf7a;
+
+        }
+
+
+        .notice strong {
+
+            color:
+                white;
+
+        }
+
+
+        /* =====================================================
+           Competition cards
+        ====================================================== */
+
+        .competitions {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(300px,1fr)
+                );
+
+            gap:
+                20px;
+
+        }
+
+
+        .competition-card {
+
+            position:
+                relative;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(243,207,122,0.35);
+
+            border-radius:
+                25px;
+
+            padding:
+                25px;
+
+            text-align:
+                right;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .competition-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                var(--gold);
+
+            box-shadow:
+                0 10px 30px
+                rgba(243,207,122,0.08);
+
+        }
+
+
+        .competition-icon {
+
+            font-size:
+                3rem;
+
+            text-align:
+                center;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .competition-name {
+
+            color:
+                var(--gold);
+
+            font-size:
+                1.3rem;
+
+            font-weight:
+                900;
+
+            text-align:
+                center;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .info-row {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            gap:
+                10px;
+
+            padding:
+                10px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
+
+        }
+
+
+        .info-label {
+
+            color:
+                rgba(255,255,255,0.6);
+
+        }
+
+
+        .info-value {
+
+            font-weight:
+                bold;
+
+            color:
+                white;
+
+        }
+
+
+        .reward {
+
+            color:
+                #00ff88;
+
+        }
+
+
+        /* =====================================================
+           Status
+        ====================================================== */
+
+        .status {
+
+            display:
+                inline-block;
+
+            padding:
+                5px 15px;
+
+            border-radius:
+                30px;
+
+            font-size:
+                0.85rem;
+
+            font-weight:
+                bold;
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .status.open {
+
+            background:
+                rgba(0,255,136,0.12);
+
+            color:
+                #00ff88;
+
+            border:
+                1px solid
+                #00ff88;
+
+        }
+
+
+        .status.closed {
+
+            background:
+                rgba(255,82,82,0.12);
+
+            color:
+                #ff5252;
+
+            border:
+                1px solid
+                #ff5252;
+
+        }
+
+
+        /* =====================================================
+           Join button
+        ====================================================== */
+
+        .join-btn {
+
+            width:
+                100%;
+
+            margin-top:
+                20px;
+
+            padding:
+                13px;
+
+            border:
+                none;
+
+            border-radius:
+                15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold),
+                    var(--gold-dark)
+                );
+
+            color:
+                #050010;
+
+            font-family:
+                'Cairo';
+
+            font-weight:
+                900;
+
+            font-size:
+                1rem;
+
+            cursor:
+                pointer;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .join-btn:hover {
+
+            transform:
+                scale(1.02);
+
+            box-shadow:
+                0 5px 20px
+                rgba(243,207,122,0.3);
+
+        }
+
+
+        .join-btn.disabled {
+
+            background:
+                #333;
+
+            color:
+                #888;
+
+            cursor:
+                not-allowed;
+
+        }
+
+
+        /* =====================================================
+           Rules
+        ====================================================== */
+
+        .rules-box {
+
+            margin-top:
+                35px;
+
+            text-align:
+                right;
+
+            background:
+                rgba(0,0,0,0.25);
+
+            border:
+                1px solid
+                rgba(243,207,122,0.25);
+
+            border-radius:
+                20px;
+
+            padding:
+                25px;
+
+        }
+
+
+        .rules-box h2 {
+
+            color:
+                var(--gold);
+
+            margin-top:
+                0;
+
+        }
+
+
+        .rules-box li {
+
+            margin-bottom:
+                10px;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           ID Modal
+        ====================================================== */
+
+        .modal {
+
+            display:
+                none;
+
+            position:
+                fixed;
+
+            z-index:
+                2000;
+
+            inset:
+                0;
+
+            background:
+                rgba(0,0,0,0.82);
+
+            backdrop-filter:
+                blur(8px);
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                20px;
+
+        }
+
+
+        .modal.active {
+
+            display:
+                flex;
+
+        }
+
+
+        .modal-box {
+
+            width:
+                100%;
+
+            max-width:
+                450px;
+
+            background:
+                #0b0618;
+
+            border:
+                2px solid
+                var(--gold);
+
+            border-radius:
+                25px;
+
+            padding:
+                30px;
+
+            box-shadow:
+                0 0 50px
+                rgba(243,207,122,0.15);
+
+        }
+
+
+        .modal-box h2 {
+
+            color:
+                var(--gold);
+
+        }
+
+
+        .modal-box input {
+
+            width:
+                100%;
+
+            padding:
+                15px;
+
+            border:
+                2px solid
+                var(--gold);
+
+            border-radius:
+                15px;
+
+            background:
+                black;
+
+            color:
+                white;
+
+            text-align:
+                center;
+
+            font-family:
+                'Cairo';
+
+            font-size:
+                1.2rem;
+
+            outline:
+                none;
+
+        }
+
+
+        .modal-actions {
+
+            display:
+                flex;
+
+            gap:
+                10px;
+
+            margin-top:
+                20px;
+
+        }
+
+
+        .modal-actions button {
+
+            flex:
+                1;
+
+            padding:
+                12px;
+
+            border-radius:
+                12px;
+
+            font-family:
+                'Cairo';
+
+            font-weight:
+                bold;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .confirm-btn {
+
+            background:
+                var(--green);
+
+            color:
+                white;
+
+            border:
+                none;
+
+        }
+
+
+        .cancel-btn {
+
+            background:
+                transparent;
+
+            color:
+                white;
+
+            border:
+                1px solid
+                #777;
+
+        }
+
+
+        /* =====================================================
+           Bottom
+        ====================================================== */
+
+        .back-home {
+
+            display:
+                inline-block;
+
+            margin-top:
+                35px;
+
+            padding:
+                12px 35px;
+
+            color:
+                var(--gold);
+
+            border:
+                2px solid
+                var(--gold);
+
+            border-radius:
+                50px;
+
+            text-decoration:
+                none;
+
+            font-weight:
+                900;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .back-home:hover {
+
+            background:
+                var(--gold);
+
+            color:
+                black;
+
+        }
+
+
+        .help-btn {
+
+            position:
+                fixed;
+
+            bottom:
+                25px;
+
+            left:
+                25px;
+
+            width:
+                55px;
+
+            height:
+                55px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--gold);
+
+            color:
+                #050010;
+
+            text-decoration:
+                none;
+
+            font-size:
+                25px;
+
+            font-weight:
+                900;
+
+            z-index:
+                1500;
+
+            box-shadow:
+                0 4px 20px
+                rgba(243,207,122,0.35);
+
+        }
+
+
+        /* =====================================================
+           Footer
+        ====================================================== */
+
+        .footer-note {
+
+            margin-top:
+                30px;
+
+            color:
+                rgba(255,255,255,0.45);
+
+            font-size:
+                0.8rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           Mobile
+        ====================================================== */
+
+        @media(max-width:600px) {
+
+            .page-card {
+
+                padding:
+                    20px 12px;
+
+                border-radius:
+                    25px;
+
+            }
+
+            h1 {
+
+                font-size:
+                    2rem;
+
+            }
+
+            .competitions {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            .container {
+
+                width:
+                    96%;
+
+            }
+
+            .help-btn {
+
+                width:
+                    50px;
+
+                height:
+                    50px;
+
+                bottom:
+                    18px;
+
+                left:
+                    18px;
+
+            }
+
+        }
+
     </style>
+
 </head>
+
+
 <body>
-    <h1>🏆 المسابقات الملكية</h1>
-    <div class="comp-container">
-        <table>
-            <tr>
-                <th>اسم المسابقة</th>
-                <th>الجائزة</th>
-                <th>المشاركة</th>
-            </tr>
-            <tr>
-                <td>أفضل صوت ذهبي</td>
-                <td>50,000 جوهرة 💎</td>
-                <td><a href="#" class="btn-join">اشترك الآن</a></td>
-            </tr>
-            <tr>
-                <td>تحدي الغرف الملكية</td>
-                <td>ترقية VIP شهرية 👑</td>
-                <td><a href="#" class="btn-join">اشترك الآن</a></td>
-            </tr>
-        </table>
-        <br>
-        <a href="index.html" style="color: #f3cf7a;">🏠 العودة للرئيسية</a>
+
+
+<!-- =====================================================
+     Particles
+====================================================== -->
+
+<div id="particles-js"></div>
+
+
+<!-- =====================================================
+     Navigation
+====================================================== -->
+
+<nav class="top-nav">
+
+    <a href="index.html">
+        🏠 الرئيسية
+    </a>
+
+    <a href="recharge.html">
+        💎 الشحن
+    </a>
+
+    <a href="royal_rewards.html">
+        👑 المكافآت الملكية
+    </a>
+
+    <a href="agents.html">
+        🤝 الوكلاء
+    </a>
+
+    <a href="faq.html">
+        ❓ الأسئلة الشائعة
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+     Main
+====================================================== -->
+
+<div class="container">
+
+    <div class="page-card">
+
+
+        <div class="crown">
+            👑
+        </div>
+
+
+        <h1>
+            المسابقات الملكية
+        </h1>
+
+
+        <div class="subtitle">
+            مسابقات ترفيهية وتحديات رقمية داخل عالم Royal Door
+        </div>
+
+
+        <!-- =================================================
+             Important notice
+        ================================================== -->
+
+        <div class="notice">
+
+            <strong>
+                ⚠️ تنبيه مهم
+            </strong>
+
+            <br><br>
+
+            المسابقات الملكية هي أنشطة ترفيهية رقمية داخل
+            منصة Royal Door.
+
+            <br>
+
+            المشاركة في المسابقات لا تتطلب شراء جواهر أو
+            دفع رسوم دخول أو تحويل أموال.
+
+            <br>
+
+            الجوائز المعلنة في هذه الصفحة هي جوائز رقمية
+            داخل المنصة فقط، ولا تمثل أموالاً نقدية أو
+            عائداً مالياً.
+
+            <br>
+
+            تخضع كل مسابقة لشروطها الخاصة، وقد يتم إيقاف
+            أو تعديل أي مسابقة وفقاً لظروف المنصة.
+
+        </div>
+
+
+        <!-- =================================================
+             Competitions
+        ================================================== -->
+
+        <div
+            class="competitions"
+            id="competitions-list"
+        ></div>
+
+
+        <!-- =================================================
+             Rules
+        ================================================== -->
+
+        <div class="rules-box">
+
+            <h2>
+                📜 شروط المشاركة
+            </h2>
+
+            <ul>
+
+                <li>
+                    المشاركة في المسابقات متاحة وفق الشروط
+                    المعلنة لكل مسابقة.
+                </li>
+
+                <li>
+                    لا يشترط شراء الجواهر أو دفع أي مبلغ
+                    للمشاركة في المسابقات المجانية.
+                </li>
+
+                <li>
+                    الجوائز رقمية داخل Royal Door ومخصصة
+                    للاستخدام وفق وظائف المنصة.
+                </li>
+
+                <li>
+                    يمنع استخدام الحسابات الوهمية أو البرامج
+                    الآلية أو أي وسيلة للتلاعب بنتائج المسابقة.
+                </li>
+
+                <li>
+                    لكل مستخدم حساب واحد للمشاركة ما لم تنص
+                    المسابقة على خلاف ذلك.
+                </li>
+
+                <li>
+                    يحق لإدارة Royal Door إلغاء أي مشاركة
+                    مخالفة للشروط أو قواعد المسابقة.
+                </li>
+
+                <li>
+                    لا تعتبر المشاركة وعداً بالحصول على جائزة
+                    إلا بعد تحقق شروط المسابقة وإعلان النتيجة.
+                </li>
+
+                <li>
+                    قرارات الإدارة المتعلقة بالمخالفات والتحقق
+                    من المشاركات تكون وفق سجلات المنصة
+                    والشروط المعلنة.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-note">
+
+            Royal Door منصة ترفيهية واجتماعية.
+            <br>
+
+            جميع الجوائز والمكافآت الرقمية تخضع لشروط
+            ووظائف المنصة، ولا تمثل أموالاً نقدية.
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="back-home"
+        >
+            🏠 العودة للرئيسية
+        </a>
+
     </div>
+
+</div>
+
+
+<!-- =====================================================
+     Help
+====================================================== -->
+
+<a
+    href="guide.html"
+    class="help-btn"
+    title="دليل الإرشادات"
+>
+    ؟
+</a>
+
+
+<!-- =====================================================
+     ID Modal
+====================================================== -->
+
+<div
+    class="modal"
+    id="join-modal"
+>
+
+    <div class="modal-box">
+
+        <h2>
+            👑 المشاركة في المسابقة
+        </h2>
+
+        <p id="selected-competition">
+            -
+        </p>
+
+        <p style="color:#aaa;font-size:0.9rem;">
+            أدخل ID حسابك في Royal Door لإرسال طلب المشاركة.
+        </p>
+
+        <input
+            type="number"
+            id="user-id"
+            inputmode="numeric"
+            placeholder="أدخل ID الحساب"
+        >
+
+        <div class="modal-actions">
+
+            <button
+                class="confirm-btn"
+                onclick="confirmJoin()"
+            >
+                إرسال الطلب
+            </button>
+
+            <button
+                class="cancel-btn"
+                onclick="closeModal()"
+            >
+                إلغاء
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     Particles JS
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
+<script>
+
+/*
+=========================================================
+                 ROYAL DOOR
+             COMPETITIONS CONFIG
+=========================================================
+
+جميع إعدادات المسابقات موجودة هنا.
+
+يمكنك مستقبلاً تعديل:
+
+- اسم المسابقة
+- الجائزة
+- تاريخ البداية
+- تاريخ النهاية
+- حالة المسابقة
+- نوع النشاط
+- رقم التواصل
+
+بدون تعديل بقية الصفحة.
+=========================================================
+*/
+
+
+const ROYAL_COMPETITIONS_CONFIG = {
+
+    /*
+    رقم واتساب الإدارة
+    */
+
+    whatsapp:
+
+        "9647770992966",
+
+
+    /*
+    العملة الرقمية الأساسية للجوائز
+    */
+
+    rewardCurrency:
+
+        "جوهرة",
+
+
+    /*
+    هل المشاركة مدفوعة؟
+
+    يجب أن تبقى false للمسابقات
+    المجانية المعروضة هنا.
+    */
+
+    paidEntry:
+
+        false,
+
+
+    /*
+    هل الجوائز قابلة للتحويل إلى أموال نقدية؟
+
+    false = لا
+    */
+
+    cashPrizes:
+
+        false,
+
+
+    /*
+    هل شراء الجواهر شرط للمشاركة؟
+
+    false = لا
+    */
+
+    purchaseRequired:
+
+        false
+
+};
+
+
+/*
+=========================================================
+                 قائمة المسابقات
+=========================================================
+*/
+
+const competitions = [
+
+    {
+
+        id:
+            "golden_voice",
+
+        icon:
+            "🎤",
+
+        name:
+            "أفضل صوت ذهبي",
+
+        description:
+            "مسابقة ترفيهية لاختيار أفضل أداء صوتي وفق آلية التقييم المعلنة.",
+
+        reward:
+            "50,000 جوهرة 💎",
+
+        startDate:
+            "يتم الإعلان عنه",
+
+        endDate:
+            "يتم الإعلان عنه",
+
+        status:
+            "open"
+
+    },
+
+
+    {
+
+        id:
+            "royal_rooms",
+
+        icon:
+            "👑",
+
+        name:
+            "تحدي الغرف الملكية",
+
+        description:
+            "تحدٍ ترفيهي داخل الغرف الصوتية وفق القواعد الخاصة بالمسابقة.",
+
+        reward:
+            "ترقية VIP رقمية",
+
+        startDate:
+            "يتم الإعلان عنه",
+
+        endDate:
+            "يتم الإعلان عنه",
+
+        status:
+            "open"
+
+    },
+
+
+    {
+
+        id:
+            "royal_challenge",
+
+        icon:
+            "🏆",
+
+        name:
+            "التحدي الملكي",
+
+        description:
+            "مسابقة ترفيهية تعتمد على النشاط والمهارة وفق شروط التحدي.",
+
+        reward:
+            "جائزة رقمية داخل المنصة",
+
+        startDate:
+            "يتم الإعلان عنه",
+
+        endDate:
+            "يتم الإعلان عنه",
+
+        status:
+            "open"
+
+    }
+
+];
+
+
+/*
+=========================================================
+                 متغير المسابقة المختارة
+=========================================================
+*/
+
+let selectedCompetition = null;
+
+
+/*
+=========================================================
+                 إنشاء المسابقات
+=========================================================
+*/
+
+function renderCompetitions() {
+
+    const container =
+        document.getElementById(
+            "competitions-list"
+        );
+
+
+    container.innerHTML = "";
+
+
+    competitions.forEach(
+        function(comp) {
+
+
+            const isOpen =
+                comp.status === "open";
+
+
+            const statusHTML =
+                isOpen
+
+                ?
+
+                `<span class="status open">
+                    🟢 مفتوحة للمشاركة
+                 </span>`
+
+                :
+
+                `<span class="status closed">
+                    🔴 مغلقة حالياً
+                 </span>`;
+
+
+            const buttonHTML =
+                isOpen
+
+                ?
+
+                `<button
+                    class="join-btn"
+                    onclick="openJoinModal('${comp.id}')"
+                >
+                    👑 اشترك الآن
+                </button>`
+
+                :
+
+                `<button
+                    class="join-btn disabled"
+                    disabled
+                >
+                    المشاركة مغلقة
+                </button>`;
+
+
+            container.innerHTML += `
+
+                <div class="competition-card">
+
+                    <div class="competition-icon">
+                        ${comp.icon}
+                    </div>
+
+                    <div class="competition-name">
+                        ${comp.name}
+                    </div>
+
+                    <div style="
+                        text-align:center;
+                        color:#aaa;
+                        font-size:0.9rem;
+                        line-height:1.8;
+                        margin-bottom:15px;
+                    ">
+                        ${comp.description}
+                    </div>
+
+                    <div style="text-align:center;">
+                        ${statusHTML}
+                    </div>
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            🎁 الجائزة
+                        </span>
+
+                        <span class="info-value reward">
+                            ${comp.reward}
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            📅 البداية
+                        </span>
+
+                        <span class="info-value">
+                            ${comp.startDate}
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span class="info-label">
+                            ⏳ النهاية
+                        </span>
+
+                        <span class="info-value">
+                            ${comp.endDate}
+                        </span>
+
+                    </div>
+
+
+                    ${buttonHTML}
+
+                </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/*
+=========================================================
+                 فتح نافذة المشاركة
+=========================================================
+*/
+
+function openJoinModal(id) {
+
+    const competition =
+        competitions.find(
+            function(item) {
+                return item.id === id;
+            }
+        );
+
+
+    if (!competition) {
+
+        alert(
+            "تعذر العثور على المسابقة."
+        );
+
+        return;
+
+    }
+
+
+    if (competition.status !== "open") {
+
+        alert(
+            "هذه المسابقة مغلقة حالياً."
+        );
+
+        return;
+
+    }
+
+
+    selectedCompetition =
+        competition;
+
+
+    document.getElementById(
+        "selected-competition"
+    ).innerText =
+        "المسابقة: " +
+        competition.name;
+
+
+    document.getElementById(
+        "user-id"
+    ).value = "";
+
+
+    document.getElementById(
+        "join-modal"
+    ).classList.add(
+        "active"
+    );
+
+
+    setTimeout(
+        function() {
+
+            document.getElementById(
+                "user-id"
+            ).focus();
+
+        },
+        100
+    );
+
+}
+
+
+/*
+=========================================================
+                 إغلاق النافذة
+=========================================================
+*/
+
+function closeModal() {
+
+    document.getElementById(
+        "join-modal"
+    ).classList.remove(
+        "active"
+    );
+
+}
+
+
+/*
+=========================================================
+                 إرسال المشاركة
+=========================================================
+*/
+
+function confirmJoin() {
+
+    if (!selectedCompetition) {
+
+        alert(
+            "يرجى اختيار مسابقة أولاً."
+        );
+
+        return;
+
+    }
+
+
+    const userId =
+        document.getElementById(
+            "user-id"
+        ).value.trim();
+
+
+    /*
+    التحقق من ID
+    */
+
+    if (!userId) {
+
+        alert(
+            "⚠️ يرجى إدخال ID الحساب أولاً."
+        );
+
+        return;
+
+    }
+
+
+    /*
+    منع إدخال قيم غير منطقية
+    */
+
+    if (!/^[0-9]+$/.test(userId)) {
+
+        alert(
+            "⚠️ يجب أن يحتوي ID على أرقام فقط."
+        );
+
+        return;
+
+    }
+
+
+    if (userId.length < 3) {
+
+        alert(
+            "⚠️ يرجى التأكد من صحة ID الحساب."
+        );
+
+        return;
+
+    }
+
+
+    /*
+    الرسالة
+    */
+
+    const message =
+
+        `طلب مشاركة في مسابقة Royal Door\n\n` +
+
+        `المسابقة: ${selectedCompetition.name}\n` +
+
+        `ID الحساب: ${userId}\n\n` +
+
+        `الجائزة المعلنة: ${selectedCompetition.reward}\n\n` +
+
+        `أؤكد أن المشاركة تخضع لشروط المسابقة المعلنة، ` +
+
+        `وأن الجائزة رقمية داخل المنصة وليست مبلغاً نقدياً.`;
+
+
+    /*
+    فتح واتساب
+    */
+
+    const whatsappURL =
+
+        `https://wa.me/${ROYAL_COMPETITIONS_CONFIG.whatsapp}` +
+
+        `?text=${encodeURIComponent(message)}`;
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+
+    closeModal();
+
+}
+
+
+/*
+=========================================================
+                 تشغيل الصفحة
+=========================================================
+*/
+
+renderCompetitions();
+
+
+/*
+=========================================================
+                 إغلاق Modal عند الضغط خارجها
+=========================================================
+*/
+
+document.getElementById(
+    "join-modal"
+).addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            this
+        ) {
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/*
+=========================================================
+                 Particles
+=========================================================
+*/
+
+particlesJS(
+    "particles-js",
+    {
+
+        particles: {
+
+            number: {
+                value: 70
+            },
+
+            color: {
+                value: "#f3cf7a"
+            },
+
+            shape: {
+                type: "circle"
+            },
+
+            opacity: {
+                value: 0.45
+            },
+
+            size: {
+                value: 3
+            },
+
+            line_linked: {
+
+                enable: true,
+
+                distance: 150,
+
+                color: "#f3cf7a",
+
+                opacity: 0.15
+
+            },
+
+            move: {
+
+                enable: true,
+
+                speed: 1.5
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
 </body>
 </html>
