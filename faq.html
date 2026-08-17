@@ -1,53 +1,541 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="html-root">
+
 <head>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPJJR3W8WT"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RPJJR3W8WT');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-RPJJR3W8WT');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>الأسئلة الشائعة | Royal Door</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <meta name="description"
+        content="الأسئلة الشائعة حول الجواهر والكوينز والباقات والمكافآت الرقمية في Royal Door.">
+
+    <link rel="canonical" href="https://royaldoor.live/faq.html">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
     <style>
-        :root { --gold: #f3cf7a; }
-        body { background: #050010; color: white; font-family: 'Cairo', sans-serif; padding: 20px; text-align: center; }
-        .faq-container { max-width: 800px; margin: auto; padding: 20px; }
-        h1 { color: var(--gold); border-bottom: 2px solid var(--gold); display: inline-block; padding: 0 20px; }
-        .faq-item { background: rgba(243, 207, 122, 0.05); border: 1px solid var(--gold); padding: 20px; border-radius: 15px; margin-bottom: 20px; text-align: justify; }
-        .q { color: var(--gold); font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
-        .a { line-height: 1.8; }
-        .back-btn { display: inline-block; margin-top: 20px; padding: 10px 30px; background: var(--gold); color: black; text-decoration: none; border-radius: 25px; font-weight: bold; }
+
+        :root {
+            --gold: #f3cf7a;
+            --gold-dark: #b08d32;
+            --bg: #050010;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(243, 207, 122, 0.08),
+                    transparent 45%
+                ),
+                var(--bg);
+
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            padding: 30px 15px 60px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 5px;
+            filter: drop-shadow(
+                0 0 15px rgba(243, 207, 122, 0.5)
+            );
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 2.4rem;
+            font-weight: 900;
+            margin: 5px 0 10px;
+        }
+
+        .subtitle {
+            color: #ddd;
+            margin-bottom: 35px;
+            font-size: 1rem;
+        }
+
+        .faq-container {
+            width: 100%;
+        }
+
+        .faq-item {
+            background: var(--glass);
+            border: 1px solid rgba(243, 207, 122, 0.6);
+            padding: 22px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            text-align: right;
+            backdrop-filter: blur(12px);
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .q {
+            color: var(--gold);
+            font-size: 1.15rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .a {
+            line-height: 2;
+            color: #f1f1f1;
+            font-size: 0.95rem;
+        }
+
+        .highlight {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .info-box {
+            background: rgba(243, 207, 122, 0.08);
+            border: 1px solid var(--gold);
+            border-radius: 18px;
+            padding: 18px;
+            margin: 25px 0;
+            line-height: 1.9;
+            color: #f3cf7a;
+            text-align: right;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            transition: 0.3s;
+        }
+
+        .btn-home {
+            background: linear-gradient(
+                135deg,
+                var(--gold),
+                var(--gold-dark)
+            );
+
+            color: #050010;
+        }
+
+        .btn-recharge {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 8px 20px rgba(243, 207, 122, 0.25);
+        }
+
+        .footer {
+            margin-top: 45px;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 25px 10px 50px;
+            }
+
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            .faq-item {
+                padding: 18px;
+            }
+
+            .q {
+                font-size: 1rem;
+            }
+
+            .a {
+                font-size: 0.9rem;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
+
+<div class="container">
+
+    <img
+        src="https://royaldoor86.github.io/assets/images/logo.png"
+        class="logo"
+        alt="Royal Door">
+
     <h1>الأسئلة الشائعة</h1>
-    <div class="faq-container">
-        <div class="faq-item">
-            <div class="q">س: كيف أشحن الجواهر؟</div>
-            <div class="a">ج: اختر الباقة من صفحة الشحن، أدخل الآيدي (ID) الصحيح الخاص بك في التطبيق، واضغط على زر واتساب للتواصل مع الوكيل الخاص بمحافظتك أو من ينوب عنه.</div>
-        </div>
 
-        <div class="faq-item">
-            <div class="q">س: ماهو الاستثمار وكم يستغرق؟</div>
-            <div class="a">ج: هي عملية شراء جواهر واستثمارها في التطبيق لمدة ٣٠ يوم. بعد انتهاء المدة تحصل على عائد أو راتب حسب نوع الباقة. كل باقة لها ربحها اليومي والشهري، وتستطيع الاستمرار بعد شهر بتفعيل باقة أخرى أو سحب أرباحك كاملة. رويال دور منصة آمنة وموثقة قانونياً عبر قبول تطبيقنا في منصة جوجل، كما يمكنك شراء وتفعيل الباقات من خانة "المكافآت الملكية" أو بيع باقتك في سوق بيع الباقات إذا احتجت لأموالك.<br>
-            <strong>تنويه هام:</strong> قمنا بتصميم هذه العملية بهذا الأسلوب لتجنب خصم عمولات جوجل (التي تصل لثلث المبلغ)، لضمان وصول المبلغ كاملاً إليك؛ فإذا اشتريت 100 جوهرة، تحصل على 100 جوهرة بنفس السعر. سعر الدولار المعتمد هو 1300 دينار.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="q">س: هل توجد رسوم على التحويلات المالية؟</div>
-            <div class="a">ج: يمكنك تحويل أموالك من حساب لآخر ومن شخص لآخر داخل منصة "المكافآت الملكية" بعمولة 5% فقط كأجور تحويل.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="q">س: هل الشحن آمن؟</div>
-            <div class="a">ج: نعم، الشحن يتم عبر الوكلاء الرسميين المعتمدين في الموقع والتطبيق حصراً ويضمنون وصول الأموال إلى حسابك مباشرة. أي وكيل لم يُذكر في قائمة الوكلاء بالموقع الرسمي فهو ليس تابعاً للتطبيق.</div>
-        </div>
+    <div class="subtitle">
+        كل ما تحتاج معرفته عن خدمات Royal Door الرقمية 👑
     </div>
-    <a href="index.html" class="back-btn">العودة للرئيسية</a>
+
+
+    <!-- السؤال الأول -->
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+
+            <div class="q">
+                💎 كيف أشحن الجواهر؟
+            </div>
+
+            <div class="a">
+
+                اختر الكمية المناسبة من صفحة
+                <span class="highlight">مركز الشحن الملكي</span>،
+                ثم أدخل رقم الـ ID الخاص بحسابك في Royal Door.
+
+                بعد ذلك يمكنك إرسال طلب الشحن عبر وسيلة التواصل
+                الموضحة في صفحة الشحن.
+
+                <br><br>
+
+                يتم إضافة الجواهر إلى الحساب بعد التحقق من الطلب.
+
+            </div>
+
+        </div>
+
+
+        <!-- السؤال الثاني -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                👑 ما هو نظام المكافآت الملكية؟
+            </div>
+
+            <div class="a">
+
+                نظام المكافآت الملكية هو نظام
+                <span class="highlight">
+                    مكافآت ومزايا رقمية
+                </span>
+                داخل Royal Door.
+
+                يمكن للمستخدم اختيار الباقة الرقمية المناسبة
+                والاستفادة من المزايا والمكافآت المحددة لكل باقة
+                وفق الشروط المعروضة داخل النظام.
+
+                <br><br>
+
+                هذا النظام مخصص للاستخدام داخل منصة Royal Door
+                ولا يمثل استثمارًا ماليًا أو وديعة أو فائدة أو عائدًا ماليًا.
+
+            </div>
+
+        </div>
+
+
+        <!-- السؤال الثالث -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                💰 ما الفرق بين الجواهر والكوينز؟
+            </div>
+
+            <div class="a">
+
+                الجواهر والكوينز هما وحدتان رقميتان تستخدمان
+                داخل وظائف Royal Door المختلفة.
+
+                تختلف استخدامات كل وحدة بحسب الخدمات والألعاب
+                والمزايا المتاحة داخل التطبيق.
+
+                <br><br>
+
+                يمكن الاطلاع على أسعار الشحن الحالية
+                من خلال صفحة مركز الشحن الملكي.
+
+            </div>
+
+        </div>
+
+
+        <!-- السؤال الرابع -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                🛡️ هل الجواهر أموال حقيقية؟
+            </div>
+
+            <div class="a">
+
+                لا.
+
+                الجواهر والكوينز عبارة عن
+                <span class="highlight">
+                    وحدات رقمية داخل المنصة
+                </span>
+                تستخدم للاستفادة من الخدمات والمزايا الرقمية
+                المتوفرة في Royal Door.
+
+                ولا تُعد بحد ذاتها حسابًا مصرفيًا أو وديعة أو استثمارًا ماليًا.
+
+            </div>
+
+        </div>
+
+
+        <!-- السؤال الخامس -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                🤝 كيف أعرف الوكيل المعتمد؟
+            </div>
+
+            <div class="a">
+
+                يتم عرض بيانات وكلاء Royal Door المعتمدين
+                في صفحة
+
+                <span class="highlight">
+                    وكلاء Royal Door
+                </span>.
+
+                ننصح المستخدم بالتواصل فقط مع بيانات الاتصال
+                المنشورة في الموقع الرسمي.
+
+                <br><br>
+
+                لا تتحمل Royal Door مسؤولية التعامل مع جهات
+                أو أشخاص غير مدرجين ضمن قائمة الوكلاء المنشورة.
+
+            </div>
+
+        </div>
+
+
+        <!-- السؤال السادس -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                📱 هل أستطيع استخدام حسابي على أكثر من جهاز؟
+            </div>
+
+            <div class="a">
+
+                يعتمد ذلك على طريقة تسجيل الدخول وإعدادات الحساب
+                داخل تطبيق Royal Door.
+
+                يمكنك استخدام بيانات تسجيل الدخول الخاصة بحسابك
+                وفق القواعد والتعليمات الموجودة داخل التطبيق.
+
+            </div>
+
+        </div>
+
+
+        <!-- السؤال السابع -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                🎁 كيف أحصل على المكافآت؟
+            </div>
+
+            <div class="a">
+
+                تختلف طرق الحصول على المكافآت بحسب النظام أو الفعالية.
+
+                قد تتضمن المكافآت جواهر أو مزايا رقمية
+                أو عناصر أخرى داخل Royal Door.
+
+                يتم توضيح شروط كل مكافأة قبل الحصول عليها.
+
+            </div>
+
+        </div>
+
+
+        <!-- السؤال الثامن -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                🏆 كيف أشارك في المسابقات؟
+            </div>
+
+            <div class="a">
+
+                يمكنك متابعة صفحة
+                <span class="highlight">
+                    المسابقات الملكية
+                </span>
+                لمعرفة المسابقات والفعاليات المتاحة
+                وشروط المشاركة والجوائز الرقمية الخاصة بها.
+
+            </div>
+
+        </div>
+
+
+        <!-- السؤال التاسع -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                🔐 هل معلومات حسابي آمنة؟
+            </div>
+
+            <div class="a">
+
+                ننصح دائمًا بعدم مشاركة كلمة المرور أو رموز
+                تسجيل الدخول أو رموز التحقق مع أي شخص.
+
+                استخدم فقط قنوات التواصل الرسمية المنشورة
+                في موقع Royal Door.
+
+            </div>
+
+        </div>
+
+
+        <!-- السؤال العاشر -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                ❓ ماذا أفعل إذا واجهت مشكلة؟
+            </div>
+
+            <div class="a">
+
+                يمكنك التواصل مع الدعم من خلال قنوات التواصل
+                الرسمية الموجودة في الموقع، أو مراجعة صفحة
+                الوكلاء المعتمدين عند الحاجة إلى مساعدة مرتبطة
+                بعملية الشحن.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- صندوق توضيحي -->
+
+    <div class="info-box">
+
+        <strong>⚠️ تنويه مهم</strong>
+
+        <br>
+
+        جميع الجواهر والكوينز والمكافآت المذكورة في هذا الموقع
+        هي عناصر ووحدات رقمية مرتبطة بخدمات Royal Door.
+
+        <br>
+
+        لا تمثل هذه الوحدات أموالًا مودعة أو أوراقًا مالية
+        أو استثمارًا أو فائدة أو عائدًا ماليًا.
+
+        <br>
+
+        تخضع الخدمات والمكافآت للشروط والقواعد المعمول بها
+        داخل Royal Door.
+
+    </div>
+
+
+    <!-- الأزرار -->
+
+    <div class="buttons">
+
+        <a
+            href="index.html"
+            class="btn btn-home">
+            🏠 العودة للرئيسية
+        </a>
+
+        <a
+            href="recharge.html"
+            class="btn btn-recharge">
+            💎 مركز الشحن
+        </a>
+
+        <a
+            href="royal_rewards.html"
+            class="btn btn-recharge">
+            👑 المكافآت الملكية
+        </a>
+
+        <a
+            href="agents.html"
+            class="btn btn-recharge">
+            🤝 الوكلاء المعتمدون
+        </a>
+
+    </div>
+
+
+    <div class="footer">
+
+        © 2026 Royal Door — جميع الحقوق محفوظة
+
+    </div>
+
+</div>
+
 </body>
 </html>
