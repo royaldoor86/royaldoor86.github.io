@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>المكافآت الملكية | Royal Door</title>
+
+<meta name="description"
+content="المكافآت الملكية في Royal Door - مزايا رقمية وجواهر للاستخدام داخل المنصة.">
+
+<link rel="canonical"
+href="https://royaldoor.live/royal_rewards.html">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root {
+    --gold:#f3cf7a;
+    --dark:#b08d32;
+    --green:#00e88a;
+    --bg:#050010;
+    --card:rgba(255,255,255,.05);
+}
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    margin:0;
+    background:var(--bg);
+    color:white;
+    font-family:'Cairo',sans-serif;
+}
+
+.container {
+    max-width:1150px;
+    margin:auto;
+    padding:40px 15px;
+    text-align:center;
+}
+
+.card {
+    background:var(--card);
+    border:1px solid var(--gold);
+    border-radius:30px;
+    padding:25px;
+    backdrop-filter:blur(12px);
+}
+
+.logo {
+    width:95px;
+    filter:drop-shadow(0 0 12px var(--gold));
+}
+
+h1 {
+    color:var(--gold);
+    font-size:2.7rem;
+}
+
+.subtitle {
+    color:#ddd;
+    line-height:2;
+    max-width:750px;
+    margin:auto;
+}
+
+.notice {
+    margin:25px auto;
+    max-width:850px;
+    background:rgba(243,207,122,.08);
+    border:1px solid var(--gold);
+    border-radius:18px;
+    padding:20px;
+    text-align:right;
+    line-height:2;
+    color:#eee;
+}
+
+.notice strong {
+    color:var(--gold);
+}
+
+.table-wrapper {
+    overflow-x:auto;
+    margin-top:30px;
+    border-radius:18px;
+}
+
+table {
+    width:100%;
+    min-width:850px;
+    border-collapse:collapse;
+}
+
+th {
+    background:var(--gold);
+    color:#050010;
+    padding:15px;
+}
+
+td {
+    padding:15px 10px;
+    border-bottom:1px solid rgba(243,207,122,.15);
+}
+
+.package {
+    color:var(--gold);
+    font-weight:900;
+}
+
+.reward {
+    color:var(--green);
+    font-weight:900;
+}
+
+.duration {
+    color:#ddd;
+}
+
+.benefit {
+    color:#eee;
+}
+
+.back {
+    display:inline-block;
+    margin-top:35px;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    border-radius:30px;
+    padding:10px 30px;
+    text-decoration:none;
+}
+
+.info {
+    margin-top:25px;
+    padding:18px;
+    border-radius:15px;
+    background:rgba(0,234,255,.04);
+    border:1px solid rgba(0,234,255,.25);
+    color:#ccc;
+    line-height:2;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<img
+src="https://royaldoor86.github.io/assets/images/logo.png"
+class="logo"
+alt="Royal Door">
+
+<h1>👑 المكافآت الملكية</h1>
+
+<p class="subtitle">
+
+استمتع بالمزايا الرقمية المتاحة داخل Royal Door
+واختر ما يناسب تجربتك الملكية.
+
+</p>
+
+
+<div class="notice">
+
+<strong>💎 نظام المكافآت الملكية</strong>
+
+<br><br>
+
+الباقات المعروضة في هذه الصفحة تتعلق بمزايا
+ومكافآت رقمية داخل منصة Royal Door.
+
+<br><br>
+
+<strong>
+⚠️ الجواهر والعملات الافتراضية مخصصة للاستخدام
+داخل Royal Door ولا تمثل أموالًا نقدية أو عائدًا
+استثماريًا.
+</strong>
+
+<br><br>
+
+يتم توضيح محتوى كل باقة ومدتها قبل تفعيلها.
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>الباقة</th>
+<th>السعر</th>
+<th>المدة</th>
+<th>المكافأة</th>
+<th>المزايا</th>
+
+</tr>
+
+</thead>
+
+<tbody id="packages"></tbody>
+
+</table>
+
+</div>
+
+
+<div class="info">
+
+💡 الأسعار والمزايا المعروضة في هذه الصفحة
+قد تتغير حسب إصدار الخدمة.
+
+<br>
+
+للمعلومات النهائية، يرجى الرجوع إلى العرض
+الظاهر داخل التطبيق قبل إتمام أي عملية شراء.
+
+</div>
+
+
+<a href="guide.html" class="back">
+❓ دليل المكافآت
+</a>
+
+<br>
+
+<a href="index.html" class="back">
+🏠 العودة للرئيسية
+</a>
+
+</div>
+
+</div>
+
+
+<script>
+
+const packages = [
+
+{
+    name:"🌟 الدر",
+    price:100000,
+    reward:15000,
+    benefit:"مزايا رقمية أساسية"
+},
+
+{
+    name:"🔴 المرجان",
+    price:200000,
+    reward:30000,
+    benefit:"مزايا رقمية إضافية"
+},
+
+{
+    name:"🟤 العقيق",
+    price:300000,
+    reward:45000,
+    benefit:"مزايا رقمية متقدمة"
+},
+
+{
+    name:"💠 الكريستال",
+    price:500000,
+    reward:75000,
+    benefit:"مزايا ملكية"
+},
+
+{
+    name:"🟢 الزبرجد",
+    price:750000,
+    reward:112500,
+    benefit:"مزايا مميزة"
+},
+
+{
+    name:"🤍 اللؤلؤ",
+    price:1000000,
+    reward:150000,
+    benefit:"مزايا متقدمة جدًا"
+},
+
+{
+    name:"🔷 الفيروز",
+    price:1200000,
+    reward:180000,
+    benefit:"مزايا ملكية متقدمة"
+},
+
+{
+    name:"💎 الماس",
+    price:1300000,
+    reward:195000,
+    benefit:"مزايا ألماسية"
+},
+
+{
+    name:"🟩 الزمرد",
+    price:1400000,
+    reward:210000,
+    benefit:"مزايا زمردية"
+},
+
+{
+    name:"🔶 الياقوت",
+    price:1500000,
+    reward:225000,
+    benefit:"أعلى مستوى من المزايا الملكية"
+}
+
+];
+
+
+const container =
+document.getElementById("packages");
+
+
+packages.forEach(pkg => {
+
+    container.innerHTML += `
+
+    <tr>
+
+        <td class="package">
+            ${pkg.name}
+        </td>
+
+        <td>
+            ${pkg.price.toLocaleString("ar-IQ")}
+            د.ع
+        </td>
+
+        <td class="duration">
+            30 يوم
+        </td>
+
+        <td class="reward">
+            💎 ${pkg.reward.toLocaleString("ar-IQ")}
+        </td>
+
+        <td class="benefit">
+            ${pkg.benefit}
+        </td>
+
+    </tr>
+
+    `;
+
+});
+
+</script>
+
+</body>
+</html>
