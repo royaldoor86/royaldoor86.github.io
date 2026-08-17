@@ -3,9 +3,12 @@
 
 <head>
 
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPJJR3W8WT"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -15,193 +18,646 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>الأسئلة الشائعة | Royal Door</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-        content="الأسئلة الشائعة حول الجواهر والكوينز والباقات والمكافآت الرقمية في Royal Door.">
+    <title>
+        الأسئلة الشائعة | Royal Door
+    </title>
 
-    <link rel="canonical" href="https://royaldoor.live/faq.html">
+    <meta
+        name="description"
+        content="الأسئلة الشائعة حول الشحن والجواهر والكوينز والمكافآت الرقمية والخدمات في منصة Royal Door."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"
-        rel="stylesheet">
+        rel="canonical"
+        href="https://royaldoor.live/faq.html"
+    >
+
+    <link
+        rel="icon"
+        href="https://royaldoor86.github.io/assets/images/logo.png"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
 
         :root {
+
             --gold: #f3cf7a;
             --gold-dark: #b08d32;
+
             --bg: #050010;
-            --glass: rgba(255, 255, 255, 0.05);
+
+            --glass: rgba(255,255,255,0.05);
+
+            --glass-strong: rgba(255,255,255,0.08);
+
+            --green: #25d366;
+
+            --danger: #ff8a8a;
+
+            --text: #ffffff;
+
+            --muted: #cfcfcf;
+
+            --border: rgba(243,207,122,0.55);
+
         }
+
 
         * {
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
+
+        html {
+            scroll-behavior: smooth;
         }
 
+
         body {
+
+            margin: 0;
+
+            padding: 25px 12px 70px;
+
+            min-height: 100vh;
+
+            font-family: 'Cairo', sans-serif;
+
+            color: var(--text);
+
+            text-align: center;
+
             background:
+
                 radial-gradient(
                     circle at top,
-                    rgba(243, 207, 122, 0.08),
-                    transparent 45%
+                    rgba(243,207,122,0.10),
+                    transparent 40%
                 ),
+
+                radial-gradient(
+                    circle at bottom,
+                    rgba(100,0,150,0.08),
+                    transparent 40%
+                ),
+
                 var(--bg);
 
-            color: white;
-            font-family: 'Cairo', sans-serif;
-            text-align: center;
-            min-height: 100vh;
-            padding: 30px 15px 60px;
         }
+
 
         .container {
+
             width: 100%;
-            max-width: 900px;
+
+            max-width: 950px;
+
             margin: auto;
+
         }
+
+
+        /* =========================
+           LOGO
+        ========================== */
 
         .logo {
-            width: 90px;
-            height: 90px;
+
+            width: 95px;
+
+            height: 95px;
+
             object-fit: contain;
+
             margin-bottom: 5px;
-            filter: drop-shadow(
-                0 0 15px rgba(243, 207, 122, 0.5)
-            );
+
+            filter:
+                drop-shadow(
+                    0 0 18px
+                    rgba(243,207,122,0.55)
+                );
+
         }
+
+
+        /* =========================
+           TITLE
+        ========================== */
 
         h1 {
-            color: var(--gold);
-            font-size: 2.4rem;
+
+            margin: 5px 0 8px;
+
+            font-size: 2.5rem;
+
             font-weight: 900;
-            margin: 5px 0 10px;
+
+            color: var(--gold);
+
+            text-shadow:
+                0 0 15px
+                rgba(243,207,122,0.15);
+
         }
+
 
         .subtitle {
-            color: #ddd;
-            margin-bottom: 35px;
+
+            color: var(--muted);
+
             font-size: 1rem;
+
+            margin-bottom: 30px;
+
+            line-height: 1.8;
+
         }
 
-        .faq-container {
-            width: 100%;
-        }
 
-        .faq-item {
-            background: var(--glass);
-            border: 1px solid rgba(243, 207, 122, 0.6);
-            padding: 22px;
-            border-radius: 20px;
-            margin-bottom: 18px;
-            text-align: right;
-            backdrop-filter: blur(12px);
-            box-shadow:
-                0 8px 30px rgba(0, 0, 0, 0.25);
-        }
+        /* =========================
+           QUICK NAV
+        ========================== */
 
-        .q {
-            color: var(--gold);
-            font-size: 1.15rem;
-            font-weight: 900;
-            margin-bottom: 12px;
-        }
+        .quick-nav {
 
-        .a {
-            line-height: 2;
-            color: #f1f1f1;
-            font-size: 0.95rem;
-        }
-
-        .highlight {
-            color: var(--gold);
-            font-weight: bold;
-        }
-
-        .info-box {
-            background: rgba(243, 207, 122, 0.08);
-            border: 1px solid var(--gold);
-            border-radius: 18px;
-            padding: 18px;
-            margin: 25px 0;
-            line-height: 1.9;
-            color: #f3cf7a;
-            text-align: right;
-        }
-
-        .buttons {
             display: flex;
+
             justify-content: center;
+
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 30px;
+
+            gap: 10px;
+
+            margin-bottom: 30px;
+
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 50px;
+
+        .quick-nav a {
+
+            color: var(--gold);
+
+            border: 1px solid var(--border);
+
+            background: rgba(243,207,122,0.04);
+
             text-decoration: none;
-            font-weight: 900;
+
+            padding: 8px 16px;
+
+            border-radius: 50px;
+
+            font-size: 0.9rem;
+
+            font-weight: 700;
+
             transition: 0.3s;
+
         }
 
-        .btn-home {
-            background: linear-gradient(
-                135deg,
-                var(--gold),
-                var(--gold-dark)
-            );
+
+        .quick-nav a:hover {
+
+            background: var(--gold);
 
             color: #050010;
+
+            transform: translateY(-2px);
+
         }
 
-        .btn-recharge {
+
+        /* =========================
+           PRICE BOX
+        ========================== */
+
+        .price-box {
+
+            background:
+                rgba(243,207,122,0.07);
+
             border: 1px solid var(--gold);
-            color: var(--gold);
-            background: transparent;
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            margin-bottom: 30px;
+
+            line-height: 2;
+
         }
+
+
+        .price-title {
+
+            color: var(--gold);
+
+            font-size: 1.15rem;
+
+            font-weight: 900;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .price-row {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+        }
+
+
+        .price-item {
+
+            min-width: 220px;
+
+            padding: 12px 18px;
+
+            background:
+                rgba(0,0,0,0.25);
+
+            border: 1px solid
+                rgba(243,207,122,0.25);
+
+            border-radius: 15px;
+
+            font-weight: 700;
+
+        }
+
+
+        .price-item strong {
+
+            color: var(--gold);
+
+        }
+
+
+        /* =========================
+           FAQ
+        ========================== */
+
+        .faq-container {
+
+            width: 100%;
+
+        }
+
+
+        .faq-item {
+
+            background: var(--glass);
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            padding: 22px;
+
+            margin-bottom: 18px;
+
+            text-align: right;
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 8px 30px
+                rgba(0,0,0,0.22);
+
+        }
+
+
+        .q {
+
+            color: var(--gold);
+
+            font-size: 1.15rem;
+
+            font-weight: 900;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .a {
+
+            color: #f1f1f1;
+
+            font-size: 0.95rem;
+
+            line-height: 2;
+
+        }
+
+
+        .highlight {
+
+            color: var(--gold);
+
+            font-weight: 900;
+
+        }
+
+
+        .warning {
+
+            color: var(--danger);
+
+            font-weight: 700;
+
+        }
+
+
+        /* =========================
+           INFO BOX
+        ========================== */
+
+        .info-box {
+
+            background:
+                rgba(243,207,122,0.07);
+
+            border: 1px solid var(--gold);
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            margin: 30px 0;
+
+            line-height: 2;
+
+            color: #f3cf7a;
+
+            text-align: right;
+
+        }
+
+
+        .info-box-title {
+
+            font-weight: 900;
+
+            font-size: 1.1rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =========================
+           SUPPORT BOX
+        ========================== */
+
+        .support-box {
+
+            background:
+                rgba(37,211,102,0.05);
+
+            border: 1px solid
+                rgba(37,211,102,0.35);
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            margin: 30px 0;
+
+            line-height: 1.9;
+
+        }
+
+
+        .support-box h3 {
+
+            color: #25d366;
+
+            margin-top: 0;
+
+        }
+
+
+        .whatsapp-btn {
+
+            display: inline-block;
+
+            background: var(--green);
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 11px 25px;
+
+            border-radius: 50px;
+
+            font-weight: 900;
+
+            margin-top: 10px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .whatsapp-btn:hover {
+
+            transform: scale(1.05);
+
+            box-shadow:
+                0 0 20px
+                rgba(37,211,102,0.35);
+
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 35px;
+
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 900;
+
+            transition: 0.3s;
+
+        }
+
+
+        .btn-home {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold),
+                    var(--gold-dark)
+                );
+
+            color: #050010;
+
+        }
+
+
+        .btn-secondary {
+
+            border: 1px solid var(--gold);
+
+            color: var(--gold);
+
+            background: transparent;
+
+        }
+
 
         .btn:hover {
+
             transform: translateY(-3px);
+
             box-shadow:
-                0 8px 20px rgba(243, 207, 122, 0.25);
+                0 8px 20px
+                rgba(243,207,122,0.25);
+
         }
 
+
+        /* =========================
+           FOOTER
+        ========================== */
+
         .footer {
+
             margin-top: 45px;
-            color: #888;
-            font-size: 0.85rem;
+
+            color: #777;
+
+            font-size: 0.82rem;
+
+            line-height: 1.8;
+
         }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
 
         @media (max-width: 600px) {
 
             body {
-                padding: 25px 10px 50px;
+
+                padding:
+                    20px
+                    8px
+                    50px;
+
             }
+
+
+            .logo {
+
+                width: 80px;
+
+                height: 80px;
+
+            }
+
 
             h1 {
+
                 font-size: 1.9rem;
+
             }
+
+
+            .subtitle {
+
+                font-size: 0.9rem;
+
+            }
+
 
             .faq-item {
-                padding: 18px;
+
+                padding: 17px;
+
             }
+
 
             .q {
+
                 font-size: 1rem;
+
             }
 
+
             .a {
-                font-size: 0.9rem;
+
+                font-size: 0.88rem;
+
+            }
+
+
+            .price-item {
+
+                width: 100%;
+
+                min-width: auto;
+
+            }
+
+
+            .btn {
+
+                width: 90%;
+
             }
 
         }
@@ -210,25 +666,117 @@
 
 </head>
 
+
 <body>
 
+
 <div class="container">
+
+
+    <!-- LOGO -->
 
     <img
         src="https://royaldoor86.github.io/assets/images/logo.png"
         class="logo"
-        alt="Royal Door">
+        alt="Royal Door"
+    >
 
-    <h1>الأسئلة الشائعة</h1>
+
+    <h1>
+        الأسئلة الشائعة
+    </h1>
+
 
     <div class="subtitle">
-        كل ما تحتاج معرفته عن خدمات Royal Door الرقمية 👑
+
+        كل ما تحتاج معرفته عن خدمات Royal Door
+        والجواهر والكوينز والمكافآت الرقمية 👑
+
     </div>
 
 
-    <!-- السؤال الأول -->
+    <!-- QUICK NAV -->
+
+    <div class="quick-nav">
+
+        <a href="index.html">
+            🏠 الرئيسية
+        </a>
+
+        <a href="recharge.html">
+            💎 الشحن
+        </a>
+
+        <a href="royal_rewards.html">
+            👑 المكافآت
+        </a>
+
+        <a href="agents.html">
+            🤝 الوكلاء
+        </a>
+
+        <a href="competitions.html">
+            🏆 المسابقات
+        </a>
+
+    </div>
+
+
+    <!-- PRICES -->
+
+    <div class="price-box">
+
+        <div class="price-title">
+            💰 أسعار الشحن الحالية
+        </div>
+
+
+        <div class="price-row">
+
+            <div class="price-item">
+
+                💎
+
+                <strong>
+                    500 جوهرة
+                </strong>
+
+                =
+
+                <strong>
+                    1,500 د.ع
+                </strong>
+
+            </div>
+
+
+            <div class="price-item">
+
+                💰
+
+                <strong>
+                    1,000 كوينز
+                </strong>
+
+                =
+
+                <strong>
+                    1,500 د.ع
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FAQ -->
 
     <div class="faq-container">
+
+
+        <!-- 1 -->
 
         <div class="faq-item">
 
@@ -238,23 +786,65 @@
 
             <div class="a">
 
-                اختر الكمية المناسبة من صفحة
-                <span class="highlight">مركز الشحن الملكي</span>،
-                ثم أدخل رقم الـ ID الخاص بحسابك في Royal Door.
+                ادخل إلى
+                <span class="highlight">
+                    مركز الشحن الملكي
+                </span>،
 
-                بعد ذلك يمكنك إرسال طلب الشحن عبر وسيلة التواصل
-                الموضحة في صفحة الشحن.
+                ثم اختر كمية الجواهر المناسبة،
+                وأدخل رقم الـ ID الخاص بحسابك
+                في Royal Door.
 
                 <br><br>
 
-                يتم إضافة الجواهر إلى الحساب بعد التحقق من الطلب.
+                بعد ذلك اتبع تعليمات الشحن
+                الظاهرة في الصفحة.
+
+                <br><br>
+
+                <span class="warning">
+                    تأكد من إدخال ID الصحيح قبل إرسال طلب الشحن.
+                </span>
 
             </div>
 
         </div>
 
 
-        <!-- السؤال الثاني -->
+        <!-- 2 -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                💰 كيف أشحن الكوينز؟
+            </div>
+
+            <div class="a">
+
+                يتم شحن الكوينز من خلال
+                <span class="highlight">
+                    مركز الشحن الملكي
+                </span>.
+
+                السعر الأساسي الحالي هو:
+
+                <br><br>
+
+                <span class="highlight">
+                    1,000 كوينز = 1,500 د.ع
+                </span>
+
+                <br><br>
+
+                ويمكن أن تتوفر كميات مختلفة
+                حسب الخيارات المعروضة في صفحة الشحن.
+
+            </div>
+
+        </div>
+
+
+        <!-- 3 -->
 
         <div class="faq-item">
 
@@ -266,77 +856,113 @@
 
                 نظام المكافآت الملكية هو نظام
                 <span class="highlight">
-                    مكافآت ومزايا رقمية
+                    رقمي داخل منصة Royal Door
                 </span>
-                داخل Royal Door.
-
-                يمكن للمستخدم اختيار الباقة الرقمية المناسبة
-                والاستفادة من المزايا والمكافآت المحددة لكل باقة
-                وفق الشروط المعروضة داخل النظام.
+                يوفر باقات ومزايا ومكافآت رقمية
+                وفق الشروط الموضحة لكل باقة.
 
                 <br><br>
 
-                هذا النظام مخصص للاستخدام داخل منصة Royal Door
-                ولا يمثل استثمارًا ماليًا أو وديعة أو فائدة أو عائدًا ماليًا.
+                هذا النظام لا يمثل:
+
+                <br>
+
+                • استثمارًا ماليًا.
+
+                <br>
+
+                • وديعة مالية.
+
+                <br>
+
+                • فائدة مالية.
+
+                <br>
+
+                • ورقة مالية.
+
+                <br>
+
+                • حسابًا مصرفيًا.
+
+                <br>
+
+                • ضمانًا لعائد مالي.
 
             </div>
 
         </div>
 
 
-        <!-- السؤال الثالث -->
+        <!-- 4 -->
 
         <div class="faq-item">
 
             <div class="q">
-                💰 ما الفرق بين الجواهر والكوينز؟
+                💎 هل الجواهر والكوينز أموال حقيقية؟
             </div>
 
             <div class="a">
-
-                الجواهر والكوينز هما وحدتان رقميتان تستخدمان
-                داخل وظائف Royal Door المختلفة.
-
-                تختلف استخدامات كل وحدة بحسب الخدمات والألعاب
-                والمزايا المتاحة داخل التطبيق.
-
-                <br><br>
-
-                يمكن الاطلاع على أسعار الشحن الحالية
-                من خلال صفحة مركز الشحن الملكي.
-
-            </div>
-
-        </div>
-
-
-        <!-- السؤال الرابع -->
-
-        <div class="faq-item">
-
-            <div class="q">
-                🛡️ هل الجواهر أموال حقيقية؟
-            </div>
-
-            <div class="a">
-
-                لا.
 
                 الجواهر والكوينز عبارة عن
                 <span class="highlight">
-                    وحدات رقمية داخل المنصة
+                    وحدات رقمية داخل Royal Door
                 </span>
-                تستخدم للاستفادة من الخدمات والمزايا الرقمية
-                المتوفرة في Royal Door.
+                مخصصة لاستخدامها ضمن الوظائف
+                والخدمات والألعاب والمزايا التي توفرها المنصة.
 
-                ولا تُعد بحد ذاتها حسابًا مصرفيًا أو وديعة أو استثمارًا ماليًا.
+                <br><br>
+
+                لا تمثل الجواهر أو الكوينز بحد ذاتها
+                حسابًا مصرفيًا أو وديعة أو استثمارًا
+                أو أوراقًا مالية.
 
             </div>
 
         </div>
 
 
-        <!-- السؤال الخامس -->
+        <!-- 5 -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                🛒 أين أجد أسعار الجواهر والكوينز؟
+            </div>
+
+            <div class="a">
+
+                يمكنك الاطلاع على الأسعار والكميات
+                المتاحة في صفحة:
+
+                <br><br>
+
+                <span class="highlight">
+                    💎 مركز الشحن الملكي
+                </span>
+
+                <br><br>
+
+                السعر الأساسي الحالي:
+
+                <br>
+
+                <span class="highlight">
+                    500 جوهرة = 1,500 د.ع
+                </span>
+
+                <br>
+
+                <span class="highlight">
+                    1,000 كوينز = 1,500 د.ع
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6 -->
 
         <div class="faq-item">
 
@@ -346,48 +972,62 @@
 
             <div class="a">
 
-                يتم عرض بيانات وكلاء Royal Door المعتمدين
-                في صفحة
-
-                <span class="highlight">
-                    وكلاء Royal Door
-                </span>.
-
-                ننصح المستخدم بالتواصل فقط مع بيانات الاتصال
-                المنشورة في الموقع الرسمي.
+                يتم نشر بيانات الوكلاء المعتمدين
+                في صفحة:
 
                 <br><br>
 
-                لا تتحمل Royal Door مسؤولية التعامل مع جهات
-                أو أشخاص غير مدرجين ضمن قائمة الوكلاء المنشورة.
+                <span class="highlight">
+                    وكلاء Royal Door
+                </span>
+
+                <br><br>
+
+                ننصح بالتعامل فقط مع بيانات الاتصال
+                المنشورة في القنوات الرسمية.
+
+                <br><br>
+
+                لا ترسل أموالًا أو بيانات حساسة
+                إلى أي شخص يدعي أنه وكيل
+                إذا لم تكن بياناته منشورة رسميًا.
 
             </div>
 
         </div>
 
 
-        <!-- السؤال السادس -->
+        <!-- 7 -->
 
         <div class="faq-item">
 
             <div class="q">
-                📱 هل أستطيع استخدام حسابي على أكثر من جهاز؟
+                🔐 هل يجب أن أعطي الوكيل كلمة المرور؟
             </div>
 
             <div class="a">
 
-                يعتمد ذلك على طريقة تسجيل الدخول وإعدادات الحساب
-                داخل تطبيق Royal Door.
+                <span class="warning">
+                    لا.
+                </span>
 
-                يمكنك استخدام بيانات تسجيل الدخول الخاصة بحسابك
-                وفق القواعد والتعليمات الموجودة داخل التطبيق.
+                لا تشارك كلمة المرور أو رمز التحقق
+                أو أي بيانات سرية للحساب مع أي شخص.
+
+                <br><br>
+
+                عند طلب الشحن، استخدم
+                <span class="highlight">
+                    ID الحساب
+                </span>
+                فقط عندما يكون ذلك مطلوبًا.
 
             </div>
 
         </div>
 
 
-        <!-- السؤال السابع -->
+        <!-- 8 -->
 
         <div class="faq-item">
 
@@ -397,62 +1037,199 @@
 
             <div class="a">
 
-                تختلف طرق الحصول على المكافآت بحسب النظام أو الفعالية.
+                تختلف المكافآت بحسب النظام
+                أو الفعالية أو الباقة المتاحة.
 
-                قد تتضمن المكافآت جواهر أو مزايا رقمية
-                أو عناصر أخرى داخل Royal Door.
+                <br><br>
 
-                يتم توضيح شروط كل مكافأة قبل الحصول عليها.
+                قد تشمل المكافآت عناصر رقمية
+                مثل الجواهر أو المزايا أو العناصر
+                المتاحة داخل Royal Door.
+
+                <br><br>
+
+                يجب مراجعة شروط كل مكافأة
+                قبل المشاركة أو التفعيل.
 
             </div>
 
         </div>
 
 
-        <!-- السؤال الثامن -->
+        <!-- 9 -->
 
         <div class="faq-item">
 
             <div class="q">
-                🏆 كيف أشارك في المسابقات؟
+                🏆 كيف أشارك في المسابقات الملكية؟
             </div>
 
             <div class="a">
 
-                يمكنك متابعة صفحة
+                يمكنك زيارة صفحة
                 <span class="highlight">
                     المسابقات الملكية
                 </span>
-                لمعرفة المسابقات والفعاليات المتاحة
-                وشروط المشاركة والجوائز الرقمية الخاصة بها.
+                للاطلاع على الفعاليات المتاحة.
+
+                <br><br>
+
+                تختلف شروط المشاركة والجوائز
+                من مسابقة إلى أخرى.
+
+                <br><br>
+
+                لا تعتبر جوائز المسابقات
+                عائدًا استثماريًا أو فائدة مالية.
 
             </div>
 
         </div>
 
 
-        <!-- السؤال التاسع -->
+        <!-- 10 -->
 
         <div class="faq-item">
 
             <div class="q">
-                🔐 هل معلومات حسابي آمنة؟
+                📱 هل يمكنني استخدام حسابي على أكثر من جهاز؟
             </div>
 
             <div class="a">
 
-                ننصح دائمًا بعدم مشاركة كلمة المرور أو رموز
-                تسجيل الدخول أو رموز التحقق مع أي شخص.
+                يعتمد ذلك على نظام تسجيل الدخول
+                وإعدادات الأمان الخاصة بالحساب.
 
-                استخدم فقط قنوات التواصل الرسمية المنشورة
-                في موقع Royal Door.
+                <br><br>
+
+                احرص على استخدام حسابك الشخصي
+                وعدم مشاركة بيانات تسجيل الدخول
+                مع الآخرين.
 
             </div>
 
         </div>
 
 
-        <!-- السؤال العاشر -->
+        <!-- 11 -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                🔄 هل يمكن استرجاع عملية الشحن؟
+            </div>
+
+            <div class="a">
+
+                يجب التأكد من:
+
+                <br>
+
+                • رقم الـ ID.
+
+                <br>
+
+                • نوع الرصيد.
+
+                <br>
+
+                • الكمية.
+
+                <br>
+
+                • السعر.
+
+                <br><br>
+
+                قبل تأكيد الطلب.
+
+                <br><br>
+
+                تتم معالجة طلبات الشحن وفق
+                إجراءات Royal Door وسياسة الخدمة
+                المعمول بها وقت الطلب.
+
+            </div>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                ⚠️ ماذا أفعل إذا لم تصل الجواهر؟
+            </div>
+
+            <div class="a">
+
+                احتفظ بإثبات عملية الشحن،
+                ثم تواصل مع الدعم الرسمي.
+
+                <br><br>
+
+                يفضل إرسال:
+
+                <br>
+
+                • ID الحساب.
+
+                <br>
+
+                • نوع الرصيد.
+
+                <br>
+
+                • الكمية.
+
+                <br>
+
+                • وقت العملية.
+
+                <br>
+
+                • إثبات الدفع عند الحاجة.
+
+                <br><br>
+
+                لا ترسل كلمة المرور أو رموز
+                التحقق الخاصة بحسابك.
+
+            </div>
+
+        </div>
+
+
+        <!-- 13 -->
+
+        <div class="faq-item">
+
+            <div class="q">
+                🛡️ هل Royal Door يضمن أرباحًا مالية؟
+            </div>
+
+            <div class="a">
+
+                <span class="warning">
+                    لا.
+                </span>
+
+                Royal Door لا يقدم ضمانًا لعائد مالي
+                أو ربح استثماري.
+
+                <br><br>
+
+                أي مكافآت أو مزايا تظهر داخل المنصة
+                تخضع للشروط والقواعد الخاصة بالنظام
+                الذي يتم تقديمها من خلاله.
+
+            </div>
+
+        </div>
+
+
+        <!-- 14 -->
 
         <div class="faq-item">
 
@@ -462,10 +1239,14 @@
 
             <div class="a">
 
-                يمكنك التواصل مع الدعم من خلال قنوات التواصل
-                الرسمية الموجودة في الموقع، أو مراجعة صفحة
-                الوكلاء المعتمدين عند الحاجة إلى مساعدة مرتبطة
-                بعملية الشحن.
+                يمكنك التواصل مع قنوات الدعم الرسمية
+                أو مراجعة صفحات المساعدة والوكلاء
+                المنشورة في موقع Royal Door.
+
+                <br><br>
+
+                لا تعتمد على حسابات أو أرقام غير منشورة
+                في القنوات الرسمية.
 
             </div>
 
@@ -474,68 +1255,206 @@
     </div>
 
 
-    <!-- صندوق توضيحي -->
+    <!-- IMPORTANT NOTICE -->
 
     <div class="info-box">
 
-        <strong>⚠️ تنويه مهم</strong>
+        <div class="info-box-title">
+            ⚠️ تنويه مهم
+        </div>
 
-        <br>
+        جميع الجواهر والكوينز والنقاط والمكافآت
+        والعناصر الرقمية المذكورة في الموقع
+        مرتبطة بخدمات Royal Door.
 
-        جميع الجواهر والكوينز والمكافآت المذكورة في هذا الموقع
-        هي عناصر ووحدات رقمية مرتبطة بخدمات Royal Door.
+        <br><br>
 
-        <br>
+        هذه العناصر لا تمثل أموالًا مودعة،
+        ولا أوراقًا مالية،
+        ولا وديعة،
+        ولا فائدة،
+        ولا استثمارًا ماليًا،
+        ولا تضمن أي عائد مالي.
 
-        لا تمثل هذه الوحدات أموالًا مودعة أو أوراقًا مالية
-        أو استثمارًا أو فائدة أو عائدًا ماليًا.
+        <br><br>
 
-        <br>
-
-        تخضع الخدمات والمكافآت للشروط والقواعد المعمول بها
-        داخل Royal Door.
+        تخضع الخدمات والميزات والمكافآت
+        للشروط والقواعد المعروضة داخل Royal Door
+        والتي قد يتم تحديثها عند الحاجة.
 
     </div>
 
 
-    <!-- الأزرار -->
+    <!-- SUPPORT -->
+
+    <div class="support-box">
+
+        <h3>
+            📞 تحتاج إلى مساعدة؟
+        </h3>
+
+        <div>
+            استخدم قنوات التواصل الرسمية فقط.
+        </div>
+
+        <a
+            href="https://wa.me/9647770992966"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-btn"
+        >
+            💬 التواصل عبر واتساب
+        </a>
+
+    </div>
+
+
+    <!-- BUTTONS -->
 
     <div class="buttons">
 
         <a
             href="index.html"
-            class="btn btn-home">
+            class="btn btn-home"
+        >
             🏠 العودة للرئيسية
         </a>
 
+
         <a
             href="recharge.html"
-            class="btn btn-recharge">
+            class="btn btn-secondary"
+        >
             💎 مركز الشحن
         </a>
 
+
         <a
             href="royal_rewards.html"
-            class="btn btn-recharge">
+            class="btn btn-secondary"
+        >
             👑 المكافآت الملكية
         </a>
 
+
         <a
             href="agents.html"
-            class="btn btn-recharge">
+            class="btn btn-secondary"
+        >
             🤝 الوكلاء المعتمدون
+        </a>
+
+
+        <a
+            href="competitions.html"
+            class="btn btn-secondary"
+        >
+            🏆 المسابقات الملكية
         </a>
 
     </div>
 
+
+    <!-- FOOTER -->
 
     <div class="footer">
 
         © 2026 Royal Door — جميع الحقوق محفوظة
 
+        <br>
+
+        آخر تحديث للأسئلة الشائعة:
+        <span id="update-date"></span>
+
     </div>
 
 </div>
+
+
+<script>
+
+    /*
+    =====================================================
+    ROYAL DOOR — FAQ CONFIGURATION
+    =====================================================
+
+    الأسعار المركزية المستخدمة في الموقع.
+
+    الجواهر:
+    500 = 1,500 د.ع
+
+    الكوينز:
+    1,000 = 1,500 د.ع
+
+    إذا تغير السعر مستقبلاً،
+    يتم تعديل هذه القيم فقط.
+    =====================================================
+    */
+
+    const ROYAL_CONFIG = {
+
+        gems: {
+            baseAmount: 500,
+            basePriceIQD: 1500,
+            symbol: "💎"
+        },
+
+        coins: {
+            baseAmount: 1000,
+            basePriceIQD: 1500,
+            symbol: "💰"
+        },
+
+        supportWhatsApp:
+            "9647770992966",
+
+        website:
+            "https://royaldoor.live/",
+
+        rechargePage:
+            "recharge.html",
+
+        rewardsPage:
+            "royal_rewards.html",
+
+        agentsPage:
+            "agents.html",
+
+        competitionsPage:
+            "competitions.html"
+
+    };
+
+
+    /*
+    =====================================================
+    تاريخ تحديث الصفحة
+    =====================================================
+    */
+
+    document.getElementById(
+        "update-date"
+    ).textContent = "17-08-2026";
+
+
+    /*
+    =====================================================
+    حماية بسيطة للروابط الخارجية
+    =====================================================
+    */
+
+    document.querySelectorAll(
+        'a[target="_blank"]'
+    ).forEach(function(link) {
+
+        link.setAttribute(
+            "rel",
+            "noopener noreferrer"
+        );
+
+    });
+
+</script>
 
 </body>
 </html>
