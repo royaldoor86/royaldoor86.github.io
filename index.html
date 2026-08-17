@@ -3,28 +3,24 @@
 
 <head>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPJJR3W8WT"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RPJJR3W8WT');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Royal Door | الباب الملكي</title>
 
     <meta name="description"
-          content="Royal Door - منصة ترفيهية واجتماعية تجمع الألعاب، الغرف الصوتية، الهدايا، الجواهر والمكافآت الملكية.">
+          content="Royal Door - منصة اجتماعية وترفيهية تجمع الألعاب والغرف الصوتية والهدايا والجواهر والمكافآت الرقمية.">
 
-    <link rel="canonical" href="https://royaldoor.live/">
+    <link rel="canonical"
+          href="https://royaldoor.live/">
+
+    <link rel="icon"
+          href="https://royaldoor86.github.io/assets/images/logo.png">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap"
           rel="stylesheet">
 
     <style>
@@ -34,6 +30,10 @@
             --gold-dark: #b08d32;
             --glass: rgba(255,255,255,0.05);
             --bg: #050010;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         html,
@@ -46,6 +46,10 @@
             overflow-x: hidden;
         }
 
+        body {
+            min-height: 100vh;
+        }
+
         #particles-js {
             position: fixed;
             width: 100%;
@@ -56,85 +60,134 @@
             pointer-events: none;
         }
 
-        .main-content {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 100px;
-            padding-bottom: 50px;
-            text-align: center;
-        }
-
         nav {
-            background: rgba(0,0,0,0.88);
-            padding: 15px;
+            background: rgba(0,0,0,0.90);
+            padding: 12px;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             border-bottom: 1px solid var(--gold);
-            backdrop-filter: blur(10px);
-            box-sizing: border-box;
+            backdrop-filter: blur(12px);
             flex-wrap: wrap;
         }
 
-        nav a {
+        nav a,
+        .lang-btn {
             color: white;
             text-decoration: none;
-            font-weight: bold;
-            padding: 8px 15px;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            padding: 7px 14px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: 0.3s;
+            border: 1px solid transparent;
+            background: transparent;
+            cursor: pointer;
         }
 
-        nav a:hover {
+        nav a:hover,
+        .lang-btn:hover {
             background: var(--gold);
-            color: black;
+            color: #050010;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 110px 15px 50px;
+            text-align: center;
         }
 
         .royal-logo {
             width: 120px;
+            max-width: 35vw;
             margin-bottom: 10px;
-            filter: drop-shadow(0 0 10px var(--gold));
+            filter: drop-shadow(0 0 15px var(--gold));
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.4rem, 8vw, 4rem);
             font-weight: 900;
+            margin: 0;
             background: linear-gradient(
                 to bottom,
+                #fff2bd,
                 #f3cf7a,
                 #b08d32
             );
-
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
 
-            margin: 5px 0;
+        .subtitle {
+            color: #ddd;
+            max-width: 750px;
+            line-height: 2;
+            font-size: 1rem;
+            margin: 10px auto;
+        }
+
+        .status-box {
+            background: var(--glass);
+            border: 1px solid var(--gold);
+            padding: 12px 22px;
+            border-radius: 50px;
+            margin: 18px 0;
+            color: var(--gold);
+        }
+
+        .royal-webapp-btn {
+            display: inline-block;
+            background: linear-gradient(
+                135deg,
+                var(--gold),
+                var(--gold-dark)
+            );
+            color: #050010;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 900;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(243,207,122,0.35);
+            transition: 0.3s;
+        }
+
+        .royal-webapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(243,207,122,0.55);
         }
 
         .intro-text {
             max-width: 800px;
-            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .intro-text h2 {
+            color: var(--gold);
         }
 
         .notice-box {
-            background: rgba(243,207,122,0.1);
+            background: rgba(243,207,122,0.08);
             border: 1px solid var(--gold);
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 18px;
             margin: 20px auto;
-            max-width: 700px;
-            text-align: justify;
-            font-size: 0.95rem;
+            text-align: right;
+            color: #eee;
+            line-height: 2;
+        }
+
+        .notice-box strong {
             color: var(--gold);
-            line-height: 1.9;
         }
 
         .features-chips {
@@ -142,107 +195,96 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .chip {
             background: var(--glass);
-            border: 1px solid var(--gold);
-            padding: 7px 16px;
+            border: 1px solid rgba(243,207,122,0.7);
+            padding: 8px 15px;
             border-radius: 50px;
-            font-size: 0.9rem;
-        }
-
-        .stats-box,
-        .testimonials {
-            background: var(--glass);
-            border: 1px solid var(--gold);
-            padding: 15px;
-            border-radius: 15px;
-            margin: 10px;
-        }
-
-        .royal-webapp-btn {
-            background: linear-gradient(
-                135deg,
-                var(--gold),
-                var(--gold-dark)
-            );
-
-            color: var(--bg);
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 900;
-            font-size: 1rem;
-            text-decoration: none;
-            display: inline-block;
-            margin: 15px 0 5px 0;
-
-            box-shadow:
-                0 4px 15px rgba(243,207,122,0.4);
-
-            transition: all 0.3s ease;
-            border: 1px solid #fff;
-        }
-
-        .royal-webapp-btn:hover {
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 6px 20px rgba(243,207,122,0.7);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffffff,
-                    var(--gold)
-                );
         }
 
         .video-box {
             width: 90%;
             max-width: 750px;
             aspect-ratio: 16/9;
-            border: 3px solid var(--gold);
-            border-radius: 25px;
+            border: 2px solid var(--gold);
+            border-radius: 22px;
             overflow: hidden;
-            margin: 25px 0;
+            margin: 30px 0;
+            box-shadow: 0 0 30px rgba(243,207,122,0.08);
+        }
+
+        .video-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         .social-grid {
             display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(100px, 1fr));
-
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 12px;
             width: 90%;
             max-width: 800px;
-            margin: 40px 0;
+            margin-top: 25px;
         }
 
         .social-card {
             background: var(--glass);
-            border: 1px solid var(--gold);
+            border: 1px solid rgba(243,207,122,0.7);
             padding: 15px;
             border-radius: 15px;
-            text-decoration: none;
             color: white;
-
+            text-decoration: none;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
-
+            gap: 7px;
             transition: 0.3s;
         }
 
         .social-card:hover {
-            transform: translateY(-5px);
-            background: rgba(243,207,122,0.1);
+            transform: translateY(-4px);
+            background: rgba(243,207,122,0.08);
         }
 
         .fab {
-            font-size: 24px;
+            font-size: 25px;
+        }
+
+        footer {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(243,207,122,0.25);
+            color: #888;
+            font-size: 0.8rem;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        @media(max-width:600px) {
+
+            nav {
+                gap: 3px;
+                padding: 8px;
+            }
+
+            nav a,
+            .lang-btn {
+                padding: 5px 8px;
+                font-size: 0.72rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .notice-box {
+                font-size: 0.88rem;
+            }
+
         }
 
     </style>
@@ -255,48 +297,21 @@
 
 <nav>
 
-    <a href="index.html" id="nav-home">
-        🏠 الرئيسية
-    </a>
+    <a href="index.html" id="nav-home">🏠 الرئيسية</a>
 
-    <a href="recharge.html" id="nav-recharge">
-        💎 الشحن
-    </a>
+    <a href="recharge.html" id="nav-recharge">💎 الشحن</a>
 
-    <a href="invest.html" id="nav-rewards">
-        👑 المكافآت الملكية
-    </a>
+    <a href="royal_rewards.html" id="nav-rewards">👑 المكافآت الملكية</a>
 
-    <a href="agents.html" id="nav-agents">
-        🤝 الوكلاء
-    </a>
+    <a href="agents.html" id="nav-agents">🤝 الوكلاء</a>
 
-    <a href="faq.html" id="nav-faq">
-        ❓ الأسئلة
-    </a>
+    <a href="faq.html" id="nav-faq">❓ الأسئلة</a>
 
-    <a href="about.html" id="nav-about">
-        ✨ نبذة عني
-    </a>
+    <a href="about.html" id="nav-about">✨ نبذة</a>
 
-    <a href="competitions.html" id="nav-comp">
-        🏆 المسابقات الملكية
-    </a>
+    <a href="competitions.html" id="nav-comp">🏆 المسابقات</a>
 
-    <button
-        onclick="toggleLang()"
-        style="
-            background:none;
-            border:1px solid var(--gold);
-            color:white;
-            border-radius:20px;
-            padding:5px 15px;
-            cursor:pointer;
-            font-family:'Cairo';
-        "
-    >
-        EN/AR
-    </button>
+    <button class="lang-btn" onclick="toggleLang()">EN / AR</button>
 
 </nav>
 
@@ -309,38 +324,21 @@
         alt="Royal Door Logo"
     >
 
-    <h1>
-        Royal Door
-    </h1>
+    <h1>Royal Door</h1>
 
-
-    <div class="stats-box">
-
-        <span id="stats-text">
-            👥 المستخدمون حالياً:
-        </span>
-
-        <span id="user-count">
-            50,000
-        </span>
-
+    <div class="status-box">
+        👑 مرحبًا بك في الباب الملكي
     </div>
 
-
-    <div>
-
-        <a
-            href="https://royaldoor86-e6489.web.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="royal-webapp-btn"
-            id="webapp-btn-text"
-        >
-            🌐 فتح تطبيق الويب
-        </a>
-
-    </div>
-
+    <a
+        href="https://royaldoor86-e6489.web.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="royal-webapp-btn"
+        id="webapp-btn"
+    >
+        🌐 فتح تطبيق الويب
+    </a>
 
     <div class="intro-text">
 
@@ -349,50 +347,37 @@
         </h2>
 
         <p id="welcome-desc">
-            منصة ترفيهية اجتماعية تجمع بين الدردشة الصوتية،
-            الألعاب التفاعلية، الملفات الشخصية، الهدايا،
-            الموضوعات والمكافآت الملكية.
+            Royal Door منصة اجتماعية وترفيهية تجمع بين
+            الغرف الصوتية والألعاب التفاعلية والملفات الشخصية
+            والهدايا والجواهر والمزايا الرقمية.
         </p>
 
+        <div class="notice-box">
 
-        <div class="notice-box" id="notice-content">
-
-            <strong>
-                👑 المكافآت الملكية
-            </strong>
+            <strong>👑 المكافآت الملكية</strong>
 
             <br>
 
-            يقدم Royal Door أنظمة رقمية ترفيهية
-            وبرامج مكافآت ونقاط داخل المنصة.
-            تختلف المكافآت والمهام والمزايا حسب
-            النظام أو الباقة المتاحة، ويتم توضيح
-            الشروط قبل التفعيل.
+            يمكنك الاستفادة من الأنظمة الرقمية والمكافآت
+            والمزايا المتاحة داخل Royal Door وفق الشروط
+            الموضحة لكل خدمة أو باقة قبل استخدامها.
+
+            <br><br>
+
+            <strong>
+                💎 الجواهر والرصيد الافتراضي مخصصان للاستخدام
+                داخل Royal Door ولا يمثلان أموالًا نقدية.
+            </strong>
 
         </div>
 
-
         <div class="features-chips">
 
-            <span class="chip">
-                🎙️ أنشئ غرفتك
-            </span>
-
-            <span class="chip">
-                🔊 تواصل بالصوت
-            </span>
-
-            <span class="chip">
-                🎮 ألعاب تفاعلية
-            </span>
-
-            <span class="chip">
-                💎 جواهر ومكافآت
-            </span>
-
-            <span class="chip">
-                👑 مزايا ملكية
-            </span>
+            <span class="chip">🎙️ الغرف الصوتية</span>
+            <span class="chip">🎮 الألعاب</span>
+            <span class="chip">🎁 الهدايا</span>
+            <span class="chip">💎 الجواهر</span>
+            <span class="chip">👑 المزايا الملكية</span>
 
         </div>
 
@@ -402,161 +387,127 @@
     <div class="video-box">
 
         <iframe
-            width="100%"
-            height="100%"
             src="https://www.youtube.com/embed/kHAiaOt9MdY"
-            frameborder="0"
-            allowfullscreen
             title="Royal Door"
-        ></iframe>
-
-    </div>
-
-
-    <div class="testimonials">
-
-        <h4 id="testi-title">
-            آراء الأعضاء
-        </h4>
-
-        <p id="testi-desc">
-            "تجربة ملكية لا تضاهى!"
-        </p>
+            allowfullscreen>
+        </iframe>
 
     </div>
 
 
     <div class="social-grid">
 
-        <a
-            href="https://wa.me/9647770992966"
-            class="social-card"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <i
-                class="fab fa-whatsapp"
-                style="color:#25D366;"
-            ></i>
+        <a href="https://wa.me/9647770992966"
+           class="social-card"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <span>
-                واتساب
-            </span>
-        </a>
+            <i class="fab fa-whatsapp"
+               style="color:#25D366"></i>
 
-
-        <a
-            href="https://t.me/royaldur"
-            class="social-card"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <i
-                class="fab fa-telegram"
-                style="color:#0088cc;"
-            ></i>
-
-            <span>
-                تيليجرام
-            </span>
-        </a>
-
-
-        <a
-            href="https://t.me/royaldoor_bot"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-card"
-        >
-
-            <i
-                class="fab fa-telegram-plane"
-                style="color:#0088cc;"
-            ></i>
-
-            <span id="telegram-bot-text">
-                بوت التلغرام
-            </span>
+            <span>واتساب</span>
 
         </a>
 
 
-        <a
-            href="https://www.instagram.com/royaldoor86"
-            class="social-card"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a href="https://t.me/royaldur"
+           class="social-card"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <i
-                class="fab fa-instagram"
-                style="color:#E1306C;"
-            ></i>
+            <i class="fab fa-telegram"
+               style="color:#0088cc"></i>
 
-            <span>
-                انستغرام
-            </span>
+            <span>تيليجرام</span>
 
         </a>
 
 
-        <a
-            href="https://www.facebook.com/share/1CoYUY6yWX/"
-            class="social-card"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a href="https://t.me/royaldoor_bot"
+           class="social-card"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <i
-                class="fab fa-facebook"
-                style="color:#1877F2;"
-            ></i>
+            <i class="fab fa-telegram-plane"
+               style="color:#0088cc"></i>
 
-            <span>
-                فيسبوك
-            </span>
+            <span>بوت Royal Door</span>
 
         </a>
 
 
-        <a
-            href="https://youtube.com/@royaldoor"
-            class="social-card"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a href="https://www.instagram.com/royaldoor86"
+           class="social-card"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <i
-                class="fab fa-youtube"
-                style="color:#FF0000;"
-            ></i>
+            <i class="fab fa-instagram"
+               style="color:#E1306C"></i>
 
-            <span>
-                يوتيوب
-            </span>
+            <span>انستغرام</span>
 
         </a>
 
 
-        <a
-            href="https://www.tiktok.com/@royaldoor86"
-            class="social-card"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a href="https://www.facebook.com/share/1CoYUY6yWX/"
+           class="social-card"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <i
-                class="fab fa-tiktok"
-                style="color:#fff;"
-            ></i>
+            <i class="fab fa-facebook"
+               style="color:#1877F2"></i>
 
-            <span>
-                تيك توك
-            </span>
+            <span>فيسبوك</span>
+
+        </a>
+
+
+        <a href="https://youtube.com/@royaldoor"
+           class="social-card"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <i class="fab fa-youtube"
+               style="color:#FF0000"></i>
+
+            <span>يوتيوب</span>
+
+        </a>
+
+
+        <a href="https://www.tiktok.com/@royaldoor86"
+           class="social-card"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <i class="fab fa-tiktok"></i>
+
+            <span>تيك توك</span>
 
         </a>
 
     </div>
+
+
+    <footer>
+
+        © 2026 Royal Door — جميع الحقوق محفوظة.
+
+        <br><br>
+
+        <a href="privacy.html"
+           style="color:#f3cf7a">
+            سياسة الخصوصية
+        </a>
+
+        &nbsp; | &nbsp;
+
+        <a href="delete-account.html"
+           style="color:#f3cf7a">
+            حذف الحساب
+        </a>
+
+    </footer>
 
 </div>
 
@@ -565,107 +516,47 @@
 
 function toggleLang() {
 
-    const el =
-        document.getElementById('html-root');
+    const html = document.getElementById("html-root");
 
-    const isAr =
-        el.dir === 'rtl';
+    const arabic = html.dir === "rtl";
 
-    el.dir =
-        isAr ? 'ltr' : 'rtl';
+    html.dir = arabic ? "ltr" : "rtl";
+    html.lang = arabic ? "en" : "ar";
 
-    el.lang =
-        isAr ? 'en' : 'ar';
+    document.getElementById("nav-home").textContent =
+        arabic ? "🏠 Home" : "🏠 الرئيسية";
 
+    document.getElementById("nav-recharge").textContent =
+        arabic ? "💎 Recharge" : "💎 الشحن";
 
-    document.getElementById('nav-home').innerText =
-        isAr ? '🏠 Home' : '🏠 الرئيسية';
+    document.getElementById("nav-rewards").textContent =
+        arabic ? "👑 Royal Rewards" : "👑 المكافآت الملكية";
 
-    document.getElementById('nav-recharge').innerText =
-        isAr ? '💎 Recharge' : '💎 الشحن';
+    document.getElementById("nav-agents").textContent =
+        arabic ? "🤝 Agents" : "🤝 الوكلاء";
 
-    document.getElementById('nav-rewards').innerText =
-        isAr ? '👑 Royal Rewards' : '👑 المكافآت الملكية';
+    document.getElementById("nav-faq").textContent =
+        arabic ? "❓ FAQ" : "❓ الأسئلة";
 
-    document.getElementById('nav-agents').innerText =
-        isAr ? '🤝 Agents' : '🤝 الوكلاء';
+    document.getElementById("nav-about").textContent =
+        arabic ? "✨ About" : "✨ نبذة";
 
-    document.getElementById('nav-faq').innerText =
-        isAr ? '❓ FAQ' : '❓ الأسئلة';
+    document.getElementById("nav-comp").textContent =
+        arabic ? "🏆 Competitions" : "🏆 المسابقات";
 
-    document.getElementById('nav-about').innerText =
-        isAr ? '✨ About' : '✨ نبذة عني';
+    document.getElementById("welcome-title").textContent =
+        arabic
+        ? "Welcome to a world like no other 👑"
+        : "مرحباً بك في عالم لا يشبه غيره 👑";
 
-    document.getElementById('nav-comp').innerText =
-        isAr ? '🏆 Royal Competitions' : '🏆 المسابقات الملكية';
+    document.getElementById("welcome-desc").textContent =
+        arabic
+        ? "Royal Door is a social and entertainment platform combining voice rooms, interactive games, profiles, gifts, gems and digital benefits."
+        : "Royal Door منصة اجتماعية وترفيهية تجمع بين الغرف الصوتية والألعاب التفاعلية والملفات الشخصية والهدايا والجواهر والمزايا الرقمية.";
 
-    document.getElementById('welcome-title').innerText =
-        isAr
-        ? 'Welcome to a world like no other 👑'
-        : 'مرحباً بك في عالم لا يشبه غيره 👑';
-
-    document.getElementById('stats-text').innerText =
-        isAr
-        ? '👥 Users currently:'
-        : '👥 المستخدمون حالياً:';
-
-    document.getElementById('webapp-btn-text').innerText =
-        isAr
-        ? '🌐 Open Web App'
-        : '🌐 فتح تطبيق الويب';
-
-    document.getElementById('telegram-bot-text').innerText =
-        isAr
-        ? 'Telegram Bot'
-        : 'بوت التلغرام';
-
-
-    document.getElementById('notice-content').innerHTML =
-        isAr
-
-        ?
-
-        `<strong>👑 Royal Rewards</strong>
-        <br>
-        Royal Door provides digital entertainment systems,
-        reward programs and points within the platform.
-        Rewards, tasks and benefits vary according to
-        the available system or package, and terms are
-        displayed before activation.`
-
-        :
-
-        `<strong>👑 المكافآت الملكية</strong>
-        <br>
-        يقدم Royal Door أنظمة رقمية ترفيهية
-        وبرامج مكافآت ونقاط داخل المنصة.
-        تختلف المكافآت والمهام والمزايا حسب
-        النظام أو الباقة المتاحة، ويتم توضيح
-        الشروط قبل التفعيل.`;
+    document.getElementById("webapp-btn").textContent =
+        arabic ? "🌐 Open Web App" : "🌐 فتح تطبيق الويب";
 }
-
-
-/*
-    رقم العرض هنا ليس عداداً مالياً
-    ولا يمثل أرباحاً أو نتائج حقيقية.
-
-    الأفضل لاحقاً ربطه بقاعدة بيانات حقيقية
-    بدلاً من توليد رقم عشوائي.
-*/
-
-setInterval(() => {
-
-    const count =
-        Math.floor(
-            Math.random() * 1000 + 50000
-        );
-
-    document.getElementById(
-        'user-count'
-    ).innerText =
-        count.toLocaleString();
-
-}, 3000);
 
 </script>
 
@@ -674,29 +565,34 @@ setInterval(() => {
 
 <script>
 
-particlesJS(
-    "particles-js",
-    {
-        "particles": {
-            "number": {
-                "value": 80
-            },
+particlesJS("particles-js", {
 
-            "color": {
-                "value": "#f3cf7a"
-            },
+    particles: {
 
-            "size": {
-                "value": 2
-            },
+        number: {
+            value: 70
+        },
 
-            "move": {
-                "enable": true,
-                "speed": 1
-            }
+        color: {
+            value: "#f3cf7a"
+        },
+
+        size: {
+            value: 2
+        },
+
+        opacity: {
+            value: 0.5
+        },
+
+        move: {
+            enable: true,
+            speed: 1
         }
+
     }
-);
+
+});
 
 </script>
 
