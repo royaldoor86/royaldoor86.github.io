@@ -1,92 +1,505 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPJJR3W8WT"></script>
+
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RPJJR3W8WT');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-RPJJR3W8WT');
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>وكلاء Royal Door المعتمدون | شبكة الوكلاء</title>
-    <link rel="canonical" href="https://royaldoor.live/agents.html" />
-    <meta name="description" content="قائمة وكلاء Royal Door المعتمدين في كافة المحافظات العراقية لشحن الجواهر والكوينز بضمانة وأمان.">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link
+        rel="canonical"
+        href="https://royaldoor.live/agents.html"
+    >
+
+    <meta
+        name="description"
+        content="قائمة وكلاء Royal Door المعتمدين لخدمات شحن الجواهر والكوينز والخدمات الرقمية."
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"
+        rel="stylesheet"
+    >
+
     <style>
-        body { font-family: 'Cairo', sans-serif; background: #050010; color: white; text-align: center; margin: 0; }
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
-        .container { position: relative; z-index: 10; max-width: 900px; margin: auto; padding: 40px 15px; }
-        .agent-card { background: rgba(243, 207, 122, 0.05); border: 2px solid #f3cf7a; border-radius: 30px; padding: 30px; backdrop-filter: blur(15px); }
-        
-        /* صندوق الإرشادات */
-        .notice-box { background: rgba(243, 207, 122, 0.1); border: 1px solid #f3cf7a; padding: 15px; border-radius: 15px; margin-bottom: 25px; font-size: 0.9rem; color: #f3cf7a; text-align: justify; }
 
-        h1 { color: #f3cf7a; margin-bottom: 30px; font-size: 2rem; }
-        table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
-        th { color: #f3cf7a; padding: 15px; font-size: 1.2rem; }
-        td { padding: 15px; background: rgba(255,255,255,0.03); }
-        tr td:first-child { border-radius: 10px 0 0 10px; color: #f3cf7a; font-weight: bold; }
-        tr td:last-child { border-radius: 0 10px 10px 0; }
-        
-        /* زر المساعدة العائم */
-        .help-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: #f3cf7a; color: #050010; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4); z-index: 1000; transition: 0.3s; }
-        .help-btn:hover { transform: scale(1.1) rotate(20deg); }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #050010;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
 
-        .btn-chat { background: #25d366; color: white; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: inline-block; }
-        .btn-chat:hover { transform: scale(1.1); box-shadow: 0 0 15px #25d366; }
-        .back-home { display: inline-block; margin-top: 30px; color: #f3cf7a; text-decoration: none; border: 2px solid #f3cf7a; padding: 12px 40px; border-radius: 50px; font-weight: bold; }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 15px;
+        }
+
+        .agent-card {
+            background: rgba(243, 207, 122, 0.05);
+            border: 2px solid #f3cf7a;
+            border-radius: 30px;
+            padding: 30px;
+            backdrop-filter: blur(15px);
+        }
+
+        .notice-box {
+            background: rgba(243, 207, 122, 0.1);
+            border: 1px solid #f3cf7a;
+            padding: 18px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: #f3cf7a;
+            text-align: justify;
+            line-height: 1.9;
+        }
+
+        .info-box {
+            background: rgba(0, 234, 255, 0.05);
+            border: 1px solid rgba(0, 234, 255, 0.3);
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            line-height: 1.9;
+            color: #ddd;
+        }
+
+        h1 {
+            color: #f3cf7a;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+
+        th {
+            color: #f3cf7a;
+            padding: 15px;
+            font-size: 1.2rem;
+        }
+
+        td {
+            padding: 15px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        tr td:first-child {
+            border-radius: 10px 0 0 10px;
+            color: #f3cf7a;
+            font-weight: bold;
+        }
+
+        tr td:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .btn-chat {
+            background: #25d366;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-chat:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #25d366;
+        }
+
+        .help-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: #f3cf7a;
+            color: #050010;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(243,207,122,0.4);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .help-btn:hover {
+            transform: scale(1.1) rotate(20deg);
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 30px;
+            color: #f3cf7a;
+            text-decoration: none;
+            border: 2px solid #f3cf7a;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 25px 8px;
+            }
+
+            .agent-card {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            th,
+            td {
+                padding: 10px 6px;
+                font-size: 0.8rem;
+            }
+
+            .btn-chat {
+                padding: 7px 12px;
+                font-size: 0.8rem;
+            }
+
+        }
+
     </style>
+
 </head>
+
+
 <body>
-    <div id="particles-js"></div>
-    <div class="container">
-        <h1>🤝 وكلاء Royal Door المعتمدون</h1>
-        
-        <div class="notice-box">
-            <strong>💡 ملاحظة هامة:</strong>
-            نتعامل مع وكلاء معتمدين فقط لضمان وصول خدمات الشحن إليك بأمان. هؤلاء الوكلاء هم المعتمدون رسمياً من إدارة Royal Door، ونخلي مسؤوليتنا عن أي تعامل يتم خارج نطاق هذه القائمة.
-        </div>
 
-        <div class="agent-card">
-            <table>
-                <thead>
-                    <tr><th>اسم الوكيل</th><th>المحافظة</th><th>تواصل</th></tr>
-                </thead>
-                <tbody id="agent-list">
-                    </tbody>
-            </table>
-        </div>
+<div id="particles-js"></div>
 
-        <a href="guide.html" class="help-btn" title="دليل الإرشادات">؟</a>
 
-        <a href="index.html" class="back-home">🏠 العودة للرئيسية</a>
+<div class="container">
+
+    <h1>
+        🤝 وكلاء Royal Door المعتمدون
+    </h1>
+
+
+    <div class="notice-box">
+
+        <strong>💎 شبكة الوكلاء الملكية</strong>
+
+        <br><br>
+
+        توفر شبكة وكلاء Royal Door خدمات الشحن الخاصة
+        بالجواهر والكوينز والخدمات الرقمية المتاحة داخل المنصة.
+
+        <br><br>
+
+        ننصح المستخدمين بالتعامل فقط مع الوكلاء الظاهرين
+        في القائمة الرسمية الموجودة في هذه الصفحة.
+
+        <br><br>
+
+        أي شخص غير موجود في القائمة لا يمثل وكيلًا معتمدًا
+        من Royal Door.
+
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS("particles-js", {"particles":{"number":{"value":80},"color":{"value":"#f3cf7a"},"shape":{"type":"circle"},"opacity":{"value":0.5},"size":{"value":3},"line_linked":{"enable":true,"distance":150,"color":"#f3cf7a","opacity":0.2},"move":{"enable":true,"speed":2}}});
 
-        const agents = [
-            ["الوكيل العام", "Royal Door", "9647770992966"],
-            ["أبو أسحاق ", "بغداد", "9647739676609"],
-            ["حيدر الغالبي", "النجف وكربلاء", "9647862414050"],
-            ["شهم المحمداوي", "الديوانية والسماوة", "9647813431076"],
-            ["عبد الله الصالحي", "البصرة والعمارة", "9647717901796"],
-            ["عماد المندلاوي", "الأقليم", "9647736436338"],
-            ["صباح عمر الجبوري", "ديالى والرمادي", "9647805772978"]
-        ];
+    <div class="agent-card">
 
-        const list = document.getElementById('agent-list');
-        agents.forEach(a => {
-            const chatLink = a[2] !== "غير متوفر حالياً" 
-                ? `<a href="https://wa.me/${a[2]}" class="btn-chat" target="_blank">واتساب</a>` 
-                : `<span style="color:#666">خارج الخدمة</span>`;
-            
-            list.innerHTML += `<tr><td>${a[0]}</td><td>${a[1]}</td><td>${chatLink}</td></tr>`;
-        });
-    </script>
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        اسم الوكيل
+                    </th>
+
+                    <th>
+                        المنطقة
+                    </th>
+
+                    <th>
+                        التواصل
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="agent-list">
+
+            </tbody>
+
+        </table>
+
+
+        <div class="info-box">
+
+            🔐 <strong>تنبيه أمني</strong>
+
+            <br>
+
+            لا تشارك كلمة المرور أو رمز التحقق أو أي معلومات
+            سرية مع أي شخص.
+
+            <br>
+
+            الوكيل يحتاج فقط إلى البيانات المطلوبة لإتمام
+            عملية الشحن أو الخدمة الرقمية.
+
+            <br>
+
+            في حال وجود أي مشكلة، تواصل مع إدارة Royal Door
+            عبر قنوات التواصل الرسمية.
+
+        </div>
+
+    </div>
+
+
+    <a
+        href="guide.html"
+        class="help-btn"
+        title="دليل الإرشادات"
+    >
+        ؟
+    </a>
+
+
+    <a
+        href="index.html"
+        class="back-home"
+    >
+        🏠 العودة للرئيسية
+    </a>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
+<script>
+
+particlesJS("particles-js", {
+
+    "particles": {
+
+        "number": {
+            "value": 80
+        },
+
+        "color": {
+            "value": "#f3cf7a"
+        },
+
+        "shape": {
+            "type": "circle"
+        },
+
+        "opacity": {
+            "value": 0.5
+        },
+
+        "size": {
+            "value": 3
+        },
+
+        "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#f3cf7a",
+            "opacity": 0.2
+        },
+
+        "move": {
+            "enable": true,
+            "speed": 2
+        }
+
+    }
+
+});
+
+
+/*
+====================================================
+وكلاء Royal Door
+====================================================
+
+ملاحظة:
+
+هذه القائمة مخصصة للوكلاء المعتمدين
+لخدمات الشحن والخدمات الرقمية فقط.
+
+====================================================
+*/
+
+
+const agents = [
+
+    [
+        "الوكيل العام",
+        "Royal Door",
+        "9647770992966"
+    ],
+
+    [
+        "أبو إسحاق",
+        "بغداد",
+        "9647739676609"
+    ],
+
+    [
+        "حيدر الغالبي",
+        "النجف وكربلاء",
+        "9647862414050"
+    ],
+
+    [
+        "شهم المحمداوي",
+        "الديوانية والسماوة",
+        "9647813431076"
+    ],
+
+    [
+        "عبد الله الصالحي",
+        "البصرة والعمارة",
+        "9647717901796"
+    ],
+
+    [
+        "عماد المندلاوي",
+        "الإقليم",
+        "9647736436338"
+    ],
+
+    [
+        "صباح عمر الجبوري",
+        "ديالى والرمادي",
+        "9647805772978"
+    ]
+
+];
+
+
+const list =
+    document.getElementById("agent-list");
+
+
+agents.forEach(agent => {
+
+    const name = agent[0];
+    const region = agent[1];
+    const phone = agent[2];
+
+
+    let contactButton;
+
+
+    if (
+        phone &&
+        phone !== "غير متوفر حالياً"
+    ) {
+
+        contactButton = `
+
+            <a
+                href="https://wa.me/${phone}"
+                class="btn-chat"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                واتساب
+            </a>
+
+        `;
+
+    } else {
+
+        contactButton = `
+
+            <span style="color:#666;">
+                غير متوفر
+            </span>
+
+        `;
+
+    }
+
+
+    list.innerHTML += `
+
+        <tr>
+
+            <td>
+                ${name}
+            </td>
+
+            <td>
+                ${region}
+            </td>
+
+            <td>
+                ${contactButton}
+            </td>
+
+        </tr>
+
+    `;
+
+});
+
+</script>
+
 </body>
 </html>
