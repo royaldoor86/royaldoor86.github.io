@@ -11,88 +11,492 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الأستثمار الملكي | Royal Door</title>
+
+    <title>المكافآت الملكية | Royal Door</title>
+
     <link rel="canonical" href="https://royaldoor.live/invest.html" />
-    <meta name="description" content="نظام الاستثمار الملكي في منصة Royal Door. استثمر نجومك واحصل على أرباح حقيقية بضمانات موثوقة.">
-    
+
+    <meta name="description" content="نظام المكافآت الملكية في منصة Royal Door. باقات ومزايا رقمية ومكافآت جواهر داخل التطبيق.">
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: 'Cairo', sans-serif; background: #050010; color: white; text-align: center; margin: 0; }
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; top: 0; left: 0; }
-        .container { position: relative; z-index: 10; max-width: 1000px; margin: auto; padding: 40px 10px; }
-        .invest-box { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 30px; border: 1px solid #f3cf7a; backdrop-filter: blur(10px); }
-        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #050010;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 10px;
+        }
+
+        .invest-box {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 30px;
+            border: 1px solid #f3cf7a;
+            backdrop-filter: blur(10px);
+        }
+
         /* صندوق الإرشادات */
-        .notice-box { background: rgba(243, 207, 122, 0.1); border: 1px solid #f3cf7a; padding: 15px; border-radius: 15px; margin-bottom: 25px; font-size: 0.9rem; color: #f3cf7a; text-align: justify; }
+        .notice-box {
+            background: rgba(243, 207, 122, 0.1);
+            border: 1px solid #f3cf7a;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: #f3cf7a;
+            text-align: justify;
+        }
 
-        input { width: 80%; max-width: 300px; padding: 15px; border-radius: 15px; border: 2px solid #f3cf7a; background: #000; color: white; text-align: center; margin-bottom: 20px; font-size: 1.2rem; outline: none; transition: 0.3s; }
-        table { width: 100%; border-collapse: collapse; min-width: 800px; }
-        th { background: #f3cf7a; color: black; padding: 15px; }
-        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .btn-go { background: #f3cf7a; color: black; border: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .btn-go:hover { transform: scale(1.05); background: #fff; }
-        
+        input {
+            width: 80%;
+            max-width: 300px;
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px solid #f3cf7a;
+            background: #000;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        th {
+            background: #f3cf7a;
+            color: black;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn-go {
+            background: #f3cf7a;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-go:hover {
+            transform: scale(1.05);
+            background: #fff;
+        }
+
         /* زر المساعدة العائم */
-        .help-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: #f3cf7a; color: #050010; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4); z-index: 1000; transition: 0.3s; }
-        .help-btn:hover { transform: scale(1.1) rotate(20deg); }
+        .help-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: #f3cf7a;
+            color: #050010;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(243, 207, 122, 0.4);
+            z-index: 1000;
+            transition: 0.3s;
+        }
 
-        .back-link { display: inline-block; margin-top: 30px; color: #f3cf7a; text-decoration: none; font-weight: bold; font-size: 1.2rem; border: 1px solid #f3cf7a; padding: 10px 30px; border-radius: 50px; }
+        .help-btn:hover {
+            transform: scale(1.1) rotate(20deg);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #f3cf7a;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 1px solid #f3cf7a;
+            padding: 10px 30px;
+            border-radius: 50px;
+        }
     </style>
 </head>
+
 <body>
+
     <div id="particles-js"></div>
+
     <div class="container">
-        <h1 style="color:#f3cf7a">📈 نظام الأستثمار الملكي (النجوم)</h1>
-        
+
+        <h1 style="color:#f3cf7a">
+            👑 نظام المكافآت الملكية
+        </h1>
+
         <div class="notice-box">
-            <strong>💡 لماذا الاستثمار هنا؟</strong>
-            نظام الاستثمار عبر الموقع يوفر لك لوحة تحكم مستقلة وشفافة لمتابعة أرباحك، بعيداً عن تقلبات بيئة التطبيق الداخلية. نحن نضمن لك عملية استثمارية منظمة وآمنة تليق بتجربتك الملكية.
+
+            <strong>💎 كيف تعمل المكافآت الملكية؟</strong>
+
+            <br><br>
+
+            اختر الباقة الملكية المناسبة لك واستمتع بمزايا ومكافآت رقمية
+            داخل Royal Door خلال مدة الباقة.
+
+            <br><br>
+
+            يتم احتساب المكافآت وفق تفاصيل كل باقة، وتظهر الجواهر
+            كمكافآت رقمية داخل التطبيق.
+
+            <br><br>
+
+            <strong>
+                ⚠️ المكافآت والجواهر الرقمية مخصصة للاستخدام داخل Royal Door
+                ولا تمثل استثمارًا أو فائدة أو عائدًا ماليًا مضمونًا،
+                ولا تعد أموالًا نقدية.
+            </strong>
+
         </div>
 
         <div class="invest-box">
-            <p style="color:#00ff88">"حوّل نجومك إلى أرباح حقيقية بضمانة Royal Door"</p>
-            <input type="number" id="invId" placeholder="أدخل الآيدي (ID) لتفعيل الباقة">
+
+            <p style="color:#00ff88">
+                👑 "استمتع بمزاياك الملكية واجمع مكافآتك داخل Royal Door"
+            </p>
+
+            <input
+                type="number"
+                id="invId"
+                placeholder="أدخل الآيدي (ID) لتفعيل الباقة"
+            >
+
             <div style="overflow-x:auto">
+
                 <table id="iTable"></table>
+
             </div>
+
         </div>
-        
-        <a href="guide.html" class="help-btn" title="دليل الإرشادات">؟</a>
-        
-        <a href="index.html" class="back-link">← العودة للرئيسية</a>
+
+        <a
+            href="guide.html"
+            class="help-btn"
+            title="دليل الإرشادات"
+        >
+            ؟
+        </a>
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ← العودة للرئيسية
+        </a>
+
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     <script>
-        particlesJS("particles-js", {"particles":{"number":{"value":80},"color":{"value":"#f3cf7a"},"shape":{"type":"circle"},"opacity":{"value":0.5},"size":{"value":3},"line_linked":{"enable":true,"distance":150,"color":"#f3cf7a","opacity":0.2},"move":{"enable":true,"speed":2}}});
-        
+
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80
+                },
+                "color": {
+                    "value": "#f3cf7a"
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5
+                },
+                "size": {
+                    "value": 3
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#f3cf7a",
+                    "opacity": 0.2
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2
+                }
+            }
+        });
+
+
+        /*
+         * نظام المكافآت الملكية
+         *
+         * لا يوجد:
+         * - ربح مالي
+         * - دولار
+         * - فائدة
+         * - عائد استثماري
+         *
+         * توجد:
+         * - باقة رقمية
+         * - مدة مزايا
+         * - نقاط ملكية
+         * - مكافآت جواهر داخل التطبيق
+         */
+
+
         const data = [
-            ["🌟 الدر","100,000","66.7$","1,900","40,400"],
-            ["🔴 المرجان","200,000","133.3$","3,800","80,800"],
-            ["🟤 العقيق","300,000","200.0$","5,700","120,700"],
-            ["💠 الكريستال","500,000","333.3$","9,600","201,600"],
-            ["🟢 الزبرجد","750,000","500.0$","14,400","302,400"],
-            ["🤍 اللؤلؤ","1,000,000","666.7$","19,200","404,200"],
-            ["🔷 الفيروز","1,200,000","800.0$","23,000","485,000"],
-            ["💎 الماس","1,300,000","866.7$","25,000","525,000"],
-            ["🟩 الزمرد","1,400,000","933.3$","27,000","565,000"],
-            ["🔶 الياقوت","1,500,000","1000.0$","29,000","606,000"]
+
+            [
+                "🌟 الدر",
+                "100,000",
+                "30 يوم",
+                "40,400",
+                "150,000"
+            ],
+
+            [
+                "🔴 المرجان",
+                "200,000",
+                "30 يوم",
+                "80,800",
+                "300,000"
+            ],
+
+            [
+                "🟤 العقيق",
+                "300,000",
+                "30 يوم",
+                "120,700",
+                "500,000"
+            ],
+
+            [
+                "💠 الكريستال",
+                "500,000",
+                "30 يوم",
+                "201,600",
+                "750,000"
+            ],
+
+            [
+                "🟢 الزبرجد",
+                "750,000",
+                "30 يوم",
+                "302,400",
+                "1,000,000"
+            ],
+
+            [
+                "🤍 اللؤلؤ",
+                "1,000,000",
+                "30 يوم",
+                "404,200",
+                "1,500,000"
+            ],
+
+            [
+                "🔷 الفيروز",
+                "1,200,000",
+                "30 يوم",
+                "485,000",
+                "2,000,000"
+            ],
+
+            [
+                "💎 الماس",
+                "1,300,000",
+                "30 يوم",
+                "525,000",
+                "2,500,000"
+            ],
+
+            [
+                "🟩 الزمرد",
+                "1,400,000",
+                "30 يوم",
+                "565,000",
+                "3,000,000"
+            ],
+
+            [
+                "🔶 الياقوت",
+                "1,500,000",
+                "30 يوم",
+                "606,000",
+                "3,500,000"
+            ],
+
+            [
+                "👑 الملكي",
+                "2,000,000",
+                "45 يوم",
+                "800,000",
+                "4,000,000"
+            ],
+
+            [
+                "👑👑 الإمبراطوري",
+                "3,000,000",
+                "60 يوم",
+                "1,200,000",
+                "4,500,000"
+            ],
+
+            [
+                "👑💎 التاج الملكي",
+                "5,000,000",
+                "90 يوم",
+                "2,000,000",
+                "5,000,000"
+            ]
+
         ];
 
-        document.getElementById('iTable').innerHTML = `<tr><th>الباقة</th><th>دينار</th><th>دولار</th><th>الربح</th><th>الإجمالي</th><th>تفعيل</th></tr>` + 
-            data.map(r => `<tr><td style="color:#f3cf7a">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td style="color:#00ff88">+${r[3]}</td><td>${r[4]}</td><td><button class="btn-go" onclick="sendInv('${r[0]}','${r[1]}')">تفعيل</button></td></tr>`).join('');
 
-        function sendInv(pkg, price) {
-            const idInput = document.getElementById('invId');
-            if(!idInput.value) { 
+        document.getElementById('iTable').innerHTML =
+
+            `
+            <tr>
+
+                <th>الباقة</th>
+
+                <th>السعر</th>
+
+                <th>مدة المزايا</th>
+
+                <th>مكافآت الجواهر</th>
+
+                <th>نقاط الملكية</th>
+
+                <th>تفعيل</th>
+
+            </tr>
+            `
+
+            +
+
+            data.map(r =>
+
+                `
+                <tr>
+
+                    <td style="color:#f3cf7a">
+                        ${r[0]}
+                    </td>
+
+                    <td>
+                        ${r[1]} 💎
+                    </td>
+
+                    <td>
+                        ${r[2]}
+                    </td>
+
+                    <td style="color:#00ff88">
+                        +${r[3]} 💎
+                    </td>
+
+                    <td style="color:#f3cf7a">
+                        ${r[4]} ⭐
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="btn-go"
+                            onclick="sendInv('${r[0]}','${r[1]}','${r[2]}','${r[3]}')"
+                        >
+                            تفعيل
+                        </button>
+
+                    </td>
+
+                </tr>
+                `
+
+            ).join('');
+
+
+        function sendInv(pkg, price, duration, rewards) {
+
+            const idInput =
+                document.getElementById('invId');
+
+
+            if (!idInput.value) {
+
                 idInput.style.borderColor = "red";
-                alert("❌ يرجى كتابة الآيدي الخاص بك أولاً!"); 
-                return; 
+
+                alert(
+                    "❌ يرجى كتابة الآيدي الخاص بك أولاً!"
+                );
+
+                return;
             }
+
+
             idInput.style.borderColor = "#f3cf7a";
-            const msg = `طلب استثمار:\nباقة: ${pkg}\nالسعر: ${price}\nالآيدي: ${idInput.value}`;
-            window.open(`https://wa.me/9647770992966?text=${encodeURIComponent(msg)}`);
+
+
+            const msg =
+
+                `طلب تفعيل باقة مكافآت ملكية:
+
+الباقة: ${pkg}
+
+السعر: ${price} جوهرة
+
+مدة المزايا: ${duration}
+
+مكافآت الجواهر: ${rewards} جوهرة
+
+الآيدي: ${idInput.value}
+
+أوافق على أن المكافآت رقمية داخل Royal Door وليست استثمارًا أو عائدًا ماليًا.`;
+
+
+            window.open(
+
+                `https://wa.me/9647770992966?text=${encodeURIComponent(msg)}`
+
+            );
+
         }
+
     </script>
+
 </body>
 </html>
