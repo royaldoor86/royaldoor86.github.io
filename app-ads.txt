@@ -1,3 +1,4 @@
+google.com, pub-1646604112484796, DIRECT, f08c47fec0942fa0
 pokkt.com, 6246, RESELLER, c45702d9311e25fd
 contextweb.com, 558622, RESELLER, 89ff185a4c4e857c
 anzu.io, 691e95644e633a6eee2567ee, RESELLER, 1c1b7acf4992136c
